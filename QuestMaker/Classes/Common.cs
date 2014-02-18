@@ -8,6 +8,12 @@ namespace QuestMaker.Classes
 {
     public class Common
     {
-
+        public static string convertNullString(object obj)
+        {
+            if (obj == null)
+                return "";
+            else
+                return obj.ToString();
+        }
     }
 }

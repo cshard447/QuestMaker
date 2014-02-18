@@ -44,7 +44,8 @@ namespace QuestMaker
     {
         private Dictionary<int, CItem> items = new Dictionary<int, CItem>();
         private XDocument doc = new XDocument(new XElement("root"));
-        string fileName = "items.xml";
+        string fileName = "..\\..\\items.xml";
+        const string section = "items";
         const int MAX_ITEMS = 1000;
 
         public CItemManager() : base ()
@@ -94,13 +95,13 @@ namespace QuestMaker
         public void saveItemsToFile()
         {
             XDocument doc = XDocument.Load(fileName);
-            IEnumerable<XElement> del = doc.Root.Descendants("item").ToList();
+            IEnumerable<XElement> del = doc.Root.Element(section).Descendants("item").ToList();
             del.Remove();
             doc.Save(fileName);
             
             foreach (CItem item in items.Values)
             {
-                IEnumerable<XElement> find = doc.Root.Descendants("item").Where( 
+                IEnumerable<XElement> find = doc.Root.Element(section).Descendants("item").Where( 
                             t=> t.Element("itemId").Value == item.getID().ToString());
                 foreach (XElement elem in find)
                     elem.Remove();
@@ -112,7 +113,7 @@ namespace QuestMaker
                                 new XElement("itemComment", item.comment),
                                 new XElement("itemVisibility", item.visibility));
 
-                doc.Root.Add(element);
+                doc.Root.Element(section).Add(element);
             }
 
             System.Xml.XmlWriterSettings settings = new System.Xml.XmlWriterSettings();
@@ -130,7 +131,7 @@ namespace QuestMaker
         {
             removeAllItems();
             doc = XDocument.Load(fileName);
-            foreach (XElement elem in doc.Root.Elements())
+            foreach (XElement elem in doc.Root.Element(section).Elements())
             {
                 string name = elem.Element("itemName").Value.ToString();
                 string desc = elem.Element("itemDescription").Value.ToString();

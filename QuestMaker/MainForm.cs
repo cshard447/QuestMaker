@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
+using QuestMaker.Classes;
 
 namespace QuestMaker
 {
     public partial class MainForm : Form
     {
         CItemManager itemManager = new CItemManager();
+        CAimManager aimManager = new CAimManager();
 
         public MainForm()
         {
@@ -21,6 +23,8 @@ namespace QuestMaker
             //col.DataTypeConverter = new TypeConverter();
             itemManager.loadItemsFromFile();
             ShowItemsOnGridView();
+            aimManager.loadItemsFromFile();
+            ShowAimsOnGridView();
         }
 
         public static bool ConvertStringToBool(string str)
@@ -33,9 +37,9 @@ namespace QuestMaker
             itemManager.removeAllItems();
             for (int row = 0; row < gridViewItems.RowCount; row++)
             {
-                string name = gridViewItems.Rows[row].Cells["columnName"].Value.ToString();
-                string desc = gridViewItems.Rows[row].Cells["columnDescription"].Value.ToString();
-                string comm = gridViewItems.Rows[row].Cells["columnComment"].Value.ToString();
+                string name = Common.convertNullString(gridViewItems.Rows[row].Cells["columnName"].Value );
+                string desc = Common.convertNullString(gridViewItems.Rows[row].Cells["columnDescription"].Value );
+                string comm = Common.convertNullString(gridViewItems.Rows[row].Cells["columnComment"].Value );
                 //string vis = gridViewItems.Rows[row].Cells["columnVisibility"].Value.ToString();
                 itemManager.addItem(name, desc, comm, true );
             }
@@ -62,6 +66,33 @@ namespace QuestMaker
                 gridViewItems.Rows.Add(row);
             }
             gridViewItems.Update();
+        }
+
+        private void ShowAimsOnGridView()
+        {
+            gridViewAims.Rows.Clear();
+            Dictionary<int, CAim> _aims = aimManager.getAllAims();
+            foreach (CAim aim in _aims.Values)
+            {
+                GridViewRowInfo row = new GridViewRowInfo(gridViewAims.MasterView);
+                row.Cells["columnName"].Value = aim.getName();
+                row.Cells["columnDescription"].Value = aim.description;
+                gridViewAims.Rows.Add(row);
+            }
+            gridViewAims.Update();
+        }
+
+        private void bSaveAims_Click(object sender, EventArgs e)
+        {
+            aimManager.removeAllAims();
+            for (int row = 0; row < gridViewAims.RowCount; row++)
+            {
+                string name = Common.convertNullString(gridViewAims.Rows[row].Cells["columnName"].Value);
+                string desc = Common.convertNullString(gridViewAims.Rows[row].Cells["columnDescription"].Value);
+                aimManager.addAim(name, desc);
+            }
+            aimManager.saveItemsToFile();
+
         }
 
     }
