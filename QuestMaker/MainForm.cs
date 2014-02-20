@@ -24,15 +24,18 @@ namespace QuestMaker
             FillTableColumns();
             itemManager.loadItemsFromFile();
             ShowItemsOnGridView();
-            aimManager.loadItemsFromFile();
+            aimManager.loadAimsFromFile();
             ShowAimsOnGridView();
         }
 
         void FillTableColumns()
         {
             GridViewComboBoxColumn column = (GridViewComboBoxColumn)gridViewAims.Columns["columnType"];
-            column.DataSource = new string[] { "Главная", "Побочная", "Промежуточная" };
-            //column.DataSourceNullValue = "Глав";
+            column.ValueMember = "Type";
+            column.DisplayMember = "DisplayString";
+            column.FieldName = "Type";
+            column.DataSource = aimManager.list;
+            column.DataSourceNullValue = AimType.secondary;
         }
 
         private void bSaveitems_Click(object sender, EventArgs e)
@@ -81,6 +84,7 @@ namespace QuestMaker
                 GridViewRowInfo row = new GridViewRowInfo(gridViewAims.MasterView);
                 row.Cells["columnName"].Value = aim.getName();
                 row.Cells["columnDescription"].Value = aim.description;
+                row.Cells["columnType"].Value = aim.type;
                 gridViewAims.Rows.Add(row);
             }
             gridViewAims.Update();
@@ -93,11 +97,14 @@ namespace QuestMaker
             {
                 string name = Common.convertNullString(gridViewAims.Rows[row].Cells["columnName"].Value);
                 string desc = Common.convertNullString(gridViewAims.Rows[row].Cells["columnDescription"].Value);
-                string strtype = gridViewAims.Rows[row].Cells["columnType"].Value.ToString();
-                AimType type = aimManager.getType(strtype);
+                // ok works
+                //string strtype = gridViewAims.Rows[row].Cells["columnType"].Value.ToString();
+                //AimType type = aimManager.getType(strtype);
+                //Type ttt =  gridViewAims.Rows[row].Cells["columnType"].Value.GetType();
+                AimType type = (AimType) gridViewAims.Rows[row].Cells["columnType"].Value;
                 aimManager.addAim(name, desc, type);
             }
-            aimManager.saveItemsToFile();
+            aimManager.saveAimsToFile();
 
         }
 

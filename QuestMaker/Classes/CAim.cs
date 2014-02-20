@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.ComponentModel;
 
 
 namespace QuestMaker
@@ -36,11 +37,31 @@ namespace QuestMaker
         }
     }
 
+        public class AimTypeDataSourceObject
+    {
+        private string displayString;
+        public string DisplayString
+        {
+            get { return displayString; }
+            set { displayString = value; }
+        }
+
+        private AimType type;
+        public AimType Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
+    }
+
     public class CAimManager : CAim
     { 
         private Dictionary<int, CAim> aims = new Dictionary<int, CAim>();
         private XDocument doc = new XDocument(new XElement("root"));
         Dictionary<string, AimType> strToType = new Dictionary<string,AimType>();
+
+        public BindingList<AimTypeDataSourceObject> list = new BindingList<AimTypeDataSourceObject>();
+
         string fileName = "..\\..\\aims.xml";
         const string section = "aims";
         const int MAX_ITEMS = 1000;
@@ -88,7 +109,7 @@ namespace QuestMaker
         {
             return aims;
         }
-        public void saveItemsToFile()
+        public void saveAimsToFile()
         {
             XDocument doc = XDocument.Load(fileName);
             IEnumerable<XElement> del = doc.Root.Element(section).Descendants("aim").ToList();
@@ -122,7 +143,7 @@ namespace QuestMaker
             }
             //  doc.Save(fileName);
         }
-        public void loadItemsFromFile()
+        public void loadAimsFromFile()
         {
             removeAllAims();
             doc = XDocument.Load(fileName);
@@ -138,10 +159,25 @@ namespace QuestMaker
 
         private void initDict()
         { 
-            strToType.Add("Главная", AimType.primary);
-            strToType.Add("Побочная", AimType.secondary);
-            strToType.Add("Промежуточная", AimType.transitional);
+            strToType.Add("primary", AimType.primary);
+            strToType.Add("secondary", AimType.secondary);
+            strToType.Add("transitional", AimType.transitional);
+
+            AimTypeDataSourceObject obj1 = new AimTypeDataSourceObject();
+            obj1.DisplayString = "Главная";
+            obj1.Type = AimType.primary;
+            list.Add(obj1);
+            AimTypeDataSourceObject obj2 = new AimTypeDataSourceObject();
+            obj2.DisplayString = "Побочная";
+            obj2.Type = AimType.secondary;
+            list.Add(obj2);
+            AimTypeDataSourceObject obj3 = new AimTypeDataSourceObject();
+            obj3.DisplayString = "Промежуточная";
+            obj3.Type = AimType.transitional;
+            list.Add(obj3);
+
         }
+        
         public AimType getType (string type)
         {
             if (strToType.ContainsKey(type))
@@ -149,6 +185,7 @@ namespace QuestMaker
             else
                 return AimType.secondary;                        
         }
+        
 
 
 
