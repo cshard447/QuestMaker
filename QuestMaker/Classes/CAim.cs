@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace QuestMaker
 {
-    public enum AimType { primary, secondary, transitional};
+    public enum AimType { primary = 0, secondary = 1, transitional = 2};
     public class CAim
     {
         private int id;
@@ -19,11 +19,12 @@ namespace QuestMaker
         public CAim()
         {
         }
-        public CAim(int _id, string _name, string _description)
+        public CAim(int _id, string _name, string _description, AimType _type)
         {
             id = _id;
             name = _name;
             description = _description;
+            type = _type;
         }
         public string getName()
         {
@@ -39,23 +40,24 @@ namespace QuestMaker
     { 
         private Dictionary<int, CAim> aims = new Dictionary<int, CAim>();
         private XDocument doc = new XDocument(new XElement("root"));
+        Dictionary<string, AimType> strToType = new Dictionary<string,AimType>();
         string fileName = "..\\..\\aims.xml";
         const string section = "aims";
         const int MAX_ITEMS = 1000;
 
         public CAimManager() : base ()
-        { 
-        
+        {
+            initDict();
         }
 
-        public void addAim(string _name, string _description)
+        public void addAim(string _name, string _description, AimType _type)
         {
             int newID;
             for (newID = 0; newID < MAX_ITEMS; newID++)
                 if (!aims.Keys.Contains(newID))
                     break;
 
-            aims.Add(newID, new CAim(newID, _name, _description ) );
+            aims.Add(newID, new CAim(newID, _name, _description, _type ) );
         }
         public bool removeAim(int idToDelete)
         {
@@ -103,7 +105,8 @@ namespace QuestMaker
                 XElement element = new XElement("aim",
                                 new XElement("aimId", aim.getID()),
                                 new XElement("aimName", aim.getName()),
-                                new XElement("aimDescription", aim.description));
+                                new XElement("aimDescription", aim.description),
+                                new XElement("aimType", aim.type.ToString()));
 
                 doc.Root.Element(section).Add(element);
             }
@@ -127,10 +130,27 @@ namespace QuestMaker
             {
                 string name = elem.Element("aimName").Value.ToString();
                 string desc = elem.Element("aimDescription").Value.ToString();
-
-                addAim(name, desc);
+                string strtype = elem.Element("aimType").Value.ToString();
+                AimType type = getType(strtype);
+                addAim(name, desc, type);
             }
         }
+
+        private void initDict()
+        { 
+            strToType.Add("Главная", AimType.primary);
+            strToType.Add("Побочная", AimType.secondary);
+            strToType.Add("Промежуточная", AimType.transitional);
+        }
+        public AimType getType (string type)
+        {
+            if (strToType.ContainsKey(type))
+                return strToType[type];
+            else
+                return AimType.secondary;                        
+        }
+
+
 
     }
 }

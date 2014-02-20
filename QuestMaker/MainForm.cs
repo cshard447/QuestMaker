@@ -21,15 +21,18 @@ namespace QuestMaker
             InitializeComponent();
             //GridViewDataColumn col = gridViewItems.Columns.GetColumnByFieldName("columnVisibility").First();
             //col.DataTypeConverter = new TypeConverter();
+            FillTableColumns();
             itemManager.loadItemsFromFile();
             ShowItemsOnGridView();
             aimManager.loadItemsFromFile();
             ShowAimsOnGridView();
         }
 
-        public static bool ConvertStringToBool(string str)
+        void FillTableColumns()
         {
-            return str.Equals("true");
+            GridViewComboBoxColumn column = (GridViewComboBoxColumn)gridViewAims.Columns["columnType"];
+            column.DataSource = new string[] { "Главная", "Побочная", "Промежуточная" };
+            //column.DataSourceNullValue = "Глав";
         }
 
         private void bSaveitems_Click(object sender, EventArgs e)
@@ -44,12 +47,13 @@ namespace QuestMaker
                 itemManager.addItem(name, desc, comm, true );
             }
             itemManager.saveItemsToFile();
-            
+            // DataSourceNullValue
         }
 
         private void radButton2_Click(object sender, EventArgs e)
         {
-            itemManager.TestXML();
+            //itemManager.TestXML();
+            //gridViewAims.Columns[2].data
         }
 
         private void ShowItemsOnGridView()
@@ -89,7 +93,9 @@ namespace QuestMaker
             {
                 string name = Common.convertNullString(gridViewAims.Rows[row].Cells["columnName"].Value);
                 string desc = Common.convertNullString(gridViewAims.Rows[row].Cells["columnDescription"].Value);
-                aimManager.addAim(name, desc);
+                string strtype = gridViewAims.Rows[row].Cells["columnType"].Value.ToString();
+                AimType type = aimManager.getType(strtype);
+                aimManager.addAim(name, desc, type);
             }
             aimManager.saveItemsToFile();
 
