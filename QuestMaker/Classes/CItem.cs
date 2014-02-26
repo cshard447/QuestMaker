@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 using System.Xml.Linq;
+using System.Drawing;
+using QuestMaker.Classes;
 
 
 namespace QuestMaker
 {
-    
     public class CItem
     {
         private int id;
@@ -17,7 +18,8 @@ namespace QuestMaker
         public string description;
         public string comment;
         public bool visibility;
-        public string image;   // @todo think about it
+        public string pathToImage;   // @todo think about it
+        public Image image;
         public CItem()
         { 
         
@@ -43,8 +45,8 @@ namespace QuestMaker
     public class CItemManager : CItem
     {
         private Dictionary<int, CItem> items = new Dictionary<int, CItem>();
-        private XDocument doc = new XDocument(new XElement("root"));
-        string fileName = "..\\..\\items.xml";
+        private XDocument doc = new XDocument(new XElement("root"));      
+        string fileName = Common.path + "items.xml";
         const string section = "items";
         const int MAX_ITEMS = 1000;
 
@@ -86,6 +88,18 @@ namespace QuestMaker
             }
             return null;
         }
+        public void updateItem(int id, string path)
+        { 
+            if ( !items.ContainsKey(id) )
+                return;
+            items[id].pathToImage = path;
+        }
+        public void updateItem(int id, Image _image)
+        {
+            if (!items.ContainsKey(id))
+                return;
+            items[id].image = _image;        
+        }
 
         public Dictionary<int, CItem> getAllItems()
         {
@@ -111,6 +125,7 @@ namespace QuestMaker
                                 new XElement("itemName", item.getName()),
                                 new XElement("itemDescription", item.description),
                                 new XElement("itemComment", item.comment),
+                                new XElement("itemImagePath", item.pathToImage),
                                 new XElement("itemVisibility", item.visibility));
 
                 doc.Root.Element(section).Add(element);

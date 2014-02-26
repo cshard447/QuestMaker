@@ -15,6 +15,8 @@ namespace QuestMaker.Classes
             else
                 return obj.ToString();
         }
+        public static string path = "..\\..\\Result\\";
+
     }
 
 }

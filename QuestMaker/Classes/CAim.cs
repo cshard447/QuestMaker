@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.ComponentModel;
+using QuestMaker.Classes;
 
 
 namespace QuestMaker
@@ -62,7 +63,7 @@ namespace QuestMaker
 
         public BindingList<AimTypeDataSourceObject> list = new BindingList<AimTypeDataSourceObject>();
 
-        string fileName = "..\\..\\aims.xml";
+        string fileName = Common.path + "aims.xml";
         const string section = "aims";
         const int MAX_ITEMS = 1000;
 
