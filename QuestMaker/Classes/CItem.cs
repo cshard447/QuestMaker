@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections;
 using System.Xml.Linq;
 using System.Drawing;
+using Telerik.WinControls.UI;
 using QuestMaker.Classes;
 
 
@@ -40,6 +41,10 @@ namespace QuestMaker
         {
             return id;
         }
+        public void setName( string _name)
+        {
+            name = _name;
+        }
     }
 
     public class CItemManager : CItem
@@ -54,8 +59,11 @@ namespace QuestMaker
         { 
         
         }
-
-        public void addItem(string _name, string _description, string _comment, bool _visibility)
+        public void addItem(int _id, string _name, string _description, string _comment, bool _visibility)
+        {
+            items.Add(_id, new CItem(_id, _name, _description, _comment, _visibility));
+        }
+        public int addItem(string _name, string _description, string _comment, bool _visibility)
         {
             int newID;
             for (newID = 0; newID < MAX_ITEMS; newID++)
@@ -63,6 +71,7 @@ namespace QuestMaker
                     break;
 
             items.Add(newID, new CItem(newID, _name, _description, _comment, _visibility ) );
+            return newID;
         }
         public bool removeItem(int idToDelete)
         {
@@ -104,6 +113,39 @@ namespace QuestMaker
         public Dictionary<int, CItem> getAllItems()
         {
             return items;
+        }
+
+        public void UpdateItemsFromGrid(RadGridView gridView)
+        {
+            List<int> idsInTable = new List<int>();
+            for (int row = 0; row < gridView.RowCount; row++)
+            {
+                int id = int.Parse(gridView.Rows[row].Cells["columnID"].Value.ToString());
+                string name = Common.convertNullString(gridView.Rows[row].Cells["columnName"].Value);
+                string desc = Common.convertNullString(gridView.Rows[row].Cells["columnDescription"].Value);
+                string comm = Common.convertNullString(gridView.Rows[row].Cells["columnComment"].Value);
+                //string vis = gridViewItems.Rows[row].Cells["columnVisibility"].Value.ToString();
+
+                if (!items.ContainsKey(id))
+                    id = this.addItem(name, desc, comm, true);
+                else
+                {
+                    items[id].setName(name);
+                    items[id].description = desc;
+                    items[id].comment = comm;
+                }                
+                idsInTable.Add(id);
+            }
+            
+            foreach (int id in items.Keys.ToList())
+            {
+                if (!idsInTable.Contains(id))
+                    this.removeItem(id);
+                //GridViewColumnValuesCollection col;               
+                //string str = gridView.Columns["columnID"].DistinctValues[4].ToString();
+                //if (!gridView.Columns["columnID"].DistinctValues.Contains(id as object))
+                //    this.removeItem(id);
+            }        
         }
 
         public void saveItemsToFile()
@@ -148,12 +190,13 @@ namespace QuestMaker
             doc = XDocument.Load(fileName);
             foreach (XElement elem in doc.Root.Element(section).Elements())
             {
+                int id = int.Parse(elem.Element("itemId").Value.ToString());
                 string name = elem.Element("itemName").Value.ToString();
                 string desc = elem.Element("itemDescription").Value.ToString();
                 string comm = elem.Element("itemComment").Value.ToString();
                 string vis = elem.Element("itemVisibility").Value.ToString();
 
-                addItem(name, desc, comm, ConvertStringToBool(vis));
+                addItem(id, name, desc, comm, ConvertStringToBool(vis));
             }
         }
         public void TestXML()

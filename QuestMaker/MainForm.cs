@@ -40,20 +40,17 @@ namespace QuestMaker
 
             GridViewImageColumn column2= (GridViewImageColumn)gridViewItems.Columns["columnImage"];
             column2.DataSourceNullValue = "";
+
+            GridViewTextBoxColumn column3 = (GridViewTextBoxColumn)gridViewItems.Columns["columnID"];
+            column3.DataSourceNullValue = -1;
+
         }
 
         private void bSaveitems_Click(object sender, EventArgs e)
-        {/*
-            itemManager.removeAllItems();
-            for (int row = 0; row < gridViewItems.RowCount; row++)
-            {
-                string name = Common.convertNullString(gridViewItems.Rows[row].Cells["columnName"].Value );
-                string desc = Common.convertNullString(gridViewItems.Rows[row].Cells["columnDescription"].Value );
-                string comm = Common.convertNullString(gridViewItems.Rows[row].Cells["columnComment"].Value );
-                //string vis = gridViewItems.Rows[row].Cells["columnVisibility"].Value.ToString();
-                itemManager.addItem(name, desc, comm, true );
-            }*/
+        {
+            itemManager.UpdateItemsFromGrid(gridViewItems);
             itemManager.saveItemsToFile();
+            ShowItemsOnGridView();
             // DataSourceNullValue
         }
 
@@ -108,10 +105,10 @@ namespace QuestMaker
                 return;
             if (e.CellElement.ColumnInfo.Name == "columnImage")
             {
-                int id = int.Parse(gridViewItems.Rows[e.RowIndex].Cells["columnID"].Value.ToString());
-                CItem item = itemManager.getItem(id);
-                if (item.pathToImage != "")
-                    e.CellElement.Image = Image.FromFile(item.pathToImage);
+                //int id = int.Parse(gridViewItems.Rows[e.RowIndex].Cells["columnID"].Value.ToString());
+                //CItem item = itemManager.getItem(id);
+                //if (item.pathToImage != "")
+                //    e.CellElement.Image = Image.FromFile(item.pathToImage);
                 //e.CellElement.Image = Image.FromFile("d:\\src_2.0\\Launcher2_0\\res\\Launcher\\vk.png");
                 
             }

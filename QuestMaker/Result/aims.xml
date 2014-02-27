@@ -1,0 +1,41 @@
+<root>
+  <aims>
+    <aim>
+      <aimId>0</aimId>
+      <aimName>Дмойо</aimName>
+      <aimDescription>Срочновавфыа</aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>1</aimId>
+      <aimName>ХЗахват мира</aimName>
+      <aimDescription>срочно</aimDescription>
+      <aimType>secondary</aimType>
+    </aim>
+    <aim>
+      <aimId>2</aimId>
+      <aimName>ехать</aimName>
+      <aimDescription>qweqwasdadddfgdfgxcvxcvxcvxcvzczxczxcasdqeqweqweasdaddzsdzxczxc
+</aimDescription>
+      <aimType>transitional</aimType>
+    </aim>
+    <aim>
+      <aimId>3</aimId>
+      <aimName>Njzyj wtkm</aimName>
+      <aimDescription></aimDescription>
+      <aimType>secondary</aimType>
+    </aim>
+    <aim>
+      <aimId>4</aimId>
+      <aimName>test</aimName>
+      <aimDescription>234234asfsdf</aimDescription>
+      <aimType>secondary</aimType>
+    </aim>
+    <aim>
+      <aimId>5</aimId>
+      <aimName>sdf</aimName>
+      <aimDescription>sdf</aimDescription>
+      <aimType>transitional</aimType>
+    </aim>
+  </aims>
+</root>

@@ -1,0 +1,68 @@
+<root>
+  <items>
+    <item>
+      <itemId>0</itemId>
+      <itemName>имя </itemName>
+      <itemDescription>опись</itemDescription>
+      <itemComment>коммент</itemComment>
+      <itemImagePath />
+      <itemVisibility>true</itemVisibility>
+    </item>
+    <item>
+      <itemId>1</itemId>
+      <itemName>Статуя</itemName>
+      <itemDescription>Ркутая </itemDescription>
+      <itemComment>Фальшивка!</itemComment>
+      <itemImagePath />
+      <itemVisibility>true</itemVisibility>
+    </item>
+    <item>
+      <itemId>2</itemId>
+      <itemName>фак </itemName>
+      <itemDescription>yeah </itemDescription>
+      <itemComment>good</itemComment>
+      <itemImagePath />
+      <itemVisibility>true</itemVisibility>
+    </item>
+    <item>
+      <itemId>3</itemId>
+      <itemName>имя2</itemName>
+      <itemDescription>neq</itemDescription>
+      <itemComment>nwe</itemComment>
+      <itemImagePath />
+      <itemVisibility>true</itemVisibility>
+    </item>
+    <item>
+      <itemId>5</itemId>
+      <itemName>empty</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath />
+      <itemVisibility>true</itemVisibility>
+    </item>
+    <item>
+      <itemId>6</itemId>
+      <itemName>qqq</itemName>
+      <itemDescription>www</itemDescription>
+      <itemComment>qsqsqsq</itemComment>
+      <itemImagePath />
+      <itemVisibility>true</itemVisibility>
+    </item>
+    <item>
+      <itemId>9</itemId>
+      <itemName>2222</itemName>
+      <itemDescription>333</itemDescription>
+      <itemComment>4444</itemComment>
+      <itemImagePath />
+      <itemVisibility>true</itemVisibility>
+    </item>
+    <item>
+      <itemId>4</itemId>
+      <itemName>а </itemName>
+      <itemDescription>теперь </itemDescription>
+      <itemComment>куда</itemComment>
+      <itemImagePath />
+      <itemVisibility>true</itemVisibility>
+    </item>
+  </items>
+</root>
