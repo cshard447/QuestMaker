@@ -167,7 +167,6 @@
             this.gridViewItems.TabIndex = 1;
             this.gridViewItems.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gridViewItems_CellFormatting);
             this.gridViewItems.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridViewItems_CellDoubleClick);
-            this.gridViewItems.CellValueChanged += new Telerik.WinControls.UI.GridViewCellEventHandler(this.MasterTemplate_CellValueChanged);
             // 
             // pControlsItems
             // 
@@ -277,8 +276,9 @@
             // 
             this.openImageFileDialog.DefaultExt = "bmp";
             this.openImageFileDialog.FileName = "openFileDialog1";
-            this.openImageFileDialog.Filter = "Картинки|*.jpg|Картинки|*.png|Все файлы|*.*";
+            this.openImageFileDialog.Filter = "Все файлы|*.*";
             this.openImageFileDialog.InitialDirectory = "d:\\src_2.0\\Launcher2_0\\res\\Launcher\\";
+            this.openImageFileDialog.Tag = "Картинки|*.jpg|Картинки|*.png|Все файлы|*.*";
             // 
             // MainForm
             // 

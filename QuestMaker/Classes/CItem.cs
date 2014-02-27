@@ -145,10 +145,6 @@ namespace QuestMaker
             {
                 if (!idsInTable.Contains(id))
                     this.removeItem(id);
-                //GridViewColumnValuesCollection col;               
-                //string str = gridView.Columns["columnID"].DistinctValues[4].ToString();
-                //if (!gridView.Columns["columnID"].DistinctValues.Contains(id as object))
-                //    this.removeItem(id);
             }        
         }
 

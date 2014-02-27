@@ -21,7 +21,7 @@
       <itemName>empty</itemName>
       <itemDescription></itemDescription>
       <itemComment></itemComment>
-      <itemImagePath>..\..\Result\login.bmp</itemImagePath>
+      <itemImagePath>..\..\Result\vk.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
     </item>
     <item>
@@ -38,6 +38,14 @@
       <itemDescription>теперь </itemDescription>
       <itemComment>куда</itemComment>
       <itemImagePath>..\..\Result\twitter.png</itemImagePath>
+      <itemVisibility>true</itemVisibility>
+    </item>
+    <item>
+      <itemId>1</itemId>
+      <itemName>карта</itemName>
+      <itemDescription>ваыва</itemDescription>
+      <itemComment>фывфы</itemComment>
+      <itemImagePath>..\..\Result\close.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
     </item>
   </items>

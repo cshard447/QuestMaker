@@ -20,8 +20,6 @@ namespace QuestMaker
         public MainForm()
         {
             InitializeComponent();
-            //GridViewDataColumn col = gridViewItems.Columns.GetColumnByFieldName("columnVisibility").First();
-            //col.DataTypeConverter = new TypeConverter();
             FillTableColumns();
             itemManager.loadItemsFromFile();
             ShowItemsOnGridView();
@@ -38,12 +36,8 @@ namespace QuestMaker
             column.DataSource = aimManager.list;
             column.DataSourceNullValue = AimType.secondary;
 
-            GridViewImageColumn column2= (GridViewImageColumn)gridViewItems.Columns["columnImage"];
-            column2.DataSourceNullValue = "";            
-
             GridViewTextBoxColumn column3 = (GridViewTextBoxColumn)gridViewItems.Columns["columnID"];
             column3.DataSourceNullValue = -1;
-
         }
 
         private void bSaveitems_Click(object sender, EventArgs e)
@@ -52,6 +46,20 @@ namespace QuestMaker
             itemManager.saveItemsToFile();
             ShowItemsOnGridView();
             // DataSourceNullValue
+        }
+
+        private void bSaveAims_Click(object sender, EventArgs e)
+        {
+            //! @todo переделывать на манер items
+            aimManager.removeAllAims();
+            for (int row = 0; row < gridViewAims.RowCount; row++)
+            {
+                string name = Common.convertNullString(gridViewAims.Rows[row].Cells["columnName"].Value);
+                string desc = Common.convertNullString(gridViewAims.Rows[row].Cells["columnDescription"].Value);
+                AimType type = (AimType)gridViewAims.Rows[row].Cells["columnType"].Value;
+                aimManager.addAim(name, desc, type);
+            }
+            aimManager.saveAimsToFile();
         }
 
         private void ShowItemsOnGridView()
@@ -87,51 +95,17 @@ namespace QuestMaker
             gridViewAims.Update();
         }
 
-        private void bSaveAims_Click(object sender, EventArgs e)
-        {
-            aimManager.removeAllAims();
-            for (int row = 0; row < gridViewAims.RowCount; row++)
-            {
-                string name = Common.convertNullString(gridViewAims.Rows[row].Cells["columnName"].Value);
-                string desc = Common.convertNullString(gridViewAims.Rows[row].Cells["columnDescription"].Value);
-                AimType type = (AimType) gridViewAims.Rows[row].Cells["columnType"].Value;
-                aimManager.addAim(name, desc, type);
-            }
-            aimManager.saveAimsToFile();
-        }
 
         private void gridViewItems_CellFormatting(object sender, CellFormattingEventArgs e)
         {
-            /*
-            if (e.CellElement.ColumnInfo.Name == "columnImage")
-            {
-                if (gridViewItems.Rows[e.RowIndex].Cells["columnID"].Value == null)
-                    return;
-                int id = int.Parse(gridViewItems.Rows[e.RowIndex].Cells["columnID"].Value.ToString());
-                CItem item = itemManager.getItem(id);
-                if (item.pathToImage != "")
-                    e.CellElement.Image = Image.FromFile(item.pathToImage);
-                //e.CellElement.Image = Image.FromFile("d:\\src_2.0\\Launcher2_0\\res\\Launcher\\vk.png");                
-            }
-            */
-
             if (e.CellElement.ColumnInfo.Name == "columnImage")
             {
                 if (e.CellElement.RowInfo.Cells["columnPath"].Value != null)
-                   // e.CellElement.BackColor = Color.Aqua;
-                    e.CellElement.Image = Image.FromFile(e.CellElement.RowInfo.Cells["columnPath"].Value.ToString());
-                
+                {
+                    int id = int.Parse(e.CellElement.RowInfo.Cells["columnID"].Value.ToString());
+                    e.CellElement.Image = itemManager.getItem(id).image;
+                }
             }
-            else
-            {
-                e.CellElement.ResetValue(LightVisualElement.ForeColorProperty);
-            }
-        }
-
-        private void MasterTemplate_CellValueChanged(object sender, GridViewCellEventArgs e)
-        {
-
-                
         }
 
         private void gridViewItems_CellDoubleClick(object sender, GridViewCellEventArgs e)
@@ -144,16 +118,12 @@ namespace QuestMaker
                     string fileName = openImageFileDialog.SafeFileName;
                     string path = openImageFileDialog.FileName;
                     string destination = Common.path + fileName;
-                    File.Copy(path, destination,true);
+                    if (!File.Exists(destination))
+                        File.Copy(path, destination,true);
                     int id = int.Parse(gridViewItems.Rows[e.RowIndex].Cells["columnID"].Value.ToString());
                     Image img = Image.FromFile(destination);
                     itemManager.updateItem(id, destination);
                     itemManager.updateItem(id, img);
-                    GridViewCellInfo cell = gridViewItems.Rows[e.RowIndex].Cells["columnImage"];
-                    foreach (GridViewRowInfo row in gridViewItems.Rows)
-                    { 
-                        //row.Cells["columnImage"].ViewInfo.
-                    }
                     ShowItemsOnGridView();
                 }
             }
@@ -163,27 +133,6 @@ namespace QuestMaker
         {
             //itemManager.TestXML();
             //gridViewAims.Columns[2].data
-
-            //System.Drawing.Graphics g;
-            //g = radPanel1.CreateGraphics();
-            Bitmap bm = new Bitmap("d:\\src_2.0\\Launcher2_0\\res\\Launcher\\vk.png");
-            //radPanel1.ImageList.Images.Add(bm);
-            //radPanel1.ImageList.Draw(g, 0, 0, 0);
-            Image image = Image.FromFile("d:\\src_2.0\\Launcher2_0\\res\\Launcher\\vk.png");
-            //image.
-            //image.
-            //g.DrawImage(image, 0, 0);
-
-
-            GridViewImageColumn column = (GridViewImageColumn)gridViewItems.Columns["columnImage"];
-            column.ImageLayout = ImageLayout.Center;
-            gridViewItems.Rows[0].Cells["columnImage"].Value = image;
-            //gridViewItems.cell
-
-            //DataGridViewImageCell imgCell = new DataGridViewImageCell();
-            //imgCell.Value = Image.FromFile("d:\\src_2.0\\Launcher2_0\\res\\Launcher\\vk.png");
-
-            //gridViewItems.Rows[0].Cells[3].Value = imgCell.Value;
         }
 
 
