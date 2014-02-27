@@ -18,20 +18,23 @@ namespace QuestMaker
         protected string name;
         public string description;
         public string comment;
-        public bool visibility;
         public string pathToImage;   // @todo think about it
         public Image image;
+        public bool visibility;
         public CItem()
         { 
         
         }
-        public CItem(int _id, string _name, string _description, string _comment, bool _visibility)
+        public CItem(int _id, string _name, string _description, string _comment, string _path, bool _visibility)
         {
             id = _id;
             name = _name;
             description = _description;
             comment = _comment;
+            pathToImage = _path;
             visibility = _visibility;
+            if (pathToImage != "")
+                image = Image.FromFile(pathToImage);
         }
         public string getName()
         {
@@ -59,18 +62,18 @@ namespace QuestMaker
         { 
         
         }
-        public void addItem(int _id, string _name, string _description, string _comment, bool _visibility)
+        public void addItem(int _id, string _name, string _description, string _comment, string _path, bool _visibility)
         {
-            items.Add(_id, new CItem(_id, _name, _description, _comment, _visibility));
+            items.Add(_id, new CItem(_id, _name, _description, _comment, _path, _visibility));
         }
-        public int addItem(string _name, string _description, string _comment, bool _visibility)
+        public int addItem(string _name, string _description, string _comment, string _path, bool _visibility)
         {
             int newID;
             for (newID = 0; newID < MAX_ITEMS; newID++)
                 if (!items.Keys.Contains(newID))
                     break;
 
-            items.Add(newID, new CItem(newID, _name, _description, _comment, _visibility ) );
+            items.Add(newID, new CItem(newID, _name, _description, _comment, _path, _visibility ) );
             return newID;
         }
         public bool removeItem(int idToDelete)
@@ -124,10 +127,11 @@ namespace QuestMaker
                 string name = Common.convertNullString(gridView.Rows[row].Cells["columnName"].Value);
                 string desc = Common.convertNullString(gridView.Rows[row].Cells["columnDescription"].Value);
                 string comm = Common.convertNullString(gridView.Rows[row].Cells["columnComment"].Value);
+                string path = Common.convertNullString(gridView.Rows[row].Cells["columnPath"].Value);
                 //string vis = gridViewItems.Rows[row].Cells["columnVisibility"].Value.ToString();
 
                 if (!items.ContainsKey(id))
-                    id = this.addItem(name, desc, comm, true);
+                    id = this.addItem(name, desc, comm, path, true);
                 else
                 {
                     items[id].setName(name);
@@ -194,9 +198,10 @@ namespace QuestMaker
                 string name = elem.Element("itemName").Value.ToString();
                 string desc = elem.Element("itemDescription").Value.ToString();
                 string comm = elem.Element("itemComment").Value.ToString();
+                string path = elem.Element("itemImagePath").Value.ToString();
                 string vis = elem.Element("itemVisibility").Value.ToString();
 
-                addItem(id, name, desc, comm, ConvertStringToBool(vis));
+                addItem(id, name, desc, comm, path, ConvertStringToBool(vis));
             }
         }
         public void TestXML()

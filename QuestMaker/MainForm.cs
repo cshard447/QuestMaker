@@ -39,7 +39,7 @@ namespace QuestMaker
             column.DataSourceNullValue = AimType.secondary;
 
             GridViewImageColumn column2= (GridViewImageColumn)gridViewItems.Columns["columnImage"];
-            column2.DataSourceNullValue = "";
+            column2.DataSourceNullValue = "";            
 
             GridViewTextBoxColumn column3 = (GridViewTextBoxColumn)gridViewItems.Columns["columnID"];
             column3.DataSourceNullValue = -1;
@@ -65,6 +65,7 @@ namespace QuestMaker
                 row.Cells["columnDescription"].Value = item.description;
                 row.Cells["columnComment"].Value = item.comment;
                 row.Cells["columnID"].Value = item.getID();
+                row.Cells["columnPath"].Value = item.pathToImage;                
                 //row.Cells["columnVisibility"].Value = false;
                 gridViewItems.Rows.Add(row);
             }
@@ -101,17 +102,36 @@ namespace QuestMaker
 
         private void gridViewItems_CellFormatting(object sender, CellFormattingEventArgs e)
         {
-            if (!gridViewItems.IsDisplayed)
-                return;
+            /*
             if (e.CellElement.ColumnInfo.Name == "columnImage")
             {
-                //int id = int.Parse(gridViewItems.Rows[e.RowIndex].Cells["columnID"].Value.ToString());
-                //CItem item = itemManager.getItem(id);
-                //if (item.pathToImage != "")
-                //    e.CellElement.Image = Image.FromFile(item.pathToImage);
-                //e.CellElement.Image = Image.FromFile("d:\\src_2.0\\Launcher2_0\\res\\Launcher\\vk.png");
+                if (gridViewItems.Rows[e.RowIndex].Cells["columnID"].Value == null)
+                    return;
+                int id = int.Parse(gridViewItems.Rows[e.RowIndex].Cells["columnID"].Value.ToString());
+                CItem item = itemManager.getItem(id);
+                if (item.pathToImage != "")
+                    e.CellElement.Image = Image.FromFile(item.pathToImage);
+                //e.CellElement.Image = Image.FromFile("d:\\src_2.0\\Launcher2_0\\res\\Launcher\\vk.png");                
+            }
+            */
+
+            if (e.CellElement.ColumnInfo.Name == "columnImage")
+            {
+                if (e.CellElement.RowInfo.Cells["columnPath"].Value != null)
+                   // e.CellElement.BackColor = Color.Aqua;
+                    e.CellElement.Image = Image.FromFile(e.CellElement.RowInfo.Cells["columnPath"].Value.ToString());
                 
             }
+            else
+            {
+                e.CellElement.ResetValue(LightVisualElement.ForeColorProperty);
+            }
+        }
+
+        private void MasterTemplate_CellValueChanged(object sender, GridViewCellEventArgs e)
+        {
+
+                
         }
 
         private void gridViewItems_CellDoubleClick(object sender, GridViewCellEventArgs e)
@@ -124,11 +144,17 @@ namespace QuestMaker
                     string fileName = openImageFileDialog.SafeFileName;
                     string path = openImageFileDialog.FileName;
                     string destination = Common.path + fileName;
-                    File.Copy(path, destination);
+                    File.Copy(path, destination,true);
                     int id = int.Parse(gridViewItems.Rows[e.RowIndex].Cells["columnID"].Value.ToString());
                     Image img = Image.FromFile(destination);
                     itemManager.updateItem(id, destination);
                     itemManager.updateItem(id, img);
+                    GridViewCellInfo cell = gridViewItems.Rows[e.RowIndex].Cells["columnImage"];
+                    foreach (GridViewRowInfo row in gridViewItems.Rows)
+                    { 
+                        //row.Cells["columnImage"].ViewInfo.
+                    }
+                    ShowItemsOnGridView();
                 }
             }
         }
@@ -159,6 +185,8 @@ namespace QuestMaker
 
             //gridViewItems.Rows[0].Cells[3].Value = imgCell.Value;
         }
+
+
 
     }
 }

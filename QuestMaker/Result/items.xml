@@ -5,23 +5,7 @@
       <itemName>имя </itemName>
       <itemDescription>опись</itemDescription>
       <itemComment>коммент</itemComment>
-      <itemImagePath />
-      <itemVisibility>true</itemVisibility>
-    </item>
-    <item>
-      <itemId>1</itemId>
-      <itemName>Статуя</itemName>
-      <itemDescription>Ркутая </itemDescription>
-      <itemComment>Фальшивка!</itemComment>
-      <itemImagePath />
-      <itemVisibility>true</itemVisibility>
-    </item>
-    <item>
-      <itemId>2</itemId>
-      <itemName>фак </itemName>
-      <itemDescription>yeah </itemDescription>
-      <itemComment>good</itemComment>
-      <itemImagePath />
+      <itemImagePath>..\..\Result\close.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
     </item>
     <item>
@@ -29,7 +13,7 @@
       <itemName>имя2</itemName>
       <itemDescription>neq</itemDescription>
       <itemComment>nwe</itemComment>
-      <itemImagePath />
+      <itemImagePath>..\..\Result\youtube.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
     </item>
     <item>
@@ -37,15 +21,7 @@
       <itemName>empty</itemName>
       <itemDescription></itemDescription>
       <itemComment></itemComment>
-      <itemImagePath />
-      <itemVisibility>true</itemVisibility>
-    </item>
-    <item>
-      <itemId>6</itemId>
-      <itemName>qqq</itemName>
-      <itemDescription>www</itemDescription>
-      <itemComment>qsqsqsq</itemComment>
-      <itemImagePath />
+      <itemImagePath>..\..\Result\login.bmp</itemImagePath>
       <itemVisibility>true</itemVisibility>
     </item>
     <item>
@@ -53,7 +29,7 @@
       <itemName>2222</itemName>
       <itemDescription>333</itemDescription>
       <itemComment>4444</itemComment>
-      <itemImagePath />
+      <itemImagePath>..\..\Result\google.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
     </item>
     <item>
@@ -61,7 +37,7 @@
       <itemName>а </itemName>
       <itemDescription>теперь </itemDescription>
       <itemComment>куда</itemComment>
-      <itemImagePath />
+      <itemImagePath>..\..\Result\twitter.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
     </item>
   </items>
