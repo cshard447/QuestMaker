@@ -21,11 +21,12 @@ namespace QuestMaker
         public string pathToImage;   // @todo think about it
         public Image image;
         public bool visibility;
+        public bool singleUse;
         public CItem()
         { 
         
         }
-        public CItem(int _id, string _name, string _description, string _comment, string _path, bool _visibility)
+        public CItem(int _id, string _name, string _description, string _comment, string _path, bool _visibility, bool _single)
         {
             id = _id;
             name = _name;
@@ -33,6 +34,7 @@ namespace QuestMaker
             comment = _comment;
             pathToImage = _path;
             visibility = _visibility;
+            singleUse = _single;
             if (pathToImage != "")
                 image = Image.FromFile(pathToImage);
         }
@@ -62,18 +64,18 @@ namespace QuestMaker
         { 
         
         }
-        public void addItem(int _id, string _name, string _description, string _comment, string _path, bool _visibility)
+        public void addItem(int _id, string _name, string _description, string _comment, string _path, bool _visibility, bool _singleUse)
         {
-            items.Add(_id, new CItem(_id, _name, _description, _comment, _path, _visibility));
+            items.Add(_id, new CItem(_id, _name, _description, _comment, _path, _visibility, _singleUse));
         }
-        public int addItem(string _name, string _description, string _comment, string _path, bool _visibility)
+        public int addItem(string _name, string _description, string _comment, string _path, bool _visibility, bool _singleUse)
         {
             int newID;
             for (newID = 0; newID < MAX_ITEMS; newID++)
                 if (!items.Keys.Contains(newID))
                     break;
 
-            items.Add(newID, new CItem(newID, _name, _description, _comment, _path, _visibility ) );
+            items.Add(newID, new CItem(newID, _name, _description, _comment, _path, _visibility, _singleUse ) );
             return newID;
         }
         public bool removeItem(int idToDelete)
@@ -128,15 +130,19 @@ namespace QuestMaker
                 string desc = Common.convertNullString(gridView.Rows[row].Cells["columnDescription"].Value);
                 string comm = Common.convertNullString(gridView.Rows[row].Cells["columnComment"].Value);
                 string path = Common.convertNullString(gridView.Rows[row].Cells["columnPath"].Value);
-                //string vis = gridViewItems.Rows[row].Cells["columnVisibility"].Value.ToString();
+                bool vis = (bool) gridView.Rows[row].Cells["columnVisibility"].Value;
+                bool single = (bool) gridView.Rows[row].Cells["columnSingleUse"].Value;
 
                 if (!items.ContainsKey(id))
-                    id = this.addItem(name, desc, comm, path, true);
+                    id = this.addItem(name, desc, comm, path, vis, single);
                 else
                 {
                     items[id].setName(name);
                     items[id].description = desc;
                     items[id].comment = comm;
+                    items[id].pathToImage = path;
+                    items[id].visibility = vis;
+                    items[id].singleUse = single;
                 }                
                 idsInTable.Add(id);
             }
@@ -145,7 +151,7 @@ namespace QuestMaker
             {
                 if (!idsInTable.Contains(id))
                     this.removeItem(id);
-            }        
+            }
         }
 
         public void saveItemsToFile()
@@ -168,7 +174,8 @@ namespace QuestMaker
                                 new XElement("itemDescription", item.description),
                                 new XElement("itemComment", item.comment),
                                 new XElement("itemImagePath", item.pathToImage),
-                                new XElement("itemVisibility", item.visibility));
+                                new XElement("itemVisibility", item.visibility),
+                                new XElement("itemSingleUse", item.singleUse));
 
                 doc.Root.Element(section).Add(element);
             }
@@ -196,8 +203,9 @@ namespace QuestMaker
                 string comm = elem.Element("itemComment").Value.ToString();
                 string path = elem.Element("itemImagePath").Value.ToString();
                 string vis = elem.Element("itemVisibility").Value.ToString();
+                string single = elem.Element("itemSingleUse").Value.ToString();
 
-                addItem(id, name, desc, comm, path, ConvertStringToBool(vis));
+                addItem(id, name, desc, comm, path, ConvertStringToBool(vis), ConvertStringToBool(single));
             }
         }
         public void TestXML()

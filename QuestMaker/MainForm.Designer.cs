@@ -34,9 +34,12 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewImageColumn gridViewImageColumn1 = new Telerik.WinControls.UI.GridViewImageColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn1 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
             this.mainPageView = new Telerik.WinControls.UI.RadPageView();
@@ -80,8 +83,8 @@
             this.mainPageView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPageView.Location = new System.Drawing.Point(0, 0);
             this.mainPageView.Name = "mainPageView";
-            this.mainPageView.SelectedPage = this.pageItems;
-            this.mainPageView.Size = new System.Drawing.Size(722, 511);
+            this.mainPageView.SelectedPage = this.radPageViewPage1;
+            this.mainPageView.Size = new System.Drawing.Size(874, 511);
             this.mainPageView.TabIndex = 10;
             // 
             // pagePersons
@@ -99,7 +102,7 @@
             this.pageItems.Controls.Add(this.pControlsItems);
             this.pageItems.Location = new System.Drawing.Point(10, 37);
             this.pageItems.Name = "pageItems";
-            this.pageItems.Size = new System.Drawing.Size(701, 463);
+            this.pageItems.Size = new System.Drawing.Size(853, 463);
             this.pageItems.Text = "Предметы";
             // 
             // pGridViewItems
@@ -108,7 +111,7 @@
             this.pGridViewItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pGridViewItems.Location = new System.Drawing.Point(0, 54);
             this.pGridViewItems.Name = "pGridViewItems";
-            this.pGridViewItems.Size = new System.Drawing.Size(701, 409);
+            this.pGridViewItems.Size = new System.Drawing.Size(853, 409);
             this.pGridViewItems.TabIndex = 4;
             // 
             // gridViewItems
@@ -137,7 +140,7 @@
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.HeaderText = "Описание";
             gridViewTextBoxColumn3.Name = "columnDescription";
-            gridViewTextBoxColumn3.Width = 173;
+            gridViewTextBoxColumn3.Width = 150;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.HeaderText = "Комментарий";
             gridViewTextBoxColumn4.Name = "columnComment";
@@ -151,19 +154,31 @@
             gridViewTextBoxColumn5.HeaderText = "Путь";
             gridViewTextBoxColumn5.Name = "columnPath";
             gridViewTextBoxColumn5.Width = 115;
+            gridViewCheckBoxColumn1.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn1.HeaderText = "Видимый";
+            gridViewCheckBoxColumn1.MinWidth = 20;
+            gridViewCheckBoxColumn1.Name = "columnVisibility";
+            gridViewCheckBoxColumn1.Width = 87;
+            gridViewCheckBoxColumn2.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn2.HeaderText = "Однократный";
+            gridViewCheckBoxColumn2.MinWidth = 20;
+            gridViewCheckBoxColumn2.Name = "columnSingleUse";
+            gridViewCheckBoxColumn2.Width = 93;
             this.gridViewItems.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
             gridViewTextBoxColumn4,
             gridViewImageColumn1,
-            gridViewTextBoxColumn5});
+            gridViewTextBoxColumn5,
+            gridViewCheckBoxColumn1,
+            gridViewCheckBoxColumn2});
             sortDescriptor1.PropertyName = "columnID";
             this.gridViewItems.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
             sortDescriptor1});
             this.gridViewItems.Name = "gridViewItems";
             this.gridViewItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewItems.Size = new System.Drawing.Size(678, 78);
+            this.gridViewItems.Size = new System.Drawing.Size(833, 78);
             this.gridViewItems.TabIndex = 1;
             this.gridViewItems.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gridViewItems_CellFormatting);
             this.gridViewItems.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridViewItems_CellDoubleClick);
@@ -175,7 +190,7 @@
             this.pControlsItems.Dock = System.Windows.Forms.DockStyle.Top;
             this.pControlsItems.Location = new System.Drawing.Point(0, 0);
             this.pControlsItems.Name = "pControlsItems";
-            this.pControlsItems.Size = new System.Drawing.Size(701, 54);
+            this.pControlsItems.Size = new System.Drawing.Size(853, 54);
             this.pControlsItems.TabIndex = 3;
             // 
             // buttonTest
@@ -199,11 +214,11 @@
             // radPageViewPage1
             // 
 // TODO: Code generation for '' failed because of Exception 'Invalid Primitive Type: System.IntPtr. Consider using CodeObjectCreateExpression.'.
-            this.radPageViewPage1.Controls.Add(this.pControlsAims);
             this.radPageViewPage1.Controls.Add(this.gridViewAims);
+            this.radPageViewPage1.Controls.Add(this.pControlsAims);
             this.radPageViewPage1.Location = new System.Drawing.Point(10, 37);
             this.radPageViewPage1.Name = "radPageViewPage1";
-            this.radPageViewPage1.Size = new System.Drawing.Size(701, 463);
+            this.radPageViewPage1.Size = new System.Drawing.Size(853, 463);
             this.radPageViewPage1.Text = "Цели";
             // 
             // pControlsAims
@@ -212,7 +227,7 @@
             this.pControlsAims.Dock = System.Windows.Forms.DockStyle.Top;
             this.pControlsAims.Location = new System.Drawing.Point(0, 0);
             this.pControlsAims.Name = "pControlsAims";
-            this.pControlsAims.Size = new System.Drawing.Size(701, 56);
+            this.pControlsAims.Size = new System.Drawing.Size(853, 56);
             this.pControlsAims.TabIndex = 2;
             // 
             // bSaveAims
@@ -228,25 +243,29 @@
             // 
             this.gridViewAims.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(249)))));
             this.gridViewAims.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gridViewAims.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridViewAims.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewAims.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gridViewAims.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewAims.Location = new System.Drawing.Point(36, 75);
+            this.gridViewAims.Location = new System.Drawing.Point(0, 56);
             // 
-            // 
+            // gridViewAims
             // 
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.HeaderText = "Название";
-            gridViewTextBoxColumn6.Name = "columnName";
-            gridViewTextBoxColumn6.Width = 147;
-            gridViewTextBoxColumn7.AcceptsReturn = true;
-            gridViewTextBoxColumn7.AcceptsTab = true;
+            gridViewTextBoxColumn6.HeaderText = "ID";
+            gridViewTextBoxColumn6.Name = "columnID";
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.HeaderText = "Описание";
-            gridViewTextBoxColumn7.Multiline = true;
-            gridViewTextBoxColumn7.Name = "columnDescription";
-            gridViewTextBoxColumn7.Width = 181;
-            gridViewTextBoxColumn7.WrapText = true;
+            gridViewTextBoxColumn7.HeaderText = "Название";
+            gridViewTextBoxColumn7.Name = "columnName";
+            gridViewTextBoxColumn7.Width = 147;
+            gridViewTextBoxColumn8.AcceptsReturn = true;
+            gridViewTextBoxColumn8.AcceptsTab = true;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.HeaderText = "Описание";
+            gridViewTextBoxColumn8.Multiline = true;
+            gridViewTextBoxColumn8.Name = "columnDescription";
+            gridViewTextBoxColumn8.Width = 181;
+            gridViewTextBoxColumn8.WrapText = true;
             gridViewComboBoxColumn1.EnableExpressionEditor = false;
             gridViewComboBoxColumn1.FilteringMode = Telerik.WinControls.UI.GridViewFilteringMode.DisplayMember;
             gridViewComboBoxColumn1.HeaderText = "Тип";
@@ -255,20 +274,21 @@
             this.gridViewAims.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn6,
             gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
             gridViewComboBoxColumn1});
             sortDescriptor2.PropertyName = "column1";
             this.gridViewAims.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
             sortDescriptor2});
             this.gridViewAims.Name = "gridViewAims";
             this.gridViewAims.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewAims.Size = new System.Drawing.Size(562, 315);
+            this.gridViewAims.Size = new System.Drawing.Size(853, 407);
             this.gridViewAims.TabIndex = 1;
             // 
             // statusStrip
             // 
             this.statusStrip.Location = new System.Drawing.Point(0, 511);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(722, 22);
+            this.statusStrip.Size = new System.Drawing.Size(874, 22);
             this.statusStrip.TabIndex = 11;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -284,7 +304,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 533);
+            this.ClientSize = new System.Drawing.Size(874, 533);
             this.Controls.Add(this.mainPageView);
             this.Controls.Add(this.statusStrip);
             this.Name = "MainForm";

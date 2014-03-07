@@ -6,7 +6,8 @@
       <itemDescription>опись</itemDescription>
       <itemComment>коммент</itemComment>
       <itemImagePath>..\..\Result\close.png</itemImagePath>
-      <itemVisibility>true</itemVisibility>
+      <itemVisibility>false</itemVisibility>
+      <itemSingleUse>true</itemSingleUse>
     </item>
     <item>
       <itemId>3</itemId>
@@ -15,6 +16,7 @@
       <itemComment>nwe</itemComment>
       <itemImagePath>..\..\Result\youtube.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
     </item>
     <item>
       <itemId>5</itemId>
@@ -23,6 +25,7 @@
       <itemComment></itemComment>
       <itemImagePath>..\..\Result\vk.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
     </item>
     <item>
       <itemId>9</itemId>
@@ -30,7 +33,8 @@
       <itemDescription>333</itemDescription>
       <itemComment>4444</itemComment>
       <itemImagePath>..\..\Result\google.png</itemImagePath>
-      <itemVisibility>true</itemVisibility>
+      <itemVisibility>false</itemVisibility>
+      <itemSingleUse>true</itemSingleUse>
     </item>
     <item>
       <itemId>4</itemId>
@@ -39,6 +43,7 @@
       <itemComment>куда</itemComment>
       <itemImagePath>..\..\Result\twitter.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
+      <itemSingleUse>true</itemSingleUse>
     </item>
     <item>
       <itemId>1</itemId>
@@ -47,6 +52,25 @@
       <itemComment>фывфы</itemComment>
       <itemImagePath>..\..\Result\close.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
+      <itemSingleUse>true</itemSingleUse>
+    </item>
+    <item>
+      <itemId>2</itemId>
+      <itemName>qwe</itemName>
+      <itemDescription>qe</itemDescription>
+      <itemComment>qwe</itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>true</itemSingleUse>
+    </item>
+    <item>
+      <itemId>6</itemId>
+      <itemName>asdasd</itemName>
+      <itemDescription>asdasd</itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
     </item>
   </items>
 </root>

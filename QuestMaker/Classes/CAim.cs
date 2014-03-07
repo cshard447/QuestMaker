@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.ComponentModel;
 using QuestMaker.Classes;
-
+using Telerik.WinControls.UI;
 
 namespace QuestMaker
 {
@@ -32,13 +32,17 @@ namespace QuestMaker
         {
             return name;
         }
+        public void setName(string _name)
+        {
+            name = _name;
+        }
         public int getID()
         {
             return id;
         }
     }
 
-        public class AimTypeDataSourceObject
+    public class AimTypeDataSourceObject
     {
         private string displayString;
         public string DisplayString
@@ -71,8 +75,12 @@ namespace QuestMaker
         {
             initDict();
         }
+        public void addAim(int _id, string _name, string _description, AimType _type)
+        { 
+            aims.Add(_id, new CAim(_id, _name, _description, _type));
+        }
 
-        public void addAim(string _name, string _description, AimType _type)
+        public int addAim(string _name, string _description, AimType _type)
         {
             int newID;
             for (newID = 0; newID < MAX_ITEMS; newID++)
@@ -80,6 +88,7 @@ namespace QuestMaker
                     break;
 
             aims.Add(newID, new CAim(newID, _name, _description, _type ) );
+            return newID;
         }
         public bool removeAim(int idToDelete)
         {
@@ -109,6 +118,35 @@ namespace QuestMaker
         public Dictionary<int, CAim> getAllAims()
         {
             return aims;
+        }
+
+        public void UpdateAimsFromGrid(RadGridView gridView)
+        {
+            List<int> idsInTable = new List<int>();
+            for (int row = 0; row < gridView.RowCount; row++)
+            {
+                int id = int.Parse(gridView.Rows[row].Cells["columnID"].Value.ToString());
+                string name = Common.convertNullString(gridView.Rows[row].Cells["columnName"].Value);
+                string desc = Common.convertNullString(gridView.Rows[row].Cells["columnDescription"].Value);
+                AimType type = (AimType) gridView.Rows[row].Cells["columnType"].Value;                
+
+                if (!aims.ContainsKey(id))
+                    id = this.addAim(name, desc, type);
+                else
+                {
+                    aims[id].setName(name);
+                    aims[id].description = desc;
+                    aims[id].type = type;                    
+                }
+                idsInTable.Add(id);
+            }
+
+            foreach (int id in aims.Keys.ToList())
+            {
+                if (!idsInTable.Contains(id))
+                    this.removeAim(id);
+            }        
+
         }
         public void saveAimsToFile()
         {
@@ -150,11 +188,12 @@ namespace QuestMaker
             doc = XDocument.Load(fileName);
             foreach (XElement elem in doc.Root.Element(section).Elements())
             {
+                int id = int.Parse(elem.Element("aimId").Value.ToString());
                 string name = elem.Element("aimName").Value.ToString();
                 string desc = elem.Element("aimDescription").Value.ToString();
                 string strtype = elem.Element("aimType").Value.ToString();
                 AimType type = getType(strtype);
-                addAim(name, desc, type);
+                addAim(id, name, desc, type);
             }
         }
 
@@ -187,8 +226,5 @@ namespace QuestMaker
                 return AimType.secondary;                        
         }
         
-
-
-
     }
 }

@@ -13,22 +13,9 @@
       <aimType>secondary</aimType>
     </aim>
     <aim>
-      <aimId>2</aimId>
-      <aimName>ехать</aimName>
-      <aimDescription>qweqwasdadddfgdfgxcvxcvxcvxcvzczxczxcasdqeqweqweasdaddzsdzxczxc
-</aimDescription>
-      <aimType>transitional</aimType>
-    </aim>
-    <aim>
       <aimId>3</aimId>
       <aimName>Njzyj wtkm</aimName>
       <aimDescription></aimDescription>
-      <aimType>secondary</aimType>
-    </aim>
-    <aim>
-      <aimId>4</aimId>
-      <aimName>test</aimName>
-      <aimDescription>234234asfsdf</aimDescription>
       <aimType>secondary</aimType>
     </aim>
     <aim>
@@ -36,6 +23,24 @@
       <aimName>sdf</aimName>
       <aimDescription>sdf</aimDescription>
       <aimType>transitional</aimType>
+    </aim>
+    <aim>
+      <aimId>2</aimId>
+      <aimName>Новая цель</aimName>
+      <aimDescription>Какой айди</aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>4</aimId>
+      <aimName>А теперь</aimName>
+      <aimDescription>где айди</aimDescription>
+      <aimType>secondary</aimType>
+    </aim>
+    <aim>
+      <aimId>6</aimId>
+      <aimName>qwe</aimName>
+      <aimDescription>qwe</aimDescription>
+      <aimType>primary</aimType>
     </aim>
   </aims>
 </root>

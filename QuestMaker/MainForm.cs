@@ -38,6 +38,9 @@ namespace QuestMaker
 
             GridViewTextBoxColumn column3 = (GridViewTextBoxColumn)gridViewItems.Columns["columnID"];
             column3.DataSourceNullValue = -1;
+
+            GridViewTextBoxColumn column4 = (GridViewTextBoxColumn)gridViewAims.Columns["columnID"];
+            column4.DataSourceNullValue = -1;
         }
 
         private void bSaveitems_Click(object sender, EventArgs e)
@@ -50,32 +53,27 @@ namespace QuestMaker
 
         private void bSaveAims_Click(object sender, EventArgs e)
         {
-            //! @todo переделывать на манер items
-            aimManager.removeAllAims();
-            for (int row = 0; row < gridViewAims.RowCount; row++)
-            {
-                string name = Common.convertNullString(gridViewAims.Rows[row].Cells["columnName"].Value);
-                string desc = Common.convertNullString(gridViewAims.Rows[row].Cells["columnDescription"].Value);
-                AimType type = (AimType)gridViewAims.Rows[row].Cells["columnType"].Value;
-                aimManager.addAim(name, desc, type);
-            }
+            aimManager.UpdateAimsFromGrid(gridViewAims);
             aimManager.saveAimsToFile();
+            ShowAimsOnGridView();
         }
 
         private void ShowItemsOnGridView()
         {
             gridViewItems.Rows.Clear();
             Dictionary<int, CItem> _items = itemManager.getAllItems();
+            object[] values = new object[8];
             foreach (CItem item in _items.Values)
             {
-                GridViewRowInfo row = new GridViewRowInfo(gridViewItems.MasterView);
-                row.Cells["columnName"].Value = item.getName();
-                row.Cells["columnDescription"].Value = item.description;
-                row.Cells["columnComment"].Value = item.comment;
-                row.Cells["columnID"].Value = item.getID();
-                row.Cells["columnPath"].Value = item.pathToImage;                
-                //row.Cells["columnVisibility"].Value = false;
-                gridViewItems.Rows.Add(row);
+                values[0] = item.getID();
+                values[1] = item.getName();
+                values[2] = item.description;
+                values[3] = item.comment;
+                values[4] = item.image;
+                values[5] = item.pathToImage;
+                values[6] = item.visibility;
+                values[7] = item.singleUse;
+                gridViewItems.Rows.Add(values);
             }
             gridViewItems.Update();
         }
@@ -84,13 +82,14 @@ namespace QuestMaker
         {
             gridViewAims.Rows.Clear();
             Dictionary<int, CAim> _aims = aimManager.getAllAims();
+            object[] values = new object[4];
             foreach (CAim aim in _aims.Values)
             {
-                GridViewRowInfo row = new GridViewRowInfo(gridViewAims.MasterView);
-                row.Cells["columnName"].Value = aim.getName();
-                row.Cells["columnDescription"].Value = aim.description;
-                row.Cells["columnType"].Value = aim.type;
-                gridViewAims.Rows.Add(row);
+                values[0] = aim.getID();
+                values[1] = aim.getName();
+                values[2] = aim.description;
+                values[3] = aim.type;
+                gridViewAims.Rows.Add(values);
             }
             gridViewAims.Update();
         }
@@ -98,6 +97,8 @@ namespace QuestMaker
 
         private void gridViewItems_CellFormatting(object sender, CellFormattingEventArgs e)
         {
+            /*
+             // это когда-то работало ок, только группировка глючила 
             if (e.CellElement.ColumnInfo.Name == "columnImage")
             {
                 if (e.CellElement.RowInfo.Cells["columnPath"].Value != null)
@@ -106,6 +107,7 @@ namespace QuestMaker
                     e.CellElement.Image = itemManager.getItem(id).image;
                 }
             }
+            */
         }
 
         private void gridViewItems_CellDoubleClick(object sender, GridViewCellEventArgs e)
