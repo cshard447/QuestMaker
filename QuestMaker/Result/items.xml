@@ -39,7 +39,7 @@
     <item>
       <itemId>4</itemId>
       <itemName>а </itemName>
-      <itemDescription>теперь </itemDescription>
+      <itemDescription>&lt;html&gt;&lt;u&gt; теперь  &lt;strong&gt;Бля  &lt;/strong&gt;&lt;/u&gt;&lt;span style="font-size: 10pt"&gt;Сцуко&lt;span style="font-size: 12pt"&gt; все ебуццо&lt;/span&gt;&lt;/span&gt;&lt;/html&gt;</itemDescription>
       <itemComment>куда</itemComment>
       <itemImagePath>..\..\Result\twitter.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
@@ -66,7 +66,7 @@
     <item>
       <itemId>6</itemId>
       <itemName>asdasd</itemName>
-      <itemDescription>asdasd</itemDescription>
+      <itemDescription>&lt;html&gt;&lt;strong&gt;Жирный &lt;/strong&gt;&lt;em&gt;Курсив&lt;/em&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/html&gt;</itemDescription>
       <itemComment></itemComment>
       <itemImagePath></itemImagePath>
       <itemVisibility>true</itemVisibility>

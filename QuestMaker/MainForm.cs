@@ -129,12 +129,31 @@ namespace QuestMaker
                     ShowItemsOnGridView();
                 }
             }
+            else if (e.Column.Name == "columnDescription")
+            {
+                markupItems.Value = e.Value.ToString();
+                DialogResult dr = markupItems.ShowDialog();
+                if (dr == DialogResult.OK)
+                    gridViewItems.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = markupItems.Value.ToString();
+            }
         }
 
         private void buttonTest_Click(object sender, EventArgs e)
         {
             //itemManager.TestXML();
             //gridViewAims.Columns[2].data
+        }
+
+        private void gridViewAims_CellDoubleClick(object sender, GridViewCellEventArgs e)
+        {
+            if (e.Column.Name == "columnDescription")
+            {
+                markupItems.Value = e.Value.ToString();
+                DialogResult dr = markupItems.ShowDialog();
+                if (dr == DialogResult.OK)
+                    gridViewAims.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = markupItems.Value.ToString();
+            }
+
         }
 
 

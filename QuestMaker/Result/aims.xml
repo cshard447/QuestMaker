@@ -9,7 +9,7 @@
     <aim>
       <aimId>1</aimId>
       <aimName>ХЗахват мира</aimName>
-      <aimDescription>срочно</aimDescription>
+      <aimDescription>&lt;html&gt;&lt;span style="color: #ff0000"&gt;срочно!&lt;/span&gt;&lt;/html&gt;</aimDescription>
       <aimType>secondary</aimType>
     </aim>
     <aim>
@@ -27,7 +27,7 @@
     <aim>
       <aimId>2</aimId>
       <aimName>Новая цель</aimName>
-      <aimDescription>Какой айди</aimDescription>
+      <aimDescription>&lt;html&gt;&lt;strong&gt;Какой айди&lt;/strong&gt; &lt;span style="background-color: #ff0000"&gt;нахер?&lt;/span&gt;&lt;/html&gt;</aimDescription>
       <aimType>primary</aimType>
     </aim>
     <aim>
