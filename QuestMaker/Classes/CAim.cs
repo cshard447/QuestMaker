@@ -68,7 +68,7 @@ namespace QuestMaker
         public BindingList<AimTypeDataSourceObject> list = new BindingList<AimTypeDataSourceObject>();
 
         string fileName = Common.path + "aims.xml";
-        const string section = "aims";
+        public const string section = "aims";
         const int MAX_ITEMS = 1000;
 
         public CAimManager() : base ()
@@ -148,12 +148,14 @@ namespace QuestMaker
             }        
 
         }
-        public void saveAimsToFile()
+        public void saveAimsToFile(string file = "")
         {
-            XDocument doc = XDocument.Load(fileName);
+            file = (file.Length == 0) ? (fileName) : (file);
+            Common.createFileIfNotExists(file);
+            XDocument doc = XDocument.Load(file);
             IEnumerable<XElement> del = doc.Root.Element(section).Descendants("aim").ToList();
             del.Remove();
-            doc.Save(fileName);
+            doc.Save(file);
 
             foreach (CAim aim in aims.Values)
             {
@@ -176,7 +178,7 @@ namespace QuestMaker
             settings.Indent = true;
             settings.OmitXmlDeclaration = true;
             settings.NewLineOnAttributes = true;
-            using (System.Xml.XmlWriter w = System.Xml.XmlWriter.Create(fileName, settings))
+            using (System.Xml.XmlWriter w = System.Xml.XmlWriter.Create(file, settings))
             {
                 doc.Save(w);
             }

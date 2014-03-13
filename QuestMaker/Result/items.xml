@@ -55,15 +55,6 @@
       <itemSingleUse>true</itemSingleUse>
     </item>
     <item>
-      <itemId>2</itemId>
-      <itemName>qwe</itemName>
-      <itemDescription>qe</itemDescription>
-      <itemComment>qwe</itemComment>
-      <itemImagePath></itemImagePath>
-      <itemVisibility>true</itemVisibility>
-      <itemSingleUse>true</itemSingleUse>
-    </item>
-    <item>
       <itemId>6</itemId>
       <itemName>asdasd</itemName>
       <itemDescription>&lt;html&gt;&lt;strong&gt;Жирный &lt;/strong&gt;&lt;em&gt;Курсив&lt;/em&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/html&gt;</itemDescription>

@@ -19,12 +19,6 @@
       <aimType>secondary</aimType>
     </aim>
     <aim>
-      <aimId>5</aimId>
-      <aimName>sdf</aimName>
-      <aimDescription>sdf</aimDescription>
-      <aimType>transitional</aimType>
-    </aim>
-    <aim>
       <aimId>2</aimId>
       <aimName>Новая цель</aimName>
       <aimDescription>&lt;html&gt;&lt;strong&gt;Какой айди&lt;/strong&gt; &lt;span style="background-color: #ff0000"&gt;нахер?&lt;/span&gt;&lt;/html&gt;</aimDescription>
@@ -35,12 +29,6 @@
       <aimName>А теперь</aimName>
       <aimDescription>где айди</aimDescription>
       <aimType>secondary</aimType>
-    </aim>
-    <aim>
-      <aimId>6</aimId>
-      <aimName>qwe</aimName>
-      <aimDescription>qwe</aimDescription>
-      <aimType>primary</aimType>
     </aim>
   </aims>
 </root>

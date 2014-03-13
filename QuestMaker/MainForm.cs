@@ -142,6 +142,9 @@ namespace QuestMaker
         {
             //itemManager.TestXML();
             //gridViewAims.Columns[2].data
+            //gridViewItems.Columns["columnID"].IsVisible = !gridViewItems.Columns["columnID"].IsVisible;
+            gridViewItems.Columns["columnPath"].IsVisible = !gridViewItems.Columns["columnPath"].IsVisible;
+
         }
 
         private void gridViewAims_CellDoubleClick(object sender, GridViewCellEventArgs e)
@@ -154,6 +157,20 @@ namespace QuestMaker
                     gridViewAims.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = markupItems.Value.ToString();
             }
 
+        }
+
+        private void menuItemSave_Click(object sender, EventArgs e)
+        {
+            string saveFile = Common.path + "Result.xml";
+            itemManager.saveItemsToFile(saveFile);
+            aimManager.saveAimsToFile(saveFile);
+        }
+
+        private void menuButtonWipeOutColumns_Click(object sender, EventArgs e)
+        {
+            gridViewItems.Columns["columnPath"].IsVisible = !gridViewItems.Columns["columnPath"].IsVisible;
+            gridViewItems.Columns["columnId"].IsVisible = !gridViewItems.Columns["columnId"].IsVisible;
+            gridViewAims.Columns["columnID"].IsVisible = !gridViewAims.Columns["columnID"].IsVisible;
         }
 
 

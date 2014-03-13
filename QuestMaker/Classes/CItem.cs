@@ -57,7 +57,7 @@ namespace QuestMaker
         private Dictionary<int, CItem> items = new Dictionary<int, CItem>();
         private XDocument doc = new XDocument(new XElement("root"));      
         string fileName = Common.path + "items.xml";
-        const string section = "items";
+        public const string section = "items";
         const int MAX_ITEMS = 1000;
 
         public CItemManager() : base ()
@@ -154,12 +154,14 @@ namespace QuestMaker
             }
         }
 
-        public void saveItemsToFile()
+        public void saveItemsToFile(string file = "")
         {
-            XDocument doc = XDocument.Load(fileName);
+            file = (file.Length == 0) ? (fileName) : (file);
+            Common.createFileIfNotExists(file);
+            XDocument doc = XDocument.Load(file);
             IEnumerable<XElement> del = doc.Root.Element(section).Descendants("item").ToList();
             del.Remove();
-            doc.Save(fileName);
+            doc.Save(file);
             
             foreach (CItem item in items.Values)
             {
@@ -185,7 +187,7 @@ namespace QuestMaker
             settings.Indent = true;
             settings.OmitXmlDeclaration = true;
             settings.NewLineOnAttributes = true;
-            using (System.Xml.XmlWriter w = System.Xml.XmlWriter.Create(fileName, settings))
+            using (System.Xml.XmlWriter w = System.Xml.XmlWriter.Create(file, settings))
             {
                 doc.Save(w);
             }
