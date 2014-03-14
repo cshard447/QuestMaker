@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
+using Telerik.WinControls.RichTextBox.Model;
+using Telerik.WinControls.RichTextBox.FileFormats.Html;
+using Telerik.WinControls.RichTextBox.FileFormats;
 using System.IO;
 using QuestMaker.Classes;
 
@@ -171,6 +174,20 @@ namespace QuestMaker
             gridViewItems.Columns["columnPath"].IsVisible = !gridViewItems.Columns["columnPath"].IsVisible;
             gridViewItems.Columns["columnId"].IsVisible = !gridViewItems.Columns["columnId"].IsVisible;
             gridViewAims.Columns["columnID"].IsVisible = !gridViewAims.Columns["columnID"].IsVisible;
+        }
+
+        private void bEditRules_Click(object sender, EventArgs e)
+        {
+            HtmlFormatProvider provider = new HtmlFormatProvider();
+            markupRules.Value = provider.Export(rtbRules.Document);
+            if (markupRules.ShowDialog() == DialogResult.OK)
+            {                
+                rtbRules.Document = provider.Import(markupRules.Value);
+            }
+        }
+
+        private void rtbRules_Click(object sender, EventArgs e)
+        {            
         }
 
 
