@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace QuestMaker.Classes
 {
-    class CCommonText
+    abstract class CCommonText
     {
         private XDocument doc = new XDocument(new XElement("root"));
         string fileName;
@@ -16,10 +16,20 @@ namespace QuestMaker.Classes
 
         public CCommonText(string sectionName)
         {
-            section = sectionName;
-            fileName = Common.path + section + ".xml";
+            setSection( sectionName );
+            this.fileName = Common.path + getSection() + ".xml";
             writtenText = "";
         }
+
+        virtual public void setSection(string _section)
+        {
+            section = _section;
+        }
+        virtual public string getSection()
+        {
+            return section;
+        }
+
 
         public void updateTextFromUI(string newText)
         {
@@ -31,13 +41,13 @@ namespace QuestMaker.Classes
             file = (file.Length == 0) ? (fileName) : (file);
             Common.createFileIfNotExists(file);
             doc = XDocument.Load(file);
-            IEnumerable<XElement> del = doc.Root.Element(section).Descendants("text").ToList();
+            IEnumerable<XElement> del = doc.Root.Element(getSection()).Descendants("text").ToList();
             del.Remove();
             doc.Save(file);
 
             XElement element = new XElement("text", writtenText);
 
-            doc.Root.Element(section).Add(element);            
+            doc.Root.Element(getSection()).Add(element);            
 
             System.Xml.XmlWriterSettings settings = new System.Xml.XmlWriterSettings();
             settings.Encoding = new UTF8Encoding(false);
@@ -50,12 +60,11 @@ namespace QuestMaker.Classes
             }
             //            doc.Save(fileName);
         }
-        public void loadItemsFromFile()
+        public void loadTextFromFile()
         {
             writtenText = "";
-            doc = XDocument.Load(fileName);
-            string qwer = doc.Root.Element(section).Element("text").Value;
-            writtenText = qwer;            
+            doc = XDocument.Load(fileName);            
+            writtenText = doc.Root.Element(getSection()).Element("text").Value;
         }
 
 
@@ -63,8 +72,34 @@ namespace QuestMaker.Classes
 
     class CRules : CCommonText
     {
+        public static new string section;
         public CRules()
             : base("rules")
         { }
+
+        public override string getSection()
+        {
+            return section;
+        }
+        public override void setSection(string _section)
+        {
+            section = _section;
+        }
+    }
+
+    class CPrehistory : CCommonText
+    {
+        public static new string section;
+        public CPrehistory()
+            : base("prehistory")
+        { }
+        public override string getSection()
+        {
+            return section;
+        }
+        public override void setSection(string _section)
+        {
+            section = _section;
+        }
     }
 }

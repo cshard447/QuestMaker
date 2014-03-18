@@ -21,6 +21,7 @@ namespace QuestMaker
         CAimManager aimManager = new CAimManager();
         //CCommonText rules = new CCommonText("rules");
         CRules rules = new CRules();
+        CPrehistory prehistory = new CPrehistory();
 
         HtmlFormatProvider htmlProvider = new HtmlFormatProvider();
 
@@ -32,9 +33,10 @@ namespace QuestMaker
             ShowItemsOnGridView();
             aimManager.loadAimsFromFile();
             ShowAimsOnGridView();
-            rules.loadItemsFromFile();
+            rules.loadTextFromFile();
             rtbRules.Document = htmlProvider.Import(rules.writtenText);
-            //rtbRules.Insert(rules.writtenText);
+            prehistory.loadTextFromFile();
+            rtbPrehistory.Document = htmlProvider.Import(prehistory.writtenText);            
         }
 
         void FillTableColumns()
@@ -175,6 +177,7 @@ namespace QuestMaker
             itemManager.saveItemsToFile(saveFile);
             aimManager.saveAimsToFile(saveFile);
             rules.saveTextToFile(saveFile);
+            prehistory.saveTextToFile(saveFile);
         }
 
         private void menuButtonWipeOutColumns_Click(object sender, EventArgs e)
@@ -201,6 +204,24 @@ namespace QuestMaker
             string rulesText = htmlProvider.Export(rtbRules.Document);
             rules.updateTextFromUI(rulesText);
             rules.saveTextToFile();
+        }
+
+        private void bEditPrehistory_Click(object sender, EventArgs e)
+        {
+            //markupPrehistory.Value = rtbPrehistory.Text.ToString();
+            markupPrehistory.Value = htmlProvider.Export(rtbPrehistory.Document);
+            if (markupPrehistory.ShowDialog() == DialogResult.OK)
+            {
+                //rtbPrehistory.Text = markupPrehistory.Value.ToString();
+                rtbPrehistory.Document = htmlProvider.Import(markupPrehistory.Value.ToString());
+            }
+        }
+
+        private void bSavePrehistory_Click(object sender, EventArgs e)
+        {
+            string prehistoryText = htmlProvider.Export(rtbPrehistory.Document);
+            prehistory.updateTextFromUI(prehistoryText);
+            prehistory.saveTextToFile();
         }
 
     }
