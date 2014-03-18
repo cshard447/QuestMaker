@@ -30,6 +30,7 @@ namespace QuestMaker.Classes
                 stream.WriteLine("<root>");
                 stream.WriteLine("<" + CItemManager.section + "/>");
                 stream.WriteLine("<" + CAimManager.section + "/>");
+                stream.WriteLine("<" + CRules.section + "/>");
                 stream.WriteLine("</root>");            
                 stream.Flush();
                 stream.Close();

@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="Classes\CAim.cs" />
     <Compile Include="Classes\CAuthorEvent.cs" />
+    <Compile Include="Classes\CCommonText.cs" />
     <Compile Include="Classes\CItem.cs" />
     <Compile Include="Classes\Common.cs" />
     <Compile Include="Classes\CThought.cs" />

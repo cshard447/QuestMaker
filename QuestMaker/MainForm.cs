@@ -19,6 +19,10 @@ namespace QuestMaker
     {
         CItemManager itemManager = new CItemManager();
         CAimManager aimManager = new CAimManager();
+        //CCommonText rules = new CCommonText("rules");
+        CRules rules = new CRules();
+
+        HtmlFormatProvider htmlProvider = new HtmlFormatProvider();
 
         public MainForm()
         {
@@ -28,6 +32,9 @@ namespace QuestMaker
             ShowItemsOnGridView();
             aimManager.loadAimsFromFile();
             ShowAimsOnGridView();
+            rules.loadItemsFromFile();
+            rtbRules.Document = htmlProvider.Import(rules.writtenText);
+            //rtbRules.Insert(rules.writtenText);
         }
 
         void FillTableColumns()
@@ -167,6 +174,7 @@ namespace QuestMaker
             string saveFile = Common.path + "Result.xml";
             itemManager.saveItemsToFile(saveFile);
             aimManager.saveAimsToFile(saveFile);
+            rules.saveTextToFile(saveFile);
         }
 
         private void menuButtonWipeOutColumns_Click(object sender, EventArgs e)
@@ -177,20 +185,23 @@ namespace QuestMaker
         }
 
         private void bEditRules_Click(object sender, EventArgs e)
-        {
-            HtmlFormatProvider provider = new HtmlFormatProvider();
-            markupRules.Value = provider.Export(rtbRules.Document);
+        {            
+            markupRules.Value = htmlProvider.Export(rtbRules.Document);
+            //htmlProvider.ExportSettings.
+            //markupRules.Value = rules.writtenText.ToString();
+            
             if (markupRules.ShowDialog() == DialogResult.OK)
-            {                
-                rtbRules.Document = provider.Import(markupRules.Value);
+            {
+                rtbRules.Document = htmlProvider.Import(markupRules.Value.ToString());
             }
         }
 
-        private void rtbRules_Click(object sender, EventArgs e)
-        {            
+        private void bSaveRules_Click(object sender, EventArgs e)
+        {
+            string rulesText = htmlProvider.Export(rtbRules.Document);
+            rules.updateTextFromUI(rulesText);
+            rules.saveTextToFile();
         }
-
-
 
     }
 }

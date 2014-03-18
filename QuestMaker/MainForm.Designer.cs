@@ -114,9 +114,9 @@
             // pagePersons
             // 
 // TODO: Code generation for '' failed because of Exception 'Invalid Primitive Type: System.IntPtr. Consider using CodeObjectCreateExpression.'.
-            this.pagePersons.Location = new System.Drawing.Point(4, 4);
+            this.pagePersons.Location = new System.Drawing.Point(10, 37);
             this.pagePersons.Name = "pagePersons";
-            this.pagePersons.Size = new System.Drawing.Size(0, 0);
+            this.pagePersons.Size = new System.Drawing.Size(904, 424);
             this.pagePersons.Text = "Люди";
             // 
             // pageItems
@@ -124,9 +124,9 @@
 // TODO: Code generation for '' failed because of Exception 'Invalid Primitive Type: System.IntPtr. Consider using CodeObjectCreateExpression.'.
             this.pageItems.Controls.Add(this.pGridViewItems);
             this.pageItems.Controls.Add(this.pControlsItems);
-            this.pageItems.Location = new System.Drawing.Point(305, 4);
+            this.pageItems.Location = new System.Drawing.Point(10, 37);
             this.pageItems.Name = "pageItems";
-            this.pageItems.Size = new System.Drawing.Size(616, 464);
+            this.pageItems.Size = new System.Drawing.Size(904, 424);
             this.pageItems.Text = "Предметы";
             // 
             // pGridViewItems
@@ -135,7 +135,7 @@
             this.pGridViewItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pGridViewItems.Location = new System.Drawing.Point(0, 54);
             this.pGridViewItems.Name = "pGridViewItems";
-            this.pGridViewItems.Size = new System.Drawing.Size(616, 410);
+            this.pGridViewItems.Size = new System.Drawing.Size(904, 370);
             this.pGridViewItems.TabIndex = 4;
             // 
             // gridViewItems
@@ -149,7 +149,7 @@
             this.gridViewItems.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gridViewItems.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // gridViewItems
             // 
             this.gridViewItems.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             gridViewTextBoxColumn17.EnableExpressionEditor = false;
@@ -202,7 +202,7 @@
             sortDescriptor5});
             this.gridViewItems.Name = "gridViewItems";
             this.gridViewItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewItems.Size = new System.Drawing.Size(616, 410);
+            this.gridViewItems.Size = new System.Drawing.Size(904, 370);
             this.gridViewItems.TabIndex = 1;
             this.gridViewItems.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gridViewItems_CellFormatting);
             this.gridViewItems.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridViewItems_CellDoubleClick);
@@ -214,7 +214,7 @@
             this.pControlsItems.Dock = System.Windows.Forms.DockStyle.Top;
             this.pControlsItems.Location = new System.Drawing.Point(0, 0);
             this.pControlsItems.Name = "pControlsItems";
-            this.pControlsItems.Size = new System.Drawing.Size(616, 54);
+            this.pControlsItems.Size = new System.Drawing.Size(904, 54);
             this.pControlsItems.TabIndex = 3;
             // 
             // buttonTest
@@ -240,9 +240,9 @@
 // TODO: Code generation for '' failed because of Exception 'Invalid Primitive Type: System.IntPtr. Consider using CodeObjectCreateExpression.'.
             this.pageAims.Controls.Add(this.gridViewAims);
             this.pageAims.Controls.Add(this.pControlsAims);
-            this.pageAims.Location = new System.Drawing.Point(305, 4);
+            this.pageAims.Location = new System.Drawing.Point(10, 37);
             this.pageAims.Name = "pageAims";
-            this.pageAims.Size = new System.Drawing.Size(616, 464);
+            this.pageAims.Size = new System.Drawing.Size(904, 424);
             this.pageAims.Text = "Цели";
             // 
             // gridViewAims
@@ -289,7 +289,7 @@
             sortDescriptor6});
             this.gridViewAims.Name = "gridViewAims";
             this.gridViewAims.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewAims.Size = new System.Drawing.Size(616, 408);
+            this.gridViewAims.Size = new System.Drawing.Size(904, 368);
             this.gridViewAims.TabIndex = 1;
             this.gridViewAims.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridViewAims_CellDoubleClick);
             // 
@@ -299,7 +299,7 @@
             this.pControlsAims.Dock = System.Windows.Forms.DockStyle.Top;
             this.pControlsAims.Location = new System.Drawing.Point(0, 0);
             this.pControlsAims.Name = "pControlsAims";
-            this.pControlsAims.Size = new System.Drawing.Size(616, 56);
+            this.pControlsAims.Size = new System.Drawing.Size(904, 56);
             this.pControlsAims.TabIndex = 2;
             // 
             // bSaveAims
@@ -329,7 +329,6 @@
             this.rtbRules.Name = "rtbRules";
             this.rtbRules.Size = new System.Drawing.Size(904, 368);
             this.rtbRules.TabIndex = 1;
-            this.rtbRules.Click += new System.EventHandler(this.rtbRules_Click);
             // 
             // panelControlsRules
             // 
@@ -357,6 +356,7 @@
             this.bSaveRules.Size = new System.Drawing.Size(110, 24);
             this.bSaveRules.TabIndex = 0;
             this.bSaveRules.Text = "Сохранить";
+            this.bSaveRules.Click += new System.EventHandler(this.bSaveRules_Click);
             // 
             // statusStrip
             // 
