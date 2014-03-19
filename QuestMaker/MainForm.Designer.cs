@@ -42,11 +42,10 @@
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn4 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor4 = new Telerik.WinControls.Data.SortDescriptor();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainPageView = new Telerik.WinControls.UI.RadPageView();
             this.pagePrehistory = new Telerik.WinControls.UI.RadPageViewPage();
-            this.pControlsPrehistory = new Telerik.WinControls.UI.RadPanel();
-            this.bEditPrehistory = new Telerik.WinControls.UI.RadButton();
-            this.bSavePrehistory = new Telerik.WinControls.UI.RadButton();
+            this.rtbPrehistory = new Telerik.WinControls.RichTextBox.RadRichTextBox();
             this.pagePersons = new Telerik.WinControls.UI.RadPageViewPage();
             this.pageAims = new Telerik.WinControls.UI.RadPageViewPage();
             this.gridViewAims = new Telerik.WinControls.UI.RadGridView();
@@ -60,9 +59,6 @@
             this.bSaveItems = new Telerik.WinControls.UI.RadButton();
             this.pageRules = new Telerik.WinControls.UI.RadPageViewPage();
             this.rtbRules = new Telerik.WinControls.RichTextBox.RadRichTextBox();
-            this.pControlsRules = new Telerik.WinControls.UI.RadPanel();
-            this.bEditRules = new Telerik.WinControls.UI.RadButton();
-            this.bSaveRules = new Telerik.WinControls.UI.RadButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.openImageFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.markupItems = new Telerik.WinControls.UI.RadMarkupDialog();
@@ -72,18 +68,22 @@
             this.menuItemSave = new Telerik.WinControls.UI.RadMenuHeaderItem();
             this.menuSeparator1 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
             this.menuButtonWipeOutColumns = new Telerik.WinControls.UI.RadMenuButtonItem();
-            this.radMenuComboItem1 = new Telerik.WinControls.UI.RadMenuComboItem();
-            this.mainMenu = new Telerik.WinControls.UI.RadMenu();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.markupPrehistory = new Telerik.WinControls.UI.RadMarkupDialog();
-            this.rtbPrehistory = new Telerik.WinControls.RichTextBox.RadRichTextBox();
+            this.commandBarPrehistory = new Telerik.WinControls.UI.RadCommandBar();
+            this.commandBarRowPrehistory = new Telerik.WinControls.UI.CommandBarRowElement();
+            this.commandBarStripPrehistory = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.cmbSavePrehistory = new Telerik.WinControls.UI.CommandBarButton();
+            this.cmbEditPrehistory = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarRules = new Telerik.WinControls.UI.RadCommandBar();
+            this.commandBarRowRules = new Telerik.WinControls.UI.CommandBarRowElement();
+            this.commandBarStripRules = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.cmbSaveRules = new Telerik.WinControls.UI.CommandBarButton();
+            this.cmbEditRules = new Telerik.WinControls.UI.CommandBarButton();
+            this.mainMenu = new Telerik.WinControls.UI.RadMenu();
             ((System.ComponentModel.ISupportInitialize)(this.mainPageView)).BeginInit();
             this.mainPageView.SuspendLayout();
             this.pagePrehistory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pControlsPrehistory)).BeginInit();
-            this.pControlsPrehistory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bEditPrehistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bSavePrehistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtbPrehistory)).BeginInit();
             this.pageAims.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewAims)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewAims.MasterTemplate)).BeginInit();
@@ -101,13 +101,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bSaveItems)).BeginInit();
             this.pageRules.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rtbRules)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pControlsRules)).BeginInit();
-            this.pControlsRules.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bEditRules)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bSaveRules)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMenuComboItem1.ComboBoxElement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commandBarPrehistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commandBarRules)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rtbPrehistory)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPageView
@@ -120,7 +116,7 @@
             this.mainPageView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPageView.Location = new System.Drawing.Point(0, 20);
             this.mainPageView.Name = "mainPageView";
-            this.mainPageView.SelectedPage = this.pagePrehistory;
+            this.mainPageView.SelectedPage = this.pageRules;
             this.mainPageView.Size = new System.Drawing.Size(925, 472);
             this.mainPageView.TabIndex = 10;
             // 
@@ -128,39 +124,21 @@
             // 
 // TODO: Code generation for '' failed because of Exception 'Invalid Primitive Type: System.IntPtr. Consider using CodeObjectCreateExpression.'.
             this.pagePrehistory.Controls.Add(this.rtbPrehistory);
-            this.pagePrehistory.Controls.Add(this.pControlsPrehistory);
+            this.pagePrehistory.Controls.Add(this.commandBarPrehistory);
             this.pagePrehistory.Location = new System.Drawing.Point(10, 37);
             this.pagePrehistory.Name = "pagePrehistory";
             this.pagePrehistory.Size = new System.Drawing.Size(904, 424);
             this.pagePrehistory.Text = "Предыстория";
             // 
-            // pControlsPrehistory
+            // rtbPrehistory
             // 
-            this.pControlsPrehistory.Controls.Add(this.bEditPrehistory);
-            this.pControlsPrehistory.Controls.Add(this.bSavePrehistory);
-            this.pControlsPrehistory.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pControlsPrehistory.Location = new System.Drawing.Point(0, 0);
-            this.pControlsPrehistory.Name = "pControlsPrehistory";
-            this.pControlsPrehistory.Size = new System.Drawing.Size(904, 67);
-            this.pControlsPrehistory.TabIndex = 0;
-            // 
-            // bEditPrehistory
-            // 
-            this.bEditPrehistory.Location = new System.Drawing.Point(485, 26);
-            this.bEditPrehistory.Name = "bEditPrehistory";
-            this.bEditPrehistory.Size = new System.Drawing.Size(110, 24);
-            this.bEditPrehistory.TabIndex = 1;
-            this.bEditPrehistory.Text = "Редактировать";
-            this.bEditPrehistory.Click += new System.EventHandler(this.bEditPrehistory_Click);
-            // 
-            // bSavePrehistory
-            // 
-            this.bSavePrehistory.Location = new System.Drawing.Point(290, 26);
-            this.bSavePrehistory.Name = "bSavePrehistory";
-            this.bSavePrehistory.Size = new System.Drawing.Size(110, 24);
-            this.bSavePrehistory.TabIndex = 0;
-            this.bSavePrehistory.Text = "Сохранить";
-            this.bSavePrehistory.Click += new System.EventHandler(this.bSavePrehistory_Click);
+            this.rtbPrehistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbPrehistory.HyperlinkToolTipFormatString = null;
+            this.rtbPrehistory.Location = new System.Drawing.Point(0, 45);
+            this.rtbPrehistory.Name = "rtbPrehistory";
+            this.rtbPrehistory.Size = new System.Drawing.Size(904, 379);
+            this.rtbPrehistory.TabIndex = 1;
+            this.rtbPrehistory.Text = "radRichTextBox1";
             // 
             // pagePersons
             // 
@@ -190,7 +168,7 @@
             this.gridViewAims.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gridViewAims.Location = new System.Drawing.Point(0, 56);
             // 
-            // 
+            // gridViewAims
             // 
             this.gridViewAims.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             gridViewTextBoxColumn9.EnableExpressionEditor = false;
@@ -276,7 +254,7 @@
             this.gridViewItems.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gridViewItems.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // gridViewItems
             // 
             this.gridViewItems.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             gridViewTextBoxColumn12.EnableExpressionEditor = false;
@@ -366,7 +344,7 @@
             // 
 // TODO: Code generation for '' failed because of Exception 'Invalid Primitive Type: System.IntPtr. Consider using CodeObjectCreateExpression.'.
             this.pageRules.Controls.Add(this.rtbRules);
-            this.pageRules.Controls.Add(this.pControlsRules);
+            this.pageRules.Controls.Add(this.commandBarRules);
             this.pageRules.Location = new System.Drawing.Point(10, 37);
             this.pageRules.Name = "pageRules";
             this.pageRules.Size = new System.Drawing.Size(904, 424);
@@ -376,38 +354,10 @@
             // 
             this.rtbRules.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbRules.HyperlinkToolTipFormatString = null;
-            this.rtbRules.Location = new System.Drawing.Point(0, 56);
+            this.rtbRules.Location = new System.Drawing.Point(0, 45);
             this.rtbRules.Name = "rtbRules";
-            this.rtbRules.Size = new System.Drawing.Size(904, 368);
+            this.rtbRules.Size = new System.Drawing.Size(904, 379);
             this.rtbRules.TabIndex = 1;
-            // 
-            // pControlsRules
-            // 
-            this.pControlsRules.Controls.Add(this.bEditRules);
-            this.pControlsRules.Controls.Add(this.bSaveRules);
-            this.pControlsRules.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pControlsRules.Location = new System.Drawing.Point(0, 0);
-            this.pControlsRules.Name = "pControlsRules";
-            this.pControlsRules.Size = new System.Drawing.Size(904, 56);
-            this.pControlsRules.TabIndex = 0;
-            // 
-            // bEditRules
-            // 
-            this.bEditRules.Location = new System.Drawing.Point(352, 14);
-            this.bEditRules.Name = "bEditRules";
-            this.bEditRules.Size = new System.Drawing.Size(110, 24);
-            this.bEditRules.TabIndex = 1;
-            this.bEditRules.Text = "Редактировать";
-            this.bEditRules.Click += new System.EventHandler(this.bEditRules_Click);
-            // 
-            // bSaveRules
-            // 
-            this.bSaveRules.Location = new System.Drawing.Point(180, 14);
-            this.bSaveRules.Name = "bSaveRules";
-            this.bSaveRules.Size = new System.Drawing.Size(110, 24);
-            this.bSaveRules.TabIndex = 0;
-            this.bSaveRules.Text = "Сохранить";
-            this.bSaveRules.Click += new System.EventHandler(this.bSaveRules_Click);
             // 
             // statusStrip
             // 
@@ -433,8 +383,7 @@
             this.menuItemLoad,
             this.menuItemSave,
             this.menuSeparator1,
-            this.menuButtonWipeOutColumns,
-            this.radMenuComboItem1});
+            this.menuButtonWipeOutColumns});
             this.menuItemMain.Name = "menuItemMain";
             this.menuItemMain.Text = "Главное";
             this.menuItemMain.Visibility = Telerik.WinControls.ElementVisibility.Visible;
@@ -478,49 +427,113 @@
             this.menuButtonWipeOutColumns.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.menuButtonWipeOutColumns.Click += new System.EventHandler(this.menuButtonWipeOutColumns_Click);
             // 
-            // radMenuComboItem1
+            // commandBarPrehistory
             // 
-            this.radMenuComboItem1.AccessibleDescription = "radMenuComboItem1";
-            this.radMenuComboItem1.AccessibleName = "radMenuComboItem1";
+            this.commandBarPrehistory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.commandBarPrehistory.Location = new System.Drawing.Point(0, 0);
+            this.commandBarPrehistory.Name = "commandBarPrehistory";
+            this.commandBarPrehistory.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
+            this.commandBarRowPrehistory});
+            this.commandBarPrehistory.Size = new System.Drawing.Size(904, 45);
+            this.commandBarPrehistory.TabIndex = 2;
+            this.commandBarPrehistory.Text = "radCommandBar1";
             // 
+            // commandBarRowPrehistory
             // 
+            this.commandBarRowPrehistory.MinSize = new System.Drawing.Size(25, 25);
+            this.commandBarRowPrehistory.Strips.AddRange(new Telerik.WinControls.UI.CommandBarStripElement[] {
+            this.commandBarStripPrehistory});
             // 
-            this.radMenuComboItem1.ComboBoxElement.ArrowButtonMinWidth = 17;
-            this.radMenuComboItem1.ComboBoxElement.AutoCompleteAppend = null;
-            this.radMenuComboItem1.ComboBoxElement.AutoCompleteDataSource = null;
-            this.radMenuComboItem1.ComboBoxElement.AutoCompleteDisplayMember = null;
-            this.radMenuComboItem1.ComboBoxElement.AutoCompleteSuggest = null;
-            this.radMenuComboItem1.ComboBoxElement.AutoCompleteValueMember = null;
-            this.radMenuComboItem1.ComboBoxElement.DataMember = "";
-            this.radMenuComboItem1.ComboBoxElement.DataSource = null;
-            this.radMenuComboItem1.ComboBoxElement.DefaultItemsCountInDropDown = 6;
-            this.radMenuComboItem1.ComboBoxElement.DefaultValue = null;
-            this.radMenuComboItem1.ComboBoxElement.DisplayMember = "";
-            this.radMenuComboItem1.ComboBoxElement.DropDownAnimationEasing = Telerik.WinControls.RadEasingType.InQuad;
-            this.radMenuComboItem1.ComboBoxElement.DropDownAnimationEnabled = true;
-            this.radMenuComboItem1.ComboBoxElement.EditableElementText = "";
-            this.radMenuComboItem1.ComboBoxElement.EditorElement = this.radMenuComboItem1.ComboBoxElement;
-            this.radMenuComboItem1.ComboBoxElement.EditorManager = null;
-            this.radMenuComboItem1.ComboBoxElement.Filter = null;
-            this.radMenuComboItem1.ComboBoxElement.FilterExpression = "";
-            this.radMenuComboItem1.ComboBoxElement.Focusable = true;
-            this.radMenuComboItem1.ComboBoxElement.FormatString = "";
-            this.radMenuComboItem1.ComboBoxElement.FormattingEnabled = true;
-            this.radMenuComboItem1.ComboBoxElement.ItemHeight = 18;
-            this.radMenuComboItem1.ComboBoxElement.MaxDropDownItems = 0;
-            this.radMenuComboItem1.ComboBoxElement.MaxLength = 32767;
-            this.radMenuComboItem1.ComboBoxElement.MaxValue = null;
-            this.radMenuComboItem1.ComboBoxElement.MinValue = null;
-            this.radMenuComboItem1.ComboBoxElement.NullValue = null;
-            this.radMenuComboItem1.ComboBoxElement.Owner = null;
-            this.radMenuComboItem1.ComboBoxElement.OwnerOffset = 0;
-            this.radMenuComboItem1.ComboBoxElement.ShowImageInEditorArea = true;
-            this.radMenuComboItem1.ComboBoxElement.SortStyle = Telerik.WinControls.Enumerations.SortStyle.None;
-            this.radMenuComboItem1.ComboBoxElement.Value = null;
-            this.radMenuComboItem1.ComboBoxElement.ValueMember = "";
-            this.radMenuComboItem1.Name = "radMenuComboItem1";
-            this.radMenuComboItem1.Text = "radMenuComboItem1";
-            this.radMenuComboItem1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // commandBarStripPrehistory
+            // 
+            this.commandBarStripPrehistory.DisplayName = "commandBarStripPrehistory";
+            this.commandBarStripPrehistory.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
+            this.cmbSavePrehistory,
+            this.cmbEditPrehistory});
+            this.commandBarStripPrehistory.Name = "commandBarStripElement1";
+            // 
+            // cmbSavePrehistory
+            // 
+            this.cmbSavePrehistory.AccessibleDescription = "Сохранить";
+            this.cmbSavePrehistory.AccessibleName = "Сохранить";
+            this.cmbSavePrehistory.DisplayName = "cmbSavePrehistory";
+            this.cmbSavePrehistory.DrawText = true;
+            this.cmbSavePrehistory.Image = ((System.Drawing.Image)(resources.GetObject("cmbSavePrehistory.Image")));
+            this.cmbSavePrehistory.Name = "cmbSavePrehistory";
+            this.cmbSavePrehistory.Text = "Сохранить";
+            this.cmbSavePrehistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.cmbSavePrehistory.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.cmbSavePrehistory.Click += new System.EventHandler(this.cmbSavePrehistory_Click);
+            // 
+            // cmbEditPrehistory
+            // 
+            this.cmbEditPrehistory.AccessibleDescription = "Редактировать";
+            this.cmbEditPrehistory.AccessibleName = "Редактировать";
+            this.cmbEditPrehistory.DisplayName = "cmbEditPrehistory";
+            this.cmbEditPrehistory.DrawText = true;
+            this.cmbEditPrehistory.Image = ((System.Drawing.Image)(resources.GetObject("cmbEditPrehistory.Image")));
+            this.cmbEditPrehistory.Name = "cmbEditPrehistory";
+            this.cmbEditPrehistory.Text = "Редактировать";
+            this.cmbEditPrehistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.cmbEditPrehistory.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.cmbEditPrehistory.Click += new System.EventHandler(this.cmdEditPrehistory_Click);
+            // 
+            // commandBarRules
+            // 
+            this.commandBarRules.Dock = System.Windows.Forms.DockStyle.Top;
+            this.commandBarRules.Location = new System.Drawing.Point(0, 0);
+            this.commandBarRules.Name = "commandBarRules";
+            this.commandBarRules.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
+            this.commandBarRowRules});
+            this.commandBarRules.Size = new System.Drawing.Size(904, 45);
+            this.commandBarRules.TabIndex = 2;
+            this.commandBarRules.Text = "radCommandBar1";
+            // 
+            // commandBarRowRules
+            // 
+            this.commandBarRowRules.MinSize = new System.Drawing.Size(25, 25);
+            this.commandBarRowRules.Strips.AddRange(new Telerik.WinControls.UI.CommandBarStripElement[] {
+            this.commandBarStripRules});
+            // 
+            // commandBarStripRules
+            // 
+            this.commandBarStripRules.DisplayName = "commandBarStripRules";
+            this.commandBarStripRules.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
+            this.cmbSaveRules,
+            this.cmbEditRules});
+            this.commandBarStripRules.Name = "commandBarStripElement1";
+            // 
+            // cmbSaveRules
+            // 
+            this.cmbSaveRules.AccessibleDescription = "Сохранить";
+            this.cmbSaveRules.AccessibleName = "Сохранить";
+            this.cmbSaveRules.DisplayName = "cmbSaveRules";
+            this.cmbSaveRules.DrawText = true;
+            this.cmbSaveRules.Image = ((System.Drawing.Image)(resources.GetObject("cmbSaveRules.Image")));
+            this.cmbSaveRules.Name = "cmbSaveRules";
+            this.cmbSaveRules.Text = "Сохранить";
+            this.cmbSaveRules.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.cmbSaveRules.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.cmbSaveRules.Click += new System.EventHandler(this.cmbSaveRules_Click);
+            // 
+            // cmbEditRules
+            // 
+            this.cmbEditRules.AccessibleDescription = "Редактировать";
+            this.cmbEditRules.AccessibleName = "Редактировать";
+            this.cmbEditRules.DisplayName = "cmbEditRules";
+            this.cmbEditRules.DrawText = true;
+            this.cmbEditRules.Image = ((System.Drawing.Image)(resources.GetObject("cmbEditRules.Image")));
+            this.cmbEditRules.Name = "cmbEditRules";
+            this.cmbEditRules.Text = "Редактировать";
+            this.cmbEditRules.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.cmbEditRules.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.cmbEditRules.Click += new System.EventHandler(this.cmbdEditRules_Click);
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(925, 514);
             // 
             // mainMenu
             // 
@@ -531,22 +544,6 @@
             this.mainMenu.Size = new System.Drawing.Size(925, 20);
             this.mainMenu.TabIndex = 12;
             this.mainMenu.Text = "radMenu1";
-            // 
-            // rtbPrehistory
-            // 
-            this.rtbPrehistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbPrehistory.HyperlinkToolTipFormatString = null;
-            this.rtbPrehistory.Location = new System.Drawing.Point(0, 67);
-            this.rtbPrehistory.Name = "rtbPrehistory";
-            this.rtbPrehistory.Size = new System.Drawing.Size(904, 357);
-            this.rtbPrehistory.TabIndex = 1;
-            this.rtbPrehistory.Text = "radRichTextBox1";
-            // 
-            // MainForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 514);
             this.Controls.Add(this.mainPageView);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.mainMenu);
@@ -555,10 +552,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainPageView)).EndInit();
             this.mainPageView.ResumeLayout(false);
             this.pagePrehistory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pControlsPrehistory)).EndInit();
-            this.pControlsPrehistory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bEditPrehistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bSavePrehistory)).EndInit();
+            this.pagePrehistory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rtbPrehistory)).EndInit();
             this.pageAims.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewAims.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewAims)).EndInit();
@@ -575,14 +570,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonTest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bSaveItems)).EndInit();
             this.pageRules.ResumeLayout(false);
+            this.pageRules.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rtbRules)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pControlsRules)).EndInit();
-            this.pControlsRules.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bEditRules)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bSaveRules)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMenuComboItem1.ComboBoxElement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commandBarPrehistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commandBarRules)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rtbPrehistory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -607,24 +599,26 @@
         private Telerik.WinControls.UI.RadMarkupDialog markupItems;
         private Telerik.WinControls.UI.RadPageViewPage pageRules;
         private Telerik.WinControls.RichTextBox.RadRichTextBox rtbRules;
-        private Telerik.WinControls.UI.RadPanel pControlsRules;
-        private Telerik.WinControls.UI.RadButton bSaveRules;
-        private Telerik.WinControls.UI.RadButton bEditRules;
         private Telerik.WinControls.UI.RadMarkupDialog markupRules;
         private Telerik.WinControls.UI.RadMenuItem menuItemMain;
         private Telerik.WinControls.UI.RadMenuItem menuItemLoad;
-        private Telerik.WinControls.UI.RadMenuComboItem radMenuComboItem1;
         private Telerik.WinControls.UI.RadMenuButtonItem menuButtonWipeOutColumns;
         private Telerik.WinControls.UI.RadMenuHeaderItem menuItemSave;
         private Telerik.WinControls.UI.RadMenuSeparatorItem menuSeparator1;
-        private Telerik.WinControls.UI.RadMenu mainMenu;
-        private System.Drawing.Printing.PrintDocument printDocument1;
         private Telerik.WinControls.UI.RadPageViewPage pagePrehistory;
-        private Telerik.WinControls.UI.RadPanel pControlsPrehistory;
-        private Telerik.WinControls.UI.RadButton bEditPrehistory;
-        private Telerik.WinControls.UI.RadButton bSavePrehistory;
         private Telerik.WinControls.UI.RadMarkupDialog markupPrehistory;
         private Telerik.WinControls.RichTextBox.RadRichTextBox rtbPrehistory;
+        private Telerik.WinControls.UI.RadCommandBar commandBarPrehistory;
+        private Telerik.WinControls.UI.CommandBarRowElement commandBarRowPrehistory;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripPrehistory;
+        private Telerik.WinControls.UI.CommandBarButton cmbSavePrehistory;
+        private Telerik.WinControls.UI.CommandBarButton cmbEditPrehistory;
+        private Telerik.WinControls.UI.RadMenu mainMenu;
+        private Telerik.WinControls.UI.RadCommandBar commandBarRules;
+        private Telerik.WinControls.UI.CommandBarRowElement commandBarRowRules;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripRules;
+        private Telerik.WinControls.UI.CommandBarButton cmbSaveRules;
+        private Telerik.WinControls.UI.CommandBarButton cmbEditRules;
 
     }
 }

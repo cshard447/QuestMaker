@@ -19,11 +19,12 @@ namespace QuestMaker
     {
         CItemManager itemManager = new CItemManager();
         CAimManager aimManager = new CAimManager();
-        //CCommonText rules = new CCommonText("rules");
         CRules rules = new CRules();
         CPrehistory prehistory = new CPrehistory();
-
+        
         HtmlFormatProvider htmlProvider = new HtmlFormatProvider();
+        //TxtFormatProvider txtProvider = new TxtFormatProvider();
+        //XamlFormatProvider xamlProvider = new XamlFormatProvider();
 
         public MainForm()
         {
@@ -189,39 +190,47 @@ namespace QuestMaker
 
         private void bEditRules_Click(object sender, EventArgs e)
         {            
-            markupRules.Value = htmlProvider.Export(rtbRules.Document);
-            //htmlProvider.ExportSettings.
-            //markupRules.Value = rules.writtenText.ToString();
-            
-            if (markupRules.ShowDialog() == DialogResult.OK)
-            {
-                rtbRules.Document = htmlProvider.Import(markupRules.Value.ToString());
-            }
+
         }
 
         private void bSaveRules_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbSavePrehistory_Click(object sender, EventArgs e)
+        {
+            string prehistoryText = htmlProvider.Export(rtbPrehistory.Document);
+            prehistory.updateTextFromUI(prehistoryText);
+            prehistory.saveTextToFile();
+        }
+
+        private void cmdEditPrehistory_Click(object sender, EventArgs e)
+        {
+            markupPrehistory.Value = htmlProvider.Export(rtbPrehistory.Document);
+            if (markupPrehistory.ShowDialog() == DialogResult.OK)
+            {
+                rtbPrehistory.Document = htmlProvider.Import(markupPrehistory.Value.ToString());
+            }
+        }
+
+        private void cmbSaveRules_Click(object sender, EventArgs e)
         {
             string rulesText = htmlProvider.Export(rtbRules.Document);
             rules.updateTextFromUI(rulesText);
             rules.saveTextToFile();
         }
 
-        private void bEditPrehistory_Click(object sender, EventArgs e)
+        private void cmbdEditRules_Click(object sender, EventArgs e)
         {
-            //markupPrehistory.Value = rtbPrehistory.Text.ToString();
-            markupPrehistory.Value = htmlProvider.Export(rtbPrehistory.Document);
-            if (markupPrehistory.ShowDialog() == DialogResult.OK)
-            {
-                //rtbPrehistory.Text = markupPrehistory.Value.ToString();
-                rtbPrehistory.Document = htmlProvider.Import(markupPrehistory.Value.ToString());
-            }
-        }
+            markupRules.Value = htmlProvider.Export(rtbRules.Document);
+            //htmlProvider.ExportSettings.
+            //markupRules.Value = rules.writtenText.ToString();
 
-        private void bSavePrehistory_Click(object sender, EventArgs e)
-        {
-            string prehistoryText = htmlProvider.Export(rtbPrehistory.Document);
-            prehistory.updateTextFromUI(prehistoryText);
-            prehistory.saveTextToFile();
+            if (markupRules.ShowDialog() == DialogResult.OK)
+            {
+                rtbRules.Document = htmlProvider.Import(markupRules.Value.ToString());
+            }
         }
 
     }
