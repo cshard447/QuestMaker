@@ -75,6 +75,7 @@
     <Compile Include="Classes\CCommonText.cs" />
     <Compile Include="Classes\CItem.cs" />
     <Compile Include="Classes\Common.cs" />
+    <Compile Include="Classes\CPerson.cs" />
     <Compile Include="Classes\CThought.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

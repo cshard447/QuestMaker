@@ -21,6 +21,7 @@ namespace QuestMaker
         CAimManager aimManager = new CAimManager();
         CRules rules = new CRules();
         CPrehistory prehistory = new CPrehistory();
+        CPersonManager peopleManager = new CPersonManager();
         
         HtmlFormatProvider htmlProvider = new HtmlFormatProvider();
         //TxtFormatProvider txtProvider = new TxtFormatProvider();
@@ -37,7 +38,9 @@ namespace QuestMaker
             rules.loadTextFromFile();
             rtbRules.Document = htmlProvider.Import(rules.writtenText);
             prehistory.loadTextFromFile();
-            rtbPrehistory.Document = htmlProvider.Import(prehistory.writtenText);            
+            rtbPrehistory.Document = htmlProvider.Import(prehistory.writtenText);
+            peopleManager.loadPersonsFromFile();
+            ShowPersonsOnGridView();
         }
 
         void FillTableColumns()
@@ -49,11 +52,20 @@ namespace QuestMaker
             column.DataSource = aimManager.list;
             column.DataSourceNullValue = AimType.secondary;
 
+            GridViewComboBoxColumn column2 = (GridViewComboBoxColumn)gridViewPersons.Columns["columnSex"];
+            column2.ValueMember = "EnumSex";
+            column2.DisplayMember = "DisplayString";
+            column2.FieldName = "EnumSex";
+            column2.DataSource = peopleManager.list;
+            column2.DataSourceNullValue = Sex.flexible;
+
             GridViewTextBoxColumn column3 = (GridViewTextBoxColumn)gridViewItems.Columns["columnID"];
             column3.DataSourceNullValue = -1;
 
             GridViewTextBoxColumn column4 = (GridViewTextBoxColumn)gridViewAims.Columns["columnID"];
             column4.DataSourceNullValue = -1;
+            GridViewTextBoxColumn column5 = (GridViewTextBoxColumn)gridViewPersons.Columns["columnID"];
+            column5.DataSourceNullValue = -1;
         }
 
         private void bSaveitems_Click(object sender, EventArgs e)
@@ -69,6 +81,13 @@ namespace QuestMaker
             aimManager.UpdateAimsFromGrid(gridViewAims);
             aimManager.saveAimsToFile();
             ShowAimsOnGridView();
+        }
+
+        private void cmdSavePersons_Click(object sender, EventArgs e)
+        {
+            peopleManager.UpdatePersonsFromGrid(gridViewPersons);
+            peopleManager.savePersonsToFile();
+            ShowPersonsOnGridView();
         }
 
         private void ShowItemsOnGridView()
@@ -105,6 +124,26 @@ namespace QuestMaker
                 gridViewAims.Rows.Add(values);
             }
             gridViewAims.Update();
+        }
+
+        private void ShowPersonsOnGridView()
+        {
+            gridViewPersons.Rows.Clear();
+            Dictionary<int, CPerson> _people = peopleManager.getAllPersons();
+            object[] values = new object[9];
+            foreach(CPerson person in _people.Values)
+            {
+                values[0] = person.getID();
+                values[1] = person.getName();
+                values[2] = person.sex;
+                values[3] = person.unremovable;
+                values[4] = person.description;
+                values[5] = "r";
+                values[6] = person.altName;
+                values[7] = person.comment;
+                gridViewPersons.Rows.Add(values);
+            }
+            gridViewPersons.Update();
         }
 
 
@@ -169,7 +208,6 @@ namespace QuestMaker
                 if (dr == DialogResult.OK)
                     gridViewAims.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = markupItems.Value.ToString();
             }
-
         }
 
         private void menuItemSave_Click(object sender, EventArgs e)
@@ -179,6 +217,7 @@ namespace QuestMaker
             aimManager.saveAimsToFile(saveFile);
             rules.saveTextToFile(saveFile);
             prehistory.saveTextToFile(saveFile);
+            peopleManager.savePersonsToFile(saveFile);
         }
 
         private void menuButtonWipeOutColumns_Click(object sender, EventArgs e)
@@ -186,16 +225,8 @@ namespace QuestMaker
             gridViewItems.Columns["columnPath"].IsVisible = !gridViewItems.Columns["columnPath"].IsVisible;
             gridViewItems.Columns["columnId"].IsVisible = !gridViewItems.Columns["columnId"].IsVisible;
             gridViewAims.Columns["columnID"].IsVisible = !gridViewAims.Columns["columnID"].IsVisible;
-        }
-
-        private void bEditRules_Click(object sender, EventArgs e)
-        {            
-
-        }
-
-        private void bSaveRules_Click(object sender, EventArgs e)
-        {
-
+            gridViewPersons.Columns["columnID"].IsVisible = !gridViewPersons.Columns["columnID"].IsVisible;
+            gridViewPersons.Columns["columnAltName"].IsVisible = !gridViewPersons.Columns["columnAltName"].IsVisible;
         }
 
         private void cmbSavePrehistory_Click(object sender, EventArgs e)
@@ -232,6 +263,8 @@ namespace QuestMaker
                 rtbRules.Document = htmlProvider.Import(markupRules.Value.ToString());
             }
         }
+
+
 
     }
 }

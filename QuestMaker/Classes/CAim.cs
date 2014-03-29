@@ -205,19 +205,16 @@ namespace QuestMaker
             strToType.Add("secondary", AimType.secondary);
             strToType.Add("transitional", AimType.transitional);
 
-            AimTypeDataSourceObject obj1 = new AimTypeDataSourceObject();
-            obj1.DisplayString = "Главная";
-            obj1.Type = AimType.primary;
-            list.Add(obj1);
-            AimTypeDataSourceObject obj2 = new AimTypeDataSourceObject();
-            obj2.DisplayString = "Побочная";
-            obj2.Type = AimType.secondary;
-            list.Add(obj2);
-            AimTypeDataSourceObject obj3 = new AimTypeDataSourceObject();
-            obj3.DisplayString = "Промежуточная";
-            obj3.Type = AimType.transitional;
-            list.Add(obj3);
-
+            AimTypeDataSourceObject[] obj = { new AimTypeDataSourceObject(), new AimTypeDataSourceObject(), new AimTypeDataSourceObject()};
+            obj[0].DisplayString = "Главная";
+            obj[0].Type = AimType.primary;
+            list.Add(obj[0]);
+            obj[1].DisplayString = "Побочная";
+            obj[1].Type = AimType.secondary;
+            list.Add(obj[1]);
+            obj[2].DisplayString = "Промежуточная";
+            obj[2].Type = AimType.transitional;
+            list.Add(obj[2]);
         }
         
         public AimType getType (string type)
