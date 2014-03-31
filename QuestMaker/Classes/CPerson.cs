@@ -75,7 +75,7 @@ namespace QuestMaker.Classes
         string fileName = Common.path + "persons.xml";
         public const string section = "persons";
         const int MAX_PERSONS = 100;
-        public BindingList<SexDataSourceObject> list = new BindingList<SexDataSourceObject>();
+        public static BindingList<SexDataSourceObject> list = new BindingList<SexDataSourceObject>();
         Dictionary<string, Sex> strToSex = new Dictionary<string, Sex>();
 
         public CPersonManager()

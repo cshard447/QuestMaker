@@ -5,13 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.RichTextBox.Model;
 using Telerik.WinControls.RichTextBox.FileFormats.Html;
 using Telerik.WinControls.RichTextBox.FileFormats;
-using System.IO;
 using QuestMaker.Classes;
+using QuestMaker.GUI;
 
 namespace QuestMaker
 {
@@ -56,7 +57,7 @@ namespace QuestMaker
             column2.ValueMember = "EnumSex";
             column2.DisplayMember = "DisplayString";
             column2.FieldName = "EnumSex";
-            column2.DataSource = peopleManager.list;
+            column2.DataSource = CPersonManager.list;
             column2.DataSourceNullValue = Sex.flexible;
 
             GridViewTextBoxColumn column3 = (GridViewTextBoxColumn)gridViewItems.Columns["columnID"];
@@ -195,8 +196,9 @@ namespace QuestMaker
             //itemManager.TestXML();
             //gridViewAims.Columns[2].data
             //gridViewItems.Columns["columnID"].IsVisible = !gridViewItems.Columns["columnID"].IsVisible;
-            gridViewItems.Columns["columnPath"].IsVisible = !gridViewItems.Columns["columnPath"].IsVisible;
-
+            //gridViewItems.Columns["columnPath"].IsVisible = !gridViewItems.Columns["columnPath"].IsVisible;
+            //EditPersonForm ep = new EditPersonForm();
+            //ep.Show();
         }
 
         private void gridViewAims_CellDoubleClick(object sender, GridViewCellEventArgs e)
@@ -262,6 +264,15 @@ namespace QuestMaker
             {
                 rtbRules.Document = htmlProvider.Import(markupRules.Value.ToString());
             }
+        }
+
+        private void cmbEditPerson_Click(object sender, EventArgs e)
+        {
+            List<GridViewRowInfo> rows = gridViewPersons.SelectedRows.ToList();
+            int id = int.Parse( gridViewPersons.Rows[rows[0].Index].Cells["columnID"].Value.ToString() );
+            CPerson person = peopleManager.getPerson(id);
+            EditPersonForm epf = new EditPersonForm(person);
+            epf.Show();
         }
 
 
