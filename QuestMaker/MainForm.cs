@@ -139,9 +139,10 @@ namespace QuestMaker
                 values[2] = person.sex;
                 values[3] = person.unremovable;
                 values[4] = person.description;
-                values[5] = "r";
-                values[6] = person.altName;
-                values[7] = person.comment;
+                values[5] = itemManager.getItemsNamesFromId(person.itemsId);
+                values[6] = aimManager.getAimsNamesFromId(person.aimsId);
+                values[7] = person.altName;
+                values[8] = person.comment;
                 gridViewPersons.Rows.Add(values);
             }
             gridViewPersons.Update();
@@ -269,10 +270,15 @@ namespace QuestMaker
         private void cmbEditPerson_Click(object sender, EventArgs e)
         {
             List<GridViewRowInfo> rows = gridViewPersons.SelectedRows.ToList();
-            int id = int.Parse( gridViewPersons.Rows[rows[0].Index].Cells["columnID"].Value.ToString() );
+            int id = int.Parse(rows[0].Cells["columnID"].Value.ToString());
+            string name = gridViewPersons.Rows[rows[0].Index].Cells["columnName"].Value.ToString();
             CPerson person = peopleManager.getPerson(id);
-            EditPersonForm epf = new EditPersonForm(person);
-            epf.Show();
+            EditPersonForm epf = new EditPersonForm(person, aimManager, itemManager);
+            if (epf.ShowDialog() == DialogResult.OK)
+            {
+                peopleManager.updatePerson(epf.editedPerson);                
+                ShowPersonsOnGridView();
+            }
         }
 
 

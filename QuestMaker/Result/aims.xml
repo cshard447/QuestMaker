@@ -2,33 +2,30 @@
   <aims>
     <aim>
       <aimId>0</aimId>
-      <aimName>Дмойо</aimName>
-      <aimDescription>Срочновавфыа</aimDescription>
+      <aimName>Причина смерти</aimName>
+      <aimDescription>&lt;html&gt;Установить&lt;strong&gt; причину&lt;/strong&gt; смерти владельца поместья&lt;/html&gt;</aimDescription>
       <aimType>primary</aimType>
     </aim>
     <aim>
       <aimId>1</aimId>
-      <aimName>ХЗахват мира</aimName>
-      <aimDescription>&lt;html&gt;&lt;span style="color: #ff0000"&gt;срочно!&lt;/span&gt;&lt;/html&gt;</aimDescription>
+      <aimName>Узнать, как выглядит древний артефакт</aimName>
+      <aimDescription>Найти фото или выяснить у кого-либо внешний вид артефакта.
+</aimDescription>
       <aimType>secondary</aimType>
     </aim>
     <aim>
       <aimId>3</aimId>
-      <aimName>Njzyj wtkm</aimName>
-      <aimDescription></aimDescription>
+      <aimName>Найти древний артефакт</aimName>
+      <aimDescription>Артефакт точно спрятан где-то в поместье! Найдите его.
+</aimDescription>
       <aimType>secondary</aimType>
     </aim>
     <aim>
       <aimId>2</aimId>
-      <aimName>Новая цель</aimName>
-      <aimDescription>&lt;html&gt;&lt;strong&gt;Какой айди&lt;/strong&gt; &lt;span style="background-color: #ff0000"&gt;нахер?&lt;/span&gt;&lt;/html&gt;</aimDescription>
+      <aimName>Найти убийцу</aimName>
+      <aimDescription>Найти убийцу владельца поместья
+</aimDescription>
       <aimType>primary</aimType>
-    </aim>
-    <aim>
-      <aimId>4</aimId>
-      <aimName>А теперь</aimName>
-      <aimDescription>где айди</aimDescription>
-      <aimType>secondary</aimType>
     </aim>
   </aims>
 </root>

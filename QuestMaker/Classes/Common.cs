@@ -39,6 +39,15 @@ namespace QuestMaker.Classes
             }    
         }
 
+        public static string getListAsStringWithDelimiter(List<int> ids, string delimiter)
+        {
+            string result = "";
+            foreach (int id in ids)
+                result += id.ToString() + delimiter;
+            return result;
+        }
+
+
     }
 
 }

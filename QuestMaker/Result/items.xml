@@ -2,64 +2,46 @@
   <items>
     <item>
       <itemId>0</itemId>
-      <itemName>имя </itemName>
-      <itemDescription>опись</itemDescription>
-      <itemComment>коммент</itemComment>
+      <itemName>Завещание на случай смерти</itemName>
+      <itemDescription>&lt;html&gt;Завещание&lt;u&gt; покойного&lt;/u&gt; владельца дома&lt;/html&gt;</itemDescription>
+      <itemComment>Настоящее</itemComment>
       <itemImagePath>..\..\Result\close.png</itemImagePath>
-      <itemVisibility>false</itemVisibility>
-      <itemSingleUse>true</itemSingleUse>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
     </item>
     <item>
       <itemId>3</itemId>
-      <itemName>имя2</itemName>
-      <itemDescription>neq</itemDescription>
-      <itemComment>nwe</itemComment>
+      <itemName>Ампула с ядом</itemName>
+      <itemDescription>Используйте, что отравить человека и забрать его вещи</itemDescription>
+      <itemComment></itemComment>
       <itemImagePath>..\..\Result\youtube.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
-      <itemSingleUse>false</itemSingleUse>
-    </item>
-    <item>
-      <itemId>5</itemId>
-      <itemName>empty</itemName>
-      <itemDescription></itemDescription>
-      <itemComment></itemComment>
-      <itemImagePath>..\..\Result\vk.png</itemImagePath>
-      <itemVisibility>true</itemVisibility>
-      <itemSingleUse>false</itemSingleUse>
-    </item>
-    <item>
-      <itemId>9</itemId>
-      <itemName>2222</itemName>
-      <itemDescription>333</itemDescription>
-      <itemComment>4444</itemComment>
-      <itemImagePath>..\..\Result\google.png</itemImagePath>
-      <itemVisibility>false</itemVisibility>
       <itemSingleUse>true</itemSingleUse>
     </item>
     <item>
+      <itemId>5</itemId>
+      <itemName>Ключ от сейфа</itemName>
+      <itemDescription>&lt;html&gt;Открывает &lt;strong&gt;&lt;span style="color: #ff0000"&gt;сейф&lt;/span&gt;&lt;/strong&gt; в доме&lt;/html&gt;</itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath>..\..\Result\vk.png</itemImagePath>
+      <itemVisibility>false</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+    </item>
+    <item>
       <itemId>4</itemId>
-      <itemName>а </itemName>
-      <itemDescription>&lt;html&gt;&lt;u&gt; теперь  &lt;strong&gt;Бля  &lt;/strong&gt;&lt;/u&gt;&lt;span style="font-size: 10pt"&gt;Сцуко&lt;span style="font-size: 12pt"&gt; все ебуццо&lt;/span&gt;&lt;/span&gt;&lt;/html&gt;</itemDescription>
-      <itemComment>куда</itemComment>
+      <itemName>Ампула со снотворным</itemName>
+      <itemDescription>Используйте, чтобы усыпить человека</itemDescription>
+      <itemComment></itemComment>
       <itemImagePath>..\..\Result\twitter.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>true</itemSingleUse>
     </item>
     <item>
       <itemId>1</itemId>
-      <itemName>карта</itemName>
-      <itemDescription>ваыва</itemDescription>
-      <itemComment>фывфы</itemComment>
+      <itemName>Завещание на случай убийства</itemName>
+      <itemDescription>Завещание покойного владельца</itemDescription>
+      <itemComment>Фейк</itemComment>
       <itemImagePath>..\..\Result\close.png</itemImagePath>
-      <itemVisibility>true</itemVisibility>
-      <itemSingleUse>true</itemSingleUse>
-    </item>
-    <item>
-      <itemId>6</itemId>
-      <itemName>asdasd</itemName>
-      <itemDescription>&lt;html&gt;&lt;strong&gt;Жирный &lt;/strong&gt;&lt;em&gt;Курсив&lt;/em&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/html&gt;</itemDescription>
-      <itemComment></itemComment>
-      <itemImagePath></itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>false</itemSingleUse>
     </item>

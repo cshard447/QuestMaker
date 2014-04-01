@@ -21,10 +21,28 @@ namespace QuestMaker.Classes
         public string comment;
         public string altName;
         public Clan clan;
-        List<CItem> items;
-        List<CAim> aims;
+        public List<CItem> items;
+        public List<CAim> aims;
 
-        public CPerson(int _id, string _name, Sex _sex, string _description, bool _unremovable, string _comment, string _altName = "", Clan _clan = 0 )
+        public List<int> itemsId = new List<int>();
+        public List<int> aimsId = new List<int>();
+
+        public CPerson(int _id, string _name, Sex _sex, string _description, bool _unremovable, string _comment, 
+                            List<int> _itemsList, List<int> _aimsList, string _altName = "", Clan _clan = 0)
+        {
+            id = _id;
+            name = _name;
+            sex = _sex;
+            description = _description;
+            unremovable = _unremovable;
+            comment = _comment;
+            itemsId = _itemsList;
+            aimsId = _aimsList;
+            altName = _altName;
+            clan = _clan;
+        }
+
+        public CPerson(int _id, string _name, Sex _sex, string _description, bool _unremovable, string _comment, string _altName = "", Clan _clan = 0)
         {
             id = _id;
             name = _name;
@@ -48,6 +66,15 @@ namespace QuestMaker.Classes
         {
             name = _name;
         }
+        public void setOwnItems(List<int> _ownItems)
+        {
+            itemsId = _ownItems;
+        }
+        public void setOwnAims(List<int> _ownAims)
+        {
+            aimsId = _ownAims;
+        }
+
     }
 
     public class SexDataSourceObject
@@ -83,9 +110,10 @@ namespace QuestMaker.Classes
             initDict();
         }
 
-        public void addPerson(int _id, string _name, Sex _sex, string _description, bool _unremovable, string _comment, string _altName = "", Clan _clan = 0 )
+        public void addPerson(int _id, string _name, Sex _sex, string _description, bool _unremovable, string _comment,
+                                List<int> _itemsList, List<int> _aimsList, string _altName = "", Clan _clan = 0 )
         {
-            persons.Add(_id, new CPerson(_id, _name, _sex, _description, _unremovable, _comment, _altName, _clan ));
+            persons.Add(_id, new CPerson(_id, _name, _sex, _description, _unremovable, _comment, _itemsList, _aimsList, _altName, _clan ));
         }
         public int addPerson(string _name, Sex _sex, string _description, bool _unremovable, string _comment, string _altName = "", Clan _clan = 0)
         {
@@ -110,6 +138,12 @@ namespace QuestMaker.Classes
             CPerson desired;
             persons.TryGetValue(idToFind, out desired);
             return desired;
+        }
+        public void updatePerson(CPerson updated)
+        { 
+            if (!this.persons.ContainsKey(updated.getID()))
+                throw new System.ArgumentException("Персонажа с таким ID не существует!");
+            persons[updated.getID()] = updated;
         }
         public Dictionary<int, CPerson> getAllPersons()
         {
@@ -172,7 +206,9 @@ namespace QuestMaker.Classes
                                 new XElement("personDescription", person.description),
                                 new XElement("personUnremovable", person.unremovable),
                                 new XElement("personComment", person.comment),
-                                new XElement("personAltName", person.altName));
+                                new XElement("personAltName", person.altName),
+                                new XElement("personalItems", Common.getListAsStringWithDelimiter(person.itemsId, ",")),
+                                new XElement("personalAims", Common.getListAsStringWithDelimiter(person.aimsId, ",")));
                                 //new XElement("personClan", person.clan));
 
                 doc.Root.Element(section).Add(element);
@@ -187,7 +223,7 @@ namespace QuestMaker.Classes
             {
                 doc.Save(w);
             }
-            //            doc.Save(fileName);
+            //            doc.Save(fileName);            
         }
         public void loadPersonsFromFile()
         {
@@ -201,9 +237,23 @@ namespace QuestMaker.Classes
                 string desc = elem.Element("personDescription").Value.ToString();
                 string unrem = elem.Element("personUnremovable").Value.ToString();
                 string comm = elem.Element("personComment").Value.ToString();
-                string alt = elem.Element("personAltName").Value.ToString();                
+                string alt = elem.Element("personAltName").Value.ToString();
+                string itemStr = elem.Element("personalItems").Value.ToString();
+                string aimStr = elem.Element("personalAims").Value.ToString();
 
-                addPerson(id, name, sex, desc, ConvertStringToBool(unrem), comm, alt);
+                string[] itemsArr = itemStr.Split(new char[] {','}, StringSplitOptions.RemoveEmptyEntries);
+                List<int> itemsList = new List<int>();
+                if (itemStr != "")
+                    foreach (string str in itemsArr)
+                        itemsList.Add(int.Parse(str));
+
+                string[] aimsArr = aimStr.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                List<int> aimsList = new List<int>();
+                if (aimStr != "")
+                    foreach (string str in aimsArr)
+                        aimsList.Add(int.Parse(str));
+
+                addPerson(id, name, sex, desc, ConvertStringToBool(unrem), comm, itemsList, aimsList, alt);
             }
         }
 

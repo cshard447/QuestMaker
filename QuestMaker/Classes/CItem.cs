@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,27 @@ namespace QuestMaker
         }
     }
 
+    public class ItemDataSourceObject
+    {
+        private int id;
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        private string displayString;
+        public string DisplayString
+        {
+            get { return displayString; }
+            set { displayString = value; }
+        }
+        public ItemDataSourceObject(int _id, string _display)
+        {
+            id = _id;
+            displayString = _display;
+        }
+    }
+
     public class CItemManager : CItem
     {
         private Dictionary<int, CItem> items = new Dictionary<int, CItem>();
@@ -59,6 +81,7 @@ namespace QuestMaker
         string fileName = Common.path + "items.xml";
         public const string section = "items";
         const int MAX_ITEMS = 1000;
+        private BindingList<ItemDataSourceObject> itemList = new BindingList<ItemDataSourceObject>();
 
         public CItemManager() : base ()
         { 
@@ -213,6 +236,22 @@ namespace QuestMaker
         public void TestXML()
         {
 
+        }
+
+        public string getItemsNamesFromId(List<int> ids)
+        {
+            string result = "";
+            foreach (int id in ids)
+                result += items[id].getName() + "; ";
+            return result;
+        }
+
+        public BindingList<ItemDataSourceObject> getItemsList()
+        {
+            itemList.Clear();
+            foreach (CItem item in items.Values)
+                itemList.Add(new ItemDataSourceObject(item.getID(), item.getName()));
+            return itemList;
         }
 
         public static bool ConvertStringToBool(string str)

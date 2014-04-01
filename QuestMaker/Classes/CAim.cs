@@ -58,6 +58,27 @@ namespace QuestMaker
             set { type = value; }
         }
     }
+    public class AimDataSourceObject
+    {
+        private string displayString;
+        public string DisplayString
+        {
+            get { return displayString; }
+            set { displayString = value; }
+        }
+
+        private int id;
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public AimDataSourceObject(int _id, string _display)
+        {
+            id = _id;
+            displayString = _display;
+        }
+    }
 
     public class CAimManager : CAim
     { 
@@ -66,6 +87,7 @@ namespace QuestMaker
         Dictionary<string, AimType> strToType = new Dictionary<string,AimType>();
 
         public BindingList<AimTypeDataSourceObject> list = new BindingList<AimTypeDataSourceObject>();
+        private BindingList<AimDataSourceObject> aimList = new BindingList<AimDataSourceObject>();
 
         string fileName = Common.path + "aims.xml";
         public const string section = "aims";
@@ -199,6 +221,15 @@ namespace QuestMaker
             }
         }
 
+        public string getAimsNamesFromId(List<int> ids)
+        {
+            string result = "";
+            foreach (int id in ids)
+                result += aims[id].getName() + "; ";
+            return result;
+        }
+
+
         private void initDict()
         { 
             strToType.Add("primary", AimType.primary);
@@ -215,6 +246,14 @@ namespace QuestMaker
             obj[2].DisplayString = "Промежуточная";
             obj[2].Type = AimType.transitional;
             list.Add(obj[2]);
+        }
+
+        public BindingList<AimDataSourceObject> getAimsList()
+        { 
+            aimList.Clear();
+            foreach (CAim aim in aims.Values)
+                aimList.Add(new AimDataSourceObject(aim.getID(), aim.getName()));
+            return aimList;
         }
         
         public AimType getType (string type)

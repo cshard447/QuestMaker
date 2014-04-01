@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem1 = new Telerik.WinControls.UI.ListViewDataItem("Item 1234567788999989757");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem2 = new Telerik.WinControls.UI.ListViewDataItem("Item 2");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem3 = new Telerik.WinControls.UI.ListViewDataItem("ListViewItem 3");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem4 = new Telerik.WinControls.UI.ListViewDataItem("Cool stuff");
             Telerik.WinControls.UI.ListViewDataItem listViewDataItem5 = new Telerik.WinControls.UI.ListViewDataItem("Item 1");
             Telerik.WinControls.UI.ListViewDataItem listViewDataItem6 = new Telerik.WinControls.UI.ListViewDataItem("Item 2");
             Telerik.WinControls.UI.ListViewDataItem listViewDataItem7 = new Telerik.WinControls.UI.ListViewDataItem("ListViewItem 3");
             Telerik.WinControls.UI.ListViewDataItem listViewDataItem8 = new Telerik.WinControls.UI.ListViewDataItem("Cool stuff");
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem9 = new Telerik.WinControls.UI.ListViewDataItem("Item 1");
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem10 = new Telerik.WinControls.UI.ListViewDataItem("Item 2");
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem11 = new Telerik.WinControls.UI.ListViewDataItem("ListViewItem 3");
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem12 = new Telerik.WinControls.UI.ListViewDataItem("Cool stuff");
             this.bOK = new Telerik.WinControls.UI.RadButton();
             this.lvAims = new Telerik.WinControls.UI.RadListView();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
@@ -77,6 +77,7 @@
             // 
             // bOK
             // 
+            this.bOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.bOK.Location = new System.Drawing.Point(627, 469);
             this.bOK.Name = "bOK";
             this.bOK.Size = new System.Drawing.Size(110, 24);
@@ -86,22 +87,22 @@
             // 
             // lvAims
             // 
-            listViewDataItem5.Text = "Item 1";
-            listViewDataItem6.Text = "Item 2";
-            listViewDataItem7.Text = "ListViewItem 3";
-            listViewDataItem8.Text = "Cool stuff";
+            listViewDataItem1.Text = "Item 1234567788999989757";
+            listViewDataItem2.Text = "Item 2";
+            listViewDataItem3.Text = "ListViewItem 3";
+            listViewDataItem4.Text = "Cool stuff";
             this.lvAims.Items.AddRange(new Telerik.WinControls.UI.ListViewDataItem[] {
-            listViewDataItem5,
-            listViewDataItem6,
-            listViewDataItem7,
-            listViewDataItem8});
+            listViewDataItem1,
+            listViewDataItem2,
+            listViewDataItem3,
+            listViewDataItem4});
             this.lvAims.Location = new System.Drawing.Point(206, 216);
             this.lvAims.MultiSelect = true;
             this.lvAims.Name = "lvAims";
             this.lvAims.ShowCheckBoxes = true;
             this.lvAims.Size = new System.Drawing.Size(238, 130);
             this.lvAims.TabIndex = 4;
-            this.lvAims.Text = "radListView1";
+            this.lvAims.Text = "Цели";
             // 
             // radLabel1
             // 
@@ -191,22 +192,22 @@
             // 
             // lvItems
             // 
-            listViewDataItem9.Text = "Item 1";
-            listViewDataItem10.Text = "Item 2";
-            listViewDataItem11.Text = "ListViewItem 3";
-            listViewDataItem12.Text = "Cool stuff";
+            listViewDataItem5.Text = "Item 1";
+            listViewDataItem6.Text = "Item 2";
+            listViewDataItem7.Text = "ListViewItem 3";
+            listViewDataItem8.Text = "Cool stuff";
             this.lvItems.Items.AddRange(new Telerik.WinControls.UI.ListViewDataItem[] {
-            listViewDataItem9,
-            listViewDataItem10,
-            listViewDataItem11,
-            listViewDataItem12});
+            listViewDataItem5,
+            listViewDataItem6,
+            listViewDataItem7,
+            listViewDataItem8});
             this.lvItems.Location = new System.Drawing.Point(627, 216);
             this.lvItems.MultiSelect = true;
             this.lvItems.Name = "lvItems";
             this.lvItems.ShowCheckBoxes = true;
             this.lvItems.Size = new System.Drawing.Size(238, 130);
             this.lvItems.TabIndex = 13;
-            this.lvItems.Text = "radListView2";
+            this.lvItems.Text = "Предметы";
             // 
             // tbcComment
             // 
@@ -233,6 +234,7 @@
             // 
             // bCancel
             // 
+            this.bCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bCancel.Location = new System.Drawing.Point(764, 469);
             this.bCancel.Name = "bCancel";
             this.bCancel.Size = new System.Drawing.Size(110, 24);

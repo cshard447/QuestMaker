@@ -1,35 +1,37 @@
 <root>
-  <items />
-  <aims />
-  <rules />
-  <prehistory />
   <persons>
     <person>
       <personId>0</personId>
       <personName>Джон</personName>
       <personSex>male</personSex>
-      <personDescription>Главный чел</personDescription>
-      <personUnremovable>true</personUnremovable>
-      <personComment>Убит. крут</personComment>
+      <personDescription>Крутой</personDescription>
+      <personUnremovable>false</personUnremovable>
+      <personComment>Битл</personComment>
       <personAltName>Уинстон</personAltName>
+      <personalItems>0,1,</personalItems>
+      <personalAims>0,2,</personalAims>
     </person>
     <person>
       <personId>1</personId>
       <personName>Йоко</personName>
       <personSex>female</personSex>
-      <personDescription>Жена его</personDescription>
-      <personUnremovable>false</personUnremovable>
-      <personComment>Жива, не крута</personComment>
+      <personDescription>Так себе</personDescription>
+      <personUnremovable>true</personUnremovable>
+      <personComment>не Битл</personComment>
       <personAltName>Оно</personAltName>
+      <personalItems>3,5,4,</personalItems>
+      <personalAims>3,1,</personalAims>
     </person>
     <person>
       <personId>2</personId>
       <personName>Шон</personName>
       <personSex>flexible</personSex>
-      <personDescription>Сын их</personDescription>
+      <personDescription>Сынок</personDescription>
       <personUnremovable>true</personUnremovable>
-      <personComment>Жив, полукрут</personComment>
-      <personAltName>Леннон</personAltName>
+      <personComment>Молод</personComment>
+      <personAltName>Джулиан</personAltName>
+      <personalItems></personalItems>
+      <personalAims></personalAims>
     </person>
   </persons>
 </root>
