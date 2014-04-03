@@ -4,13 +4,15 @@ using System.ComponentModel;
 using System.Linq;
 using System.Xml.Linq;
 using System.Text;
+using System.Drawing;
 using System.Threading.Tasks;
 using Telerik.WinControls.UI;
 
 namespace QuestMaker.Classes
 {
     public enum Sex {male, female, flexible};
-    public enum Clan { empty = 0, red = 1, green = 2, blue = 3, violet = 4};
+    //public enum Clan { empty = Color.Black, red = Color.Red, green = Color.Green, blue = Color.Blue, violet = Color.Violet};
+    public enum Clan { empty, red, green, blue, violet };
     public class CPerson
     {
         private int id;
@@ -42,7 +44,8 @@ namespace QuestMaker.Classes
             clan = _clan;
         }
 
-        public CPerson(int _id, string _name, Sex _sex, string _description, bool _unremovable, string _comment, string _altName = "", Clan _clan = 0)
+        public CPerson(int _id, string _name, Sex _sex, string _description, bool _unremovable, string _comment, 
+                            string _altName = "", Clan _clan = 0)
         {
             id = _id;
             name = _name;
@@ -94,6 +97,27 @@ namespace QuestMaker.Classes
         }
     }
 
+    public class ClanDataSourceObject
+    {
+        private Clan enumClan;
+        public Clan EnumClan
+        {
+            get { return enumClan; }
+            set { enumClan = value; }
+        }
+        private string displayString;
+        public string DisplayString
+        {
+            get{ return displayString; }
+            set{ displayString = value; }
+        }
+        public ClanDataSourceObject(Clan _clan, string _displayString)
+        {
+            enumClan = _clan;
+            displayString = _displayString;
+        }
+    }
+
 
     public class CPersonManager
     {
@@ -102,8 +126,10 @@ namespace QuestMaker.Classes
         string fileName = Common.path + "persons.xml";
         public const string section = "persons";
         const int MAX_PERSONS = 100;
-        public static BindingList<SexDataSourceObject> list = new BindingList<SexDataSourceObject>();
+        public static BindingList<SexDataSourceObject> enumSexList = new BindingList<SexDataSourceObject>();
+        public static BindingList<ClanDataSourceObject> enumClanList = new BindingList<ClanDataSourceObject>();
         Dictionary<string, Sex> strToSex = new Dictionary<string, Sex>();
+        Dictionary<string, Clan> strToClan = new Dictionary<string, Clan>();
 
         public CPersonManager()
         {
@@ -161,9 +187,10 @@ namespace QuestMaker.Classes
                 bool unrem = (bool)gridView.Rows[row].Cells["columnUnremovable"].Value;
                 string alt = Common.convertNullString(gridView.Rows[row].Cells["columnAltName"].Value);
                 string comm = Common.convertNullString(gridView.Rows[row].Cells["columnComment"].Value);
+                Clan clan = (Clan) gridView.Rows[row].Cells["columnClan"].Value;
 
                 if (!persons.ContainsKey(id))
-                    id = this.addPerson(name, sex, desc, unrem, comm, alt);
+                    id = this.addPerson(name, sex, desc, unrem, comm, alt, clan);
                 else
                 {
                     persons[id].setName(name);
@@ -172,6 +199,7 @@ namespace QuestMaker.Classes
                     persons[id].unremovable = unrem;
                     persons[id].comment = comm;
                     persons[id].altName = alt;
+                    persons[id].clan = clan;
                 }
                 idsInTable.Add(id);
             }
@@ -208,8 +236,8 @@ namespace QuestMaker.Classes
                                 new XElement("personComment", person.comment),
                                 new XElement("personAltName", person.altName),
                                 new XElement("personalItems", Common.getListAsStringWithDelimiter(person.itemsId, ",")),
-                                new XElement("personalAims", Common.getListAsStringWithDelimiter(person.aimsId, ",")));
-                                //new XElement("personClan", person.clan));
+                                new XElement("personalAims", Common.getListAsStringWithDelimiter(person.aimsId, ",")),
+                                new XElement("personClan", person.clan));
 
                 doc.Root.Element(section).Add(element);
             }
@@ -233,13 +261,14 @@ namespace QuestMaker.Classes
             {
                 int id = int.Parse(elem.Element("personId").Value.ToString());
                 string name = elem.Element("personName").Value.ToString();
-                Sex sex = getSexEnum( elem.Element("personSex").Value.ToString() );
+                Sex sex = getSexFromString( elem.Element("personSex").Value.ToString() );
                 string desc = elem.Element("personDescription").Value.ToString();
                 string unrem = elem.Element("personUnremovable").Value.ToString();
                 string comm = elem.Element("personComment").Value.ToString();
                 string alt = elem.Element("personAltName").Value.ToString();
                 string itemStr = elem.Element("personalItems").Value.ToString();
                 string aimStr = elem.Element("personalAims").Value.ToString();
+                Clan clan = getClanFromString(elem.Element("personClan").Value.ToString());
 
                 string[] itemsArr = itemStr.Split(new char[] {','}, StringSplitOptions.RemoveEmptyEntries);
                 List<int> itemsList = new List<int>();
@@ -253,7 +282,7 @@ namespace QuestMaker.Classes
                     foreach (string str in aimsArr)
                         aimsList.Add(int.Parse(str));
 
-                addPerson(id, name, sex, desc, ConvertStringToBool(unrem), comm, itemsList, aimsList, alt);
+                addPerson(id, name, sex, desc, ConvertStringToBool(unrem), comm, itemsList, aimsList, alt, clan);
             }
         }
 
@@ -271,21 +300,40 @@ namespace QuestMaker.Classes
             SexDataSourceObject[] obj = { new SexDataSourceObject(), new SexDataSourceObject(), new SexDataSourceObject() };
             obj[0].DisplayString = "Мужик";
             obj[0].EnumSex = Sex.male;
-            list.Add(obj[0]);
+            enumSexList.Add(obj[0]);
             obj[1].DisplayString = "Девушка";
             obj[1].EnumSex = Sex.female;
-            list.Add(obj[1]);
+            enumSexList.Add(obj[1]);
             obj[2].DisplayString = "Не определился";
             obj[2].EnumSex = Sex.flexible;
-            list.Add(obj[2]);            
+            enumSexList.Add(obj[2]);
+
+            enumClanList.Add(new ClanDataSourceObject(Clan.empty, "Без клана"));
+            enumClanList.Add(new ClanDataSourceObject(Clan.red, "Красный"));
+            enumClanList.Add(new ClanDataSourceObject(Clan.green, "Зеленый"));
+            enumClanList.Add(new ClanDataSourceObject(Clan.blue, "Синий"));
+            enumClanList.Add(new ClanDataSourceObject(Clan.violet, "Фиолетовый"));
+            strToClan.Add("", Clan.empty);
+            strToClan.Add("red", Clan.red);
+            strToClan.Add("green", Clan.green);
+            strToClan.Add("blue", Clan.blue);
+            strToClan.Add("violet", Clan.violet);
         }
 
-        public Sex getSexEnum(string sex)
+        public Sex getSexFromString(string sex)
         {
             if (strToSex.ContainsKey(sex))
                 return strToSex[sex];
             else
                 return Sex.flexible;
+        }
+
+        public Clan getClanFromString(string clan)
+        {
+            if (strToClan.ContainsKey(clan))
+                return strToClan[clan];
+            else
+                return Clan.empty;
         }
 
     }

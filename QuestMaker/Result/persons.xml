@@ -10,6 +10,7 @@
       <personAltName>Уинстон</personAltName>
       <personalItems>0,1,</personalItems>
       <personalAims>0,2,</personalAims>
+      <personClan>violet</personClan>
     </person>
     <person>
       <personId>1</personId>
@@ -20,7 +21,8 @@
       <personComment>не Битл</personComment>
       <personAltName>Оно</personAltName>
       <personalItems>3,5,4,</personalItems>
-      <personalAims>3,1,</personalAims>
+      <personalAims>1,3,</personalAims>
+      <personClan>blue</personClan>
     </person>
     <person>
       <personId>2</personId>
@@ -30,8 +32,21 @@
       <personUnremovable>true</personUnremovable>
       <personComment>Молод</personComment>
       <personAltName>Джулиан</personAltName>
+      <personalItems>0,</personalItems>
+      <personalAims>2,</personalAims>
+      <personClan>green</personClan>
+    </person>
+    <person>
+      <personId>3</personId>
+      <personName>Пол</personName>
+      <personSex>male</personSex>
+      <personDescription>Жгет напалмом 50 лет</personDescription>
+      <personUnremovable>true</personUnremovable>
+      <personComment>Живой битл</personComment>
+      <personAltName>Джордж</personAltName>
       <personalItems></personalItems>
       <personalAims></personalAims>
+      <personClan>red</personClan>
     </person>
   </persons>
 </root>

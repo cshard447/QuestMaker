@@ -50,14 +50,14 @@ namespace QuestMaker
             column.ValueMember = "Type";
             column.DisplayMember = "DisplayString";
             column.FieldName = "Type";
-            column.DataSource = aimManager.list;
+            column.DataSource = aimManager.enumAimList;
             column.DataSourceNullValue = AimType.secondary;
 
             GridViewComboBoxColumn column2 = (GridViewComboBoxColumn)gridViewPersons.Columns["columnSex"];
             column2.ValueMember = "EnumSex";
             column2.DisplayMember = "DisplayString";
             column2.FieldName = "EnumSex";
-            column2.DataSource = CPersonManager.list;
+            column2.DataSource = CPersonManager.enumSexList;
             column2.DataSourceNullValue = Sex.flexible;
 
             GridViewTextBoxColumn column3 = (GridViewTextBoxColumn)gridViewItems.Columns["columnID"];
@@ -67,6 +67,14 @@ namespace QuestMaker
             column4.DataSourceNullValue = -1;
             GridViewTextBoxColumn column5 = (GridViewTextBoxColumn)gridViewPersons.Columns["columnID"];
             column5.DataSourceNullValue = -1;
+
+            GridViewComboBoxColumn column6 = (GridViewComboBoxColumn)gridViewPersons.Columns["columnClan"];
+            column6.ValueMember = "EnumClan";
+            column6.DisplayMember = "DisplayString";
+            column6.FieldName = "EnumClan";
+            //column6.ConditionalFormattingObjectList
+            column6.DataSource = CPersonManager.enumClanList;
+            column6.DataSourceNullValue = Clan.empty;
         }
 
         private void bSaveitems_Click(object sender, EventArgs e)
@@ -131,7 +139,7 @@ namespace QuestMaker
         {
             gridViewPersons.Rows.Clear();
             Dictionary<int, CPerson> _people = peopleManager.getAllPersons();
-            object[] values = new object[9];
+            object[] values = new object[10];
             foreach(CPerson person in _people.Values)
             {
                 values[0] = person.getID();
@@ -143,6 +151,7 @@ namespace QuestMaker
                 values[6] = aimManager.getAimsNamesFromId(person.aimsId);
                 values[7] = person.altName;
                 values[8] = person.comment;
+                values[9] = person.clan;
                 gridViewPersons.Rows.Add(values);
             }
             gridViewPersons.Update();
@@ -278,6 +287,45 @@ namespace QuestMaker
             {
                 peopleManager.updatePerson(epf.editedPerson);                
                 ShowPersonsOnGridView();
+            }
+        }
+
+        private void gridViewPersons_CellFormatting(object sender, CellFormattingEventArgs e)
+        {
+
+            // борода убирать
+            if (e.CellElement.ColumnInfo.HeaderText == "Клан")
+            {
+                if (e.CellElement.RowInfo.Cells["columnClan"].Value != null)
+                {
+                    e.CellElement.DrawFill = true;
+                    if ((Clan)e.CellElement.RowInfo.Cells["columnClan"].Value == Clan.red)
+                    {
+                        e.CellElement.ForeColor = Color.Red;
+                        e.CellElement.BackColor = Color.Red;
+                    }
+                    else if ((Clan)e.CellElement.RowInfo.Cells["columnClan"].Value == Clan.blue)
+                    {
+                        e.CellElement.ForeColor = Color.Blue;
+                        e.CellElement.BackColor = Color.Blue;
+                    }
+                    else if ((Clan)e.CellElement.RowInfo.Cells["columnClan"].Value == Clan.green)
+                    {
+                        e.CellElement.ForeColor = Color.Green;
+                        e.CellElement.BackColor = Color.Green;
+                    }
+                    else if ((Clan)e.CellElement.RowInfo.Cells["columnClan"].Value == Clan.violet)
+                    {
+                        e.CellElement.ForeColor = Color.Violet;
+                        e.CellElement.BackColor = Color.Violet;
+                    }
+                }
+            }
+            else
+            {
+                e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, Telerik.WinControls.ValueResetFlags.Local);
+                e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, Telerik.WinControls.ValueResetFlags.Local);
+                e.CellElement.ResetValue(LightVisualElement.BackColorProperty, Telerik.WinControls.ValueResetFlags.Local);
             }
         }
 

@@ -29,7 +29,11 @@ namespace QuestMaker.GUI
         {
             ddlSex.ValueMember = "EnumSex";
             ddlSex.DisplayMember = "DisplayString";
-            ddlSex.DataSource = CPersonManager.list;
+            ddlSex.DataSource = CPersonManager.enumSexList;
+
+            ddlClan.ValueMember = "EnumClan";
+            ddlClan.DisplayMember = "DisplayString";
+            ddlClan.DataSource = CPersonManager.enumClanList;            
 
             lvAims.Items.Clear();
             lvAims.DataSource = aimManager.getAimsList();
@@ -47,6 +51,7 @@ namespace QuestMaker.GUI
             cbUnremovable.Checked = editedPerson.unremovable;
             tbcComment.Text = editedPerson.comment;
             tbAltName.Text = editedPerson.altName;
+            ddlClan.SelectedValue = editedPerson.clan;
             foreach (ListViewDataItem lvitem in lvItems.Items)
                 if (editedPerson.itemsId.Contains((int)lvitem.Value))
                     lvitem.CheckState = Telerik.WinControls.Enumerations.ToggleState.On;
@@ -63,6 +68,7 @@ namespace QuestMaker.GUI
             editedPerson.unremovable = cbUnremovable.Checked;
             editedPerson.comment = tbcComment.Text;
             editedPerson.altName = tbAltName.Text;
+            editedPerson.clan = (Clan) ddlClan.SelectedValue;
 
             List<int> items = new List<int>();
             List<int> aims = new List<int>();

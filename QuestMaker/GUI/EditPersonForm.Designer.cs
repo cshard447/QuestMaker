@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem1 = new Telerik.WinControls.UI.ListViewDataItem("Item 1234567788999989757");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem9 = new Telerik.WinControls.UI.ListViewDataItem("Item 1234567788999989757");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem10 = new Telerik.WinControls.UI.ListViewDataItem("Item 2");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem11 = new Telerik.WinControls.UI.ListViewDataItem("ListViewItem 3");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem12 = new Telerik.WinControls.UI.ListViewDataItem("Cool stuff");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem1 = new Telerik.WinControls.UI.ListViewDataItem("Item 1");
             Telerik.WinControls.UI.ListViewDataItem listViewDataItem2 = new Telerik.WinControls.UI.ListViewDataItem("Item 2");
             Telerik.WinControls.UI.ListViewDataItem listViewDataItem3 = new Telerik.WinControls.UI.ListViewDataItem("ListViewItem 3");
             Telerik.WinControls.UI.ListViewDataItem listViewDataItem4 = new Telerik.WinControls.UI.ListViewDataItem("Cool stuff");
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem5 = new Telerik.WinControls.UI.ListViewDataItem("Item 1");
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem6 = new Telerik.WinControls.UI.ListViewDataItem("Item 2");
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem7 = new Telerik.WinControls.UI.ListViewDataItem("ListViewItem 3");
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem8 = new Telerik.WinControls.UI.ListViewDataItem("Cool stuff");
             this.bOK = new Telerik.WinControls.UI.RadButton();
             this.lvAims = new Telerik.WinControls.UI.RadListView();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
@@ -54,6 +54,8 @@
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
             this.bCancel = new Telerik.WinControls.UI.RadButton();
+            this.ddlClan = new Telerik.WinControls.UI.RadDropDownList();
+            this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.bOK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvAims)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
@@ -72,6 +74,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bCancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlClan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,15 +91,15 @@
             // 
             // lvAims
             // 
-            listViewDataItem1.Text = "Item 1234567788999989757";
-            listViewDataItem2.Text = "Item 2";
-            listViewDataItem3.Text = "ListViewItem 3";
-            listViewDataItem4.Text = "Cool stuff";
+            listViewDataItem9.Text = "Item 1234567788999989757";
+            listViewDataItem10.Text = "Item 2";
+            listViewDataItem11.Text = "ListViewItem 3";
+            listViewDataItem12.Text = "Cool stuff";
             this.lvAims.Items.AddRange(new Telerik.WinControls.UI.ListViewDataItem[] {
-            listViewDataItem1,
-            listViewDataItem2,
-            listViewDataItem3,
-            listViewDataItem4});
+            listViewDataItem9,
+            listViewDataItem10,
+            listViewDataItem11,
+            listViewDataItem12});
             this.lvAims.Location = new System.Drawing.Point(206, 216);
             this.lvAims.MultiSelect = true;
             this.lvAims.Name = "lvAims";
@@ -164,7 +168,7 @@
             // 
             this.tbcDescription.Location = new System.Drawing.Point(206, 112);
             this.tbcDescription.Name = "tbcDescription";
-            this.tbcDescription.Size = new System.Drawing.Size(125, 20);
+            this.tbcDescription.Size = new System.Drawing.Size(659, 20);
             this.tbcDescription.TabIndex = 10;
             // 
             // cbUnremovable
@@ -192,15 +196,15 @@
             // 
             // lvItems
             // 
-            listViewDataItem5.Text = "Item 1";
-            listViewDataItem6.Text = "Item 2";
-            listViewDataItem7.Text = "ListViewItem 3";
-            listViewDataItem8.Text = "Cool stuff";
+            listViewDataItem1.Text = "Item 1";
+            listViewDataItem2.Text = "Item 2";
+            listViewDataItem3.Text = "ListViewItem 3";
+            listViewDataItem4.Text = "Cool stuff";
             this.lvItems.Items.AddRange(new Telerik.WinControls.UI.ListViewDataItem[] {
-            listViewDataItem5,
-            listViewDataItem6,
-            listViewDataItem7,
-            listViewDataItem8});
+            listViewDataItem1,
+            listViewDataItem2,
+            listViewDataItem3,
+            listViewDataItem4});
             this.lvItems.Location = new System.Drawing.Point(627, 216);
             this.lvItems.MultiSelect = true;
             this.lvItems.Name = "lvItems";
@@ -213,7 +217,7 @@
             // 
             this.tbcComment.Location = new System.Drawing.Point(206, 179);
             this.tbcComment.Name = "tbcComment";
-            this.tbcComment.Size = new System.Drawing.Size(125, 20);
+            this.tbcComment.Size = new System.Drawing.Size(659, 20);
             this.tbcComment.TabIndex = 14;
             // 
             // radLabel7
@@ -242,11 +246,28 @@
             this.bCancel.Text = "Отмена";
             this.bCancel.Click += new System.EventHandler(this.bCancel_Click);
             // 
+            // ddlClan
+            // 
+            this.ddlClan.Location = new System.Drawing.Point(206, 362);
+            this.ddlClan.Name = "ddlClan";
+            this.ddlClan.Size = new System.Drawing.Size(125, 20);
+            this.ddlClan.TabIndex = 18;
+            // 
+            // radLabel9
+            // 
+            this.radLabel9.Location = new System.Drawing.Point(52, 364);
+            this.radLabel9.Name = "radLabel9";
+            this.radLabel9.Size = new System.Drawing.Size(33, 18);
+            this.radLabel9.TabIndex = 16;
+            this.radLabel9.Text = "Клан:";
+            // 
             // EditPersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 536);
+            this.Controls.Add(this.radLabel9);
+            this.Controls.Add(this.ddlClan);
             this.Controls.Add(this.bCancel);
             this.Controls.Add(this.radLabel8);
             this.Controls.Add(this.radLabel7);
@@ -290,6 +311,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlClan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -316,5 +339,7 @@
         private Telerik.WinControls.UI.RadLabel radLabel7;
         private Telerik.WinControls.UI.RadLabel radLabel8;
         private Telerik.WinControls.UI.RadButton bCancel;
+        private Telerik.WinControls.UI.RadDropDownList ddlClan;
+        private Telerik.WinControls.UI.RadLabel radLabel9;
     }
 }

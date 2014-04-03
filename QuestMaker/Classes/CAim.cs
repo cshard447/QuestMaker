@@ -86,7 +86,7 @@ namespace QuestMaker
         private XDocument doc = new XDocument(new XElement("root"));
         Dictionary<string, AimType> strToType = new Dictionary<string,AimType>();
 
-        public BindingList<AimTypeDataSourceObject> list = new BindingList<AimTypeDataSourceObject>();
+        public BindingList<AimTypeDataSourceObject> enumAimList = new BindingList<AimTypeDataSourceObject>();
         private BindingList<AimDataSourceObject> aimList = new BindingList<AimDataSourceObject>();
 
         string fileName = Common.path + "aims.xml";
@@ -239,13 +239,13 @@ namespace QuestMaker
             AimTypeDataSourceObject[] obj = { new AimTypeDataSourceObject(), new AimTypeDataSourceObject(), new AimTypeDataSourceObject()};
             obj[0].DisplayString = "Главная";
             obj[0].Type = AimType.primary;
-            list.Add(obj[0]);
+            enumAimList.Add(obj[0]);
             obj[1].DisplayString = "Побочная";
             obj[1].Type = AimType.secondary;
-            list.Add(obj[1]);
+            enumAimList.Add(obj[1]);
             obj[2].DisplayString = "Промежуточная";
             obj[2].Type = AimType.transitional;
-            list.Add(obj[2]);
+            enumAimList.Add(obj[2]);
         }
 
         public BindingList<AimDataSourceObject> getAimsList()
