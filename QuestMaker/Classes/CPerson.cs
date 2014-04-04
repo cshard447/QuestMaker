@@ -11,8 +11,6 @@ using Telerik.WinControls.UI;
 namespace QuestMaker.Classes
 {
     public enum Sex {male, female, flexible};
-    //public enum Clan { empty = Color.Black, red = Color.Red, green = Color.Green, blue = Color.Blue, violet = Color.Violet};
-    public enum Clan { empty, red, green, blue, violet };
     public class CPerson
     {
         private int id;
@@ -22,15 +20,15 @@ namespace QuestMaker.Classes
         public bool unremovable;
         public string comment;
         public string altName;
-        public Clan clan;
+        public KnownColor clan;
         public List<CItem> items;
         public List<CAim> aims;
 
         public List<int> itemsId = new List<int>();
         public List<int> aimsId = new List<int>();
 
-        public CPerson(int _id, string _name, Sex _sex, string _description, bool _unremovable, string _comment, 
-                            List<int> _itemsList, List<int> _aimsList, string _altName = "", Clan _clan = 0)
+        public CPerson(int _id, string _name, Sex _sex, string _description, bool _unremovable, string _comment,
+                            List<int> _itemsList, List<int> _aimsList, KnownColor _clan, string _altName = "")
         {
             id = _id;
             name = _name;
@@ -40,12 +38,12 @@ namespace QuestMaker.Classes
             comment = _comment;
             itemsId = _itemsList;
             aimsId = _aimsList;
-            altName = _altName;
             clan = _clan;
+            altName = _altName;
         }
 
-        public CPerson(int _id, string _name, Sex _sex, string _description, bool _unremovable, string _comment, 
-                            string _altName = "", Clan _clan = 0)
+        public CPerson(int _id, string _name, Sex _sex, string _description, bool _unremovable, string _comment,
+                            KnownColor _clan, string _altName = "")
         {
             id = _id;
             name = _name;
@@ -53,8 +51,8 @@ namespace QuestMaker.Classes
             description = _description;
             unremovable = _unremovable;
             comment = _comment;
-            altName = _altName;
             clan = _clan;
+            altName = _altName;
         }
 
         public string getName()
@@ -97,24 +95,25 @@ namespace QuestMaker.Classes
         }
     }
 
-    public class ClanDataSourceObject
+    public class ClanClass
     {
-        private Clan enumClan;
-        public Clan EnumClan
+        private KnownColor clan;
+        private string display;
+
+        public string Display 
         {
-            get { return enumClan; }
-            set { enumClan = value; }
+            get { return display; }
+            set { display = value; }
         }
-        private string displayString;
-        public string DisplayString
+        public KnownColor Clan
         {
-            get{ return displayString; }
-            set{ displayString = value; }
+            get { return clan;}
+            set { clan = value; }
         }
-        public ClanDataSourceObject(Clan _clan, string _displayString)
+        public ClanClass(KnownColor _clan, string _display)
         {
-            enumClan = _clan;
-            displayString = _displayString;
+            clan = _clan;
+            display = _display;
         }
     }
 
@@ -127,9 +126,8 @@ namespace QuestMaker.Classes
         public const string section = "persons";
         const int MAX_PERSONS = 100;
         public static BindingList<SexDataSourceObject> enumSexList = new BindingList<SexDataSourceObject>();
-        public static BindingList<ClanDataSourceObject> enumClanList = new BindingList<ClanDataSourceObject>();
+        public static BindingList<ClanClass> clanList = new BindingList<ClanClass>();
         Dictionary<string, Sex> strToSex = new Dictionary<string, Sex>();
-        Dictionary<string, Clan> strToClan = new Dictionary<string, Clan>();
 
         public CPersonManager()
         {
@@ -137,18 +135,18 @@ namespace QuestMaker.Classes
         }
 
         public void addPerson(int _id, string _name, Sex _sex, string _description, bool _unremovable, string _comment,
-                                List<int> _itemsList, List<int> _aimsList, string _altName = "", Clan _clan = 0 )
+                                List<int> _itemsList, List<int> _aimsList, KnownColor _clan, string _altName = "")
         {
-            persons.Add(_id, new CPerson(_id, _name, _sex, _description, _unremovable, _comment, _itemsList, _aimsList, _altName, _clan ));
+            persons.Add(_id, new CPerson(_id, _name, _sex, _description, _unremovable, _comment, _itemsList, _aimsList, _clan , _altName));
         }
-        public int addPerson(string _name, Sex _sex, string _description, bool _unremovable, string _comment, string _altName = "", Clan _clan = 0)
+        public int addPerson(string _name, Sex _sex, string _description, bool _unremovable, string _comment, KnownColor _clan, string _altName = "")
         {
             int newID;
             for (newID = 0; newID < MAX_PERSONS; newID++)
                 if (!persons.Keys.Contains(newID))
                     break;
 
-            persons.Add(newID, new CPerson(newID, _name, _sex, _description, _unremovable, _comment, _altName, _clan));
+            persons.Add(newID, new CPerson(newID, _name, _sex, _description, _unremovable, _comment, _clan, _altName ));
             return newID;        
         }
         public bool removePerson(int idToDelete)
@@ -187,10 +185,10 @@ namespace QuestMaker.Classes
                 bool unrem = (bool)gridView.Rows[row].Cells["columnUnremovable"].Value;
                 string alt = Common.convertNullString(gridView.Rows[row].Cells["columnAltName"].Value);
                 string comm = Common.convertNullString(gridView.Rows[row].Cells["columnComment"].Value);
-                Clan clan = (Clan) gridView.Rows[row].Cells["columnClan"].Value;
-
+                KnownColor clan = (KnownColor)gridView.Rows[row].Cells["columnClanColor"].Value;
+                
                 if (!persons.ContainsKey(id))
-                    id = this.addPerson(name, sex, desc, unrem, comm, alt, clan);
+                    id = this.addPerson(name, sex, desc, unrem, comm, clan, alt);
                 else
                 {
                     persons[id].setName(name);
@@ -268,7 +266,7 @@ namespace QuestMaker.Classes
                 string alt = elem.Element("personAltName").Value.ToString();
                 string itemStr = elem.Element("personalItems").Value.ToString();
                 string aimStr = elem.Element("personalAims").Value.ToString();
-                Clan clan = getClanFromString(elem.Element("personClan").Value.ToString());
+                KnownColor clan = (Color.FromName(elem.Element("personClan").Value.ToString())).ToKnownColor();
 
                 string[] itemsArr = itemStr.Split(new char[] {','}, StringSplitOptions.RemoveEmptyEntries);
                 List<int> itemsList = new List<int>();
@@ -282,7 +280,7 @@ namespace QuestMaker.Classes
                     foreach (string str in aimsArr)
                         aimsList.Add(int.Parse(str));
 
-                addPerson(id, name, sex, desc, ConvertStringToBool(unrem), comm, itemsList, aimsList, alt, clan);
+                addPerson(id, name, sex, desc, ConvertStringToBool(unrem), comm, itemsList, aimsList, clan, alt);
             }
         }
 
@@ -308,16 +306,11 @@ namespace QuestMaker.Classes
             obj[2].EnumSex = Sex.flexible;
             enumSexList.Add(obj[2]);
 
-            enumClanList.Add(new ClanDataSourceObject(Clan.empty, "Без клана"));
-            enumClanList.Add(new ClanDataSourceObject(Clan.red, "Красный"));
-            enumClanList.Add(new ClanDataSourceObject(Clan.green, "Зеленый"));
-            enumClanList.Add(new ClanDataSourceObject(Clan.blue, "Синий"));
-            enumClanList.Add(new ClanDataSourceObject(Clan.violet, "Фиолетовый"));
-            strToClan.Add("", Clan.empty);
-            strToClan.Add("red", Clan.red);
-            strToClan.Add("green", Clan.green);
-            strToClan.Add("blue", Clan.blue);
-            strToClan.Add("violet", Clan.violet);
+            clanList.Add(new ClanClass(KnownColor.Red, "Красный"));
+            clanList.Add(new ClanClass(KnownColor.Pink, "Розовый"));
+            clanList.Add(new ClanClass(KnownColor.Blue, "Синий"));
+            clanList.Add(new ClanClass(KnownColor.Violet, "Фиолетовый"));
+            clanList.Add(new ClanClass(KnownColor.Green, "Зеленый"));
         }
 
         public Sex getSexFromString(string sex)
@@ -326,14 +319,6 @@ namespace QuestMaker.Classes
                 return strToSex[sex];
             else
                 return Sex.flexible;
-        }
-
-        public Clan getClanFromString(string clan)
-        {
-            if (strToClan.ContainsKey(clan))
-                return strToClan[clan];
-            else
-                return Clan.empty;
         }
 
     }

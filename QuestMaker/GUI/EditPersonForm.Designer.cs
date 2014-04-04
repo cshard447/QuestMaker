@@ -56,6 +56,7 @@
             this.bCancel = new Telerik.WinControls.UI.RadButton();
             this.ddlClan = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
+            this.pClanColor = new Telerik.WinControls.UI.RadPanel();
             ((System.ComponentModel.ISupportInitialize)(this.bOK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvAims)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
@@ -76,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlClan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pClanColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -248,10 +250,14 @@
             // 
             // ddlClan
             // 
+            this.ddlClan.BackColor = System.Drawing.Color.Red;
+            this.ddlClan.ForeColor = System.Drawing.Color.DarkGreen;
             this.ddlClan.Location = new System.Drawing.Point(206, 362);
             this.ddlClan.Name = "ddlClan";
             this.ddlClan.Size = new System.Drawing.Size(125, 20);
             this.ddlClan.TabIndex = 18;
+            this.ddlClan.SelectedValueChanged += new System.EventHandler(this.ddlClan_SelectedValueChanged);
+            this.ddlClan.VisualListItemFormatting += new Telerik.WinControls.UI.VisualListItemFormattingEventHandler(this.ddlClan_VisualListItemFormatting);
             // 
             // radLabel9
             // 
@@ -261,11 +267,19 @@
             this.radLabel9.TabIndex = 16;
             this.radLabel9.Text = "Клан:";
             // 
+            // pClanColor
+            // 
+            this.pClanColor.Location = new System.Drawing.Point(348, 362);
+            this.pClanColor.Name = "pClanColor";
+            this.pClanColor.Size = new System.Drawing.Size(96, 53);
+            this.pClanColor.TabIndex = 19;
+            // 
             // EditPersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 536);
+            this.Controls.Add(this.pClanColor);
             this.Controls.Add(this.radLabel9);
             this.Controls.Add(this.ddlClan);
             this.Controls.Add(this.bCancel);
@@ -313,6 +327,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bCancel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlClan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pClanColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -341,5 +356,6 @@
         private Telerik.WinControls.UI.RadButton bCancel;
         private Telerik.WinControls.UI.RadDropDownList ddlClan;
         private Telerik.WinControls.UI.RadLabel radLabel9;
+        private Telerik.WinControls.UI.RadPanel pClanColor;
     }
 }

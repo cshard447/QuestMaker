@@ -31,9 +31,9 @@ namespace QuestMaker.GUI
             ddlSex.DisplayMember = "DisplayString";
             ddlSex.DataSource = CPersonManager.enumSexList;
 
-            ddlClan.ValueMember = "EnumClan";
-            ddlClan.DisplayMember = "DisplayString";
-            ddlClan.DataSource = CPersonManager.enumClanList;            
+            ddlClan.ValueMember = "Clan";
+            ddlClan.DisplayMember = "Display";
+            ddlClan.DataSource = CPersonManager.clanList;
 
             lvAims.Items.Clear();
             lvAims.DataSource = aimManager.getAimsList();
@@ -68,7 +68,7 @@ namespace QuestMaker.GUI
             editedPerson.unremovable = cbUnremovable.Checked;
             editedPerson.comment = tbcComment.Text;
             editedPerson.altName = tbAltName.Text;
-            editedPerson.clan = (Clan) ddlClan.SelectedValue;
+            editedPerson.clan = (KnownColor)ddlClan.SelectedValue;
 
             List<int> items = new List<int>();
             List<int> aims = new List<int>();
@@ -91,6 +91,18 @@ namespace QuestMaker.GUI
         private void bCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ddlClan_VisualListItemFormatting(object sender, VisualItemFormattingEventArgs args)
+        {
+            args.VisualItem.NumberOfColors = 1;
+            args.VisualItem.DrawFill = true;
+            args.VisualItem.BackColor = Color.FromKnownColor((KnownColor)args.VisualItem.Data.Value);
+        }
+
+        private void ddlClan_SelectedValueChanged(object sender, EventArgs e)
+        {
+            pClanColor.BackColor = Color.FromKnownColor((KnownColor)ddlClan.SelectedValue);
         }
     }
 }

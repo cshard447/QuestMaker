@@ -10,7 +10,7 @@
       <personAltName>Уинстон</personAltName>
       <personalItems>0,1,</personalItems>
       <personalAims>0,2,</personalAims>
-      <personClan>violet</personClan>
+      <personClan>Red</personClan>
     </person>
     <person>
       <personId>1</personId>
@@ -22,7 +22,7 @@
       <personAltName>Оно</personAltName>
       <personalItems>3,5,4,</personalItems>
       <personalAims>1,3,</personalAims>
-      <personClan>blue</personClan>
+      <personClan>Green</personClan>
     </person>
     <person>
       <personId>2</personId>
@@ -34,7 +34,7 @@
       <personAltName>Джулиан</personAltName>
       <personalItems>0,</personalItems>
       <personalAims>2,</personalAims>
-      <personClan>green</personClan>
+      <personClan>Blue</personClan>
     </person>
     <person>
       <personId>3</personId>
@@ -46,7 +46,7 @@
       <personAltName>Джордж</personAltName>
       <personalItems></personalItems>
       <personalAims></personalAims>
-      <personClan>red</personClan>
+      <personClan>Violet</personClan>
     </person>
   </persons>
 </root>

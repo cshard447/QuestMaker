@@ -68,13 +68,13 @@ namespace QuestMaker
             GridViewTextBoxColumn column5 = (GridViewTextBoxColumn)gridViewPersons.Columns["columnID"];
             column5.DataSourceNullValue = -1;
 
-            GridViewComboBoxColumn column6 = (GridViewComboBoxColumn)gridViewPersons.Columns["columnClan"];
-            column6.ValueMember = "EnumClan";
-            column6.DisplayMember = "DisplayString";
-            column6.FieldName = "EnumClan";
-            //column6.ConditionalFormattingObjectList
-            column6.DataSource = CPersonManager.enumClanList;
-            column6.DataSourceNullValue = Clan.empty;
+            GridViewComboBoxColumn column7 = (GridViewComboBoxColumn)gridViewPersons.Columns["columnClanColor"];
+            column7.ValueMember = "Clan";
+            column7.DisplayMember = "Display";
+            column7.FieldName = "Clan";            
+            //column7.ConditionalFormattingObjectList
+            column7.DataSource = CPersonManager.clanList;
+            //column7.DataSourceNullValue = Color.Black;
         }
 
         private void bSaveitems_Click(object sender, EventArgs e)
@@ -209,6 +209,8 @@ namespace QuestMaker
             //gridViewItems.Columns["columnPath"].IsVisible = !gridViewItems.Columns["columnPath"].IsVisible;
             //EditPersonForm ep = new EditPersonForm();
             //ep.Show();
+            gridViewAims.ColumnChooser.Show();            
+            
         }
 
         private void gridViewAims_CellDoubleClick(object sender, GridViewCellEventArgs e)
@@ -291,35 +293,12 @@ namespace QuestMaker
         }
 
         private void gridViewPersons_CellFormatting(object sender, CellFormattingEventArgs e)
-        {
-
-            // борода убирать
-            if (e.CellElement.ColumnInfo.HeaderText == "Клан")
+        {   
+            if (e.CellElement.ColumnInfo.Name == "columnClanColor")
             {
-                if (e.CellElement.RowInfo.Cells["columnClan"].Value != null)
-                {
-                    e.CellElement.DrawFill = true;
-                    if ((Clan)e.CellElement.RowInfo.Cells["columnClan"].Value == Clan.red)
-                    {
-                        e.CellElement.ForeColor = Color.Red;
-                        e.CellElement.BackColor = Color.Red;
-                    }
-                    else if ((Clan)e.CellElement.RowInfo.Cells["columnClan"].Value == Clan.blue)
-                    {
-                        e.CellElement.ForeColor = Color.Blue;
-                        e.CellElement.BackColor = Color.Blue;
-                    }
-                    else if ((Clan)e.CellElement.RowInfo.Cells["columnClan"].Value == Clan.green)
-                    {
-                        e.CellElement.ForeColor = Color.Green;
-                        e.CellElement.BackColor = Color.Green;
-                    }
-                    else if ((Clan)e.CellElement.RowInfo.Cells["columnClan"].Value == Clan.violet)
-                    {
-                        e.CellElement.ForeColor = Color.Violet;
-                        e.CellElement.BackColor = Color.Violet;
-                    }
-                }
+                e.CellElement.DrawFill = true;
+                if (e.CellElement.RowInfo.Cells["columnClanColor"].Value != null)
+                    e.CellElement.BackColor = Color.FromKnownColor( (KnownColor)e.CellElement.Value);
             }
             else
             {
@@ -327,6 +306,11 @@ namespace QuestMaker
                 e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, Telerik.WinControls.ValueResetFlags.Local);
                 e.CellElement.ResetValue(LightVisualElement.BackColorProperty, Telerik.WinControls.ValueResetFlags.Local);
             }
+        }
+
+        private void cmbPersonsColumnChooser_Click(object sender, EventArgs e)
+        {
+            gridViewPersons.ColumnChooser.Show();
         }
 
 
