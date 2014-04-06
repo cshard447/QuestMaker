@@ -104,5 +104,23 @@ namespace QuestMaker.GUI
         {
             pClanColor.BackColor = Color.FromKnownColor((KnownColor)ddlClan.SelectedValue);
         }
+
+        private void ddlSex_SelectedValueChanged(object sender, EventArgs e)
+        {
+            tbAltName.Enabled = ( (Sex) ddlSex.SelectedValue == Sex.flexible);
+        }
+
+        private void bEditDescription_Click(object sender, EventArgs e)
+        {
+            markupDescription.Value = tbcDescription.Text.ToString();
+            DialogResult dr = markupDescription.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                tbcDescription.Text = markupDescription.Value.ToString();
+                //radTextBox1.Text = markupDescription.Value.ToString();
+                // text box don't have a html render :-(((
+            }
+
+        }
     }
 }

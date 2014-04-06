@@ -1,31 +1,3 @@
 <root>
-  <aims>
-    <aim>
-      <aimId>0</aimId>
-      <aimName>Причина смерти</aimName>
-      <aimDescription>&lt;html&gt;Установить&lt;strong&gt; причину&lt;/strong&gt; смерти владельца поместья&lt;/html&gt;</aimDescription>
-      <aimType>primary</aimType>
-    </aim>
-    <aim>
-      <aimId>1</aimId>
-      <aimName>Узнать, как выглядит древний артефакт</aimName>
-      <aimDescription>Найти фото или выяснить у кого-либо внешний вид артефакта.
-</aimDescription>
-      <aimType>secondary</aimType>
-    </aim>
-    <aim>
-      <aimId>3</aimId>
-      <aimName>Найти древний артефакт</aimName>
-      <aimDescription>Артефакт точно спрятан где-то в поместье! Найдите его.
-</aimDescription>
-      <aimType>secondary</aimType>
-    </aim>
-    <aim>
-      <aimId>2</aimId>
-      <aimName>Найти убийцу</aimName>
-      <aimDescription>Найти убийцу владельца поместья
-</aimDescription>
-      <aimType>primary</aimType>
-    </aim>
-  </aims>
+  <aims />
 </root>

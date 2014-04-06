@@ -311,6 +311,7 @@ namespace QuestMaker.Classes
             clanList.Add(new ClanClass(KnownColor.Blue, "Синий"));
             clanList.Add(new ClanClass(KnownColor.Violet, "Фиолетовый"));
             clanList.Add(new ClanClass(KnownColor.Green, "Зеленый"));
+            clanList.Add(new ClanClass(KnownColor.Gray, "Серый"));
         }
 
         public Sex getSexFromString(string sex)

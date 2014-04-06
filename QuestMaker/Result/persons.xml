@@ -2,15 +2,15 @@
   <persons>
     <person>
       <personId>0</personId>
-      <personName>Джон</personName>
+      <personName>Честер Уолтер</personName>
       <personSex>male</personSex>
-      <personDescription>Крутой</personDescription>
-      <personUnremovable>false</personUnremovable>
-      <personComment>Битл</personComment>
-      <personAltName>Уинстон</personAltName>
+      <personDescription>&lt;html&gt;Вы &lt;strong&gt;молодой&lt;/strong&gt; бизнесмен. Вы поставляете морепродукты на другой континент (Африка). Вы живете один, но тайно влюблены в вашу коллегу,&lt;span style="color: #ff0000"&gt; Сейди&lt;/span&gt;.&lt;/html&gt;</personDescription>
+      <personUnremovable>true</personUnremovable>
+      <personComment></personComment>
+      <personAltName></personAltName>
       <personalItems>0,1,</personalItems>
-      <personalAims>0,2,</personalAims>
-      <personClan>Red</personClan>
+      <personalAims></personalAims>
+      <personClan>Gray</personClan>
     </person>
     <person>
       <personId>1</personId>
@@ -18,32 +18,32 @@
       <personSex>female</personSex>
       <personDescription>Так себе</personDescription>
       <personUnremovable>true</personUnremovable>
-      <personComment>не Битл</personComment>
-      <personAltName>Оно</personAltName>
+      <personComment></personComment>
+      <personAltName></personAltName>
       <personalItems>3,5,4,</personalItems>
-      <personalAims>1,3,</personalAims>
+      <personalAims></personalAims>
       <personClan>Green</personClan>
     </person>
     <person>
       <personId>2</personId>
-      <personName>Шон</personName>
+      <personName>Джозеф Финч</personName>
       <personSex>flexible</personSex>
       <personDescription>Сынок</personDescription>
       <personUnremovable>true</personUnremovable>
-      <personComment>Молод</personComment>
-      <personAltName>Джулиан</personAltName>
+      <personComment>Мистер Х</personComment>
+      <personAltName></personAltName>
       <personalItems>0,</personalItems>
-      <personalAims>2,</personalAims>
-      <personClan>Blue</personClan>
+      <personalAims></personalAims>
+      <personClan>Red</personClan>
     </person>
     <person>
       <personId>3</personId>
-      <personName>Пол</personName>
-      <personSex>male</personSex>
-      <personDescription>Жгет напалмом 50 лет</personDescription>
+      <personName>Джулия Уолтер</personName>
+      <personSex>female</personSex>
+      <personDescription>Вы стройная дама в черном, всю жизнь прожившая в Японии. Вы вернулись в Англию для того, чтобы завершить дела прошлого. В 60х вы заложили мамину брошь в ломбард, поскольку вам очень нужны были деньги. По просшествии многих лет и после смерти вашей матери, вы поняли, что хотите вернуть себе эту брошь. </personDescription>
       <personUnremovable>true</personUnremovable>
-      <personComment>Живой битл</personComment>
-      <personAltName>Джордж</personAltName>
+      <personComment></personComment>
+      <personAltName></personAltName>
       <personalItems></personalItems>
       <personalAims></personalAims>
       <personClan>Violet</personClan>

@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem9 = new Telerik.WinControls.UI.ListViewDataItem("Item 1234567788999989757");
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem10 = new Telerik.WinControls.UI.ListViewDataItem("Item 2");
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem11 = new Telerik.WinControls.UI.ListViewDataItem("ListViewItem 3");
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem12 = new Telerik.WinControls.UI.ListViewDataItem("Cool stuff");
-            Telerik.WinControls.UI.ListViewDataItem listViewDataItem1 = new Telerik.WinControls.UI.ListViewDataItem("Item 1");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem1 = new Telerik.WinControls.UI.ListViewDataItem("Item 1234567788999989757");
             Telerik.WinControls.UI.ListViewDataItem listViewDataItem2 = new Telerik.WinControls.UI.ListViewDataItem("Item 2");
             Telerik.WinControls.UI.ListViewDataItem listViewDataItem3 = new Telerik.WinControls.UI.ListViewDataItem("ListViewItem 3");
             Telerik.WinControls.UI.ListViewDataItem listViewDataItem4 = new Telerik.WinControls.UI.ListViewDataItem("Cool stuff");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem5 = new Telerik.WinControls.UI.ListViewDataItem("Item 1");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem6 = new Telerik.WinControls.UI.ListViewDataItem("Item 2");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem7 = new Telerik.WinControls.UI.ListViewDataItem("ListViewItem 3");
+            Telerik.WinControls.UI.ListViewDataItem listViewDataItem8 = new Telerik.WinControls.UI.ListViewDataItem("Cool stuff");
             this.bOK = new Telerik.WinControls.UI.RadButton();
             this.lvAims = new Telerik.WinControls.UI.RadListView();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
@@ -57,6 +57,9 @@
             this.ddlClan = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.pClanColor = new Telerik.WinControls.UI.RadPanel();
+            this.markupDescription = new Telerik.WinControls.UI.RadMarkupDialog();
+            this.bEditDescription = new Telerik.WinControls.UI.RadButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.bOK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lvAims)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
@@ -78,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ddlClan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pClanColor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bEditDescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,16 +97,16 @@
             // 
             // lvAims
             // 
-            listViewDataItem9.Text = "Item 1234567788999989757";
-            listViewDataItem10.Text = "Item 2";
-            listViewDataItem11.Text = "ListViewItem 3";
-            listViewDataItem12.Text = "Cool stuff";
+            listViewDataItem1.Text = "Item 1234567788999989757";
+            listViewDataItem2.Text = "Item 2";
+            listViewDataItem3.Text = "ListViewItem 3";
+            listViewDataItem4.Text = "Cool stuff";
             this.lvAims.Items.AddRange(new Telerik.WinControls.UI.ListViewDataItem[] {
-            listViewDataItem9,
-            listViewDataItem10,
-            listViewDataItem11,
-            listViewDataItem12});
-            this.lvAims.Location = new System.Drawing.Point(206, 216);
+            listViewDataItem1,
+            listViewDataItem2,
+            listViewDataItem3,
+            listViewDataItem4});
+            this.lvAims.Location = new System.Drawing.Point(206, 248);
             this.lvAims.MultiSelect = true;
             this.lvAims.Name = "lvAims";
             this.lvAims.ShowCheckBoxes = true;
@@ -138,13 +142,13 @@
             // 
             this.radLabel4.Location = new System.Drawing.Point(52, 112);
             this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(44, 18);
+            this.radLabel4.Size = new System.Drawing.Size(60, 18);
             this.radLabel4.TabIndex = 6;
-            this.radLabel4.Text = "Сюжет:";
+            this.radLabel4.Text = "Описание:";
             // 
             // radLabel5
             // 
-            this.radLabel5.Location = new System.Drawing.Point(52, 146);
+            this.radLabel5.Location = new System.Drawing.Point(52, 178);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(69, 18);
             this.radLabel5.TabIndex = 7;
@@ -152,7 +156,7 @@
             // 
             // radLabel6
             // 
-            this.radLabel6.Location = new System.Drawing.Point(52, 179);
+            this.radLabel6.Location = new System.Drawing.Point(52, 211);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(80, 18);
             this.radLabel6.TabIndex = 8;
@@ -169,8 +173,9 @@
             // tbcDescription
             // 
             this.tbcDescription.Location = new System.Drawing.Point(206, 112);
+            this.tbcDescription.Multiline = true;
             this.tbcDescription.Name = "tbcDescription";
-            this.tbcDescription.Size = new System.Drawing.Size(659, 20);
+            this.tbcDescription.Size = new System.Drawing.Size(659, 47);
             this.tbcDescription.TabIndex = 10;
             // 
             // cbUnremovable
@@ -187,10 +192,11 @@
             this.ddlSex.Name = "ddlSex";
             this.ddlSex.Size = new System.Drawing.Size(125, 20);
             this.ddlSex.TabIndex = 12;
+            this.ddlSex.SelectedValueChanged += new System.EventHandler(this.ddlSex_SelectedValueChanged);
             // 
             // tbAltName
             // 
-            this.tbAltName.Location = new System.Drawing.Point(206, 146);
+            this.tbAltName.Location = new System.Drawing.Point(206, 178);
             this.tbAltName.Name = "tbAltName";
             this.tbAltName.Size = new System.Drawing.Size(125, 20);
             this.tbAltName.TabIndex = 10;
@@ -198,16 +204,16 @@
             // 
             // lvItems
             // 
-            listViewDataItem1.Text = "Item 1";
-            listViewDataItem2.Text = "Item 2";
-            listViewDataItem3.Text = "ListViewItem 3";
-            listViewDataItem4.Text = "Cool stuff";
+            listViewDataItem5.Text = "Item 1";
+            listViewDataItem6.Text = "Item 2";
+            listViewDataItem7.Text = "ListViewItem 3";
+            listViewDataItem8.Text = "Cool stuff";
             this.lvItems.Items.AddRange(new Telerik.WinControls.UI.ListViewDataItem[] {
-            listViewDataItem1,
-            listViewDataItem2,
-            listViewDataItem3,
-            listViewDataItem4});
-            this.lvItems.Location = new System.Drawing.Point(627, 216);
+            listViewDataItem5,
+            listViewDataItem6,
+            listViewDataItem7,
+            listViewDataItem8});
+            this.lvItems.Location = new System.Drawing.Point(627, 248);
             this.lvItems.MultiSelect = true;
             this.lvItems.Name = "lvItems";
             this.lvItems.ShowCheckBoxes = true;
@@ -217,14 +223,14 @@
             // 
             // tbcComment
             // 
-            this.tbcComment.Location = new System.Drawing.Point(206, 179);
+            this.tbcComment.Location = new System.Drawing.Point(206, 211);
             this.tbcComment.Name = "tbcComment";
             this.tbcComment.Size = new System.Drawing.Size(659, 20);
             this.tbcComment.TabIndex = 14;
             // 
             // radLabel7
             // 
-            this.radLabel7.Location = new System.Drawing.Point(474, 216);
+            this.radLabel7.Location = new System.Drawing.Point(474, 248);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(102, 18);
             this.radLabel7.TabIndex = 9;
@@ -232,7 +238,7 @@
             // 
             // radLabel8
             // 
-            this.radLabel8.Location = new System.Drawing.Point(52, 216);
+            this.radLabel8.Location = new System.Drawing.Point(52, 248);
             this.radLabel8.Name = "radLabel8";
             this.radLabel8.Size = new System.Drawing.Size(36, 18);
             this.radLabel8.TabIndex = 15;
@@ -252,7 +258,7 @@
             // 
             this.ddlClan.BackColor = System.Drawing.Color.Red;
             this.ddlClan.ForeColor = System.Drawing.Color.DarkGreen;
-            this.ddlClan.Location = new System.Drawing.Point(206, 362);
+            this.ddlClan.Location = new System.Drawing.Point(206, 394);
             this.ddlClan.Name = "ddlClan";
             this.ddlClan.Size = new System.Drawing.Size(125, 20);
             this.ddlClan.TabIndex = 18;
@@ -261,7 +267,7 @@
             // 
             // radLabel9
             // 
-            this.radLabel9.Location = new System.Drawing.Point(52, 364);
+            this.radLabel9.Location = new System.Drawing.Point(52, 396);
             this.radLabel9.Name = "radLabel9";
             this.radLabel9.Size = new System.Drawing.Size(33, 18);
             this.radLabel9.TabIndex = 16;
@@ -269,16 +275,30 @@
             // 
             // pClanColor
             // 
-            this.pClanColor.Location = new System.Drawing.Point(348, 362);
+            this.pClanColor.Location = new System.Drawing.Point(348, 394);
             this.pClanColor.Name = "pClanColor";
             this.pClanColor.Size = new System.Drawing.Size(96, 53);
             this.pClanColor.TabIndex = 19;
+            // 
+            // bEditDescription
+            // 
+            this.bEditDescription.Location = new System.Drawing.Point(755, 82);
+            this.bEditDescription.Name = "bEditDescription";
+            this.bEditDescription.Size = new System.Drawing.Size(110, 24);
+            this.bEditDescription.TabIndex = 20;
+            this.bEditDescription.Text = "Редактировать";
+            this.bEditDescription.Click += new System.EventHandler(this.bEditDescription_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // EditPersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 536);
+            this.Controls.Add(this.bEditDescription);
             this.Controls.Add(this.pClanColor);
             this.Controls.Add(this.radLabel9);
             this.Controls.Add(this.ddlClan);
@@ -328,6 +348,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ddlClan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pClanColor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bEditDescription)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -357,5 +378,8 @@
         private Telerik.WinControls.UI.RadDropDownList ddlClan;
         private Telerik.WinControls.UI.RadLabel radLabel9;
         private Telerik.WinControls.UI.RadPanel pClanColor;
+        private Telerik.WinControls.UI.RadMarkupDialog markupDescription;
+        private Telerik.WinControls.UI.RadButton bEditDescription;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
