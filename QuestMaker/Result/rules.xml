@@ -1,11 +1,8 @@
 <root>
   <rules>
     <text>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;head&gt;&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;&lt;title&gt;Untitled&lt;/title&gt;&lt;style type="text/css"&gt;
-.p_384D933F { margin: 0px 0px 0px 0px;text-align: left;text-indent: 0pt;padding: 0px 0px 0px 0px; } 
+.p_CC664AAA { margin: 0px 0px 12px 0px;text-align: left;text-indent: 0pt;padding: 0px 0px 0px 0px; } 
 .s_12B0ABBD { font-family: 'Times New Roman';font-style: normal;font-size: 16px;color: #000000; } 
-.s_6B4C94FF { font-family: 'Times New Roman';font-weight: bold;font-size: 16px;color: #000000; } 
-.s_3E2C8F8B { font-family: 'Times New Roman';font-style: normal;font-size: 16px;color: #FF0000; } 
-.s_2F8F5B45 { font-family: 'Times New Roman';font-weight: bold;font-size: 16px;color: #0000FF; } 
-&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p class="p_384D933F"&gt;&lt;span class="s_12B0ABBD"&gt;Внимание!&lt;/span&gt;&lt;/p&gt;&lt;p class="p_384D933F"&gt;&lt;span class="s_12B0ABBD"&gt;В игре существует несколько&lt;/span&gt;&lt;span class="s_6B4C94FF"&gt; правил&lt;/span&gt;&lt;span class="s_12B0ABBD"&gt;, которых нужно придерживаться:&lt;/span&gt;&lt;/p&gt;&lt;ol start="1" style="list-style-type:decimal"&gt;&lt;li value="1" class="p_384D933F"&gt;&lt;span class="s_12B0ABBD"&gt;Если к вам подошел полицейский, и сказал &lt;/span&gt;&lt;span class="s_3E2C8F8B"&gt;&amp;quot;Арест!&amp;quot;,&lt;/span&gt;&lt;span class="s_12B0ABBD"&gt; вы должны показать ему содержимое своих карманов, все свои вещи. Показывать ваши мысли, воспоминания и лист с начальными условиями &lt;/span&gt;&lt;span class="s_2F8F5B45"&gt;НЕ НУЖНО!!&lt;/span&gt;&lt;/li&gt;&lt;li value="2" class="p_384D933F"&gt;&lt;span class="s_12B0ABBD"&gt;Если к вам подошли, и сказали &amp;quot;Снотворное&amp;quot;, вы также показываете содержимое своих карманов.&lt;/span&gt;&lt;/li&gt;&lt;li value="3" class="p_384D933F"&gt;&lt;span class="s_12B0ABBD"&gt;В случае любых неясностей обращайтесь к Хранителю Ключей.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</text>
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p class="p_CC664AAA"&gt;&lt;span class="s_12B0ABBD"&gt;REMEMBER!&lt;/span&gt;&lt;/p&gt;&lt;p class="p_CC664AAA"&gt;&lt;span class="s_12B0ABBD"&gt;It's up to you to decide who to trust and share your secrets with.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</text>
   </rules>
 </root>

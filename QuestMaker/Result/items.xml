@@ -2,8 +2,8 @@
   <items>
     <item>
       <itemId>0</itemId>
-      <itemName>Завещание на случай смерти</itemName>
-      <itemDescription>&lt;html&gt;Завещание&lt;u&gt; покойного&lt;/u&gt; владельца дома&lt;/html&gt;</itemDescription>
+      <itemName>A warning letter</itemName>
+      <itemDescription>A strange letter recieved 2 days before the event</itemDescription>
       <itemComment>Настоящее</itemComment>
       <itemImagePath>..\..\Result\close.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
@@ -38,7 +38,7 @@
     </item>
     <item>
       <itemId>1</itemId>
-      <itemName>Завещание на случай убийства</itemName>
+      <itemName>Documents</itemName>
       <itemDescription>Завещание покойного владельца</itemDescription>
       <itemComment>Фейк</itemComment>
       <itemImagePath>..\..\Result\close.png</itemImagePath>

@@ -148,7 +148,7 @@ namespace QuestMaker
             List<int> idsInTable = new List<int>();
             for (int row = 0; row < gridView.RowCount; row++)
             {
-                int id = int.Parse(gridView.Rows[row].Cells["columnID"].Value.ToString());
+                int id = Common.convertNullInt(gridView.Rows[row].Cells["columnID"].Value);
                 string name = Common.convertNullString(gridView.Rows[row].Cells["columnName"].Value);
                 string desc = Common.convertNullString(gridView.Rows[row].Cells["columnDescription"].Value);
                 string comm = Common.convertNullString(gridView.Rows[row].Cells["columnComment"].Value);

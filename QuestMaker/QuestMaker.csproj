@@ -77,6 +77,12 @@
     <Compile Include="Classes\Common.cs" />
     <Compile Include="Classes\CPerson.cs" />
     <Compile Include="Classes\CThought.cs" />
+    <Compile Include="GUI\EditAimForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EditAimForm.Designer.cs">
+      <DependentUpon>EditAimForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\EditPersonForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\EditAimForm.resx">
+      <DependentUpon>EditAimForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\EditPersonForm.resx">
       <DependentUpon>EditPersonForm.cs</DependentUpon>
     </EmbeddedResource>

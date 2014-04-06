@@ -16,10 +16,19 @@ namespace QuestMaker.GUI
         public CPerson editedPerson;
         private CAimManager aimManager;
         private CItemManager itemManager;
-        public EditPersonForm(CPerson _person, CAimManager _aimManager, CItemManager _itemManager)
+        public EditPersonForm(CPerson _person, ref CAimManager _aimManager, CItemManager _itemManager)
         {
             InitializeComponent();
             editedPerson = _person;
+            aimManager = _aimManager;
+            itemManager = _itemManager;
+            fillUIComponents();
+            fillPersonData();
+        }
+        public EditPersonForm(ref CAimManager _aimManager, CItemManager _itemManager)
+        {
+            InitializeComponent();
+            editedPerson = new CPerson();
             aimManager = _aimManager;
             itemManager = _itemManager;
             fillUIComponents();
@@ -44,7 +53,10 @@ namespace QuestMaker.GUI
             lvItems.DataSource = itemManager.getItemsList();
             lvItems.DisplayMember = "DisplayString";
             lvItems.ValueMember = "Id";
+        }
 
+        private void fillPersonData()
+        {
             tbName.Text = editedPerson.getName();
             ddlSex.SelectedValue = editedPerson.sex;
             tbcDescription.Text = editedPerson.description;
@@ -57,9 +69,9 @@ namespace QuestMaker.GUI
                     lvitem.CheckState = Telerik.WinControls.Enumerations.ToggleState.On;
             foreach (ListViewDataItem lvaim in lvAims.Items)
                 if (editedPerson.aimsId.Contains((int)lvaim.Value))
-                    lvaim.CheckState = Telerik.WinControls.Enumerations.ToggleState.On;
-
+                    lvaim.CheckState = Telerik.WinControls.Enumerations.ToggleState.On;        
         }
+
         private void getPersonFromUI()
         {
             editedPerson.setName(tbName.Text);
@@ -121,6 +133,16 @@ namespace QuestMaker.GUI
                 // text box don't have a html render :-(((
             }
 
+        }
+
+        private void bCreateAim_Click(object sender, EventArgs e)
+        {
+            EditAimForm editAimForm = new EditAimForm();            
+            if (editAimForm.ShowDialog() == DialogResult.OK)
+            {
+                aimManager.addAim(editAimForm.editedAim);
+                fillUIComponents();                
+            }
         }
     }
 }

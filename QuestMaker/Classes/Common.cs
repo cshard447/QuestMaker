@@ -19,6 +19,13 @@ namespace QuestMaker.Classes
             else
                 return obj.ToString();
         }
+        public static int convertNullInt(object obj)
+        {
+            if (obj == null)
+                return -1;
+            else
+                return int.Parse(obj.ToString());        
+        }
 
         public static void createFileIfNotExists(string fileName)
         {

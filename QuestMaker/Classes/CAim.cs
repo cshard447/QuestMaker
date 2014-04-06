@@ -86,7 +86,7 @@ namespace QuestMaker
         private XDocument doc = new XDocument(new XElement("root"));
         Dictionary<string, AimType> strToType = new Dictionary<string,AimType>();
 
-        public BindingList<AimTypeDataSourceObject> enumAimList = new BindingList<AimTypeDataSourceObject>();
+        public static BindingList<AimTypeDataSourceObject> enumAimList = new BindingList<AimTypeDataSourceObject>();
         private BindingList<AimDataSourceObject> aimList = new BindingList<AimDataSourceObject>();
 
         string fileName = Common.path + "aims.xml";
@@ -97,6 +97,14 @@ namespace QuestMaker
         {
             initDict();
         }
+        int calcNewID()
+        {
+            int newID;
+            for (newID = 0; newID < MAX_ITEMS; newID++)
+                if (!aims.Keys.Contains(newID))
+                    break;
+            return newID;        
+        }
         public void addAim(int _id, string _name, string _description, AimType _type)
         { 
             aims.Add(_id, new CAim(_id, _name, _description, _type));
@@ -104,14 +112,16 @@ namespace QuestMaker
 
         public int addAim(string _name, string _description, AimType _type)
         {
-            int newID;
-            for (newID = 0; newID < MAX_ITEMS; newID++)
-                if (!aims.Keys.Contains(newID))
-                    break;
-
+            int newID = calcNewID();
             aims.Add(newID, new CAim(newID, _name, _description, _type ) );
             return newID;
         }
+        public void addAim(CAim aim)
+        {
+            int newID = calcNewID();
+            addAim(newID, aim.getName(), aim.description, aim.type);
+        }
+
         public bool removeAim(int idToDelete)
         {
             return aims.Remove(idToDelete);
@@ -136,6 +146,12 @@ namespace QuestMaker
             }
             return null;
         }
+        public void updateAim(CAim updated)
+        {
+            if (!this.aims.ContainsKey(updated.getID()))
+                throw new System.ArgumentException("Цели с таким ID не существует!");
+            aims[updated.getID()] = updated;
+        }
 
         public Dictionary<int, CAim> getAllAims()
         {
@@ -147,7 +163,7 @@ namespace QuestMaker
             List<int> idsInTable = new List<int>();
             for (int row = 0; row < gridView.RowCount; row++)
             {
-                int id = int.Parse(gridView.Rows[row].Cells["columnID"].Value.ToString());
+                int id = Common.convertNullInt(gridView.Rows[row].Cells["columnID"].Value);
                 string name = Common.convertNullString(gridView.Rows[row].Cells["columnName"].Value);
                 string desc = Common.convertNullString(gridView.Rows[row].Cells["columnDescription"].Value);
                 AimType type = (AimType) gridView.Rows[row].Cells["columnType"].Value;                

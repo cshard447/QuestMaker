@@ -50,7 +50,7 @@ namespace QuestMaker
             column.ValueMember = "Type";
             column.DisplayMember = "DisplayString";
             column.FieldName = "Type";
-            column.DataSource = aimManager.enumAimList;
+            column.DataSource = CAimManager.enumAimList;
             column.DataSourceNullValue = AimType.secondary;
 
             GridViewComboBoxColumn column2 = (GridViewComboBoxColumn)gridViewPersons.Columns["columnSex"];
@@ -74,7 +74,7 @@ namespace QuestMaker
             column7.FieldName = "Clan";            
             //column7.ConditionalFormattingObjectList
             column7.DataSource = CPersonManager.clanList;
-            //column7.DataSourceNullValue = Color.Black;
+            column7.DataSourceNullValue = KnownColor.Gray;
         }
 
         private void bSaveitems_Click(object sender, EventArgs e)
@@ -85,13 +85,12 @@ namespace QuestMaker
             // DataSourceNullValue
         }
 
-        private void bSaveAims_Click(object sender, EventArgs e)
+        private void cmbSaveAims_Click(object sender, EventArgs e)
         {
             aimManager.UpdateAimsFromGrid(gridViewAims);
             aimManager.saveAimsToFile();
             ShowAimsOnGridView();
         }
-
         private void cmdSavePersons_Click(object sender, EventArgs e)
         {
             peopleManager.UpdatePersonsFromGrid(gridViewPersons);
@@ -282,13 +281,26 @@ namespace QuestMaker
         {
             List<GridViewRowInfo> rows = gridViewPersons.SelectedRows.ToList();
             int id = int.Parse(rows[0].Cells["columnID"].Value.ToString());
-            string name = gridViewPersons.Rows[rows[0].Index].Cells["columnName"].Value.ToString();
             CPerson person = peopleManager.getPerson(id);
-            EditPersonForm epf = new EditPersonForm(person, aimManager, itemManager);
+            EditPersonForm epf = new EditPersonForm(person, ref aimManager, itemManager);
             if (epf.ShowDialog() == DialogResult.OK)
             {
                 peopleManager.updatePerson(epf.editedPerson);                
                 ShowPersonsOnGridView();
+                ShowAimsOnGridView();
+            }
+        }
+
+        private void cmbEditAims_Click(object sender, EventArgs e)
+        {
+            List<GridViewRowInfo> rows = gridViewAims.SelectedRows.ToList();
+            int id = int.Parse(rows[0].Cells["columnID"].Value.ToString());
+            CAim aim = aimManager.getAim(id);
+            EditAimForm eaf = new EditAimForm(aim);
+            if (eaf.ShowDialog() == DialogResult.OK)
+            {
+                aimManager.updateAim(eaf.editedAim);
+                ShowAimsOnGridView();
             }
         }
 
@@ -312,6 +324,19 @@ namespace QuestMaker
         {
             gridViewPersons.ColumnChooser.Show();
         }
+
+        private void cmbCreatePerson_Click(object sender, EventArgs e)
+        {
+            EditPersonForm epf = new EditPersonForm(ref aimManager, itemManager);
+            if (epf.ShowDialog() == DialogResult.OK)
+            {
+                peopleManager.addPerson(epf.editedPerson);
+                ShowPersonsOnGridView();
+                ShowAimsOnGridView();
+            }
+        }
+
+
 
 
 

@@ -1,3 +1,55 @@
 <root>
-  <aims />
+  <aims>
+    <aim>
+      <aimId>0</aimId>
+      <aimName>Compose a new song about what happened.</aimName>
+      <aimDescription></aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>1</aimId>
+      <aimName>Find out who set the fire</aimName>
+      <aimDescription>Someone must have done it!
+</aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>2</aimId>
+      <aimName>Find an object</aimName>
+      <aimDescription>Any
+</aimDescription>
+      <aimType>transitional</aimType>
+    </aim>
+    <aim>
+      <aimId>3</aimId>
+      <aimName>Find supportersShit</aimName>
+      <aimDescription>
+упупвапавп</aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>4</aimId>
+      <aimName>Take The Skettles autographs</aimName>
+      <aimDescription>fuck it reallyjkk</aimDescription>
+      <aimType>secondary</aimType>
+    </aim>
+    <aim>
+      <aimId>5</aimId>
+      <aimName>Find 'Mister X'</aimName>
+      <aimDescription></aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>6</aimId>
+      <aimName>New Aim Name</aimName>
+      <aimDescription>New Aim Desc</aimDescription>
+      <aimType>transitional</aimType>
+    </aim>
+    <aim>
+      <aimId>7</aimId>
+      <aimName>Newest Ain Name</aimName>
+      <aimDescription>Newest Desc</aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+  </aims>
 </root>

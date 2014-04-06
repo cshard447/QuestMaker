@@ -55,6 +55,11 @@ namespace QuestMaker.Classes
             altName = _altName;
         }
 
+        public CPerson()
+        {
+            //id = null;
+        }
+
         public string getName()
         {
             return name;
@@ -133,6 +138,14 @@ namespace QuestMaker.Classes
         {
             initDict();
         }
+        int calcNewID()
+        {
+            int newID;
+            for (newID = 0; newID < MAX_PERSONS; newID++)
+                if (!persons.Keys.Contains(newID))
+                    break;
+            return newID;        
+        }
 
         public void addPerson(int _id, string _name, Sex _sex, string _description, bool _unremovable, string _comment,
                                 List<int> _itemsList, List<int> _aimsList, KnownColor _clan, string _altName = "")
@@ -141,13 +154,14 @@ namespace QuestMaker.Classes
         }
         public int addPerson(string _name, Sex _sex, string _description, bool _unremovable, string _comment, KnownColor _clan, string _altName = "")
         {
-            int newID;
-            for (newID = 0; newID < MAX_PERSONS; newID++)
-                if (!persons.Keys.Contains(newID))
-                    break;
-
+            int newID = calcNewID();
             persons.Add(newID, new CPerson(newID, _name, _sex, _description, _unremovable, _comment, _clan, _altName ));
             return newID;        
+        }
+        public void addPerson(CPerson person)
+        {
+            int newID = calcNewID();
+            addPerson(newID, person.getName(), person.sex, person.description, person.unremovable, person.comment, person.itemsId, person.aimsId, person.clan, person.altName);
         }
         public bool removePerson(int idToDelete)
         {
@@ -178,7 +192,7 @@ namespace QuestMaker.Classes
             List<int> idsInTable = new List<int>();
             for (int row = 0; row < gridView.RowCount; row++)
             {
-                int id = int.Parse(gridView.Rows[row].Cells["columnID"].Value.ToString());
+                int id = Common.convertNullInt(gridView.Rows[row].Cells["columnID"].Value);
                 string name = Common.convertNullString(gridView.Rows[row].Cells["columnName"].Value);
                 Sex sex = (Sex) gridView.Rows[row].Cells["columnSex"].Value;
                 string desc = Common.convertNullString(gridView.Rows[row].Cells["columnDescription"].Value);

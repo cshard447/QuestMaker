@@ -2,51 +2,183 @@
   <persons>
     <person>
       <personId>0</personId>
-      <personName>Честер Уолтер</personName>
+      <personName>John Lemon</personName>
       <personSex>male</personSex>
-      <personDescription>&lt;html&gt;Вы &lt;strong&gt;молодой&lt;/strong&gt; бизнесмен. Вы поставляете морепродукты на другой континент (Африка). Вы живете один, но тайно влюблены в вашу коллегу,&lt;span style="color: #ff0000"&gt; Сейди&lt;/span&gt;.&lt;/html&gt;</personDescription>
+      <personDescription>&lt;html&gt;&lt;p&gt;&lt;strong&gt;Character&lt;/strong&gt;: You're talented and intelligent person who's very passionate about music.You're a man of principle. You can't stand injustice and you tend to help and protect other people.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Skills:&lt;/strong&gt; You're a singer and composer in a very well-known band called "The Skittles". You play the guitar, banjo and harmonica.&lt;/p&gt;&lt;p&gt;Now you're on a world tour and a year ago you decided to make something unusual and give a concert in a place where noone would ever expect to see you. You duscussed that idea with others and Harry Jerrison suggested a place named &lt;span style="color: #ff0000; background-color: #ffffff"&gt;Westhay&lt;/span&gt; for that. He told you that he'd resieved a letter from a girl. She wrote that she didn't have any money to travel to a bigger city. The dream of her life was to see your live concert. So you all agreed to go there.&lt;/p&gt;&lt;p&gt;You set a date, wigh were 15 August 1965. However you arrived to &lt;span style="color: #ff0000"&gt;Westhay &lt;/span&gt;&lt;span style="color: #000000"&gt;a day later because of a flight delay. When you finally arrived The Minister of Cultural Affairs told you shocking news. It turned out that someone set a fire on a hotel where you must have stayed. There is nothing left from it. You're in a state of shock because you realised that if you'd arrived the day before (as it was planned) you would have been inside when the fire took everything. You were asked to stay in &lt;/span&gt;&lt;span style="color: #ff0000"&gt;Westhay &lt;/span&gt;&lt;span style="color: #000000"&gt;it'll be understood who set the fire.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;You feel terrible about what happened. You want to know why someone tried to kill you.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;You know:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;1. &lt;/strong&gt;The person who you talked to about organizing your concert is Mr. Ford (Minister of Cultural Affairs).&lt;/p&gt;&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt; You came with your manager, Olivia Brightwood. She was against giving a concert in a village at first, saying it was usuless and stupid. But then she set off for &lt;span style="color: #ff0000"&gt;Westhay &lt;/span&gt;&lt;span style="color: #000000"&gt;before all was decided finally. When she arrived she said it was a perfect place for a perfomance.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;3&lt;/strong&gt;. Olivia came the day before you to make last preparations. She must have stayed in a new hotel but she didn't. Where did she spend a night?&lt;/p&gt;&lt;p&gt;&lt;strong&gt;4.&lt;/strong&gt; Few days before this, you heard a very strange Olivia's phone call. She spoke to someone who she called Jakey. She was very upset. You heard the only phrase and when she saw you she hurried to end the conversation. The pharse that you heard was &lt;strong&gt;"Listen, if you carry on doing this, I'll change my mind and John will learn the truth. Do you really wanna ruin everything? Don't be a coward!'&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;5. &lt;/strong&gt;Harry told you he'd got a letter from a girl who lived in Wethay.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;6.&lt;/strong&gt; You knew that specially for your arriving a new music hall and a hotel were going to be built up.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;/html&gt;</personDescription>
       <personUnremovable>true</personUnremovable>
-      <personComment></personComment>
+      <personComment>Musician, singer, songwriter, </personComment>
       <personAltName></personAltName>
-      <personalItems>0,1,</personalItems>
-      <personalAims></personalAims>
-      <personClan>Gray</personClan>
+      <personalItems></personalItems>
+      <personalAims>7,</personalAims>
+      <personClan>Violet</personClan>
     </person>
     <person>
       <personId>1</personId>
-      <personName>Йоко</personName>
+      <personName>Paula Mackenzie</personName>
       <personSex>female</personSex>
-      <personDescription>Так себе</personDescription>
+      <personDescription>&lt;html&gt;&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt; You came with your manager, Olivia Brightwood. She was against giving a concert in a village at first, saying it was usuless and stupid. But then she set off for &lt;span style="color: #ff0000"&gt;Westhay &lt;/span&gt;&lt;span style="color: #000000"&gt;before all was decided finally. When she arrived she said it was a perfect place for a perfomance.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;3&lt;/strong&gt;. Olivia came the day before you to make last preparations. She must have stayed in a new hotel but she didn't. Where did she spend a night?&lt;/p&gt;&lt;/html&gt;</personDescription>
       <personUnremovable>true</personUnremovable>
-      <personComment></personComment>
-      <personAltName></personAltName>
-      <personalItems>3,5,4,</personalItems>
-      <personalAims></personalAims>
-      <personClan>Green</personClan>
-    </person>
-    <person>
-      <personId>2</personId>
-      <personName>Джозеф Финч</personName>
-      <personSex>flexible</personSex>
-      <personDescription>Сынок</personDescription>
-      <personUnremovable>true</personUnremovable>
-      <personComment>Мистер Х</personComment>
-      <personAltName></personAltName>
-      <personalItems>0,</personalItems>
-      <personalAims></personalAims>
-      <personClan>Red</personClan>
-    </person>
-    <person>
-      <personId>3</personId>
-      <personName>Джулия Уолтер</personName>
-      <personSex>female</personSex>
-      <personDescription>Вы стройная дама в черном, всю жизнь прожившая в Японии. Вы вернулись в Англию для того, чтобы завершить дела прошлого. В 60х вы заложили мамину брошь в ломбард, поскольку вам очень нужны были деньги. По просшествии многих лет и после смерти вашей матери, вы поняли, что хотите вернуть себе эту брошь. </personDescription>
-      <personUnremovable>true</personUnremovable>
-      <personComment></personComment>
+      <personComment>Vocals, bass guitaк</personComment>
       <personAltName></personAltName>
       <personalItems></personalItems>
       <personalAims></personalAims>
       <personClan>Violet</personClan>
+    </person>
+    <person>
+      <personId>2</personId>
+      <personName>Harry Jerrison</personName>
+      <personSex>male</personSex>
+      <personDescription>&lt;html&gt;&lt;p&gt;You know:&lt;/p&gt;&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt; You came with your manager, Olivia Brightwood. She was against giving a concert in a village at first, saying it was usuless and stupid. But then she set off for &lt;span style="color: #ff0000"&gt;Westhay &lt;/span&gt;&lt;span style="color: #000000"&gt;before all was decided finally. When she arrived she said it was a perfect place for a perfomance.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;3&lt;/strong&gt;. Olivia came the day before you to make last preparations. She must have stayed in a new hotel but she didn't. Where did she spend a night?&lt;/p&gt;&lt;/html&gt;</personDescription>
+      <personUnremovable>true</personUnremovable>
+      <personComment>Mister X. guitar, sitar, keyboards, </personComment>
+      <personAltName></personAltName>
+      <personalItems></personalItems>
+      <personalAims></personalAims>
+      <personClan>Pink</personClan>
+    </person>
+    <person>
+      <personId>3</personId>
+      <personName>Richard Star</personName>
+      <personSex>male</personSex>
+      <personDescription>&lt;html&gt;&lt;p&gt;&lt;strong&gt;1. &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt;You came with your manager, Olivia Brightwood. She was against giving a concert in a village at first, saying it was usuless and stupid. But then she set off for &lt;span style="color: #ff0000"&gt;Westhay &lt;/span&gt;&lt;span style="color: #000000"&gt;before all was decided finally. When she arrived she said it was a perfect place for a perfomance.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;3&lt;/strong&gt;. Olivia came the day before you to make last preparations. She must have stayed in a new hotel but she didn't. Where did she spend a night?&lt;/p&gt;&lt;/html&gt;</personDescription>
+      <personUnremovable>false</personUnremovable>
+      <personComment>Drums, vocals, keyboards (got a warning letter</personComment>
+      <personAltName></personAltName>
+      <personalItems>0,</personalItems>
+      <personalAims>0,</personalAims>
+      <personClan>Violet</personClan>
+    </person>
+    <person>
+      <personId>4</personId>
+      <personName>Patrick Fan</personName>
+      <personSex>flexible</personSex>
+      <personDescription>&lt;html&gt;&lt;p&gt;&lt;strong&gt;Character:&lt;/strong&gt; You're one of the locals. You've been living here since you were born. You're only 18 and you're very ambitious as a teenager should be. You're just mad about music and expecially about "The Skittles" You definitely have so-called "Skittlemania", which is so popular nowadays. You're dreaming of becoming a musucian yourself. You hope that one day you'll famous.&lt;/p&gt;&lt;p&gt;When you at first heard that The Skittles would give a concert at your hometown you couldn't believe it. It was impossible to imagine such popular band in a village like that. For such huge event it was even decided to build up a new (and the only) concert hall and a hotel.&lt;/p&gt;&lt;/html&gt;</personDescription>
+      <personUnremovable>true</personUnremovable>
+      <personComment>for the concert, Brianna's son</personComment>
+      <personAltName>Emily Fan</personAltName>
+      <personalItems></personalItems>
+      <personalAims></personalAims>
+      <personClan>Green</personClan>
+    </person>
+    <person>
+      <personId>5</personId>
+      <personName>Olivia Brightwood</personName>
+      <personSex>female</personSex>
+      <personDescription>&lt;html&gt;&lt;p&gt;A mananager who works with The Skittles.&lt;/p&gt;&lt;p&gt;She was against the idea of giving a concert in a village from the very beginning.&lt;/p&gt;&lt;/html&gt;</personDescription>
+      <personUnremovable>true</personUnremovable>
+      <personComment>Strange phonecall</personComment>
+      <personAltName></personAltName>
+      <personalItems></personalItems>
+      <personalAims></personalAims>
+      <personClan>Green</personClan>
+    </person>
+    <person>
+      <personId>6</personId>
+      <personName>Jackson Ford</personName>
+      <personSex>male</personSex>
+      <personDescription>&lt;html&gt;&lt;p&gt;&lt;strong&gt;You know:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt; You came with your manager, Olivia Brightwood. She was against giving a concert in a village at first, saying it was usuless and stupid. But then she set off for &lt;span style="color: #ff0000"&gt;Westhay &lt;/span&gt;&lt;span style="color: #000000"&gt;before all was decided finally. When she arrived she said it was a perfect place for a perfomance.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;3&lt;/strong&gt;. Olivia came the day before you to make last preparations. She must have stayed in a new hotel but she didn't. Where did she spend a night?&lt;/p&gt;&lt;/html&gt;</personDescription>
+      <personUnremovable>true</personUnremovable>
+      <personComment>Minister of Cultural Affairs.</personComment>
+      <personAltName></personAltName>
+      <personalItems></personalItems>
+      <personalAims></personalAims>
+      <personClan>Green</personClan>
+    </person>
+    <person>
+      <personId>7</personId>
+      <personName>Joseph Briber</personName>
+      <personSex>flexible</personSex>
+      <personDescription>He owns the company which built up the hotel and the new concert hall.</personDescription>
+      <personUnremovable>true</personUnremovable>
+      <personComment>A landlord</personComment>
+      <personAltName>Josephina Briber</personAltName>
+      <personalItems>1,</personalItems>
+      <personalAims></personalAims>
+      <personClan>Red</personClan>
+    </person>
+    <person>
+      <personId>8</personId>
+      <personName>Sarah Nevill</personName>
+      <personSex>female</personSex>
+      <personDescription>&lt;html&gt;&lt;p&gt;You're a very kind-hearted and well-mannered woman. Westhay is your hometown and your family's been living here for generations, so you know many legents about this place and the area surrounding it. You also know that local people are very religious and they don't like new-comers because they all live as a very close community. &lt;/p&gt;&lt;p&gt;When people heard that The Skittles were to arriive, they went absolutely mad. But there were two types of reaction. Young people, especially teenagers, were over the moon about that news. They started bying up their records, T-shirts with their portraits, badges with their logo. They couln't wait for the day to come.&lt;/p&gt;&lt;p&gt;Elde people were against. They believe that music The Skittles were making was vulgar and indecent. they didn't want their children to be part of шею They had lots of protests about that and wrote several petitions.&lt;/p&gt;&lt;p&gt;You personally believed that&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;She believed that something wrong would happen to a new hotel because it was built on an old cemetery. She tried to warn everyone but nobody believed her.&lt;/p&gt;&lt;/html&gt;</personDescription>
+      <personUnremovable>true</personUnremovable>
+      <personComment>sent a warning letter</personComment>
+      <personAltName></personAltName>
+      <personalItems></personalItems>
+      <personalAims></personalAims>
+      <personClan>Gray</personClan>
+    </person>
+    <person>
+      <personId>9</personId>
+      <personName>Brianna</personName>
+      <personSex>female</personSex>
+      <personDescription></personDescription>
+      <personUnremovable>false</personUnremovable>
+      <personComment>against the concert; Patrick's mom</personComment>
+      <personAltName></personAltName>
+      <personalItems></personalItems>
+      <personalAims></personalAims>
+      <personClan>Red</personClan>
+    </person>
+    <person>
+      <personId>10</personId>
+      <personName>Daniel</personName>
+      <personSex>male</personSex>
+      <personDescription></personDescription>
+      <personUnremovable>false</personUnremovable>
+      <personComment>against the concert</personComment>
+      <personAltName></personAltName>
+      <personalItems></personalItems>
+      <personalAims></personalAims>
+      <personClan>Red</personClan>
+    </person>
+    <person>
+      <personId>11</personId>
+      <personName>Nicole</personName>
+      <personSex>female</personSex>
+      <personDescription></personDescription>
+      <personUnremovable>false</personUnremovable>
+      <personComment>for the concert</personComment>
+      <personAltName></personAltName>
+      <personalItems></personalItems>
+      <personalAims></personalAims>
+      <personClan>Green</personClan>
+    </person>
+    <person>
+      <personId>12</personId>
+      <personName>Miss Marple</personName>
+      <personSex>female</personSex>
+      <personDescription></personDescription>
+      <personUnremovable>false</personUnremovable>
+      <personComment>Neutral. Detective</personComment>
+      <personAltName></personAltName>
+      <personalItems></personalItems>
+      <personalAims></personalAims>
+      <personClan>Gray</personClan>
+    </person>
+    <person>
+      <personId>13</personId>
+      <personName>NewbieName</personName>
+      <personSex>flexible</personSex>
+      <personDescription>Newbie desc</personDescription>
+      <personUnremovable>true</personUnremovable>
+      <personComment>Newbie Comment</personComment>
+      <personAltName>Newbie AltName</personAltName>
+      <personalItems></personalItems>
+      <personalAims></personalAims>
+      <personClan>Green</personClan>
+    </person>
+    <person>
+      <personId>14</personId>
+      <personName></personName>
+      <personSex>male</personSex>
+      <personDescription></personDescription>
+      <personUnremovable>false</personUnremovable>
+      <personComment></personComment>
+      <personAltName></personAltName>
+      <personalItems></personalItems>
+      <personalAims>6,</personalAims>
+      <personClan>Red</personClan>
     </person>
   </persons>
 </root>
