@@ -77,7 +77,7 @@ namespace QuestMaker
             column7.DataSourceNullValue = KnownColor.Gray;
         }
 
-        private void bSaveitems_Click(object sender, EventArgs e)
+        private void cmbSaveItems_Click(object sender, EventArgs e)
         {
             itemManager.UpdateItemsFromGrid(gridViewItems);
             itemManager.saveItemsToFile();
@@ -334,6 +334,31 @@ namespace QuestMaker
                 ShowPersonsOnGridView();
                 ShowAimsOnGridView();
             }
+        }
+
+        private void cmbEditItems_Click(object sender, EventArgs e)
+        {
+            List<GridViewRowInfo> rows = gridViewItems.SelectedRows.ToList();
+            int id = int.Parse(rows[0].Cells["columnID"].Value.ToString());
+            CItem item = itemManager.getItem(id);
+            EditItemForm eif = new EditItemForm(item);
+            if (eif.ShowDialog() == DialogResult.OK)
+            {
+                //itemManager.updateItem(eif.editedAim);
+                ShowItemsOnGridView();
+            }
+
+        }
+
+        private void cmbCreateItem_Click(object sender, EventArgs e)
+        {
+            EditItemForm eif = new EditItemForm();
+            if (eif.ShowDialog() == DialogResult.OK)
+            {
+                itemManager.addItem(eif.editedItem);
+                ShowItemsOnGridView();
+            }
+
         }
 
 

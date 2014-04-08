@@ -19,7 +19,7 @@ namespace QuestMaker
         protected string name;
         public string description;
         public string comment;
-        public string pathToImage;   // @todo think about it
+        public string pathToImage;
         public Image image;
         public bool visibility;
         public bool singleUse;
@@ -87,20 +87,30 @@ namespace QuestMaker
         { 
         
         }
+        int calcNewID()
+        {
+            int newID;
+            for (newID = 0; newID < MAX_ITEMS; newID++)
+                if (!items.Keys.Contains(newID))
+                    break;
+            return newID;        
+        }
         public void addItem(int _id, string _name, string _description, string _comment, string _path, bool _visibility, bool _singleUse)
         {
             items.Add(_id, new CItem(_id, _name, _description, _comment, _path, _visibility, _singleUse));
         }
         public int addItem(string _name, string _description, string _comment, string _path, bool _visibility, bool _singleUse)
         {
-            int newID;
-            for (newID = 0; newID < MAX_ITEMS; newID++)
-                if (!items.Keys.Contains(newID))
-                    break;
-
+            int newID = calcNewID();
             items.Add(newID, new CItem(newID, _name, _description, _comment, _path, _visibility, _singleUse ) );
             return newID;
         }
+        public void addItem(CItem item)
+        {
+            int newID = calcNewID();
+            addItem(newID, item.getName(), item.description, item.comment, item.pathToImage, item.visibility, item.singleUse);
+        }
+
         public bool removeItem(int idToDelete)
         {
             return items.Remove(idToDelete);
