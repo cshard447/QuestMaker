@@ -41,6 +41,8 @@
             this.tbComment = new Telerik.WinControls.UI.RadTextBox();
             this.bOK = new Telerik.WinControls.UI.RadButton();
             this.bCancel = new Telerik.WinControls.UI.RadButton();
+            this.pImage = new Telerik.WinControls.UI.RadPanel();
+            this.beImage = new Telerik.WinControls.UI.RadBrowseEditor();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
@@ -54,6 +56,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbComment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bOK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bCancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,11 +169,30 @@
             this.bCancel.Text = "Отмена";
             this.bCancel.Click += new System.EventHandler(this.bCancel_Click);
             // 
+            // pImage
+            // 
+            this.pImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pImage.Location = new System.Drawing.Point(112, 252);
+            this.pImage.Name = "pImage";
+            this.pImage.Size = new System.Drawing.Size(200, 100);
+            this.pImage.TabIndex = 12;
+            // 
+            // beImage
+            // 
+            this.beImage.Location = new System.Drawing.Point(324, 252);
+            this.beImage.Name = "beImage";
+            this.beImage.Size = new System.Drawing.Size(214, 20);
+            this.beImage.TabIndex = 13;
+            this.beImage.Text = "Картинка";
+            this.beImage.ValueChanged += new System.EventHandler(this.beImage_ValueChanged);
+            // 
             // EditItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 477);
+            this.Controls.Add(this.beImage);
+            this.Controls.Add(this.pImage);
             this.Controls.Add(this.bCancel);
             this.Controls.Add(this.bOK);
             this.Controls.Add(this.tbComment);
@@ -203,6 +226,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbComment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bOK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -224,5 +249,7 @@
         private Telerik.WinControls.UI.RadTextBox tbComment;
         private Telerik.WinControls.UI.RadButton bOK;
         private Telerik.WinControls.UI.RadButton bCancel;
+        private Telerik.WinControls.UI.RadPanel pImage;
+        private Telerik.WinControls.UI.RadBrowseEditor beImage;
     }
 }

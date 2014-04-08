@@ -135,13 +135,21 @@ namespace QuestMaker
             }
             return null;
         }
-        public void updateItem(int id, string path)
+
+        public void updateItem(CItem updated)
+        {
+            if (!this.items.ContainsKey(updated.getID()))
+                throw new System.ArgumentException("Предмета с таким ID не существует!");
+            items[updated.getID()] = updated;
+        }
+
+        public void updateItemImage(int id, string path)
         { 
             if ( !items.ContainsKey(id) )
                 return;
             items[id].pathToImage = path;
         }
-        public void updateItem(int id, Image _image)
+        public void updateItemImage(int id, Image _image)
         {
             if (!items.ContainsKey(id))
                 return;

@@ -186,8 +186,8 @@ namespace QuestMaker
                         File.Copy(path, destination,true);
                     int id = int.Parse(gridViewItems.Rows[e.RowIndex].Cells["columnID"].Value.ToString());
                     Image img = Image.FromFile(destination);
-                    itemManager.updateItem(id, destination);
-                    itemManager.updateItem(id, img);
+                    itemManager.updateItemImage(id, destination);
+                    itemManager.updateItemImage(id, img);
                     ShowItemsOnGridView();
                 }
             }
@@ -282,12 +282,13 @@ namespace QuestMaker
             List<GridViewRowInfo> rows = gridViewPersons.SelectedRows.ToList();
             int id = int.Parse(rows[0].Cells["columnID"].Value.ToString());
             CPerson person = peopleManager.getPerson(id);
-            EditPersonForm epf = new EditPersonForm(person, ref aimManager, itemManager);
+            EditPersonForm epf = new EditPersonForm(person, ref aimManager, ref itemManager);
             if (epf.ShowDialog() == DialogResult.OK)
             {
                 peopleManager.updatePerson(epf.editedPerson);                
                 ShowPersonsOnGridView();
                 ShowAimsOnGridView();
+                ShowItemsOnGridView();
             }
         }
 
@@ -299,6 +300,7 @@ namespace QuestMaker
             EditAimForm eaf = new EditAimForm(aim);
             if (eaf.ShowDialog() == DialogResult.OK)
             {
+                // find out, aim updated eve nwithout this function!
                 aimManager.updateAim(eaf.editedAim);
                 ShowAimsOnGridView();
             }
@@ -333,21 +335,23 @@ namespace QuestMaker
                 peopleManager.addPerson(epf.editedPerson);
                 ShowPersonsOnGridView();
                 ShowAimsOnGridView();
+                ShowItemsOnGridView();
             }
         }
 
         private void cmbEditItems_Click(object sender, EventArgs e)
         {
-            List<GridViewRowInfo> rows = gridViewItems.SelectedRows.ToList();
+            List<GridViewRowInfo> rows = new List<GridViewRowInfo>();
+            rows = gridViewItems.SelectedRows.ToList();
+            //List<GridViewRowInfo> rows = gridViewItems.SelectedRows.ToList();
             int id = int.Parse(rows[0].Cells["columnID"].Value.ToString());
             CItem item = itemManager.getItem(id);
             EditItemForm eif = new EditItemForm(item);
             if (eif.ShowDialog() == DialogResult.OK)
             {
-                //itemManager.updateItem(eif.editedAim);
+                itemManager.updateItem(eif.editedItem);
                 ShowItemsOnGridView();
             }
-
         }
 
         private void cmbCreateItem_Click(object sender, EventArgs e)
@@ -358,7 +362,6 @@ namespace QuestMaker
                 itemManager.addItem(eif.editedItem);
                 ShowItemsOnGridView();
             }
-
         }
 
 

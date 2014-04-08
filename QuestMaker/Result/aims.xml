@@ -41,9 +41,9 @@
     </aim>
     <aim>
       <aimId>6</aimId>
-      <aimName>New Aim Name</aimName>
-      <aimDescription>New Aim Desc</aimDescription>
-      <aimType>transitional</aimType>
+      <aimName> Aim Name</aimName>
+      <aimDescription> Aim Desc</aimDescription>
+      <aimType>primary</aimType>
     </aim>
     <aim>
       <aimId>7</aimId>

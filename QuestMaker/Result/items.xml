@@ -47,21 +47,21 @@
     </item>
     <item>
       <itemId>2</itemId>
-      <itemName>fuck it again</itemName>
-      <itemDescription>fuc k again</itemDescription>
-      <itemComment>fuck fuck </itemComment>
+      <itemName>guitar fucked</itemName>
+      <itemDescription>broken totally</itemDescription>
+      <itemComment>fake andshit</itemComment>
       <itemImagePath></itemImagePath>
       <itemVisibility>false</itemVisibility>
       <itemSingleUse>true</itemSingleUse>
     </item>
     <item>
       <itemId>6</itemId>
-      <itemName>Новй предмет</itemName>
-      <itemDescription>новое описание</itemDescription>
-      <itemComment>новый коммент</itemComment>
+      <itemName>fuck</itemName>
+      <itemDescription>etg</itemDescription>
+      <itemComment>dg</itemComment>
       <itemImagePath></itemImagePath>
-      <itemVisibility>true</itemVisibility>
-      <itemSingleUse>true</itemSingleUse>
+      <itemVisibility>false</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
     </item>
   </items>
 </root>

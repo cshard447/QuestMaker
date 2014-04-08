@@ -16,7 +16,7 @@ namespace QuestMaker.GUI
         public CPerson editedPerson;
         private CAimManager aimManager;
         private CItemManager itemManager;
-        public EditPersonForm(CPerson _person, ref CAimManager _aimManager, CItemManager _itemManager)
+        public EditPersonForm(CPerson _person, ref CAimManager _aimManager, ref CItemManager _itemManager)
         {
             InitializeComponent();
             editedPerson = _person;
@@ -130,7 +130,7 @@ namespace QuestMaker.GUI
             {
                 tbcDescription.Text = markupDescription.Value.ToString();
                 //radTextBox1.Text = markupDescription.Value.ToString();
-                // text box don't have a html render :-(((
+                // text box don't have a html render :-(((                
             }
 
         }
@@ -141,6 +141,16 @@ namespace QuestMaker.GUI
             if (editAimForm.ShowDialog() == DialogResult.OK)
             {
                 aimManager.addAim(editAimForm.editedAim);
+                fillUIComponents();                
+            }
+        }
+
+        private void bCreateItem_Click(object sender, EventArgs e)
+        {
+            EditItemForm editItemForm = new EditItemForm();
+            if (editItemForm.ShowDialog() == DialogResult.OK)
+            {
+                itemManager.addItem(editItemForm.editedItem);
                 fillUIComponents();                
             }
         }

@@ -30,7 +30,9 @@ namespace QuestMaker.GUI
         {
             tbName.Text = editedItem.getName();
             tbcDescription.Text = editedItem.description;
-            tbComment.Text = editedItem.comment;
+            tbComment.Text = editedItem.comment;            
+            beImage.Value = editedItem.pathToImage;
+            pImage.BackgroundImage = editedItem.image;
             cbVisibility.Checked = editedItem.visibility;
             cbSingleUse.Checked = editedItem.singleUse;
         }
@@ -54,6 +56,11 @@ namespace QuestMaker.GUI
         private void bCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void beImage_ValueChanged(object sender, EventArgs e)
+        {
+            // show image 
         }
 
 
