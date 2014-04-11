@@ -116,10 +116,11 @@ namespace QuestMaker
             aims.Add(newID, new CAim(newID, _name, _description, _type ) );
             return newID;
         }
-        public void addAim(CAim aim)
+        public int addAim(CAim aim)
         {
             int newID = calcNewID();
             addAim(newID, aim.getName(), aim.description, aim.type);
+            return newID;
         }
 
         public bool removeAim(int idToDelete)

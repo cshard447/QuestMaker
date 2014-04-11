@@ -39,17 +39,5 @@
       <aimDescription></aimDescription>
       <aimType>primary</aimType>
     </aim>
-    <aim>
-      <aimId>6</aimId>
-      <aimName> Aim Name</aimName>
-      <aimDescription> Aim Desc</aimDescription>
-      <aimType>primary</aimType>
-    </aim>
-    <aim>
-      <aimId>7</aimId>
-      <aimName>Newest Ain Name</aimName>
-      <aimDescription>Newest Desc</aimDescription>
-      <aimType>primary</aimType>
-    </aim>
   </aims>
 </root>

@@ -16,6 +16,10 @@ namespace QuestMaker.GUI
         public CPerson editedPerson;
         private CAimManager aimManager;
         private CItemManager itemManager;
+
+        List<int> checkedAimList = new List<int>();
+        List<int> checkedItemList = new List<int>();
+
         public EditPersonForm(CPerson _person, ref CAimManager _aimManager, ref CItemManager _itemManager)
         {
             InitializeComponent();
@@ -132,27 +136,49 @@ namespace QuestMaker.GUI
                 //radTextBox1.Text = markupDescription.Value.ToString();
                 // text box don't have a html render :-(((                
             }
-
         }
 
         private void bCreateAim_Click(object sender, EventArgs e)
         {
+            SaveState();
             EditAimForm editAimForm = new EditAimForm();            
             if (editAimForm.ShowDialog() == DialogResult.OK)
             {
-                aimManager.addAim(editAimForm.editedAim);
-                fillUIComponents();                
+                int newID = aimManager.addAim(editAimForm.editedAim);
+                fillUIComponents();
+                LoadState(newID);
             }
         }
 
         private void bCreateItem_Click(object sender, EventArgs e)
         {
+            SaveState();
             EditItemForm editItemForm = new EditItemForm();
             if (editItemForm.ShowDialog() == DialogResult.OK)
             {
-                itemManager.addItem(editItemForm.editedItem);
-                fillUIComponents();                
+                int newID = itemManager.addItem(editItemForm.editedItem);
+                fillUIComponents();
+                LoadState(newID);
             }
+        }
+
+        private void SaveState()
+        {
+            checkedAimList.Clear();
+            foreach (ListViewDataItem lvAim in lvAims.CheckedItems)
+                checkedAimList.Add((int)lvAim.Value);
+            checkedItemList.Clear();
+            foreach (ListViewDataItem lvItem in lvItems.CheckedItems)
+                checkedItemList.Add((int)lvItem.Value);        
+        }
+        private void LoadState(int added = -1)
+        {
+            foreach (ListViewDataItem lvaim in lvAims.Items)
+                if (checkedAimList.Contains((int)lvaim.Value) || added == (int)lvaim.Value)
+                    lvaim.CheckState = Telerik.WinControls.Enumerations.ToggleState.On;
+            foreach (ListViewDataItem lvitem in lvItems.Items)
+                if (checkedItemList.Contains((int)lvitem.Value) || added == (int)lvitem.Value)
+                    lvitem.CheckState = Telerik.WinControls.Enumerations.ToggleState.On;        
         }
     }
 }

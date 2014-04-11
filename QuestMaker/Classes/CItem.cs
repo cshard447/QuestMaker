@@ -105,10 +105,11 @@ namespace QuestMaker
             items.Add(newID, new CItem(newID, _name, _description, _comment, _path, _visibility, _singleUse ) );
             return newID;
         }
-        public void addItem(CItem item)
+        public int addItem(CItem item)
         {
             int newID = calcNewID();
             addItem(newID, item.getName(), item.description, item.comment, item.pathToImage, item.visibility, item.singleUse);
+            return newID;
         }
 
         public bool removeItem(int idToDelete)

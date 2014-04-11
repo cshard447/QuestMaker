@@ -9,7 +9,7 @@
       <personComment>Musician, singer, songwriter, </personComment>
       <personAltName></personAltName>
       <personalItems></personalItems>
-      <personalAims>7,</personalAims>
+      <personalAims></personalAims>
       <personClan>Violet</personClan>
     </person>
     <person>
@@ -155,30 +155,6 @@
       <personalItems></personalItems>
       <personalAims></personalAims>
       <personClan>Gray</personClan>
-    </person>
-    <person>
-      <personId>13</personId>
-      <personName>NewbieName</personName>
-      <personSex>flexible</personSex>
-      <personDescription>Newbie desc</personDescription>
-      <personUnremovable>true</personUnremovable>
-      <personComment>Newbie Comment</personComment>
-      <personAltName>Newbie AltName</personAltName>
-      <personalItems></personalItems>
-      <personalAims></personalAims>
-      <personClan>Green</personClan>
-    </person>
-    <person>
-      <personId>14</personId>
-      <personName></personName>
-      <personSex>male</personSex>
-      <personDescription></personDescription>
-      <personUnremovable>false</personUnremovable>
-      <personComment></personComment>
-      <personAltName></personAltName>
-      <personalItems></personalItems>
-      <personalAims>6,</personalAims>
-      <personClan>Red</personClan>
     </person>
   </persons>
 </root>
