@@ -72,5 +72,13 @@ namespace QuestMaker.GUI
             }
         }
 
+        private void cbZoomImage_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        {
+            if (cbZoomImage.Checked)
+                pImage.BackgroundImageLayout = ImageLayout.Zoom;
+            else
+                pImage.BackgroundImageLayout = ImageLayout.Center;
+        }
+
     }
 }

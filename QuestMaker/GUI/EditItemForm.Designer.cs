@@ -43,6 +43,7 @@
             this.bCancel = new Telerik.WinControls.UI.RadButton();
             this.pImage = new Telerik.WinControls.UI.RadPanel();
             this.beImage = new Telerik.WinControls.UI.RadBrowseEditor();
+            this.cbZoomImage = new Telerik.WinControls.UI.RadCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
@@ -58,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbZoomImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,11 +188,21 @@
             this.beImage.Text = "Картинка";
             this.beImage.ValueChanged += new System.EventHandler(this.beImage_ValueChanged);
             // 
+            // cbZoomImage
+            // 
+            this.cbZoomImage.Location = new System.Drawing.Point(455, 245);
+            this.cbZoomImage.Name = "cbZoomImage";
+            this.cbZoomImage.Size = new System.Drawing.Size(109, 18);
+            this.cbZoomImage.TabIndex = 14;
+            this.cbZoomImage.Text = "Масштабировать";
+            this.cbZoomImage.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.cbZoomImage_ToggleStateChanged);
+            // 
             // EditItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 547);
+            this.Controls.Add(this.cbZoomImage);
             this.Controls.Add(this.beImage);
             this.Controls.Add(this.pImage);
             this.Controls.Add(this.bCancel);
@@ -211,7 +223,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "EditItemForm";
+            this.Text = "Редактирование предмета";
             this.ThemeName = "ControlDefault";
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
@@ -228,6 +240,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bCancel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbZoomImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -251,5 +264,6 @@
         private Telerik.WinControls.UI.RadButton bCancel;
         private Telerik.WinControls.UI.RadPanel pImage;
         private Telerik.WinControls.UI.RadBrowseEditor beImage;
+        private Telerik.WinControls.UI.RadCheckBox cbZoomImage;
     }
 }
