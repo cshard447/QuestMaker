@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace QuestMaker.Classes
 {
-    abstract class CCommonText
+    public abstract class CCommonText
     {
         private XDocument doc = new XDocument(new XElement("root"));
         string fileName;
@@ -70,7 +70,7 @@ namespace QuestMaker.Classes
 
     }
 
-    class CRules : CCommonText
+    public class CRules : CCommonText
     {
         public static new string section;
         public CRules()
@@ -87,7 +87,7 @@ namespace QuestMaker.Classes
         }
     }
 
-    class CPrehistory : CCommonText
+    public class CPrehistory : CCommonText
     {
         public static new string section;
         public CPrehistory()

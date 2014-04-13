@@ -2,42 +2,141 @@
   <aims>
     <aim>
       <aimId>0</aimId>
-      <aimName>Compose a new song about what happened.</aimName>
+      <aimName>Find supporters</aimName>
+      <aimDescription></aimDescription>
+      <aimType>secondary</aimType>
+    </aim>
+    <aim>
+      <aimId>1</aimId>
+      <aimName>Find out about the oracle</aimName>
+      <aimDescription></aimDescription>
+      <aimType>transitional</aimType>
+    </aim>
+    <aim>
+      <aimId>2</aimId>
+      <aimName>Prevent something from happening</aimName>
       <aimDescription></aimDescription>
       <aimType>primary</aimType>
     </aim>
     <aim>
-      <aimId>1</aimId>
-      <aimName>Find out who set the fire</aimName>
-      <aimDescription>Someone must have done it!
-</aimDescription>
-      <aimType>primary</aimType>
+      <aimId>5</aimId>
+      <aimName>Learn more about the oracle</aimName>
+      <aimDescription></aimDescription>
+      <aimType>transitional</aimType>
     </aim>
     <aim>
-      <aimId>2</aimId>
-      <aimName>Find an object</aimName>
-      <aimDescription>Any
-</aimDescription>
+      <aimId>4</aimId>
+      <aimName>Persuade the locals to leave the Island</aimName>
+      <aimDescription></aimDescription>
       <aimType>transitional</aimType>
     </aim>
     <aim>
       <aimId>3</aimId>
-      <aimName>Find supportersShit</aimName>
-      <aimDescription>
-упупвапавп</aimDescription>
+      <aimName>Own the Island</aimName>
+      <aimDescription></aimDescription>
       <aimType>primary</aimType>
     </aim>
     <aim>
-      <aimId>4</aimId>
-      <aimName>Take The Skettles autographs</aimName>
-      <aimDescription>fuck it reallyjkk</aimDescription>
+      <aimId>6</aimId>
+      <aimName>Get rid of newcomers</aimName>
+      <aimDescription></aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>7</aimId>
+      <aimName>Make the Island a place for tourists</aimName>
+      <aimDescription></aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>8</aimId>
+      <aimName>Find out who writes love letters</aimName>
+      <aimDescription></aimDescription>
       <aimType>secondary</aimType>
     </aim>
     <aim>
-      <aimId>5</aimId>
-      <aimName>Find 'Mister X'</aimName>
+      <aimId>9</aimId>
+      <aimName>Find out what this Island hides</aimName>
       <aimDescription></aimDescription>
       <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>10</aimId>
+      <aimName>Find the murderer</aimName>
+      <aimDescription></aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>11</aimId>
+      <aimName>Find a local healer</aimName>
+      <aimDescription></aimDescription>
+      <aimType>secondary</aimType>
+    </aim>
+    <aim>
+      <aimId>12</aimId>
+      <aimName>Find out what happened to your brother</aimName>
+      <aimDescription></aimDescription>
+      <aimType>transitional</aimType>
+    </aim>
+    <aim>
+      <aimId>13</aimId>
+      <aimName>Take your medicine every 20 minutes</aimName>
+      <aimDescription></aimDescription>
+      <aimType>secondary</aimType>
+    </aim>
+    <aim>
+      <aimId>14</aimId>
+      <aimName>Find local healer</aimName>
+      <aimDescription></aimDescription>
+      <aimType>secondary</aimType>
+    </aim>
+    <aim>
+      <aimId>15</aimId>
+      <aimName>Find a person who can tell you more about their culture so that you could offer them something.</aimName>
+      <aimDescription></aimDescription>
+      <aimType>transitional</aimType>
+    </aim>
+    <aim>
+      <aimId>16</aimId>
+      <aimName>Gather offerings for Chee U</aimName>
+      <aimDescription></aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>17</aimId>
+      <aimName>Find out more about local legents and customs</aimName>
+      <aimDescription></aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>18</aimId>
+      <aimName>Find the heart-shaped diamond</aimName>
+      <aimDescription></aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>19</aimId>
+      <aimName>Write a book about the Virgin Island</aimName>
+      <aimDescription>To do so you have to find out at least 5 legends about the place. 1. A legend about a powerful man who dissapeared from the island. 2 the legend about the volcano (prophecy)3 name of place in a local language</aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>20</aimId>
+      <aimName>Gather 5 valiables</aimName>
+      <aimDescription></aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>21</aimId>
+      <aimName>Find all the fragments of the map</aimName>
+      <aimDescription>When you do it, come up to a keys' keeper</aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>22</aimId>
+      <aimName>Make sure all local people gathered offerings for the Volcano.</aimName>
+      <aimDescription></aimDescription>
+      <aimType>transitional</aimType>
     </aim>
   </aims>
 </root>

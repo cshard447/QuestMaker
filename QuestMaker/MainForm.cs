@@ -1,16 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System.IO;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.IO;
+using System.Drawing;
 using System.Windows.Forms;
+using System.ComponentModel;
+using System.Collections.Generic;
+
 using Telerik.WinControls.UI;
 using Telerik.WinControls.RichTextBox.Model;
-using Telerik.WinControls.RichTextBox.FileFormats.Html;
 using Telerik.WinControls.RichTextBox.FileFormats;
+using Telerik.WinControls.RichTextBox.FileFormats.Html;
 using QuestMaker.Classes;
 using QuestMaker.GUI;
 
@@ -41,7 +42,7 @@ namespace QuestMaker
             prehistory.loadTextFromFile();
             rtbPrehistory.Document = htmlProvider.Import(prehistory.writtenText);
             peopleManager.loadPersonsFromFile();
-            ShowPersonsOnGridView();
+            ShowPersonsOnGridView();            
         }
 
         void FillTableColumns()
@@ -317,7 +318,7 @@ namespace QuestMaker
 
         private void cmbCreatePerson_Click(object sender, EventArgs e)
         {
-            EditPersonForm epf = new EditPersonForm(ref aimManager, itemManager);
+            EditPersonForm epf = new EditPersonForm(ref aimManager, ref itemManager);
             if (epf.ShowDialog() == DialogResult.OK)
             {
                 peopleManager.addPerson(epf.editedPerson);
@@ -350,6 +351,12 @@ namespace QuestMaker
                 itemManager.addItem(eif.editedItem);
                 ShowItemsOnGridView();
             }
+        }
+
+        private void menuItemPrintForm_Click(object sender, EventArgs e)
+        {
+            PrintResultForm prf = new PrintResultForm(peopleManager, aimManager, itemManager, prehistory, rules);
+            prf.Show();
         }
 
 

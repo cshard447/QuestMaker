@@ -26,6 +26,8 @@ namespace QuestMaker.GUI
             editedItem = _item;
             opening = true;
             fillItemData();
+            ((OpenFileDialog)(beImage.Dialog)).DefaultExt = ".jpg";
+            ((OpenFileDialog)(beImage.Dialog)).Filter = "Картинки|*.jpg|Картинки|*.png";
         }
 
         private void fillItemData()

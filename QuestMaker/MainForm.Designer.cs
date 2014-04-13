@@ -102,6 +102,7 @@
             this.menuItemLoad = new Telerik.WinControls.UI.RadMenuItem();
             this.menuItemSave = new Telerik.WinControls.UI.RadMenuHeaderItem();
             this.menuSeparator1 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
+            this.menuItemPrintForm = new Telerik.WinControls.UI.RadMenuItem();
             this.menuButtonWipeOutColumns = new Telerik.WinControls.UI.RadMenuButtonItem();
             this.markupPrehistory = new Telerik.WinControls.UI.RadMarkupDialog();
             this.mainMenu = new Telerik.WinControls.UI.RadMenu();
@@ -140,8 +141,8 @@
             this.mainPageView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPageView.Location = new System.Drawing.Point(0, 20);
             this.mainPageView.Name = "mainPageView";
-            this.mainPageView.SelectedPage = this.pageItems;
-            this.mainPageView.Size = new System.Drawing.Size(925, 472);
+            this.mainPageView.SelectedPage = this.pagePersons;
+            this.mainPageView.Size = new System.Drawing.Size(1191, 558);
             this.mainPageView.TabIndex = 10;
             // 
             // pagePrehistory
@@ -222,7 +223,7 @@
             this.pagePersons.Controls.Add(this.commandBarPerson);
             this.pagePersons.Location = new System.Drawing.Point(10, 37);
             this.pagePersons.Name = "pagePersons";
-            this.pagePersons.Size = new System.Drawing.Size(904, 424);
+            this.pagePersons.Size = new System.Drawing.Size(1170, 510);
             this.pagePersons.Text = "Люди";
             // 
             // gridViewPersons
@@ -245,29 +246,31 @@
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.HeaderText = "Имя";
             gridViewTextBoxColumn2.Name = "columnName";
+            gridViewTextBoxColumn2.Width = 137;
             gridViewComboBoxColumn1.EnableExpressionEditor = false;
             gridViewComboBoxColumn1.HeaderText = "Пол";
             gridViewComboBoxColumn1.Name = "columnSex";
-            gridViewComboBoxColumn1.Width = 88;
+            gridViewComboBoxColumn1.Width = 89;
             gridViewCheckBoxColumn1.EnableExpressionEditor = false;
             gridViewCheckBoxColumn1.HeaderText = "Неудаляемый";
             gridViewCheckBoxColumn1.MinWidth = 20;
             gridViewCheckBoxColumn1.Name = "columnUnremovable";
-            gridViewCheckBoxColumn1.Width = 97;
+            gridViewCheckBoxColumn1.Width = 80;
             gridViewTextBoxColumn3.DisableHTMLRendering = false;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.HeaderText = "Описание";
             gridViewTextBoxColumn3.Name = "columnDescription";
-            gridViewTextBoxColumn3.Width = 104;
+            gridViewTextBoxColumn3.Width = 186;
             gridViewMultiComboBoxColumn1.EnableExpressionEditor = false;
             gridViewMultiComboBoxColumn1.HeaderText = "Предметы";
             gridViewMultiComboBoxColumn1.Name = "columnPersonalItems";
             gridViewMultiComboBoxColumn1.ReadOnly = true;
-            gridViewMultiComboBoxColumn1.Width = 85;
+            gridViewMultiComboBoxColumn1.Width = 112;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.HeaderText = "Цели";
             gridViewTextBoxColumn4.Name = "columnPersonalAims";
             gridViewTextBoxColumn4.ReadOnly = true;
+            gridViewTextBoxColumn4.Width = 148;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.HeaderText = "Второе имя";
             gridViewTextBoxColumn5.Name = "columnAltName";
@@ -296,7 +299,7 @@
             sortDescriptor1});
             this.gridViewPersons.Name = "gridViewPersons";
             this.gridViewPersons.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewPersons.Size = new System.Drawing.Size(904, 394);
+            this.gridViewPersons.Size = new System.Drawing.Size(1170, 480);
             this.gridViewPersons.TabIndex = 1;
             this.gridViewPersons.Text = "radGridView1";
             this.gridViewPersons.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gridViewPersons_CellFormatting);
@@ -308,7 +311,7 @@
             this.commandBarPerson.Name = "commandBarPerson";
             this.commandBarPerson.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowPerson});
-            this.commandBarPerson.Size = new System.Drawing.Size(904, 30);
+            this.commandBarPerson.Size = new System.Drawing.Size(1170, 30);
             this.commandBarPerson.TabIndex = 0;
             this.commandBarPerson.Text = "radCommandBar1";
             // 
@@ -399,9 +402,9 @@
             this.gridViewAims.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewAims.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gridViewAims.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewAims.Location = new System.Drawing.Point(0, 45);
+            this.gridViewAims.Location = new System.Drawing.Point(0, 1);
             // 
-            // gridViewAims
+            // 
             // 
             this.gridViewAims.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
@@ -410,7 +413,7 @@
             gridViewTextBoxColumn8.EnableExpressionEditor = false;
             gridViewTextBoxColumn8.HeaderText = "Название";
             gridViewTextBoxColumn8.Name = "columnName";
-            gridViewTextBoxColumn8.Width = 147;
+            gridViewTextBoxColumn8.Width = 261;
             gridViewTextBoxColumn9.AcceptsReturn = true;
             gridViewTextBoxColumn9.AcceptsTab = true;
             gridViewTextBoxColumn9.DisableHTMLRendering = false;
@@ -435,7 +438,7 @@
             sortDescriptor2});
             this.gridViewAims.Name = "gridViewAims";
             this.gridViewAims.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewAims.Size = new System.Drawing.Size(904, 379);
+            this.gridViewAims.Size = new System.Drawing.Size(904, 423);
             this.gridViewAims.TabIndex = 1;
             this.gridViewAims.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridViewAims_CellDoubleClick);
             // 
@@ -446,7 +449,7 @@
             this.commandBarAims.Name = "commandBarAims";
             this.commandBarAims.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowAims});
-            this.commandBarAims.Size = new System.Drawing.Size(904, 45);
+            this.commandBarAims.Size = new System.Drawing.Size(904, 1);
             this.commandBarAims.TabIndex = 2;
             this.commandBarAims.Text = "radCommandBar1";
             // 
@@ -496,7 +499,7 @@
             this.pageItems.Controls.Add(this.pGridViewItems);
             this.pageItems.Location = new System.Drawing.Point(10, 37);
             this.pageItems.Name = "pageItems";
-            this.pageItems.Size = new System.Drawing.Size(904, 424);
+            this.pageItems.Size = new System.Drawing.Size(1101, 424);
             this.pageItems.Text = "Предметы";
             // 
             // pGridViewItems
@@ -506,7 +509,7 @@
             this.pGridViewItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pGridViewItems.Location = new System.Drawing.Point(0, 0);
             this.pGridViewItems.Name = "pGridViewItems";
-            this.pGridViewItems.Size = new System.Drawing.Size(904, 424);
+            this.pGridViewItems.Size = new System.Drawing.Size(1101, 424);
             this.pGridViewItems.TabIndex = 4;
             // 
             // gridViewItems
@@ -530,12 +533,12 @@
             gridViewTextBoxColumn11.EnableExpressionEditor = false;
             gridViewTextBoxColumn11.HeaderText = "Имя";
             gridViewTextBoxColumn11.Name = "columnName";
-            gridViewTextBoxColumn11.Width = 68;
+            gridViewTextBoxColumn11.Width = 262;
             gridViewTextBoxColumn12.DisableHTMLRendering = false;
             gridViewTextBoxColumn12.EnableExpressionEditor = false;
             gridViewTextBoxColumn12.HeaderText = "Описание";
             gridViewTextBoxColumn12.Name = "columnDescription";
-            gridViewTextBoxColumn12.Width = 150;
+            gridViewTextBoxColumn12.Width = 266;
             gridViewTextBoxColumn13.EnableExpressionEditor = false;
             gridViewTextBoxColumn13.HeaderText = "Комментарий";
             gridViewTextBoxColumn13.Name = "columnComment";
@@ -553,12 +556,12 @@
             gridViewCheckBoxColumn2.HeaderText = "Видимый";
             gridViewCheckBoxColumn2.MinWidth = 20;
             gridViewCheckBoxColumn2.Name = "columnVisibility";
-            gridViewCheckBoxColumn2.Width = 87;
+            gridViewCheckBoxColumn2.Width = 57;
             gridViewCheckBoxColumn3.EnableExpressionEditor = false;
             gridViewCheckBoxColumn3.HeaderText = "Однократный";
             gridViewCheckBoxColumn3.MinWidth = 20;
             gridViewCheckBoxColumn3.Name = "columnSingleUse";
-            gridViewCheckBoxColumn3.Width = 93;
+            gridViewCheckBoxColumn3.Width = 80;
             this.gridViewItems.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn10,
             gridViewTextBoxColumn11,
@@ -573,7 +576,7 @@
             sortDescriptor3});
             this.gridViewItems.Name = "gridViewItems";
             this.gridViewItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewItems.Size = new System.Drawing.Size(904, 379);
+            this.gridViewItems.Size = new System.Drawing.Size(1101, 379);
             this.gridViewItems.TabIndex = 1;
             this.gridViewItems.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gridViewItems_CellFormatting);
             this.gridViewItems.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridViewItems_CellDoubleClick);
@@ -585,7 +588,7 @@
             this.commandBarItems.Name = "commandBarItems";
             this.commandBarItems.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.commandBarItems.Size = new System.Drawing.Size(904, 45);
+            this.commandBarItems.Size = new System.Drawing.Size(1101, 45);
             this.commandBarItems.TabIndex = 2;
             this.commandBarItems.Text = "radCommandBar1";
             // 
@@ -658,9 +661,9 @@
             // 
             this.rtbRules.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbRules.HyperlinkToolTipFormatString = null;
-            this.rtbRules.Location = new System.Drawing.Point(0, 45);
+            this.rtbRules.Location = new System.Drawing.Point(0, 1);
             this.rtbRules.Name = "rtbRules";
-            this.rtbRules.Size = new System.Drawing.Size(904, 379);
+            this.rtbRules.Size = new System.Drawing.Size(904, 423);
             this.rtbRules.TabIndex = 1;
             // 
             // commandBarRules
@@ -670,7 +673,7 @@
             this.commandBarRules.Name = "commandBarRules";
             this.commandBarRules.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowRules});
-            this.commandBarRules.Size = new System.Drawing.Size(904, 45);
+            this.commandBarRules.Size = new System.Drawing.Size(904, 1);
             this.commandBarRules.TabIndex = 2;
             this.commandBarRules.Text = "radCommandBar1";
             // 
@@ -716,9 +719,9 @@
             // 
             // statusStrip
             // 
-            this.statusStrip.Location = new System.Drawing.Point(0, 492);
+            this.statusStrip.Location = new System.Drawing.Point(0, 578);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(925, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1191, 22);
             this.statusStrip.TabIndex = 11;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -738,6 +741,7 @@
             this.menuItemLoad,
             this.menuItemSave,
             this.menuSeparator1,
+            this.menuItemPrintForm,
             this.menuButtonWipeOutColumns});
             this.menuItemMain.Name = "menuItemMain";
             this.menuItemMain.Text = "Главное";
@@ -768,6 +772,15 @@
             this.menuSeparator1.Text = "radMenuSeparatorItem1";
             this.menuSeparator1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
+            // menuItemPrintForm
+            // 
+            this.menuItemPrintForm.AccessibleDescription = "Печать...";
+            this.menuItemPrintForm.AccessibleName = "Печать...";
+            this.menuItemPrintForm.Name = "menuItemPrintForm";
+            this.menuItemPrintForm.Text = "Печать...";
+            this.menuItemPrintForm.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.menuItemPrintForm.Click += new System.EventHandler(this.menuItemPrintForm_Click);
+            // 
             // menuButtonWipeOutColumns
             // 
             this.menuButtonWipeOutColumns.AccessibleDescription = "Убрать лишнее";
@@ -788,7 +801,7 @@
             this.menuItemMain});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(925, 20);
+            this.mainMenu.Size = new System.Drawing.Size(1191, 20);
             this.mainMenu.TabIndex = 12;
             this.mainMenu.Text = "radMenu1";
             // 
@@ -796,7 +809,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 514);
+            this.ClientSize = new System.Drawing.Size(1191, 600);
             this.Controls.Add(this.mainPageView);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.mainMenu);
@@ -888,6 +901,7 @@
         private Telerik.WinControls.UI.CommandBarButton cmbCreateItem;
         private Telerik.WinControls.UI.CommandBarButton cmbSaveItems;
         private Telerik.WinControls.UI.CommandBarButton cmbEditItems;
+        private Telerik.WinControls.UI.RadMenuItem menuItemPrintForm;
 
     }
 }

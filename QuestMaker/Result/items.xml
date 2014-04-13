@@ -2,16 +2,16 @@
   <items>
     <item>
       <itemId>0</itemId>
-      <itemName>A warning letter</itemName>
-      <itemDescription>A strange letter recieved 2 days before the event</itemDescription>
-      <itemComment>Настоящее</itemComment>
-      <itemImagePath>..\..\Result\card2.jpg</itemImagePath>
+      <itemName>A ring with an emerald</itemName>
+      <itemDescription>Family ring inherited after great-grandmoher</itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath>..\..\Result\close.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>false</itemSingleUse>
     </item>
     <item>
       <itemId>3</itemId>
-      <itemName>Ампула с ядом</itemName>
+      <itemName>Money</itemName>
       <itemDescription>Используйте, что отравить человека и забрать его вещи</itemDescription>
       <itemComment></itemComment>
       <itemImagePath>..\..\Result\youtube.png</itemImagePath>
@@ -20,39 +20,139 @@
     </item>
     <item>
       <itemId>5</itemId>
-      <itemName>Ключ от сейфа</itemName>
-      <itemDescription>&lt;html&gt;Открывает &lt;strong&gt;&lt;span style="color: #ff0000"&gt;сейф&lt;/span&gt;&lt;/strong&gt; в доме&lt;/html&gt;</itemDescription>
+      <itemName>Creeping Thyme</itemName>
+      <itemDescription>tranquilizer </itemDescription>
       <itemComment></itemComment>
       <itemImagePath>..\..\Result\vk.png</itemImagePath>
-      <itemVisibility>false</itemVisibility>
-      <itemSingleUse>false</itemSingleUse>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>true</itemSingleUse>
     </item>
     <item>
       <itemId>4</itemId>
-      <itemName>Ампула со снотворным</itemName>
-      <itemDescription>Используйте, чтобы усыпить человека</itemDescription>
-      <itemComment></itemComment>
+      <itemName>A strange scroll</itemName>
+      <itemDescription>open when finds out something happened to your brother.</itemDescription>
+      <itemComment>a map of the island</itemComment>
       <itemImagePath>..\..\Result\twitter.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>true</itemSingleUse>
     </item>
     <item>
       <itemId>1</itemId>
-      <itemName>Documents</itemName>
-      <itemDescription>Завещание покойного владельца</itemDescription>
-      <itemComment>Фейк</itemComment>
-      <itemImagePath>..\..\Result\card2.jpg</itemImagePath>
+      <itemName>A photo of a strange message</itemName>
+      <itemDescription>▫ᴈ  °ᴈ¦  ▀s   ▀»    ﬩∩»╝ײַ°
+</itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>false</itemSingleUse>
     </item>
     <item>
       <itemId>2</itemId>
-      <itemName>guitar fucked</itemName>
-      <itemDescription>broken totally</itemDescription>
-      <itemComment>fake andshit</itemComment>
-      <itemImagePath>..\..\Result\card1.jpg</itemImagePath>
-      <itemVisibility>false</itemVisibility>
+      <itemName>Creeping Thyme</itemName>
+      <itemDescription>tranquilizer </itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
       <itemSingleUse>true</itemSingleUse>
+    </item>
+    <item>
+      <itemId>6</itemId>
+      <itemName>A tatoo</itemName>
+      <itemDescription></itemDescription>
+      <itemComment>A plaster</itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+    </item>
+    <item>
+      <itemId>7</itemId>
+      <itemName>brochure "Exotic Paradise"</itemName>
+      <itemDescription></itemDescription>
+      <itemComment>everyone has it</itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+    </item>
+    <item>
+      <itemId>8</itemId>
+      <itemName>Permission from authorities to build up the Island.</itemName>
+      <itemDescription>A paper for aboriginals to sigh is attached.</itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+    </item>
+    <item>
+      <itemId>9</itemId>
+      <itemName>A note in a cave</itemName>
+      <itemDescription>if you follow the map correctly you'll find it</itemDescription>
+      <itemComment>The Boatman left his brother a map. He knew he wasn't doing something legal so in case something happened to him, he drew a map and placed a note into a cave.</itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+    </item>
+    <item>
+      <itemId>10</itemId>
+      <itemName>A heart-shaped diamond</itemName>
+      <itemDescription>found in a cave</itemDescription>
+      <itemComment>fake</itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+    </item>
+    <item>
+      <itemId>11</itemId>
+      <itemName>A heart-shaped diamond</itemName>
+      <itemDescription>found on the other side of the island, hidden under the ground</itemDescription>
+      <itemComment>the real one</itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+    </item>
+    <item>
+      <itemId>12</itemId>
+      <itemName>A camera</itemName>
+      <itemDescription></itemDescription>
+      <itemComment>Yo can take photos with it</itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>false</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+    </item>
+    <item>
+      <itemId>13</itemId>
+      <itemName>A hand-glass</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+    </item>
+    <item>
+      <itemId>14</itemId>
+      <itemName>A dagger</itemName>
+      <itemDescription>JB written on</itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+    </item>
+    <item>
+      <itemId>15</itemId>
+      <itemName>A fragment of a map</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>false</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+    </item>
+    <item>
+      <itemId>16</itemId>
+      <itemName>Gold</itemName>
+      <itemDescription>Pirates' gold</itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
     </item>
   </items>
 </root>

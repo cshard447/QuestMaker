@@ -29,7 +29,7 @@ namespace QuestMaker.GUI
             fillUIComponents();
             fillPersonData();
         }
-        public EditPersonForm(ref CAimManager _aimManager, CItemManager _itemManager)
+        public EditPersonForm(ref CAimManager _aimManager, ref CItemManager _itemManager)
         {
             InitializeComponent();
             editedPerson = new CPerson();

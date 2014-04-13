@@ -122,6 +122,27 @@ namespace QuestMaker.Classes
         }
     }
 
+    public class PersonNameObject
+    {
+        private int id;
+        private string name;
+        public int Id
+        {
+            get{return id;}
+            set{id = value;}
+        }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public PersonNameObject(int _id, string _name)
+        {
+            id = _id;
+            name = _name;
+        }
+    }
+
 
     public class CPersonManager
     {
@@ -132,6 +153,7 @@ namespace QuestMaker.Classes
         const int MAX_PERSONS = 100;
         public static BindingList<SexDataSourceObject> enumSexList = new BindingList<SexDataSourceObject>();
         public static BindingList<ClanClass> clanList = new BindingList<ClanClass>();
+        public static BindingList<PersonNameObject> personList = new BindingList<PersonNameObject>();
         Dictionary<string, Sex> strToSex = new Dictionary<string, Sex>();
 
         public CPersonManager()
@@ -326,6 +348,14 @@ namespace QuestMaker.Classes
             clanList.Add(new ClanClass(KnownColor.Violet, "Фиолетовый"));
             clanList.Add(new ClanClass(KnownColor.Green, "Зеленый"));
             clanList.Add(new ClanClass(KnownColor.Gray, "Серый"));
+        }
+
+        public BindingList<PersonNameObject> getPersonsList()
+        {
+            personList.Clear();            
+            foreach (CPerson person in persons.Values)
+                personList.Add(new PersonNameObject(person.getID(), person.getName()));
+            return personList;
         }
 
         public Sex getSexFromString(string sex)
