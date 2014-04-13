@@ -12,6 +12,7 @@ namespace QuestMaker.GUI
     public partial class EditItemForm : Telerik.WinControls.UI.RadForm
     {
         public CItem editedItem;
+        bool opening;
         
         public EditItemForm()
         {
@@ -23,6 +24,7 @@ namespace QuestMaker.GUI
         {
             InitializeComponent();
             editedItem = _item;
+            opening = true;
             fillItemData();
         }
 
@@ -35,6 +37,7 @@ namespace QuestMaker.GUI
             pImage.BackgroundImage = editedItem.image;
             cbVisibility.Checked = editedItem.visibility;
             cbSingleUse.Checked = editedItem.singleUse;
+            opening = false;
         }
         private void getItemFromUI()
         {
@@ -43,8 +46,7 @@ namespace QuestMaker.GUI
             editedItem.comment = tbComment.Text;
             editedItem.visibility = cbVisibility.Checked;
             editedItem.singleUse = cbSingleUse.Checked;
-            editedItem.pathToImage = "";
-            
+            editedItem.pathToImage = beImage.Value;
         }
 
         private void bOK_Click(object sender, EventArgs e)
@@ -60,10 +62,15 @@ namespace QuestMaker.GUI
 
         private void beImage_ValueChanged(object sender, EventArgs e)
         {
-            // show image 
+            if (!opening)
+            {
+                string fileName = ((OpenFileDialog)(beImage.Dialog)).SafeFileName;
+                string path = ((OpenFileDialog)(beImage.Dialog)).FileName;
+                //MessageBox.Show("ПОлучили: " + fileName + "\n" + path);
+                Image image = Image.FromFile(path);
+                pImage.BackgroundImage = image;
+            }
         }
-
-
 
     }
 }

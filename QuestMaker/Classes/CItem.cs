@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Collections;
-using System.Xml.Linq;
 using System.Drawing;
+using System.Xml.Linq;
+using System.Collections;
+using System.ComponentModel;
+using System.Threading.Tasks;
 using Telerik.WinControls.UI;
+using System.Collections.Generic;
 using QuestMaker.Classes;
-
 
 namespace QuestMaker
 {
@@ -142,19 +142,27 @@ namespace QuestMaker
             if (!this.items.ContainsKey(updated.getID()))
                 throw new System.ArgumentException("Предмета с таким ID не существует!");
             items[updated.getID()] = updated;
+            addImageToItem(updated.pathToImage, updated.getID());
         }
 
-        public void updateItemImage(int id, string path)
-        { 
-            if ( !items.ContainsKey(id) )
-                return;
-            items[id].pathToImage = path;
-        }
-        public void updateItemImage(int id, Image _image)
+        public void addImageToItem(string path, string fileName, int id)
         {
             if (!items.ContainsKey(id))
                 return;
-            items[id].image = _image;        
+            string destination = Common.path + fileName;
+            if (!File.Exists(destination))
+                File.Copy(path, destination, true);
+            Image image = Image.FromFile(destination);
+
+            items[id].pathToImage = destination;
+            items[id].image = image;
+        }
+
+        public void addImageToItem(string path, int id)
+        {
+            int last = path.LastIndexOf("\\");
+            string fileName = path.Substring(last + 1);
+            addImageToItem(path, fileName, id);
         }
 
         public Dictionary<int, CItem> getAllItems()

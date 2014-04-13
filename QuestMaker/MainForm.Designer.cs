@@ -140,7 +140,7 @@
             this.mainPageView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPageView.Location = new System.Drawing.Point(0, 20);
             this.mainPageView.Name = "mainPageView";
-            this.mainPageView.SelectedPage = this.pagePrehistory;
+            this.mainPageView.SelectedPage = this.pageItems;
             this.mainPageView.Size = new System.Drawing.Size(925, 472);
             this.mainPageView.TabIndex = 10;
             // 

@@ -177,17 +177,11 @@ namespace QuestMaker
             if (e.Column.Name == "columnImage")
             {
                 if (openImageFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    //! @todo подумать над тем, если файл с таким именем привязан к другому объекту
+                {                    
                     string fileName = openImageFileDialog.SafeFileName;
                     string path = openImageFileDialog.FileName;
-                    string destination = Common.path + fileName;
-                    if (!File.Exists(destination))
-                        File.Copy(path, destination,true);
                     int id = int.Parse(gridViewItems.Rows[e.RowIndex].Cells["columnID"].Value.ToString());
-                    Image img = Image.FromFile(destination);
-                    itemManager.updateItemImage(id, destination);
-                    itemManager.updateItemImage(id, img);
+                    itemManager.addImageToItem(path, fileName, id);                    
                     ShowItemsOnGridView();
                 }
             }
@@ -203,13 +197,7 @@ namespace QuestMaker
         private void buttonTest_Click(object sender, EventArgs e)
         {
             //itemManager.TestXML();
-            //gridViewAims.Columns[2].data
-            //gridViewItems.Columns["columnID"].IsVisible = !gridViewItems.Columns["columnID"].IsVisible;
-            //gridViewItems.Columns["columnPath"].IsVisible = !gridViewItems.Columns["columnPath"].IsVisible;
-            //EditPersonForm ep = new EditPersonForm();
-            //ep.Show();
             gridViewAims.ColumnChooser.Show();            
-            
         }
 
         private void gridViewAims_CellDoubleClick(object sender, GridViewCellEventArgs e)
@@ -363,10 +351,6 @@ namespace QuestMaker
                 ShowItemsOnGridView();
             }
         }
-
-
-
-
 
     }
 }

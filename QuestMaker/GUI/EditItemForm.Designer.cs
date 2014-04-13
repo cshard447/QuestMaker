@@ -95,7 +95,7 @@
             // 
             // radLabel5
             // 
-            this.radLabel5.Location = new System.Drawing.Point(39, 211);
+            this.radLabel5.Location = new System.Drawing.Point(39, 205);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(166, 18);
             this.radLabel5.TabIndex = 1;
@@ -103,7 +103,7 @@
             // 
             // radLabel6
             // 
-            this.radLabel6.Location = new System.Drawing.Point(39, 252);
+            this.radLabel6.Location = new System.Drawing.Point(39, 245);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(57, 18);
             this.radLabel6.TabIndex = 1;
@@ -119,7 +119,7 @@
             // 
             // cbSingleUse
             // 
-            this.cbSingleUse.Location = new System.Drawing.Point(220, 211);
+            this.cbSingleUse.Location = new System.Drawing.Point(220, 205);
             this.cbSingleUse.Name = "cbSingleUse";
             this.cbSingleUse.Size = new System.Drawing.Size(92, 18);
             this.cbSingleUse.TabIndex = 5;
@@ -152,7 +152,7 @@
             // bOK
             // 
             this.bOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.bOK.Location = new System.Drawing.Point(281, 406);
+            this.bOK.Location = new System.Drawing.Point(284, 491);
             this.bOK.Name = "bOK";
             this.bOK.Size = new System.Drawing.Size(110, 24);
             this.bOK.TabIndex = 9;
@@ -162,7 +162,7 @@
             // bCancel
             // 
             this.bCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bCancel.Location = new System.Drawing.Point(428, 406);
+            this.bCancel.Location = new System.Drawing.Point(428, 491);
             this.bCancel.Name = "bCancel";
             this.bCancel.Size = new System.Drawing.Size(110, 24);
             this.bCancel.TabIndex = 10;
@@ -172,16 +172,16 @@
             // pImage
             // 
             this.pImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pImage.Location = new System.Drawing.Point(112, 252);
+            this.pImage.Location = new System.Drawing.Point(112, 286);
             this.pImage.Name = "pImage";
-            this.pImage.Size = new System.Drawing.Size(200, 100);
+            this.pImage.Size = new System.Drawing.Size(312, 183);
             this.pImage.TabIndex = 12;
             // 
             // beImage
             // 
-            this.beImage.Location = new System.Drawing.Point(324, 252);
+            this.beImage.Location = new System.Drawing.Point(112, 245);
             this.beImage.Name = "beImage";
-            this.beImage.Size = new System.Drawing.Size(214, 20);
+            this.beImage.Size = new System.Drawing.Size(312, 20);
             this.beImage.TabIndex = 13;
             this.beImage.Text = "Картинка";
             this.beImage.ValueChanged += new System.EventHandler(this.beImage_ValueChanged);
@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 477);
+            this.ClientSize = new System.Drawing.Size(590, 547);
             this.Controls.Add(this.beImage);
             this.Controls.Add(this.pImage);
             this.Controls.Add(this.bCancel);

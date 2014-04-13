@@ -5,7 +5,7 @@
       <itemName>A warning letter</itemName>
       <itemDescription>A strange letter recieved 2 days before the event</itemDescription>
       <itemComment>Настоящее</itemComment>
-      <itemImagePath>..\..\Result\close.png</itemImagePath>
+      <itemImagePath>..\..\Result\card2.jpg</itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>false</itemSingleUse>
     </item>
@@ -41,7 +41,7 @@
       <itemName>Documents</itemName>
       <itemDescription>Завещание покойного владельца</itemDescription>
       <itemComment>Фейк</itemComment>
-      <itemImagePath>..\..\Result\close.png</itemImagePath>
+      <itemImagePath>..\..\Result\card2.jpg</itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>false</itemSingleUse>
     </item>
@@ -50,7 +50,7 @@
       <itemName>guitar fucked</itemName>
       <itemDescription>broken totally</itemDescription>
       <itemComment>fake andshit</itemComment>
-      <itemImagePath></itemImagePath>
+      <itemImagePath>..\..\Result\card1.jpg</itemImagePath>
       <itemVisibility>false</itemVisibility>
       <itemSingleUse>true</itemSingleUse>
     </item>
