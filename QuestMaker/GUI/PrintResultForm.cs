@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Collections.Generic;
 
+using Telerik.WinControls.RichTextBox;
 using Telerik.WinControls.RichTextBox.Model;
 using Telerik.WinControls.RichTextBox.Model.Styles;
 using Telerik.WinControls.RichTextBox.FileFormats.Html;
@@ -68,6 +69,7 @@ namespace QuestMaker.GUI
 
         private void compileDocument()
         {
+            /*
             string temp = "";
             temp += prehistory.writtenText + "<br>";
             temp += chosenPerson.getName() + "<br>";
@@ -95,19 +97,68 @@ namespace QuestMaker.GUI
 
             temp += rules.writtenText;
 
-            StyleDefinition def = new StyleDefinition();
-            
-            //doc.Insert(chosenPerson.getName(), def);
-            //doc.InsertLineBreak();
-            //doc.Insert(chosenPerson.description, def);
-
-            //doc = htmlProvider.Import(chosenPerson.description);
+            StyleDefinition def = new StyleDefinition();           
             doc = htmlProvider.Import(temp);
             doc.LineSpacingType = LineSpacingType.Auto;
+            */
+            //doc = htmlProvider.Import(prehistory.writtenText);
             //doc.LineSpacing = 12;
             
             //doc = doc + doc;
-            //doc.Insert(chosenPerson.        
+            //doc = htmlProvider.Import(chosenPerson.description);
+            //doc.Insert(chosenPerson.getName(), def);
+            //doc.InsertLineBreak();
+            //doc.Insert(chosenPerson.description, def);
+            
+            
+
+            /*
+            Paragraph paragraph1 = new Paragraph();
+            Stream stream = Application.GetResourceStream(new Uri(@"/RadRichTextBox-Getting-Started;component/Images/RadRichTextBox.png", UriKind.RelativeOrAbsolute)).Stream;
+            Size size = new Size(236, 50);
+            ImageInline imageInline = new ImageInline(stream, size, "png");
+            paragraph1.Inlines.Add(imageInline);
+            section.Blocks.Add(paragraph1);
+            */
+
+            RadDocument tempDoc = new RadDocument();
+            tempDoc = htmlProvider.Import(prehistory.writtenText);
+            mergeDocuments(tempDoc);
+
+            doc.CaretPosition.MoveToLastPositionInDocument();
+            doc.InsertPageBreak();
+            Section section = new Section();
+            Paragraph paragraph1 = new Paragraph();
+            paragraph1.TextAlignment = Telerik.WinControls.RichTextBox.Layout.RadTextAlignment.Center;
+            Span span1 = new Span(chosenPerson.getName());
+            span1.FontSize = 24;
+            span1.FontStyle = TextStyle.Italic;
+            paragraph1.Inlines.Add(span1);
+            section.Blocks.Add(paragraph1);
+            doc.Sections.Add(section);            
+
+            tempDoc = htmlProvider.Import(chosenPerson.description);
+            mergeDocuments(tempDoc, section);
+
+            tempDoc = htmlProvider.Import(rules.writtenText);
+            mergeDocuments(tempDoc, doc.Sections.Last);
+
+            Paragraph par2 = new Paragraph();
+            //span1.
+
+        }
+
+        private void mergeDocuments(RadDocument tempDoc, Section prevSection = null)
+        {
+            foreach (Section sect in tempDoc.Sections)
+            {
+                Section copySection = sect.CreateDeepCopy() as Section;
+                tempDoc.Sections.Remove(sect);
+                if (prevSection != null)
+                    doc.Sections.AddAfter(prevSection, copySection);
+                else
+                    doc.Sections.Add(copySection);
+            }        
         }
 
         private void bPrintPreview_Click(object sender, EventArgs e)
@@ -122,6 +173,12 @@ namespace QuestMaker.GUI
             saveDialog.FileName = chosenPerson.getName();
             saveDialog.DefaultExt = ".docx";
             saveDialog.Filter = "Documents|*.docx";
+
+            //FileStream stream;
+            Stream output = File.OpenWrite("c:\\Users\\Илич\\Desktop\\" + chosenPerson.getName() + ".docx");
+            
+            docxProvider.Export(doc, output);
+            /*
             DialogResult dialogResult = saveDialog.ShowDialog();
             if (dialogResult == DialogResult.OK)
             {
@@ -131,6 +188,7 @@ namespace QuestMaker.GUI
                     //MessageBox.Show("Saved Successfuly!");
                 }
             }
+             * */
         }
     }
 }

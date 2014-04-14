@@ -14,7 +14,7 @@
       <itemName>Money</itemName>
       <itemDescription>Используйте, что отравить человека и забрать его вещи</itemDescription>
       <itemComment></itemComment>
-      <itemImagePath>..\..\Result\youtube.png</itemImagePath>
+      <itemImagePath></itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>true</itemSingleUse>
     </item>
@@ -142,13 +142,40 @@
       <itemDescription></itemDescription>
       <itemComment></itemComment>
       <itemImagePath></itemImagePath>
-      <itemVisibility>false</itemVisibility>
+      <itemVisibility>true</itemVisibility>
       <itemSingleUse>false</itemSingleUse>
     </item>
     <item>
       <itemId>16</itemId>
       <itemName>Gold</itemName>
       <itemDescription>Pirates' gold</itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+    </item>
+    <item>
+      <itemId>17</itemId>
+      <itemName>Emerald Ring</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+    </item>
+    <item>
+      <itemId>18</itemId>
+      <itemName>Mirror</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+    </item>
+    <item>
+      <itemId>19</itemId>
+      <itemName>Rod of Power</itemName>
+      <itemDescription></itemDescription>
       <itemComment></itemComment>
       <itemImagePath></itemImagePath>
       <itemVisibility>true</itemVisibility>

@@ -111,7 +111,7 @@
     <aim>
       <aimId>18</aimId>
       <aimName>Find the heart-shaped diamond</aimName>
-      <aimDescription></aimDescription>
+      <aimDescription>Find heart-shaped diamond until someone else does it. There is said to be an old map, leading to it. Find it. Share everything you know with your people. The'll help you looking for anything. Use their help. You need to work as one. You support each other. Try to cooperate.</aimDescription>
       <aimType>primary</aimType>
     </aim>
     <aim>
@@ -137,6 +137,24 @@
       <aimName>Make sure all local people gathered offerings for the Volcano.</aimName>
       <aimDescription></aimDescription>
       <aimType>transitional</aimType>
+    </aim>
+    <aim>
+      <aimId>23</aimId>
+      <aimName>Take Noo's map leading to the Ko Rou</aimName>
+      <aimDescription></aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>24</aimId>
+      <aimName>Find out who "the Serpent" is and how to stop the prophency from coming true.</aimName>
+      <aimDescription></aimDescription>
+      <aimType>primary</aimType>
+    </aim>
+    <aim>
+      <aimId>25</aimId>
+      <aimName>Buy off Ryan. Understand what he needs.</aimName>
+      <aimDescription></aimDescription>
+      <aimType>primary</aimType>
     </aim>
   </aims>
 </root>
