@@ -9,11 +9,14 @@ using System.ComponentModel;
 using System.Collections.Generic;
 
 using Telerik.WinControls.RichTextBox;
+using Telerik.WinControls.RichTextBox.Lists;
 using Telerik.WinControls.RichTextBox.Model;
 using Telerik.WinControls.RichTextBox.Model.Styles;
 using Telerik.WinControls.RichTextBox.FileFormats.Html;
 using Telerik.WinControls.RichTextBox.FileFormats.OpenXml.Docx;
 using Telerik.Windows.Documents.Fixed.FormatProviders.Text;
+
+
 
 using QuestMaker.Classes;
 
@@ -120,6 +123,14 @@ namespace QuestMaker.GUI
             paragraph1.Inlines.Add(imageInline);
             section.Blocks.Add(paragraph1);
             */
+            // вид документа:
+            // предыстория, на отдельной странице (потом разрыв)
+            // имя персонажа большими буквами посередине страницы
+            // описание, сюжет
+            // список целей, ненумерованным списком
+            // список предметов (если есть), ненумерованным списком
+            // правила игры
+
 
             RadDocument tempDoc = new RadDocument();
             tempDoc = htmlProvider.Import(prehistory.writtenText);
@@ -127,12 +138,14 @@ namespace QuestMaker.GUI
 
             doc.CaretPosition.MoveToLastPositionInDocument();
             doc.InsertPageBreak();
+
             Section section = new Section();
             Paragraph paragraph1 = new Paragraph();
             paragraph1.TextAlignment = Telerik.WinControls.RichTextBox.Layout.RadTextAlignment.Center;
             Span span1 = new Span(chosenPerson.getName());
             span1.FontSize = 24;
-            span1.FontStyle = TextStyle.Italic;
+            span1.FontStyle = TextStyle.Bold;
+            span1.UnderlineType = Telerik.WinControls.RichTextBox.UI.UnderlineType.Wave;
             paragraph1.Inlines.Add(span1);
             section.Blocks.Add(paragraph1);
             doc.Sections.Add(section);            
@@ -140,11 +153,28 @@ namespace QuestMaker.GUI
             tempDoc = htmlProvider.Import(chosenPerson.description);
             mergeDocuments(tempDoc, section);
 
+            BulletedList aimList = new BulletedList('+',doc); 
+            Section section2 = new Section();
+            Paragraph par2 = new Paragraph();
+            Span span2 = new Span("Your Aims:");
+            par2.Inlines.Add(span2);
+            section2.Blocks.Add(par2);
+            foreach (int aimID in chosenPerson.aimsId)
+            {
+                CAim aim = aimManager.getAim(aimID);
+                Paragraph par = new Paragraph();
+                Span span = new Span(aim.getName());                
+                if (aim.description != "")
+                    span.Text += " (" + aim.description + ")";
+                par.Inlines.Add(span);
+                aimList.AddParagraph(par);
+                section2.Blocks.Add(par);
+            }
+            
+            doc.Sections.Add(section2);            
+
             tempDoc = htmlProvider.Import(rules.writtenText);
             mergeDocuments(tempDoc, doc.Sections.Last);
-
-            Paragraph par2 = new Paragraph();
-            //span1.
 
         }
 
@@ -175,7 +205,7 @@ namespace QuestMaker.GUI
             saveDialog.Filter = "Documents|*.docx";
 
             //FileStream stream;
-            Stream output = File.OpenWrite("c:\\Users\\Илич\\Desktop\\" + chosenPerson.getName() + ".docx");
+            Stream output = File.OpenWrite("d:\\QuestMaker\\QuestMaker\\QuestMaker\\Result\\" + chosenPerson.getName() + ".docx");
             
             docxProvider.Export(doc, output);
             /*
