@@ -243,10 +243,11 @@ namespace QuestMaker
             }
 //            doc.Save(fileName);
         }
-        public void loadItemsFromFile()
+        public void loadItemsFromFile(string file = "")
         {
+            file = (file.Length == 0) ? (fileName) : (file);
             removeAllItems();
-            doc = XDocument.Load(fileName);
+            doc = XDocument.Load(file);
             foreach (XElement elem in doc.Root.Element(section).Elements())
             {
                 int id = int.Parse(elem.Element("itemId").Value.ToString());

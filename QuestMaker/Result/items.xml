@@ -47,15 +47,6 @@
       <itemSingleUse>false</itemSingleUse>
     </item>
     <item>
-      <itemId>2</itemId>
-      <itemName>Creeping Thyme</itemName>
-      <itemDescription>tranquilizer </itemDescription>
-      <itemComment></itemComment>
-      <itemImagePath></itemImagePath>
-      <itemVisibility>true</itemVisibility>
-      <itemSingleUse>true</itemSingleUse>
-    </item>
-    <item>
       <itemId>6</itemId>
       <itemName>A tatoo</itemName>
       <itemDescription></itemDescription>
@@ -87,96 +78,6 @@
       <itemName>A note in a cave</itemName>
       <itemDescription>if you follow the map correctly you'll find it</itemDescription>
       <itemComment>The Boatman left his brother a map. He knew he wasn't doing something legal so in case something happened to him, he drew a map and placed a note into a cave.</itemComment>
-      <itemImagePath></itemImagePath>
-      <itemVisibility>true</itemVisibility>
-      <itemSingleUse>false</itemSingleUse>
-    </item>
-    <item>
-      <itemId>10</itemId>
-      <itemName>A heart-shaped diamond</itemName>
-      <itemDescription>found in a cave</itemDescription>
-      <itemComment>fake</itemComment>
-      <itemImagePath></itemImagePath>
-      <itemVisibility>true</itemVisibility>
-      <itemSingleUse>false</itemSingleUse>
-    </item>
-    <item>
-      <itemId>11</itemId>
-      <itemName>A heart-shaped diamond</itemName>
-      <itemDescription>found on the other side of the island, hidden under the ground</itemDescription>
-      <itemComment>the real one</itemComment>
-      <itemImagePath></itemImagePath>
-      <itemVisibility>true</itemVisibility>
-      <itemSingleUse>false</itemSingleUse>
-    </item>
-    <item>
-      <itemId>12</itemId>
-      <itemName>A camera</itemName>
-      <itemDescription></itemDescription>
-      <itemComment>Yo can take photos with it</itemComment>
-      <itemImagePath></itemImagePath>
-      <itemVisibility>false</itemVisibility>
-      <itemSingleUse>false</itemSingleUse>
-    </item>
-    <item>
-      <itemId>13</itemId>
-      <itemName>A hand-glass</itemName>
-      <itemDescription></itemDescription>
-      <itemComment></itemComment>
-      <itemImagePath></itemImagePath>
-      <itemVisibility>true</itemVisibility>
-      <itemSingleUse>false</itemSingleUse>
-    </item>
-    <item>
-      <itemId>14</itemId>
-      <itemName>A dagger</itemName>
-      <itemDescription>JB written on</itemDescription>
-      <itemComment></itemComment>
-      <itemImagePath></itemImagePath>
-      <itemVisibility>true</itemVisibility>
-      <itemSingleUse>false</itemSingleUse>
-    </item>
-    <item>
-      <itemId>15</itemId>
-      <itemName>A fragment of a map</itemName>
-      <itemDescription></itemDescription>
-      <itemComment></itemComment>
-      <itemImagePath></itemImagePath>
-      <itemVisibility>true</itemVisibility>
-      <itemSingleUse>false</itemSingleUse>
-    </item>
-    <item>
-      <itemId>16</itemId>
-      <itemName>Gold</itemName>
-      <itemDescription>Pirates' gold</itemDescription>
-      <itemComment></itemComment>
-      <itemImagePath></itemImagePath>
-      <itemVisibility>true</itemVisibility>
-      <itemSingleUse>false</itemSingleUse>
-    </item>
-    <item>
-      <itemId>17</itemId>
-      <itemName>Emerald Ring</itemName>
-      <itemDescription></itemDescription>
-      <itemComment></itemComment>
-      <itemImagePath></itemImagePath>
-      <itemVisibility>true</itemVisibility>
-      <itemSingleUse>false</itemSingleUse>
-    </item>
-    <item>
-      <itemId>18</itemId>
-      <itemName>Mirror</itemName>
-      <itemDescription></itemDescription>
-      <itemComment></itemComment>
-      <itemImagePath></itemImagePath>
-      <itemVisibility>true</itemVisibility>
-      <itemSingleUse>false</itemSingleUse>
-    </item>
-    <item>
-      <itemId>19</itemId>
-      <itemName>Rod of Power</itemName>
-      <itemDescription></itemDescription>
-      <itemComment></itemComment>
       <itemImagePath></itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>false</itemSingleUse>

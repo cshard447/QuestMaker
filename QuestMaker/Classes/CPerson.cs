@@ -89,14 +89,17 @@ namespace QuestMaker.Classes
         public string DisplayString
         {
             get { return displayString; }
-            set { displayString = value; }
         }
 
         private Sex enumSex;
         public Sex EnumSex
         {
             get { return enumSex; }
-            set { enumSex = value; }
+        }
+        public SexDataSourceObject(Sex _sex, string _display)
+        {
+            enumSex = _sex;
+            displayString = _display;
         }
     }
 
@@ -108,12 +111,10 @@ namespace QuestMaker.Classes
         public string Display 
         {
             get { return display; }
-            set { display = value; }
         }
         public KnownColor Clan
         {
             get { return clan;}
-            set { clan = value; }
         }
         public ClanClass(KnownColor _clan, string _display)
         {
@@ -153,7 +154,7 @@ namespace QuestMaker.Classes
         const int MAX_PERSONS = 100;
         public static BindingList<SexDataSourceObject> enumSexList = new BindingList<SexDataSourceObject>();
         public static BindingList<ClanClass> clanList = new BindingList<ClanClass>();
-        public static BindingList<PersonNameObject> personList = new BindingList<PersonNameObject>();
+        BindingList<PersonNameObject> personList = new BindingList<PersonNameObject>();
         Dictionary<string, Sex> strToSex = new Dictionary<string, Sex>();
 
         public CPersonManager()
@@ -287,10 +288,11 @@ namespace QuestMaker.Classes
             }
             //            doc.Save(fileName);            
         }
-        public void loadPersonsFromFile()
+        public void loadPersonsFromFile(string file = "")
         {
+            file = (file.Length == 0) ? (fileName) : (file);
             removeAllPersons();
-            doc = XDocument.Load(fileName);
+            doc = XDocument.Load(file);
             foreach (XElement elem in doc.Root.Element(section).Elements())
             {
                 int id = int.Parse(elem.Element("personId").Value.ToString());
@@ -330,29 +332,22 @@ namespace QuestMaker.Classes
             strToSex.Add("male", Sex.male);
             strToSex.Add("female", Sex.female);
             strToSex.Add("flexible", Sex.flexible);
+  
+            enumSexList.Add( new SexDataSourceObject(Sex.male, "Мужчина") );
+            enumSexList.Add( new SexDataSourceObject(Sex.female, "Женщина") );
+            enumSexList.Add( new SexDataSourceObject(Sex.flexible, "Изменяемый") );
 
-            SexDataSourceObject[] obj = { new SexDataSourceObject(), new SexDataSourceObject(), new SexDataSourceObject() };
-            obj[0].DisplayString = "Мужик";
-            obj[0].EnumSex = Sex.male;
-            enumSexList.Add(obj[0]);
-            obj[1].DisplayString = "Девушка";
-            obj[1].EnumSex = Sex.female;
-            enumSexList.Add(obj[1]);
-            obj[2].DisplayString = "Не определился";
-            obj[2].EnumSex = Sex.flexible;
-            enumSexList.Add(obj[2]);
-
-            clanList.Add(new ClanClass(KnownColor.Red, "Красный"));
-            clanList.Add(new ClanClass(KnownColor.Pink, "Розовый"));
-            clanList.Add(new ClanClass(KnownColor.Blue, "Синий"));
-            clanList.Add(new ClanClass(KnownColor.Violet, "Фиолетовый"));
-            clanList.Add(new ClanClass(KnownColor.Green, "Зеленый"));
-            clanList.Add(new ClanClass(KnownColor.Gray, "Серый"));
+            clanList.Add( new ClanClass(KnownColor.Red, "Красный") );
+            clanList.Add( new ClanClass(KnownColor.Pink, "Розовый") );
+            clanList.Add( new ClanClass(KnownColor.Blue, "Синий") );
+            clanList.Add( new ClanClass(KnownColor.Violet, "Фиолетовый") );
+            clanList.Add( new ClanClass(KnownColor.Green, "Зеленый") );
+            clanList.Add( new ClanClass(KnownColor.Gray, "Серый") );
         }
 
         public BindingList<PersonNameObject> getPersonsList()
         {
-            personList.Clear();            
+            personList.Clear();
             foreach (CPerson person in persons.Values)
                 personList.Add(new PersonNameObject(person.getID(), person.getName()));
             return personList;

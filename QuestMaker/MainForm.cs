@@ -34,15 +34,12 @@ namespace QuestMaker
             InitializeComponent();
             FillTableColumns();
             itemManager.loadItemsFromFile();
-            ShowItemsOnGridView();
             aimManager.loadAimsFromFile();
-            ShowAimsOnGridView();
             rules.loadTextFromFile();
-            rtbRules.Document = htmlProvider.Import(rules.writtenText);
             prehistory.loadTextFromFile();
-            rtbPrehistory.Document = htmlProvider.Import(prehistory.writtenText);
             peopleManager.loadPersonsFromFile();
-            ShowPersonsOnGridView();            
+
+            UpdateDataOnGridViews();
         }
 
         void FillTableColumns()
@@ -97,6 +94,15 @@ namespace QuestMaker
             peopleManager.UpdatePersonsFromGrid(gridViewPersons);
             peopleManager.savePersonsToFile();
             ShowPersonsOnGridView();
+        }
+
+        private void UpdateDataOnGridViews()
+        {
+            ShowItemsOnGridView();
+            ShowAimsOnGridView();
+            ShowPersonsOnGridView();
+            rtbRules.Document = htmlProvider.Import(rules.writtenText);
+            rtbPrehistory.Document = htmlProvider.Import(prehistory.writtenText);
         }
 
         private void ShowItemsOnGridView()
@@ -157,22 +163,6 @@ namespace QuestMaker
             gridViewPersons.Update();
         }
 
-
-        private void gridViewItems_CellFormatting(object sender, CellFormattingEventArgs e)
-        {
-            /*
-             // это когда-то работало ок, только группировка глючила 
-            if (e.CellElement.ColumnInfo.Name == "columnImage")
-            {
-                if (e.CellElement.RowInfo.Cells["columnPath"].Value != null)
-                {
-                    int id = int.Parse(e.CellElement.RowInfo.Cells["columnID"].Value.ToString());
-                    e.CellElement.Image = itemManager.getItem(id).image;
-                }
-            }
-            */
-        }
-
         private void gridViewItems_CellDoubleClick(object sender, GridViewCellEventArgs e)
         {
             if (e.Column.Name == "columnImage")
@@ -195,12 +185,6 @@ namespace QuestMaker
             }
         }
 
-        private void buttonTest_Click(object sender, EventArgs e)
-        {
-            //itemManager.TestXML();
-            gridViewAims.ColumnChooser.Show();            
-        }
-
         private void gridViewAims_CellDoubleClick(object sender, GridViewCellEventArgs e)
         {
             if (e.Column.Name == "columnDescription")
@@ -212,14 +196,42 @@ namespace QuestMaker
             }
         }
 
+        //********* Main MENU   ******************************************
+        private void menuItemLoad_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = openFileDialog.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                string filename = openFileDialog.FileName;
+                itemManager.loadItemsFromFile(filename);
+                aimManager.loadAimsFromFile(filename);
+                peopleManager.loadPersonsFromFile(filename);
+                rules.loadTextFromFile(filename);
+                prehistory.loadTextFromFile(filename);
+
+                UpdateDataOnGridViews();
+            }
+        }
+        
         private void menuItemSave_Click(object sender, EventArgs e)
         {
-            string saveFile = Common.path + "Result.xml";
-            itemManager.saveItemsToFile(saveFile);
-            aimManager.saveAimsToFile(saveFile);
-            rules.saveTextToFile(saveFile);
-            prehistory.saveTextToFile(saveFile);
-            peopleManager.savePersonsToFile(saveFile);
+            DialogResult dr = saveFileDialog.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                //string saveFile = Common.path + "Result.xml";
+                string saveFile = saveFileDialog.FileName;
+                itemManager.saveItemsToFile(saveFile);
+                aimManager.saveAimsToFile(saveFile);
+                rules.saveTextToFile(saveFile);
+                prehistory.saveTextToFile(saveFile);
+                peopleManager.savePersonsToFile(saveFile);
+            }
+        }
+
+        private void menuItemPrintForm_Click(object sender, EventArgs e)
+        {
+            PrintResultForm prf = new PrintResultForm(peopleManager, aimManager, itemManager, prehistory, rules);
+            prf.Show();
         }
 
         private void menuButtonWipeOutColumns_Click(object sender, EventArgs e)
@@ -230,7 +242,8 @@ namespace QuestMaker
             gridViewPersons.Columns["columnID"].IsVisible = !gridViewPersons.Columns["columnID"].IsVisible;
             gridViewPersons.Columns["columnAltName"].IsVisible = !gridViewPersons.Columns["columnAltName"].IsVisible;
         }
-
+        //***************************************************
+        //*********Prehistory and Rules***************
         private void cmbSavePrehistory_Click(object sender, EventArgs e)
         {
             string prehistoryText = htmlProvider.Export(rtbPrehistory.Document);
@@ -265,6 +278,17 @@ namespace QuestMaker
                 rtbRules.Document = htmlProvider.Import(markupRules.Value.ToString());
             }
         }
+        //***************************************************
+        //*******Create and Edit*****************
+        private void cmbCreatePerson_Click(object sender, EventArgs e)
+        {
+            EditPersonForm epf = new EditPersonForm(ref aimManager, ref itemManager);
+            if (epf.ShowDialog() == DialogResult.OK)
+            {
+                peopleManager.addPerson(epf.editedPerson);
+                UpdateDataOnGridViews();
+            }
+        }
 
         private void cmbEditPerson_Click(object sender, EventArgs e)
         {
@@ -274,10 +298,8 @@ namespace QuestMaker
             EditPersonForm epf = new EditPersonForm(person, ref aimManager, ref itemManager);
             if (epf.ShowDialog() == DialogResult.OK)
             {
-                peopleManager.updatePerson(epf.editedPerson);                
-                ShowPersonsOnGridView();
-                ShowAimsOnGridView();
-                ShowItemsOnGridView();
+                peopleManager.updatePerson(epf.editedPerson);
+                UpdateDataOnGridViews();
             }
         }
 
@@ -295,35 +317,12 @@ namespace QuestMaker
             }
         }
 
-        private void gridViewPersons_CellFormatting(object sender, CellFormattingEventArgs e)
-        {   
-            if (e.CellElement.ColumnInfo.Name == "columnClanColor")
-            {
-                e.CellElement.DrawFill = true;
-                if (e.CellElement.RowInfo.Cells["columnClanColor"].Value != null)
-                    e.CellElement.BackColor = Color.FromKnownColor( (KnownColor)e.CellElement.Value);
-            }
-            else
-            {
-                e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, Telerik.WinControls.ValueResetFlags.Local);
-                e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, Telerik.WinControls.ValueResetFlags.Local);
-                e.CellElement.ResetValue(LightVisualElement.BackColorProperty, Telerik.WinControls.ValueResetFlags.Local);
-            }
-        }
-
-        private void cmbPersonsColumnChooser_Click(object sender, EventArgs e)
+        private void cmbCreateItem_Click(object sender, EventArgs e)
         {
-            gridViewPersons.ColumnChooser.Show();
-        }
-
-        private void cmbCreatePerson_Click(object sender, EventArgs e)
-        {
-            EditPersonForm epf = new EditPersonForm(ref aimManager, ref itemManager);
-            if (epf.ShowDialog() == DialogResult.OK)
+            EditItemForm eif = new EditItemForm();
+            if (eif.ShowDialog() == DialogResult.OK)
             {
-                peopleManager.addPerson(epf.editedPerson);
-                ShowPersonsOnGridView();
-                ShowAimsOnGridView();
+                itemManager.addItem(eif.editedItem);
                 ShowItemsOnGridView();
             }
         }
@@ -342,23 +341,34 @@ namespace QuestMaker
                 ShowItemsOnGridView();
             }
         }
+        //***************************************************
 
-        private void cmbCreateItem_Click(object sender, EventArgs e)
+        private void gridViewPersons_CellFormatting(object sender, CellFormattingEventArgs e)
         {
-            EditItemForm eif = new EditItemForm();
-            if (eif.ShowDialog() == DialogResult.OK)
+            if (e.CellElement.ColumnInfo.Name == "columnClanColor")
             {
-                itemManager.addItem(eif.editedItem);
-                ShowItemsOnGridView();
+                e.CellElement.DrawFill = true;
+                if (e.CellElement.RowInfo.Cells["columnClanColor"].Value != null)
+                    e.CellElement.BackColor = Color.FromKnownColor((KnownColor)e.CellElement.Value);
+            }
+            else
+            {
+                e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, Telerik.WinControls.ValueResetFlags.Local);
+                e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, Telerik.WinControls.ValueResetFlags.Local);
+                e.CellElement.ResetValue(LightVisualElement.BackColorProperty, Telerik.WinControls.ValueResetFlags.Local);
             }
         }
 
-        private void menuItemPrintForm_Click(object sender, EventArgs e)
+        private void cmbPersonsColumnChooser_Click(object sender, EventArgs e)
         {
-            PrintResultForm prf = new PrintResultForm(peopleManager, aimManager, itemManager, prehistory, rules);
-            prf.Show();
+            gridViewPersons.ColumnChooser.Show();
         }
 
+        private void buttonTest_Click(object sender, EventArgs e)
+        {
+            //itemManager.TestXML();
+            gridViewAims.ColumnChooser.Show();
+        }
 
     }
 }

@@ -48,14 +48,17 @@ namespace QuestMaker
         public string DisplayString
         {
             get { return displayString; }
-            set { displayString = value; }
         }
 
         private AimType type;
         public AimType Type
         {
             get { return type; }
-            set { type = value; }
+        }
+        public AimTypeDataSourceObject(AimType _type, string _display)
+        {
+            type = _type;
+            displayString = _display;
         }
     }
     public class AimDataSourceObject
@@ -64,14 +67,12 @@ namespace QuestMaker
         public string DisplayString
         {
             get { return displayString; }
-            set { displayString = value; }
         }
 
         private int id;
         public int Id
         {
             get { return id; }
-            set { id = value; }
         }
         public AimDataSourceObject(int _id, string _display)
         {
@@ -223,10 +224,11 @@ namespace QuestMaker
             }
             //  doc.Save(fileName);
         }
-        public void loadAimsFromFile()
+        public void loadAimsFromFile(string file = "")
         {
+            file = (file.Length == 0) ? (fileName) : (file);
             removeAllAims();
-            doc = XDocument.Load(fileName);
+            doc = XDocument.Load(file);
             foreach (XElement elem in doc.Root.Element(section).Elements())
             {
                 int id = int.Parse(elem.Element("aimId").Value.ToString());
@@ -253,16 +255,9 @@ namespace QuestMaker
             strToType.Add("secondary", AimType.secondary);
             strToType.Add("transitional", AimType.transitional);
 
-            AimTypeDataSourceObject[] obj = { new AimTypeDataSourceObject(), new AimTypeDataSourceObject(), new AimTypeDataSourceObject()};
-            obj[0].DisplayString = "Главная";
-            obj[0].Type = AimType.primary;
-            enumAimList.Add(obj[0]);
-            obj[1].DisplayString = "Побочная";
-            obj[1].Type = AimType.secondary;
-            enumAimList.Add(obj[1]);
-            obj[2].DisplayString = "Промежуточная";
-            obj[2].Type = AimType.transitional;
-            enumAimList.Add(obj[2]);
+            enumAimList.Add( new AimTypeDataSourceObject(AimType.primary, "Главная") );
+            enumAimList.Add( new AimTypeDataSourceObject(AimType.secondary, "Побочная") );
+            enumAimList.Add(new AimTypeDataSourceObject(AimType.transitional, "Промежуточная"));
         }
 
         public BindingList<AimDataSourceObject> getAimsList()

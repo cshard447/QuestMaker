@@ -100,11 +100,13 @@
             this.markupRules = new Telerik.WinControls.UI.RadMarkupDialog();
             this.menuItemMain = new Telerik.WinControls.UI.RadMenuItem();
             this.menuItemLoad = new Telerik.WinControls.UI.RadMenuItem();
-            this.menuItemSave = new Telerik.WinControls.UI.RadMenuHeaderItem();
             this.menuSeparator1 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
             this.menuItemPrintForm = new Telerik.WinControls.UI.RadMenuItem();
             this.menuButtonWipeOutColumns = new Telerik.WinControls.UI.RadMenuButtonItem();
             this.markupPrehistory = new Telerik.WinControls.UI.RadMarkupDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.menuItemSave = new Telerik.WinControls.UI.RadMenuItem();
             this.mainMenu = new Telerik.WinControls.UI.RadMenu();
             ((System.ComponentModel.ISupportInitialize)(this.mainPageView)).BeginInit();
             this.mainPageView.SuspendLayout();
@@ -141,7 +143,7 @@
             this.mainPageView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPageView.Location = new System.Drawing.Point(0, 20);
             this.mainPageView.Name = "mainPageView";
-            this.mainPageView.SelectedPage = this.pagePrehistory;
+            this.mainPageView.SelectedPage = this.pageItems;
             this.mainPageView.Size = new System.Drawing.Size(1191, 558);
             this.mainPageView.TabIndex = 10;
             // 
@@ -234,9 +236,9 @@
             this.gridViewPersons.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewPersons.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gridViewPersons.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewPersons.Location = new System.Drawing.Point(0, 30);
+            this.gridViewPersons.Location = new System.Drawing.Point(0, 1);
             // 
-            // gridViewPersons
+            // 
             // 
             this.gridViewPersons.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.gridViewPersons.MasterTemplate.AutoGenerateColumns = false;
@@ -299,7 +301,7 @@
             sortDescriptor1});
             this.gridViewPersons.Name = "gridViewPersons";
             this.gridViewPersons.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewPersons.Size = new System.Drawing.Size(1170, 480);
+            this.gridViewPersons.Size = new System.Drawing.Size(1170, 509);
             this.gridViewPersons.TabIndex = 1;
             this.gridViewPersons.Text = "radGridView1";
             this.gridViewPersons.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gridViewPersons_CellFormatting);
@@ -311,7 +313,7 @@
             this.commandBarPerson.Name = "commandBarPerson";
             this.commandBarPerson.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowPerson});
-            this.commandBarPerson.Size = new System.Drawing.Size(1170, 30);
+            this.commandBarPerson.Size = new System.Drawing.Size(1170, 1);
             this.commandBarPerson.TabIndex = 0;
             this.commandBarPerson.Text = "radCommandBar1";
             // 
@@ -499,7 +501,7 @@
             this.pageItems.Controls.Add(this.pGridViewItems);
             this.pageItems.Location = new System.Drawing.Point(10, 37);
             this.pageItems.Name = "pageItems";
-            this.pageItems.Size = new System.Drawing.Size(1101, 424);
+            this.pageItems.Size = new System.Drawing.Size(1170, 510);
             this.pageItems.Text = "Предметы";
             // 
             // pGridViewItems
@@ -509,7 +511,7 @@
             this.pGridViewItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pGridViewItems.Location = new System.Drawing.Point(0, 0);
             this.pGridViewItems.Name = "pGridViewItems";
-            this.pGridViewItems.Size = new System.Drawing.Size(1101, 424);
+            this.pGridViewItems.Size = new System.Drawing.Size(1170, 510);
             this.pGridViewItems.TabIndex = 4;
             // 
             // gridViewItems
@@ -521,9 +523,9 @@
             this.gridViewItems.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewItems.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gridViewItems.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewItems.Location = new System.Drawing.Point(0, 1);
+            this.gridViewItems.Location = new System.Drawing.Point(0, 45);
             // 
-            // 
+            // gridViewItems
             // 
             this.gridViewItems.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             gridViewTextBoxColumn10.EnableExpressionEditor = false;
@@ -576,9 +578,8 @@
             sortDescriptor3});
             this.gridViewItems.Name = "gridViewItems";
             this.gridViewItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewItems.Size = new System.Drawing.Size(1101, 423);
+            this.gridViewItems.Size = new System.Drawing.Size(1170, 465);
             this.gridViewItems.TabIndex = 1;
-            this.gridViewItems.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gridViewItems_CellFormatting);
             this.gridViewItems.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridViewItems_CellDoubleClick);
             // 
             // commandBarItems
@@ -588,7 +589,7 @@
             this.commandBarItems.Name = "commandBarItems";
             this.commandBarItems.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.commandBarItems.Size = new System.Drawing.Size(1101, 1);
+            this.commandBarItems.Size = new System.Drawing.Size(1170, 45);
             this.commandBarItems.TabIndex = 2;
             this.commandBarItems.Text = "radCommandBar1";
             // 
@@ -754,15 +755,7 @@
             this.menuItemLoad.Name = "menuItemLoad";
             this.menuItemLoad.Text = "Загрузить...";
             this.menuItemLoad.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // menuItemSave
-            // 
-            this.menuItemSave.AccessibleDescription = "menuItemSave";
-            this.menuItemSave.AccessibleName = "Сохранить...";
-            this.menuItemSave.Name = "menuItemSave";
-            this.menuItemSave.Text = "Сохранить...";
-            this.menuItemSave.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.menuItemSave.Click += new System.EventHandler(this.menuItemSave_Click);
+            this.menuItemLoad.Click += new System.EventHandler(this.menuItemLoad_Click);
             // 
             // menuSeparator1
             // 
@@ -795,6 +788,31 @@
             this.menuButtonWipeOutColumns.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.menuButtonWipeOutColumns.Click += new System.EventHandler(this.menuButtonWipeOutColumns_Click);
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.DefaultExt = "xml";
+            this.openFileDialog.Filter = "Файл данных квеста|*.xml|TXT data|*.txt";
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "xml";
+            this.saveFileDialog.Filter = "Файл данных квеста|*.xml|TXT data|*.txt";
+            // 
+            // menuItemSave
+            // 
+            this.menuItemSave.AccessibleDescription = "Сохранить...";
+            this.menuItemSave.AccessibleName = "Сохранить...";
+            this.menuItemSave.Name = "menuItemSave";
+            this.menuItemSave.Text = "Сохранить...";
+            this.menuItemSave.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.menuItemSave.Click += new System.EventHandler(this.menuItemSave_Click);
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1191, 600);
+            // 
             // mainMenu
             // 
             this.mainMenu.Items.AddRange(new Telerik.WinControls.RadItem[] {
@@ -804,12 +822,6 @@
             this.mainMenu.Size = new System.Drawing.Size(1191, 20);
             this.mainMenu.TabIndex = 12;
             this.mainMenu.Text = "radMenu1";
-            // 
-            // MainForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1191, 600);
             this.Controls.Add(this.mainPageView);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.mainMenu);
@@ -866,7 +878,6 @@
         private Telerik.WinControls.UI.RadMenuItem menuItemMain;
         private Telerik.WinControls.UI.RadMenuItem menuItemLoad;
         private Telerik.WinControls.UI.RadMenuButtonItem menuButtonWipeOutColumns;
-        private Telerik.WinControls.UI.RadMenuHeaderItem menuItemSave;
         private Telerik.WinControls.UI.RadMenuSeparatorItem menuSeparator1;
         private Telerik.WinControls.UI.RadPageViewPage pagePrehistory;
         private Telerik.WinControls.UI.RadMarkupDialog markupPrehistory;
@@ -876,7 +887,6 @@
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripPrehistory;
         private Telerik.WinControls.UI.CommandBarButton cmbSavePrehistory;
         private Telerik.WinControls.UI.CommandBarButton cmbEditPrehistory;
-        private Telerik.WinControls.UI.RadMenu mainMenu;
         private Telerik.WinControls.UI.RadCommandBar commandBarRules;
         private Telerik.WinControls.UI.CommandBarRowElement commandBarRowRules;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripRules;
@@ -902,6 +912,10 @@
         private Telerik.WinControls.UI.CommandBarButton cmbSaveItems;
         private Telerik.WinControls.UI.CommandBarButton cmbEditItems;
         private Telerik.WinControls.UI.RadMenuItem menuItemPrintForm;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private Telerik.WinControls.UI.RadMenuItem menuItemSave;
+        private Telerik.WinControls.UI.RadMenu mainMenu;
 
     }
 }

@@ -60,10 +60,11 @@ namespace QuestMaker.Classes
             }
             //            doc.Save(fileName);
         }
-        public void loadTextFromFile()
+        public void loadTextFromFile(string file = "")
         {
+            file = (file.Length == 0) ? (fileName) : (file);
             writtenText = "";
-            doc = XDocument.Load(fileName);            
+            doc = XDocument.Load(file);            
             writtenText = doc.Root.Element(getSection()).Element("text").Value;
         }
 
