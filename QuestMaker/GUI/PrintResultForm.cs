@@ -12,6 +12,7 @@ using Telerik.WinControls.RichTextBox;
 using Telerik.WinControls.RichTextBox.Lists;
 using Telerik.WinControls.RichTextBox.Model;
 using Telerik.WinControls.RichTextBox.Model.Styles;
+using Telerik.WinControls.RichTextBox.FileFormats.Pdf;
 using Telerik.WinControls.RichTextBox.FileFormats.Html;
 using Telerik.WinControls.RichTextBox.FileFormats.OpenXml.Docx;
 using Telerik.Windows.Documents.Fixed.FormatProviders.Text;
@@ -33,7 +34,8 @@ namespace QuestMaker.GUI
         CPerson chosenPerson;
         RadDocument doc = new RadDocument();               
         DocxFormatProvider docxProvider = new DocxFormatProvider();
-        HtmlFormatProvider htmlProvider = new HtmlFormatProvider();        
+        HtmlFormatProvider htmlProvider = new HtmlFormatProvider();
+        PdfFormatProvider pdfProvider = new PdfFormatProvider();
 
         public PrintResultForm(CPersonManager _personManager, CAimManager _aimManager, CItemManager _itemManager, CPrehistory _prehistory, CRules _rules)
         {
@@ -192,31 +194,36 @@ namespace QuestMaker.GUI
             }        
         }
 
-        private void bPrintPreview_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void bSaveAsDocument_Click(object sender, EventArgs e)
         {
             compileDocument();
-            SaveFileDialog saveDialog = new SaveFileDialog();
             saveDialog.FileName = chosenPerson.getName();
-            saveDialog.DefaultExt = ".docx";
-            saveDialog.Filter = "Documents|*.docx";
-
-            //Stream output = File.OpenWrite("d:\\QuestMaker\\QuestMaker\\QuestMaker\\Result\\" + chosenPerson.getName() + ".docx");           
-            //docxProvider.Export(doc, output);
-            
+            saveDialog.FilterIndex = 1;
+           
             DialogResult dialogResult = saveDialog.ShowDialog();
             if (dialogResult == DialogResult.OK)
             {
                 using (Stream output = saveDialog.OpenFile())
                 {
                     docxProvider.Export(doc, output);
-                    //MessageBox.Show("Saved Successfuly!");
                 }
             }             
+        }
+
+        private void bSaveAsPdfDocument_Click(object sender, EventArgs e)
+        {
+            compileDocument();
+            saveDialog.FileName = chosenPerson.getName();
+            saveDialog.FilterIndex = 2;
+
+            DialogResult dialogResult = saveDialog.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                using (Stream output = saveDialog.OpenFile())
+                {
+                    pdfProvider.Export(doc, output);
+                }
+            } 
         }
     }
 }
