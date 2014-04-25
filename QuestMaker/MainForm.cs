@@ -38,6 +38,10 @@ namespace QuestMaker
             rules.loadTextFromFile();
             prehistory.loadTextFromFile();
             peopleManager.loadPersonsFromFile();
+            CSettings.loadSettingsFromFile();
+            CSettings.fillGridViewSettings(gridViewAims);
+            CSettings.fillGridViewSettings(gridViewItems);
+            CSettings.fillGridViewSettings(gridViewPersons);
 
             UpdateDataOnGridViews();
         }
@@ -368,6 +372,14 @@ namespace QuestMaker
         {
             //itemManager.TestXML();
             gridViewAims.ColumnChooser.Show();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CSettings.setGridViewSettings(gridViewAims);
+            CSettings.setGridViewSettings(gridViewItems);
+            CSettings.setGridViewSettings(gridViewPersons);
+            CSettings.saveSettingsToFile();
         }
 
     }

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using QuestMaker.Classes;
 
 namespace QuestMaker.GUI
 {
@@ -25,6 +26,15 @@ namespace QuestMaker.GUI
             InitializeComponent();
             editedAim = new CAim();
             fillUIComponents();            
+        }
+
+        private void EditAimForm_Load(object sender, EventArgs e)
+        {
+            CSettings.fillFormSettings(this);
+        }
+        private void EditAimForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CSettings.setFormSettings(this);
         }
 
         private void fillUIComponents()
@@ -70,7 +80,6 @@ namespace QuestMaker.GUI
             }
 
         }
-         * */
-
+        */
     }
 }

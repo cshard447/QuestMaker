@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using QuestMaker.Classes;
 
 namespace QuestMaker.GUI
 {
@@ -28,6 +29,15 @@ namespace QuestMaker.GUI
             fillItemData();
             ((OpenFileDialog)(beImage.Dialog)).DefaultExt = ".jpg";
             ((OpenFileDialog)(beImage.Dialog)).Filter = "Картинки|*.jpg|Картинки|*.png";
+        }
+
+        private void EditItemForm_Load(object sender, EventArgs e)
+        {
+            CSettings.fillFormSettings(this);
+        }
+        private void EditItemForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CSettings.setFormSettings(this);
         }
 
         private void fillItemData()
@@ -81,6 +91,8 @@ namespace QuestMaker.GUI
             else
                 pImage.BackgroundImageLayout = ImageLayout.Center;
         }
+
+
 
     }
 }

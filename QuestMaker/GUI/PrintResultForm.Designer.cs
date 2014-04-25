@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadPrintWatermark radPrintWatermark4 = new Telerik.WinControls.UI.RadPrintWatermark();
+            Telerik.WinControls.UI.RadPrintWatermark radPrintWatermark1 = new Telerik.WinControls.UI.RadPrintWatermark();
             this.ddlPersonChoose = new Telerik.WinControls.UI.RadDropDownList();
             this.ddlSexChoose = new Telerik.WinControls.UI.RadDropDownList();
             this.bSaveAsPdfDocument = new Telerik.WinControls.UI.RadButton();
@@ -93,7 +93,7 @@
             // 
             this.printDocument.FooterFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.printDocument.HeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.printDocument.Watermark = radPrintWatermark4;
+            this.printDocument.Watermark = radPrintWatermark1;
             // 
             // saveDialog
             // 
@@ -117,6 +117,8 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Печать результата";
             this.ThemeName = "ControlDefault";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PrintResultForm_FormClosed);
+            this.Load += new System.EventHandler(this.PrintResultForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ddlPersonChoose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlSexChoose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bSaveAsPdfDocument)).EndInit();

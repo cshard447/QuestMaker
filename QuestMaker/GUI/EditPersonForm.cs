@@ -28,6 +28,7 @@ namespace QuestMaker.GUI
             itemManager = _itemManager;
             fillUIComponents();
             fillPersonData();
+            
         }
         public EditPersonForm(ref CAimManager _aimManager, ref CItemManager _itemManager)
         {
@@ -57,6 +58,15 @@ namespace QuestMaker.GUI
             lvItems.DataSource = itemManager.getItemsList();
             lvItems.DisplayMember = "DisplayString";
             lvItems.ValueMember = "Id";
+        }
+
+        private void EditPersonForm_Load(object sender, EventArgs e)
+        {
+            CSettings.fillFormSettings(this);
+        }
+        private void EditPersonForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CSettings.setFormSettings(this);
         }
 
         private void fillPersonData()
@@ -180,5 +190,7 @@ namespace QuestMaker.GUI
                 if (checkedItemList.Contains((int)lvitem.Value) || added == (int)lvitem.Value)
                     lvitem.CheckState = Telerik.WinControls.Enumerations.ToggleState.On;        
         }
+
+
     }
 }

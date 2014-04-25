@@ -225,6 +225,8 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Редактирование предмета";
             this.ThemeName = "ControlDefault";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditItemForm_FormClosed);
+            this.Load += new System.EventHandler(this.EditItemForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();

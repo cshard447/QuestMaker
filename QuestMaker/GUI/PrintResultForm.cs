@@ -61,6 +61,15 @@ namespace QuestMaker.GUI
             ddlSexChoose.DataSource = CPersonManager.enumSexList;
         }
 
+        private void PrintResultForm_Load(object sender, EventArgs e)
+        {
+            CSettings.fillFormSettings(this);
+        }
+        private void PrintResultForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CSettings.setFormSettings(this);
+        }
+
         private void bCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -225,5 +234,6 @@ namespace QuestMaker.GUI
                 }
             } 
         }
+
     }
 }
