@@ -131,6 +131,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rtbRules)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarRules)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPageView
@@ -236,9 +237,9 @@
             this.gridViewPersons.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewPersons.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gridViewPersons.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewPersons.Location = new System.Drawing.Point(0, 30);
+            this.gridViewPersons.Location = new System.Drawing.Point(0, 1);
             // 
-            // gridViewPersons
+            // 
             // 
             this.gridViewPersons.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.gridViewPersons.MasterTemplate.AutoGenerateColumns = false;
@@ -301,7 +302,7 @@
             sortDescriptor1});
             this.gridViewPersons.Name = "gridViewPersons";
             this.gridViewPersons.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewPersons.Size = new System.Drawing.Size(1170, 480);
+            this.gridViewPersons.Size = new System.Drawing.Size(1170, 509);
             this.gridViewPersons.TabIndex = 1;
             this.gridViewPersons.Text = "radGridView1";
             this.gridViewPersons.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gridViewPersons_CellFormatting);
@@ -313,7 +314,7 @@
             this.commandBarPerson.Name = "commandBarPerson";
             this.commandBarPerson.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowPerson});
-            this.commandBarPerson.Size = new System.Drawing.Size(1170, 30);
+            this.commandBarPerson.Size = new System.Drawing.Size(1170, 1);
             this.commandBarPerson.TabIndex = 0;
             this.commandBarPerson.Text = "radCommandBar1";
             // 
@@ -404,9 +405,9 @@
             this.gridViewAims.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewAims.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gridViewAims.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewAims.Location = new System.Drawing.Point(0, 45);
+            this.gridViewAims.Location = new System.Drawing.Point(0, 1);
             // 
-            // gridViewAims
+            // 
             // 
             this.gridViewAims.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
@@ -440,7 +441,7 @@
             sortDescriptor2});
             this.gridViewAims.Name = "gridViewAims";
             this.gridViewAims.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewAims.Size = new System.Drawing.Size(1170, 465);
+            this.gridViewAims.Size = new System.Drawing.Size(1170, 509);
             this.gridViewAims.TabIndex = 1;
             this.gridViewAims.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridViewAims_CellDoubleClick);
             // 
@@ -451,7 +452,7 @@
             this.commandBarAims.Name = "commandBarAims";
             this.commandBarAims.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowAims});
-            this.commandBarAims.Size = new System.Drawing.Size(1170, 45);
+            this.commandBarAims.Size = new System.Drawing.Size(1170, 1);
             this.commandBarAims.TabIndex = 2;
             this.commandBarAims.Text = "radCommandBar1";
             // 
@@ -662,9 +663,9 @@
             // 
             this.rtbRules.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbRules.HyperlinkToolTipFormatString = null;
-            this.rtbRules.Location = new System.Drawing.Point(0, 45);
+            this.rtbRules.Location = new System.Drawing.Point(0, 1);
             this.rtbRules.Name = "rtbRules";
-            this.rtbRules.Size = new System.Drawing.Size(1170, 465);
+            this.rtbRules.Size = new System.Drawing.Size(1170, 509);
             this.rtbRules.TabIndex = 1;
             // 
             // commandBarRules
@@ -674,7 +675,7 @@
             this.commandBarRules.Name = "commandBarRules";
             this.commandBarRules.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowRules});
-            this.commandBarRules.Size = new System.Drawing.Size(1170, 45);
+            this.commandBarRules.Size = new System.Drawing.Size(1170, 1);
             this.commandBarRules.TabIndex = 2;
             this.commandBarRules.Text = "radCommandBar1";
             // 
@@ -826,8 +827,13 @@
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.mainMenu);
             this.Name = "MainForm";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.Text = "Редактор квестов";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainPageView)).EndInit();
             this.mainPageView.ResumeLayout(false);
             this.pagePrehistory.ResumeLayout(false);
@@ -856,6 +862,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rtbRules)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarRules)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

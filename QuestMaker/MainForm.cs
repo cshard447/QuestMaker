@@ -17,7 +17,7 @@ using QuestMaker.GUI;
 
 namespace QuestMaker
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Telerik.WinControls.UI.RadForm
     {
         CItemManager itemManager = new CItemManager();
         CAimManager aimManager = new CAimManager();
@@ -376,10 +376,16 @@ namespace QuestMaker
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            CSettings.setFormSettings(this);
             CSettings.setGridViewSettings(gridViewAims);
             CSettings.setGridViewSettings(gridViewItems);
             CSettings.setGridViewSettings(gridViewPersons);
             CSettings.saveSettingsToFile();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            CSettings.fillFormSettings(this);
         }
 
     }
