@@ -5,66 +5,77 @@
       <aimName>Find supporters</aimName>
       <aimDescription></aimDescription>
       <aimType>secondary</aimType>
+      <personsWithAim>1,0,</personsWithAim>
     </aim>
     <aim>
       <aimId>1</aimId>
       <aimName>Find out about the oracle</aimName>
       <aimDescription></aimDescription>
       <aimType>transitional</aimType>
+      <personsWithAim>1,0,</personsWithAim>
     </aim>
     <aim>
       <aimId>2</aimId>
       <aimName>Prevent something from happening</aimName>
       <aimDescription></aimDescription>
       <aimType>primary</aimType>
+      <personsWithAim>0,</personsWithAim>
     </aim>
     <aim>
       <aimId>5</aimId>
       <aimName>Learn more about the oracle</aimName>
       <aimDescription></aimDescription>
       <aimType>transitional</aimType>
+      <personsWithAim></personsWithAim>
     </aim>
     <aim>
       <aimId>4</aimId>
       <aimName>Persuade the locals to leave the Island</aimName>
       <aimDescription></aimDescription>
       <aimType>transitional</aimType>
+      <personsWithAim></personsWithAim>
     </aim>
     <aim>
       <aimId>3</aimId>
       <aimName>Own the Island</aimName>
       <aimDescription></aimDescription>
       <aimType>primary</aimType>
+      <personsWithAim></personsWithAim>
     </aim>
     <aim>
       <aimId>6</aimId>
       <aimName>Get rid of newcomers</aimName>
       <aimDescription></aimDescription>
       <aimType>primary</aimType>
+      <personsWithAim></personsWithAim>
     </aim>
     <aim>
       <aimId>7</aimId>
       <aimName>Make the Island a place for tourists</aimName>
       <aimDescription></aimDescription>
       <aimType>primary</aimType>
+      <personsWithAim></personsWithAim>
     </aim>
     <aim>
       <aimId>8</aimId>
       <aimName>Find out who writes love letters</aimName>
       <aimDescription></aimDescription>
       <aimType>secondary</aimType>
+      <personsWithAim></personsWithAim>
     </aim>
     <aim>
       <aimId>9</aimId>
       <aimName>Find out what this Island hides</aimName>
       <aimDescription></aimDescription>
       <aimType>primary</aimType>
+      <personsWithAim></personsWithAim>
     </aim>
     <aim>
       <aimId>10</aimId>
       <aimName>Find the murderer</aimName>
       <aimDescription></aimDescription>
       <aimType>primary</aimType>
+      <personsWithAim>1,</personsWithAim>
     </aim>
   </aims>
 </root>

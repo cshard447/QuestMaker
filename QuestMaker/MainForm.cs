@@ -113,7 +113,7 @@ namespace QuestMaker
         {
             gridViewItems.Rows.Clear();
             Dictionary<int, CItem> _items = itemManager.getAllItems();
-            object[] values = new object[8];
+            object[] values = new object[9];
             foreach (CItem item in _items.Values)
             {
                 values[0] = item.getID();
@@ -124,6 +124,7 @@ namespace QuestMaker
                 values[5] = item.pathToImage;
                 values[6] = item.visibility;
                 values[7] = item.singleUse;
+                values[8] = peopleManager.getPersonsNamesFromId( item.personsId );
                 gridViewItems.Rows.Add(values);
             }
             gridViewItems.Update();
@@ -133,13 +134,14 @@ namespace QuestMaker
         {
             gridViewAims.Rows.Clear();
             Dictionary<int, CAim> _aims = aimManager.getAllAims();
-            object[] values = new object[4];
+            object[] values = new object[5];
             foreach (CAim aim in _aims.Values)
             {
                 values[0] = aim.getID();
                 values[1] = aim.getName();
                 values[2] = aim.description;
                 values[3] = aim.type;
+                values[4] = peopleManager.getPersonsNamesFromId( aim.personsId );
                 gridViewAims.Rows.Add(values);
             }
             gridViewAims.Update();

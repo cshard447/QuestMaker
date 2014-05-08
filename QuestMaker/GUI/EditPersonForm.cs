@@ -104,6 +104,9 @@ namespace QuestMaker.GUI
             foreach (ListViewDataItem lvAim in lvAims.CheckedItems)
                 aims.Add((int)lvAim.Value);
 
+            aimManager.addAimsToPerson(aims, editedPerson.getID());
+            itemManager.addItemsToPerson(items, editedPerson.getID());
+
             editedPerson.setOwnItems(items);
             editedPerson.setOwnAims(aims);
         }

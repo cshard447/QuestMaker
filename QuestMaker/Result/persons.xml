@@ -20,8 +20,8 @@
       <personUnremovable>true</personUnremovable>
       <personComment>Has a phobia.  Against the greens. Seeks for supporters. He will find out about the oracle and have a new goal. Can use Lockee to learn more about local culture. Can use Zalee to get closer to Kee. You're wearing a white T-shirt</personComment>
       <personAltName>Rachel Black</personAltName>
-      <personalItems>8,9,7,6,</personalItems>
-      <personalAims>10,</personalAims>
+      <personalItems>6,7,8,9,</personalItems>
+      <personalAims>0,1,10,</personalAims>
       <personClan>Blue</personClan>
     </person>
   </persons>

@@ -23,6 +23,8 @@ namespace QuestMaker
         public Image image;
         public bool visibility;
         public bool singleUse;
+        public List<int> personsId = new List<int>();
+
         public CItem()
         { 
         
@@ -39,6 +41,21 @@ namespace QuestMaker
             if (pathToImage != "")
                 image = Image.FromFile(pathToImage);
         }
+        public CItem(int _id, string _name, string _description, string _comment, string _path, bool _visibility, bool _single,
+                            List<int> _personsId)
+        {
+            id = _id;
+            name = _name;
+            description = _description;
+            comment = _comment;
+            pathToImage = _path;
+            visibility = _visibility;
+            singleUse = _single;
+            if (pathToImage != "")
+                image = Image.FromFile(pathToImage);
+            personsId = _personsId;
+        }
+
         public string getName()
         {
             return name;
@@ -95,9 +112,10 @@ namespace QuestMaker
                     break;
             return newID;        
         }
-        public void addItem(int _id, string _name, string _description, string _comment, string _path, bool _visibility, bool _singleUse)
+        public void addItem(int _id, string _name, string _description, string _comment, string _path, bool _visibility, 
+                                bool _singleUse, List<int> _personsId)
         {
-            items.Add(_id, new CItem(_id, _name, _description, _comment, _path, _visibility, _singleUse));
+            items.Add(_id, new CItem(_id, _name, _description, _comment, _path, _visibility, _singleUse, _personsId));
         }
         public int addItem(string _name, string _description, string _comment, string _path, bool _visibility, bool _singleUse)
         {
@@ -108,7 +126,7 @@ namespace QuestMaker
         public int addItem(CItem item)
         {
             int newID = calcNewID();
-            addItem(newID, item.getName(), item.description, item.comment, item.pathToImage, item.visibility, item.singleUse);
+            addItem(newID, item.getName(), item.description, item.comment, item.pathToImage, item.visibility, item.singleUse, item.personsId);
             return newID;
         }
 
@@ -143,6 +161,16 @@ namespace QuestMaker
                 throw new System.ArgumentException("Предмета с таким ID не существует!");
             items[updated.getID()] = updated;
             addImageToItem(updated.pathToImage, updated.getID());
+        }
+
+        public void addItemsToPerson(List<int> itemsID, int personID)
+        {
+            foreach (int itemID in itemsID)
+            {
+                CItem item = getItem(itemID);
+                if (!item.personsId.Contains(personID))
+                    items[itemID].personsId.Add(personID);
+            }
         }
 
         public void addImageToItem(string path, string fileName, int id)
@@ -227,7 +255,8 @@ namespace QuestMaker
                                 new XElement("itemComment", item.comment),
                                 new XElement("itemImagePath", item.pathToImage),
                                 new XElement("itemVisibility", item.visibility),
-                                new XElement("itemSingleUse", item.singleUse));
+                                new XElement("itemSingleUse", item.singleUse),
+                                new XElement("personsWithItem", Common.getListAsStringWithDelimiter(item.personsId, ",")));
 
                 doc.Root.Element(section).Add(element);
             }
@@ -257,8 +286,10 @@ namespace QuestMaker
                 string path = elem.Element("itemImagePath").Value.ToString();
                 string vis = elem.Element("itemVisibility").Value.ToString();
                 string single = elem.Element("itemSingleUse").Value.ToString();
+                string personsID = elem.Element("personsWithItem").Value.ToString();
+                List<int> personsList = Common.splitStringIntoList(personsID);
 
-                addItem(id, name, desc, comm, path, ConvertStringToBool(vis), ConvertStringToBool(single));
+                addItem(id, name, desc, comm, path, ConvertStringToBool(vis), ConvertStringToBool(single), personsList);
             }
         }
         public void TestXML()

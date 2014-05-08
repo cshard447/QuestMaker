@@ -21,8 +21,8 @@ namespace QuestMaker.Classes
         public string comment;
         public string altName;
         public KnownColor clan;
-        public List<CItem> items;
-        public List<CAim> aims;
+        //public List<CItem> items;
+        //public List<CAim> aims;
 
         public List<int> itemsId = new List<int>();
         public List<int> aimsId = new List<int>();
@@ -306,17 +306,8 @@ namespace QuestMaker.Classes
                 string aimStr = elem.Element("personalAims").Value.ToString();
                 KnownColor clan = (Color.FromName(elem.Element("personClan").Value.ToString())).ToKnownColor();
 
-                string[] itemsArr = itemStr.Split(new char[] {','}, StringSplitOptions.RemoveEmptyEntries);
-                List<int> itemsList = new List<int>();
-                if (itemStr != "")
-                    foreach (string str in itemsArr)
-                        itemsList.Add(int.Parse(str));
-
-                string[] aimsArr = aimStr.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                List<int> aimsList = new List<int>();
-                if (aimStr != "")
-                    foreach (string str in aimsArr)
-                        aimsList.Add(int.Parse(str));
+                List<int> itemsList = Common.splitStringIntoList(itemStr);
+                List<int> aimsList = Common.splitStringIntoList(aimStr);
 
                 addPerson(id, name, sex, desc, ConvertStringToBool(unrem), comm, itemsList, aimsList, clan, alt);
             }
@@ -325,6 +316,14 @@ namespace QuestMaker.Classes
         public static bool ConvertStringToBool(string str)
         {
             return str.Equals("true");
+        }
+
+        public string getPersonsNamesFromId(List<int> ids)
+        {
+            string result = "";
+            foreach (int id in ids)
+                result += persons[id].getName() + "; ";
+            return result;
         }
 
         private void initDict()

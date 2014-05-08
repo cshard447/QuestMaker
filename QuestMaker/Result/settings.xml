@@ -8,16 +8,16 @@
     <EditPersonForm>1</EditPersonForm>
     <EditPersonFormLeft>149</EditPersonFormLeft>
     <EditPersonFormTop>67</EditPersonFormTop>
-    <EditPersonFormWidth>1033</EditPersonFormWidth>
-    <EditPersonFormHeight>626</EditPersonFormHeight>
+    <EditPersonFormWidth>867</EditPersonFormWidth>
+    <EditPersonFormHeight>536</EditPersonFormHeight>
     <PrintResultForm>1</PrintResultForm>
     <PrintResultFormLeft>0</PrintResultFormLeft>
     <PrintResultFormTop>0</PrintResultFormTop>
     <PrintResultFormWidth>499</PrintResultFormWidth>
     <PrintResultFormHeight>557</PrintResultFormHeight>
     <EditAimForm>1</EditAimForm>
-    <EditAimFormLeft>857</EditAimFormLeft>
-    <EditAimFormTop>485</EditAimFormTop>
+    <EditAimFormLeft>508</EditAimFormLeft>
+    <EditAimFormTop>284</EditAimFormTop>
     <EditAimFormWidth>421</EditAimFormWidth>
     <EditAimFormHeight>305</EditAimFormHeight>
     <gridViewAims_columnID>32</gridViewAims_columnID>
@@ -26,8 +26,8 @@
     <gridViewAims_columnType>93</gridViewAims_columnType>
     <gridViewItems_columnID>50</gridViewItems_columnID>
     <gridViewItems_columnName>262</gridViewItems_columnName>
-    <gridViewItems_columnDescription>307</gridViewItems_columnDescription>
-    <gridViewItems_columnComment>154</gridViewItems_columnComment>
+    <gridViewItems_columnDescription>212</gridViewItems_columnDescription>
+    <gridViewItems_columnComment>96</gridViewItems_columnComment>
     <gridViewItems_columnImage>128</gridViewItems_columnImage>
     <gridViewItems_columnPath>115</gridViewItems_columnPath>
     <gridViewItems_columnVisibility>57</gridViewItems_columnVisibility>
@@ -38,14 +38,16 @@
     <gridViewPersons_columnUnremovable>80</gridViewPersons_columnUnremovable>
     <gridViewPersons_columnDescription>181</gridViewPersons_columnDescription>
     <gridViewPersons_columnPersonalItems>116</gridViewPersons_columnPersonalItems>
-    <gridViewPersons_columnPersonalAims>169</gridViewPersons_columnPersonalAims>
+    <gridViewPersons_columnPersonalAims>198</gridViewPersons_columnPersonalAims>
     <gridViewPersons_columnAltName>70</gridViewPersons_columnAltName>
     <gridViewPersons_columnComment>265</gridViewPersons_columnComment>
     <gridViewPersons_columnClanColor>102</gridViewPersons_columnClanColor>
     <MainForm>1</MainForm>
-    <MainFormLeft>38</MainFormLeft>
-    <MainFormTop>1</MainFormTop>
+    <MainFormLeft>42</MainFormLeft>
+    <MainFormTop>27</MainFormTop>
     <MainFormWidth>1207</MainFormWidth>
     <MainFormHeight>773</MainFormHeight>
+    <gridViewAims_columnPersonsWithAim>197</gridViewAims_columnPersonsWithAim>
+    <gridViewItems_columnPersonsWithItem>119</gridViewItems_columnPersonsWithItem>
   </settings>
 </root>

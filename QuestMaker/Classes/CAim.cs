@@ -17,9 +17,18 @@ namespace QuestMaker
         protected string name;
         public string description;
         public AimType type;
+        public List<int> personsId = new List<int>();
 
         public CAim()
         {
+        }
+        public CAim(int _id, string _name, string _description, AimType _type, List<int> _personsList)
+        {
+            id = _id;
+            name = _name;
+            description = _description;
+            type = _type;
+            personsId = _personsList;
         }
         public CAim(int _id, string _name, string _description, AimType _type)
         {
@@ -81,7 +90,7 @@ namespace QuestMaker
         }
     }
 
-    public class CAimManager : CAim
+    public class CAimManager
     { 
         private Dictionary<int, CAim> aims = new Dictionary<int, CAim>();
         private XDocument doc = new XDocument(new XElement("root"));
@@ -94,7 +103,7 @@ namespace QuestMaker
         public const string section = "aims";
         const int MAX_ITEMS = 1000;
 
-        public CAimManager() : base ()
+        public CAimManager()
         {
             initDict();
         }
@@ -106,9 +115,9 @@ namespace QuestMaker
                     break;
             return newID;        
         }
-        public void addAim(int _id, string _name, string _description, AimType _type)
+        public void addAim(int _id, string _name, string _description, AimType _type, List<int> _personsList)
         { 
-            aims.Add(_id, new CAim(_id, _name, _description, _type));
+            aims.Add(_id, new CAim(_id, _name, _description, _type, _personsList));
         }
 
         public int addAim(string _name, string _description, AimType _type)
@@ -120,7 +129,7 @@ namespace QuestMaker
         public int addAim(CAim aim)
         {
             int newID = calcNewID();
-            addAim(newID, aim.getName(), aim.description, aim.type);
+            addAim(newID, aim.getName(), aim.description, aim.type, aim.personsId);
             return newID;
         }
 
@@ -153,6 +162,16 @@ namespace QuestMaker
             if (!this.aims.ContainsKey(updated.getID()))
                 throw new System.ArgumentException("Цели с таким ID не существует!");
             aims[updated.getID()] = updated;
+        }
+
+        public void addAimsToPerson(List<int> aimsID, int personID)
+        {
+            foreach (int aimID in aimsID)
+            {
+                CAim aim = getAim(aimID);
+                if (!aim.personsId.Contains(personID))
+                    aims[aimID].personsId.Add(personID);
+            }        
         }
 
         public Dictionary<int, CAim> getAllAims()
@@ -208,7 +227,8 @@ namespace QuestMaker
                                 new XElement("aimId", aim.getID()),
                                 new XElement("aimName", aim.getName()),
                                 new XElement("aimDescription", aim.description),
-                                new XElement("aimType", aim.type.ToString()));
+                                new XElement("aimType", aim.type.ToString()),
+                                new XElement("personsWithAim", Common.getListAsStringWithDelimiter(aim.personsId,",")));
 
                 doc.Root.Element(section).Add(element);
             }
@@ -236,7 +256,9 @@ namespace QuestMaker
                 string desc = elem.Element("aimDescription").Value.ToString();
                 string strtype = elem.Element("aimType").Value.ToString();
                 AimType type = getType(strtype);
-                addAim(id, name, desc, type);
+                string personStr = elem.Element("personsWithAim").Value.ToString();
+                List<int> personsList = Common.splitStringIntoList(personStr);
+                addAim(id, name, desc, type, personsList);
             }
         }
 
@@ -247,7 +269,6 @@ namespace QuestMaker
                 result += aims[id].getName() + "; ";
             return result;
         }
-
 
         private void initDict()
         { 

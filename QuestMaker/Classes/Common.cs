@@ -54,6 +54,16 @@ namespace QuestMaker.Classes
             return result;
         }
 
+        public static List<int> splitStringIntoList(string listedString)
+        {
+            string[] itemsArr = listedString.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            List<int> itemsList = new List<int>();
+            if (listedString != "")
+                foreach (string str in itemsArr)
+                    itemsList.Add(int.Parse(str));
+            return itemsList;
+        }
+
 
     }
 
