@@ -171,6 +171,11 @@ namespace QuestMaker
                 if (!item.personsId.Contains(personID))
                     items[itemID].personsId.Add(personID);
             }
+            foreach (CItem item in items.Values)
+            {
+                if (item.personsId.Contains(personID) && !itemsID.Contains(item.getID()))
+                    item.personsId.Remove(personID);
+            }
         }
 
         public void addImageToItem(string path, string fileName, int id)

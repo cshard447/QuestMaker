@@ -171,7 +171,12 @@ namespace QuestMaker
                 CAim aim = getAim(aimID);
                 if (!aim.personsId.Contains(personID))
                     aims[aimID].personsId.Add(personID);
-            }        
+            }
+            foreach (CAim aim in aims.Values)
+            {
+                if (aim.personsId.Contains(personID) && !aimsID.Contains(aim.getID()))
+                    aim.personsId.Remove(personID);
+            }
         }
 
         public Dictionary<int, CAim> getAllAims()
