@@ -130,7 +130,7 @@ namespace QuestMaker.GUI
             section.Blocks.Add(paragraph1);
             doc.Sections.Add(section);
 
-            // **** Prehistory***********
+            // **** Person's description***********
             tempDoc = htmlProvider.Import(chosenPerson.description);
             mergeDocuments(tempDoc, section);
 

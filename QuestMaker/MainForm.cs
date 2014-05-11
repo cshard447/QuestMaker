@@ -204,7 +204,7 @@ namespace QuestMaker
                     gridViewAims.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = markupItems.Value.ToString();
             }
         }
-
+        //****************************************************************
         //********* Main MENU   ******************************************
         private void menuItemLoad_Click(object sender, EventArgs e)
         {
@@ -252,7 +252,7 @@ namespace QuestMaker
             gridViewPersons.Columns["columnAltName"].IsVisible = !gridViewPersons.Columns["columnAltName"].IsVisible;
         }
         //***************************************************
-        //*********Prehistory and Rules***************
+        //*********Prehistory and Rules**********************
         private void cmbSavePrehistory_Click(object sender, EventArgs e)
         {
             string prehistoryText = htmlProvider.Export(rtbPrehistory.Document);
@@ -288,7 +288,7 @@ namespace QuestMaker
             }
         }
         //***************************************************
-        //*******Create and Edit*****************
+        //*******Create and Edit*****************************
         private void cmbCreatePerson_Click(object sender, EventArgs e)
         {
             EditPersonForm epf = new EditPersonForm(ref aimManager, ref itemManager);
@@ -392,6 +392,42 @@ namespace QuestMaker
         {
             CSettings.fillFormSettings(this);
         }
+
+        //***************************************************
+        //*******Save data after editing on grids************
+        private void gridViewPersons_CellValueChanged(object sender, GridViewCellEventArgs e)
+        {
+            peopleManager.UpdatePersonsFromGrid(gridViewPersons);
+        }
+
+        private void gridViewPersons_UserAddedRow(object sender, GridViewRowEventArgs e)
+        {
+            peopleManager.UpdatePersonsFromGrid(gridViewPersons);
+            ShowPersonsOnGridView();
+        }
+
+        private void gridViewAims_CellValueChanged(object sender, GridViewCellEventArgs e)
+        {
+            aimManager.UpdateAimsFromGrid(gridViewAims);
+        }
+
+        private void gridViewAims_UserAddedRow(object sender, GridViewRowEventArgs e)
+        {
+            aimManager.UpdateAimsFromGrid(gridViewAims);
+            ShowAimsOnGridView();
+        }
+
+        private void gridViewItems_CellValueChanged(object sender, GridViewCellEventArgs e)
+        {
+            itemManager.UpdateItemsFromGrid(gridViewItems);
+        }
+
+        private void gridViewItems_UserAddedRow(object sender, GridViewRowEventArgs e)
+        {
+            itemManager.UpdateItemsFromGrid(gridViewItems);
+            ShowItemsOnGridView();
+        }
+        //***************************************************
 
     }
 }
