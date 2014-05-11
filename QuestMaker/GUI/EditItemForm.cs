@@ -92,7 +92,5 @@ namespace QuestMaker.GUI
                 pImage.BackgroundImageLayout = ImageLayout.Center;
         }
 
-
-
     }
 }

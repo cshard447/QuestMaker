@@ -68,7 +68,6 @@ namespace QuestMaker.Classes
             writtenText = doc.Root.Element(getSection()).Element("text").Value;
         }
 
-
     }
 
     public class CRules : CCommonText

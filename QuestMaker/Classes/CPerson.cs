@@ -210,6 +210,7 @@ namespace QuestMaker.Classes
         {
             return persons;
         }
+
         public void UpdatePersonsFromGrid(RadGridView gridView)
         {
             List<int> idsInTable = new List<int>();
@@ -322,7 +323,16 @@ namespace QuestMaker.Classes
         {
             string result = "";
             foreach (int id in ids)
-                result += persons[id].getName() + "; ";
+            {
+                try
+                {
+                    result += persons.ElementAt(id).Value.getName() + "; ";
+                }
+                catch (System.ArgumentOutOfRangeException e)
+                {
+                    CommonError.addErrorString("Не существует персонаж с ID = " + id.ToString());
+                }
+            }
             return result;
         }
 

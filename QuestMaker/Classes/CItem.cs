@@ -52,7 +52,12 @@ namespace QuestMaker
             visibility = _visibility;
             singleUse = _single;
             if (pathToImage != "")
-                image = Image.FromFile(pathToImage);
+            {
+                if (File.Exists(pathToImage))
+                    image = Image.FromFile(pathToImage);
+                else
+                    CommonError.addErrorString(pathToImage);
+            }
             personsId = _personsId;
         }
 
@@ -91,7 +96,7 @@ namespace QuestMaker
         }
     }
 
-    public class CItemManager : CItem
+    public class CItemManager
     {
         private Dictionary<int, CItem> items = new Dictionary<int, CItem>();
         private XDocument doc = new XDocument(new XElement("root"));      
@@ -100,7 +105,7 @@ namespace QuestMaker
         const int MAX_ITEMS = 1000;
         private BindingList<ItemDataSourceObject> itemList = new BindingList<ItemDataSourceObject>();
 
-        public CItemManager() : base ()
+        public CItemManager()
         { 
         
         }
@@ -306,7 +311,16 @@ namespace QuestMaker
         {
             string result = "";
             foreach (int id in ids)
-                result += items[id].getName() + "; ";
+            {
+                try
+                {
+                    result += items.ElementAt(id).Value.getName() + "; ";
+                }
+                catch (System.ArgumentOutOfRangeException e)
+                {
+                    CommonError.addErrorString("Не существует предмет с ID = " + id.ToString());
+                }
+            }
             return result;
         }
 

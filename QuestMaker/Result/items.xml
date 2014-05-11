@@ -1,4 +1,4 @@
-<root>
+﻿<root>
   <items>
     <item>
       <itemId>0</itemId>
@@ -18,7 +18,7 @@
       <itemImagePath></itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>true</itemSingleUse>
-      <personsWithItem>0,</personsWithItem>
+      <personsWithItem>1,11,</personsWithItem>
     </item>
     <item>
       <itemId>5</itemId>
@@ -28,7 +28,7 @@
       <itemImagePath>..\..\Result\vk.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>true</itemSingleUse>
-      <personsWithItem></personsWithItem>
+      <personsWithItem>5,</personsWithItem>
     </item>
     <item>
       <itemId>4</itemId>
@@ -38,7 +38,7 @@
       <itemImagePath>..\..\Result\twitter.png</itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>true</itemSingleUse>
-      <personsWithItem></personsWithItem>
+      <personsWithItem>6,</personsWithItem>
     </item>
     <item>
       <itemId>1</itemId>
@@ -49,7 +49,17 @@
       <itemImagePath></itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>false</itemSingleUse>
-      <personsWithItem></personsWithItem>
+      <personsWithItem>11,</personsWithItem>
+    </item>
+    <item>
+      <itemId>2</itemId>
+      <itemName>Creeping Thyme</itemName>
+      <itemDescription>tranquilizer </itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>true</itemSingleUse>
+      <personsWithItem>5,</personsWithItem>
     </item>
     <item>
       <itemId>6</itemId>
@@ -59,7 +69,7 @@
       <itemImagePath></itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>false</itemSingleUse>
-      <personsWithItem>1,</personsWithItem>
+      <personsWithItem></personsWithItem>
     </item>
     <item>
       <itemId>7</itemId>
@@ -69,7 +79,7 @@
       <itemImagePath></itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>false</itemSingleUse>
-      <personsWithItem>1,</personsWithItem>
+      <personsWithItem>0,1,2,8,9,12,30</personsWithItem>
     </item>
     <item>
       <itemId>8</itemId>
@@ -89,7 +99,197 @@
       <itemImagePath></itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>false</itemSingleUse>
-      <personsWithItem>1,</personsWithItem>
+      <personsWithItem></personsWithItem>
+    </item>
+    <item>
+      <itemId>10</itemId>
+      <itemName>A heart-shaped diamond</itemName>
+      <itemDescription>found in a cave</itemDescription>
+      <itemComment>fake</itemComment>
+      <itemImagePath>..\..\Result\Heart-shaped diamond3.jpg</itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+      <personsWithItem>31</personsWithItem>
+    </item>
+    <item>
+      <itemId>11</itemId>
+      <itemName>A heart-shaped diamond</itemName>
+      <itemDescription>found on the other side of the island, hidden under the ground</itemDescription>
+      <itemComment>the real one</itemComment>
+      <itemImagePath>..\..\Result\Heart-shaped diamond1.jpg</itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+      <personsWithItem></personsWithItem>
+    </item>
+    <item>
+      <itemId>12</itemId>
+      <itemName>A camera</itemName>
+      <itemDescription></itemDescription>
+      <itemComment>Yo can take photos with it</itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>false</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+      <personsWithItem>11,</personsWithItem>
+    </item>
+    <item>
+      <itemId>13</itemId>
+      <itemName>A hand-glass</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+      <personsWithItem>11,</personsWithItem>
+    </item>
+    <item>
+      <itemId>14</itemId>
+      <itemName>A dagger</itemName>
+      <itemDescription>JB written on</itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+      <personsWithItem>10,</personsWithItem>
+    </item>
+    <item>
+      <itemId>15</itemId>
+      <itemName>A fragment of a map</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+      <personsWithItem>5,10,13,</personsWithItem>
+    </item>
+    <item>
+      <itemId>16</itemId>
+      <itemName>Gold</itemName>
+      <itemDescription>Pirates' gold</itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+      <personsWithItem>10,</personsWithItem>
+    </item>
+    <item>
+      <itemId>17</itemId>
+      <itemName>Emerald Ring</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+      <personsWithItem></personsWithItem>
+    </item>
+    <item>
+      <itemId>18</itemId>
+      <itemName>Mirror</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+      <personsWithItem></personsWithItem>
+    </item>
+    <item>
+      <itemId>19</itemId>
+      <itemName>Rod of Power</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath></itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+      <personsWithItem>4,</personsWithItem>
+    </item>
+    <item>
+      <itemId>20</itemId>
+      <itemName>Letter to my brother</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath>C:\Users\Zhenya\Desktop\IJ Quests\Letter to my brother.jpg</itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+	<personsWithItem></personsWithItem>
+    </item>
+    <item>
+      <itemId>21</itemId>
+      <itemName>Development Agreement</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath>C:\Users\Zhenya\Desktop\IJ Quests\Development agreement.jpg</itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+	<personsWithItem></personsWithItem>
+    </item>
+    <item>
+      <itemId>22</itemId>
+      <itemName>Local alphabet</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath>C:\Users\Zhenya\Desktop\IJ Quests\Local alphabet.jpg</itemImagePath>
+      <itemVisibility>false</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+	<personsWithItem></personsWithItem>
+    </item>
+    <item>
+      <itemId>23</itemId>
+      <itemName>Lots of money</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath>C:\Users\Zhenya\Desktop\IJ Quests\Lots of Money.jpg</itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+	<personsWithItem></personsWithItem>
+    </item>
+    <item>
+      <itemId>24</itemId>
+      <itemName>Card 2 (Kee)</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath>C:\Users\Zhenya\Desktop\IJ Quests\Card 2 (Kee).jpg</itemImagePath>
+      <itemVisibility>false</itemVisibility>
+      <itemSingleUse>true</itemSingleUse>
+	<personsWithItem></personsWithItem>
+    </item>
+    <item>
+      <itemId>25</itemId>
+      <itemName>Card 3 (Noo)</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath>C:\Users\Zhenya\Desktop\IJ Quests\Card 3 (Noo).jpg</itemImagePath>
+      <itemVisibility>false</itemVisibility>
+      <itemSingleUse>true</itemSingleUse>
+	<personsWithItem></personsWithItem>
+    </item>
+    <item>
+      <itemId>26</itemId>
+      <itemName>Card 1 (Priscill)</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath>C:\Users\Zhenya\Desktop\IJ Quests\Card 1 (Priscill).jpg</itemImagePath>
+      <itemVisibility>false</itemVisibility>
+      <itemSingleUse>true</itemSingleUse>
+	<personsWithItem></personsWithItem>
+    </item>
+    <item>
+      <itemId>27</itemId>
+      <itemName>Card 5 (Ryan)</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath>C:\Users\Zhenya\Desktop\IJ Quests\Card 5 (Ryan).jpg</itemImagePath>
+      <itemVisibility>false</itemVisibility>
+      <itemSingleUse>true</itemSingleUse>
+	<personsWithItem></personsWithItem>
+    </item>
+    <item>
+      <itemId>28</itemId>
+      <itemName>Pack of cigarettes</itemName>
+      <itemDescription></itemDescription>
+      <itemComment></itemComment>
+      <itemImagePath>C:\Users\Zhenya\Desktop\IJ Quests\7 x 10\Pack of cigarettes 7-10.jpg</itemImagePath>
+      <itemVisibility>true</itemVisibility>
+      <itemSingleUse>false</itemSingleUse>
+	<personsWithItem></personsWithItem>
     </item>
   </items>
 </root>

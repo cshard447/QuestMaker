@@ -64,7 +64,25 @@ namespace QuestMaker.Classes
             return itemsList;
         }
 
+    }
 
+    public class CommonError
+    {
+        private static string currentError = "";
+        public static bool isError = false;
+        public static void addErrorString(string error)
+        {
+            isError = true;
+            currentError += error + "\n";
+        }
+        public static string getCurrentError()
+        {
+            string result = currentError;
+            currentError = "";
+            isError = false;
+            return result;
+        }
+    
     }
 
 }

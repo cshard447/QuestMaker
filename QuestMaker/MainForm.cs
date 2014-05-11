@@ -42,8 +42,11 @@ namespace QuestMaker
             CSettings.fillGridViewSettings(gridViewAims);
             CSettings.fillGridViewSettings(gridViewItems);
             CSettings.fillGridViewSettings(gridViewPersons);
-
+            if (CommonError.isError)
+                MessageBox.Show(CommonError.getCurrentError(), "Ошибка открытия данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             UpdateDataOnGridViews();
+            if (CommonError.isError)
+                MessageBox.Show(CommonError.getCurrentError(), "Ошибка открытия данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         void FillTableColumns()
