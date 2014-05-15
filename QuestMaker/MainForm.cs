@@ -117,6 +117,7 @@ namespace QuestMaker
             gridViewItems.Rows.Clear();
             Dictionary<int, CItem> _items = itemManager.getAllItems();
             object[] values = new object[9];
+            gridViewItems.BeginUpdate();
             foreach (CItem item in _items.Values)
             {
                 values[0] = item.getID();
@@ -130,7 +131,7 @@ namespace QuestMaker
                 values[8] = peopleManager.getPersonsNamesFromId( item.personsId );
                 gridViewItems.Rows.Add(values);
             }
-            gridViewItems.Update();
+            gridViewItems.EndUpdate();            
         }
 
         private void ShowAimsOnGridView()
@@ -138,6 +139,7 @@ namespace QuestMaker
             gridViewAims.Rows.Clear();
             Dictionary<int, CAim> _aims = aimManager.getAllAims();
             object[] values = new object[5];
+            gridViewAims.BeginUpdate();
             foreach (CAim aim in _aims.Values)
             {
                 values[0] = aim.getID();
@@ -147,7 +149,7 @@ namespace QuestMaker
                 values[4] = peopleManager.getPersonsNamesFromId( aim.personsId );
                 gridViewAims.Rows.Add(values);
             }
-            gridViewAims.Update();
+            gridViewAims.EndUpdate();
         }
 
         private void ShowPersonsOnGridView()
@@ -155,6 +157,7 @@ namespace QuestMaker
             gridViewPersons.Rows.Clear();
             Dictionary<int, CPerson> _people = peopleManager.getAllPersons();
             object[] values = new object[10];
+            gridViewPersons.BeginUpdate();
             foreach(CPerson person in _people.Values)
             {
                 values[0] = person.getID();
@@ -169,7 +172,7 @@ namespace QuestMaker
                 values[9] = person.clan;
                 gridViewPersons.Rows.Add(values);
             }
-            gridViewPersons.Update();
+            gridViewPersons.EndUpdate();
         }
 
         private void gridViewItems_CellDoubleClick(object sender, GridViewCellEventArgs e)

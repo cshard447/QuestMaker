@@ -36,16 +36,16 @@
     <gridViewPersons_columnName>134</gridViewPersons_columnName>
     <gridViewPersons_columnSex>76</gridViewPersons_columnSex>
     <gridViewPersons_columnUnremovable>80</gridViewPersons_columnUnremovable>
-    <gridViewPersons_columnDescription>181</gridViewPersons_columnDescription>
+    <gridViewPersons_columnDescription>129</gridViewPersons_columnDescription>
     <gridViewPersons_columnPersonalItems>116</gridViewPersons_columnPersonalItems>
     <gridViewPersons_columnPersonalAims>253</gridViewPersons_columnPersonalAims>
     <gridViewPersons_columnAltName>70</gridViewPersons_columnAltName>
-    <gridViewPersons_columnComment>265</gridViewPersons_columnComment>
+    <gridViewPersons_columnComment>203</gridViewPersons_columnComment>
     <gridViewPersons_columnClanColor>102</gridViewPersons_columnClanColor>
     <MainForm>1</MainForm>
-    <MainFormLeft>104</MainFormLeft>
-    <MainFormTop>20</MainFormTop>
-    <MainFormWidth>1358</MainFormWidth>
+    <MainFormLeft>15</MainFormLeft>
+    <MainFormTop>9</MainFormTop>
+    <MainFormWidth>1253</MainFormWidth>
     <MainFormHeight>947</MainFormHeight>
     <gridViewAims_columnPersonsWithAim>197</gridViewAims_columnPersonsWithAim>
     <gridViewItems_columnPersonsWithItem>176</gridViewItems_columnPersonsWithItem>
