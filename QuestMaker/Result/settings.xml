@@ -49,5 +49,10 @@
     <MainFormHeight>947</MainFormHeight>
     <gridViewAims_columnPersonsWithAim>197</gridViewAims_columnPersonsWithAim>
     <gridViewItems_columnPersonsWithItem>176</gridViewItems_columnPersonsWithItem>
+    <gridViewEvents_columnID>38</gridViewEvents_columnID>
+    <gridViewEvents_columnDescription>340</gridViewEvents_columnDescription>
+    <gridViewEvents_columnPrecondition>301</gridViewEvents_columnPrecondition>
+    <gridViewEvents_columnTime>140</gridViewEvents_columnTime>
+    <gridViewEvents_columnEventType>170</gridViewEvents_columnEventType>
   </settings>
 </root>

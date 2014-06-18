@@ -24,6 +24,7 @@ namespace QuestMaker
         CRules rules = new CRules();
         CPrehistory prehistory = new CPrehistory();
         CPersonManager peopleManager = new CPersonManager();
+        CEventManager eventManager = new CEventManager();
         
         HtmlFormatProvider htmlProvider = new HtmlFormatProvider();
         //TxtFormatProvider txtProvider = new TxtFormatProvider();
@@ -38,10 +39,12 @@ namespace QuestMaker
             rules.loadTextFromFile();
             prehistory.loadTextFromFile();
             peopleManager.loadPersonsFromFile();
+            eventManager.loadEventsFromFile();
             CSettings.loadSettingsFromFile();
             CSettings.fillGridViewSettings(gridViewAims);
             CSettings.fillGridViewSettings(gridViewItems);
             CSettings.fillGridViewSettings(gridViewPersons);
+            CSettings.fillGridViewSettings(gridViewEvents);
             if (CommonError.isError)
                 MessageBox.Show(CommonError.getCurrentError(), "Ошибка открытия данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             UpdateDataOnGridViews();
@@ -67,11 +70,12 @@ namespace QuestMaker
 
             GridViewTextBoxColumn column3 = (GridViewTextBoxColumn)gridViewItems.Columns["columnID"];
             column3.DataSourceNullValue = -1;
-
             GridViewTextBoxColumn column4 = (GridViewTextBoxColumn)gridViewAims.Columns["columnID"];
             column4.DataSourceNullValue = -1;
             GridViewTextBoxColumn column5 = (GridViewTextBoxColumn)gridViewPersons.Columns["columnID"];
             column5.DataSourceNullValue = -1;
+            GridViewTextBoxColumn column6 = (GridViewTextBoxColumn)gridViewEvents.Columns["columnID"];
+            column6.DataSourceNullValue = -1;
 
             GridViewComboBoxColumn column7 = (GridViewComboBoxColumn)gridViewPersons.Columns["columnClanColor"];
             column7.ValueMember = "Clan";
@@ -80,8 +84,16 @@ namespace QuestMaker
             //column7.ConditionalFormattingObjectList
             column7.DataSource = CPersonManager.clanList;
             column7.DataSourceNullValue = KnownColor.Gray;
-        }
 
+            GridViewComboBoxColumn column8 = (GridViewComboBoxColumn)gridViewEvents.Columns["columnEventType"];
+            column8.ValueMember = "Type";
+            column8.DisplayMember = "DisplayString";
+            column8.FieldName = "Type";
+            column8.DataSource = CEventManager.enumEventList;
+            //column8.DataSourceNullValue = ;
+        }
+        //***************************************************
+        //*********Data save by button click*****************
         private void cmbSaveItems_Click(object sender, EventArgs e)
         {
             itemManager.UpdateItemsFromGrid(gridViewItems);
@@ -102,12 +114,20 @@ namespace QuestMaker
             peopleManager.savePersonsToFile();
             ShowPersonsOnGridView();
         }
-
+        private void cmbSaveEvents_Click(object sender, EventArgs e)
+        {
+            eventManager.UpdateEventsFromGrid(gridViewEvents);
+            eventManager.saveEventsToFile();
+            ShowEventsOnGridView();
+        }
+        //***************************************************
+        //*********Show data on grid views and docs**********
         private void UpdateDataOnGridViews()
         {
             ShowItemsOnGridView();
             ShowAimsOnGridView();
             ShowPersonsOnGridView();
+            ShowEventsOnGridView();
             rtbRules.Document = htmlProvider.Import(rules.writtenText);
             rtbPrehistory.Document = htmlProvider.Import(prehistory.writtenText);
         }
@@ -174,7 +194,25 @@ namespace QuestMaker
             }
             gridViewPersons.EndUpdate();
         }
-
+        private void ShowEventsOnGridView()
+        {
+            gridViewEvents.Rows.Clear();
+            Dictionary<int, CAuthorEvent> _events = eventManager.getAllEvents();
+            object[] values = new object[5];
+            gridViewEvents.BeginUpdate();
+            foreach (CAuthorEvent _event in _events.Values)
+            {
+                values[0] = _event.getID();
+                values[1] = _event.description;
+                values[2] = _event.precondition;
+                values[3] = DateTime.Now; //_event.time;
+                values[4] = _event.type;
+                gridViewEvents.Rows.Add(values);
+            }
+            gridViewEvents.EndUpdate();
+        }
+        //****************************************************************
+        //********* Stuff   ******************************************
         private void gridViewItems_CellDoubleClick(object sender, GridViewCellEventArgs e)
         {
             if (e.Column.Name == "columnImage")
@@ -237,6 +275,7 @@ namespace QuestMaker
                 rules.saveTextToFile(saveFile);
                 prehistory.saveTextToFile(saveFile);
                 peopleManager.savePersonsToFile(saveFile);
+                eventManager.saveEventsToFile(saveFile);
             }
         }
 
@@ -251,6 +290,7 @@ namespace QuestMaker
             gridViewItems.Columns["columnPath"].IsVisible = !gridViewItems.Columns["columnPath"].IsVisible;
             gridViewItems.Columns["columnId"].IsVisible = !gridViewItems.Columns["columnId"].IsVisible;
             gridViewAims.Columns["columnID"].IsVisible = !gridViewAims.Columns["columnID"].IsVisible;
+            gridViewEvents.Columns["columnID"].IsVisible = !gridViewEvents.Columns["columnID"].IsVisible;
             gridViewPersons.Columns["columnID"].IsVisible = !gridViewPersons.Columns["columnID"].IsVisible;
             gridViewPersons.Columns["columnAltName"].IsVisible = !gridViewPersons.Columns["columnAltName"].IsVisible;
         }
@@ -388,6 +428,7 @@ namespace QuestMaker
             CSettings.setGridViewSettings(gridViewAims);
             CSettings.setGridViewSettings(gridViewItems);
             CSettings.setGridViewSettings(gridViewPersons);
+            CSettings.setGridViewSettings(gridViewEvents);
             CSettings.saveSettingsToFile();
         }
 
@@ -430,6 +471,12 @@ namespace QuestMaker
             itemManager.UpdateItemsFromGrid(gridViewItems);
             ShowItemsOnGridView();
         }
+
+        private void gridViewEvents_CellValueChanged(object sender, GridViewCellEventArgs e)
+        {
+            eventManager.UpdateEventsFromGrid(gridViewEvents);
+        }
+
         //***************************************************
 
     }
