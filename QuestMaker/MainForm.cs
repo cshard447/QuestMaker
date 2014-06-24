@@ -205,7 +205,7 @@ namespace QuestMaker
                 values[0] = _event.getID();
                 values[1] = _event.description;
                 values[2] = _event.precondition;
-                values[3] = DateTime.Now; //_event.time;
+                values[3] = _event.time;
                 values[4] = _event.type;
                 gridViewEvents.Rows.Add(values);
             }

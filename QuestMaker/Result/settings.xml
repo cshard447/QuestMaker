@@ -43,8 +43,8 @@
     <gridViewPersons_columnComment>203</gridViewPersons_columnComment>
     <gridViewPersons_columnClanColor>102</gridViewPersons_columnClanColor>
     <MainForm>1</MainForm>
-    <MainFormLeft>15</MainFormLeft>
-    <MainFormTop>9</MainFormTop>
+    <MainFormLeft>22</MainFormLeft>
+    <MainFormTop>7</MainFormTop>
     <MainFormWidth>1253</MainFormWidth>
     <MainFormHeight>947</MainFormHeight>
     <gridViewAims_columnPersonsWithAim>197</gridViewAims_columnPersonsWithAim>
@@ -52,7 +52,9 @@
     <gridViewEvents_columnID>38</gridViewEvents_columnID>
     <gridViewEvents_columnDescription>340</gridViewEvents_columnDescription>
     <gridViewEvents_columnPrecondition>301</gridViewEvents_columnPrecondition>
-    <gridViewEvents_columnTime>140</gridViewEvents_columnTime>
+    <gridViewEvents_columnTime>109</gridViewEvents_columnTime>
     <gridViewEvents_columnEventType>170</gridViewEvents_columnEventType>
+    <gridViewEvents_column1>50</gridViewEvents_column1>
+    <gridViewEvents_column2>50</gridViewEvents_column2>
   </settings>
 </root>

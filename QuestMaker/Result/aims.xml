@@ -40,14 +40,14 @@
       <aimName>Own the Island</aimName>
       <aimDescription></aimDescription>
       <aimType>primary</aimType>
-      <personsWithAim>1,6,20,</personsWithAim>
+      <personsWithAim>1,6,</personsWithAim>
     </aim>
     <aim>
       <aimId>6</aimId>
       <aimName>Get rid of newcomers</aimName>
       <aimDescription></aimDescription>
       <aimType>primary</aimType>
-      <personsWithAim>4,13,25,</personsWithAim>
+      <personsWithAim>4,13,</personsWithAim>
     </aim>
     <aim>
       <aimId>7</aimId>

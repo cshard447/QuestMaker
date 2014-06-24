@@ -9,29 +9,28 @@ using Telerik.WinControls.UI;
 
 namespace QuestMaker.Classes
 {
-    public enum EventType { dataPass, itemEjection }
+    public enum EventType { dataPass, itemEjection, announcement }
     public class CAuthorEvent
     {
         private int id;
         public string description;
         public string precondition;
-        public TimeSpan time;
+        public decimal time;
         public EventType type;
         //List<CItem> items;
         //List<CThought> thoughts;
 
         public CAuthorEvent()
-        { 
-        
+        {
         }
 
-        public CAuthorEvent(int _id, string _desc, string _precond, TimeSpan _time, EventType _type)
+        public CAuthorEvent(int _id, string _desc, string _precond, decimal _time, EventType _type)
         {
             id = _id;
             description = _desc;
             precondition = _precond;
             time = _time;
-            type = _type;
+            type = _type;           
         }
 
         public int getID()
@@ -82,11 +81,11 @@ namespace QuestMaker.Classes
                     break;
             return newID;
         }
-        public void addEvent(int _id, string _description, string _precondition, TimeSpan _time, EventType _type)
+        public void addEvent(int _id, string _description, string _precondition, decimal _time, EventType _type)
         {
             events.Add(_id, new CAuthorEvent(_id, _description, _precondition, _time, _type));
         }
-        public int addEvent(string _description, string _precondition, TimeSpan _time, EventType _type)
+        public int addEvent(string _description, string _precondition, decimal _time, EventType _type)
         {
             int newID = calcNewID();
             events.Add(newID, new CAuthorEvent(newID, _description, _precondition, _time, _type));
@@ -126,8 +125,7 @@ namespace QuestMaker.Classes
                 int id = Common.convertNullInt(gridView.Rows[row].Cells["columnID"].Value);
                 string desc = Common.convertNullString(gridView.Rows[row].Cells["columnDescription"].Value);
                 string precond = Common.convertNullString(gridView.Rows[row].Cells["columnPrecondition"].Value);
-                //TimeSpan time = (TimeSpan) gridView.Rows[row].Cells["columnTime"].Value;
-                TimeSpan time = TimeSpan.FromMinutes(1);
+                decimal time = (decimal) gridView.Rows[row].Cells["columnTime"].Value;
                 EventType type = (EventType)gridView.Rows[row].Cells["columnEventType"].Value;
 
                 if (!events.ContainsKey(id))
@@ -197,7 +195,7 @@ namespace QuestMaker.Classes
                 string precond = elem.Element("eventPrecondition").Value.ToString();
                 string timestr = elem.Element("eventTime").Value.ToString();
                 string strtype = elem.Element("eventType").Value.ToString();
-                TimeSpan time = TimeSpan.FromMinutes(1); //TimeSpan.Parse(timestr);
+                decimal time = Decimal.Parse(timestr);
                 EventType type = getType(strtype);
                 addEvent(id, desc, precond, time, type);
             }
@@ -207,9 +205,11 @@ namespace QuestMaker.Classes
         {
             strToType.Add("dataPass", EventType.dataPass);
             strToType.Add("itemEjection", EventType.itemEjection);
+            strToType.Add("announcement", EventType.announcement);
 
             enumEventList.Add(new EventTypeDataSourceObject(EventType.dataPass, "Передача данных"));
             enumEventList.Add(new EventTypeDataSourceObject(EventType.itemEjection, "Вброс предметов"));
+            enumEventList.Add(new EventTypeDataSourceObject(EventType.announcement, "Объявление"));
         }
         public EventType getType(string type)
         {

@@ -79,7 +79,7 @@
       <itemImagePath></itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>false</itemSingleUse>
-      <personsWithItem>0,1,2,8,9,12,30</personsWithItem>
+      <personsWithItem>0,1,2,8,9,12,</personsWithItem>
     </item>
     <item>
       <itemId>8</itemId>
@@ -109,7 +109,7 @@
       <itemImagePath>..\..\Result\Heart-shaped diamond3.jpg</itemImagePath>
       <itemVisibility>true</itemVisibility>
       <itemSingleUse>false</itemSingleUse>
-      <personsWithItem>31</personsWithItem>
+      <personsWithItem></personsWithItem>
     </item>
     <item>
       <itemId>11</itemId>

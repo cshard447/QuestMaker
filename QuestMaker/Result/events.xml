@@ -9,22 +9,22 @@
       <eventId>1</eventId>
       <eventDescription>Выдать нож Биллу</eventDescription>
       <eventPrecondition>Когда все тупят</eventPrecondition>
-      <eventTime>PT1M</eventTime>
+      <eventTime>20</eventTime>
       <eventType>dataPass</eventType>
     </event>
     <event>
       <eventId>4</eventId>
       <eventDescription>Вбросить новые предметы на стол</eventDescription>
       <eventPrecondition>Когда все застряли</eventPrecondition>
-      <eventTime>PT1M</eventTime>
+      <eventTime>40</eventTime>
       <eventType>itemEjection</eventType>
     </event>
     <event>
       <eventId>2</eventId>
       <eventDescription>Объявить, что осталось 10 минут до конца</eventDescription>
       <eventPrecondition>За 10 минут до конца</eventPrecondition>
-      <eventTime>PT1M</eventTime>
-      <eventType>itemEjection</eventType>
+      <eventTime>95</eventTime>
+      <eventType>announcement</eventType>
     </event>
   </events>
 </root>

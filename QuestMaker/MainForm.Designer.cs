@@ -28,39 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn23 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn24 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn6 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn4 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn25 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewMultiComboBoxColumn gridViewMultiComboBoxColumn2 = new Telerik.WinControls.UI.GridViewMultiComboBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn26 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn27 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn28 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn7 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor4 = new Telerik.WinControls.Data.SortDescriptor();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn29 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn30 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn31 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn8 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn32 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor5 = new Telerik.WinControls.Data.SortDescriptor();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn33 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn34 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn35 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn36 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewImageColumn gridViewImageColumn2 = new Telerik.WinControls.UI.GridViewImageColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn37 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn5 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn6 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn38 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor6 = new Telerik.WinControls.Data.SortDescriptor();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn20 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn21 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn22 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn2 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn5 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn1 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewMultiComboBoxColumn gridViewMultiComboBoxColumn1 = new Telerik.WinControls.UI.GridViewMultiComboBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn2 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn3 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewImageColumn gridViewImageColumn1 = new Telerik.WinControls.UI.GridViewImageColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor3 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn19 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn4 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
             this.mainPageView = new Telerik.WinControls.UI.RadPageView();
             this.pagePrehistory = new Telerik.WinControls.UI.RadPageViewPage();
             this.rtbPrehistory = new Telerik.WinControls.RichTextBox.RadRichTextBox();
@@ -262,63 +262,63 @@
             // 
             this.gridViewPersons.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.gridViewPersons.MasterTemplate.AutoGenerateColumns = false;
-            gridViewTextBoxColumn23.EnableExpressionEditor = false;
-            gridViewTextBoxColumn23.HeaderText = "ID";
-            gridViewTextBoxColumn23.Name = "columnID";
-            gridViewTextBoxColumn24.EnableExpressionEditor = false;
-            gridViewTextBoxColumn24.HeaderText = "Имя";
-            gridViewTextBoxColumn24.Name = "columnName";
-            gridViewTextBoxColumn24.Width = 137;
-            gridViewComboBoxColumn6.EnableExpressionEditor = false;
-            gridViewComboBoxColumn6.HeaderText = "Пол";
-            gridViewComboBoxColumn6.Name = "columnSex";
-            gridViewComboBoxColumn6.Width = 89;
-            gridViewCheckBoxColumn4.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn4.HeaderText = "Неудаляемый";
-            gridViewCheckBoxColumn4.MinWidth = 20;
-            gridViewCheckBoxColumn4.Name = "columnUnremovable";
-            gridViewCheckBoxColumn4.Width = 80;
-            gridViewTextBoxColumn25.DisableHTMLRendering = false;
-            gridViewTextBoxColumn25.EnableExpressionEditor = false;
-            gridViewTextBoxColumn25.HeaderText = "Описание";
-            gridViewTextBoxColumn25.Name = "columnDescription";
-            gridViewTextBoxColumn25.Width = 186;
-            gridViewMultiComboBoxColumn2.EnableExpressionEditor = false;
-            gridViewMultiComboBoxColumn2.HeaderText = "Предметы";
-            gridViewMultiComboBoxColumn2.Name = "columnPersonalItems";
-            gridViewMultiComboBoxColumn2.ReadOnly = true;
-            gridViewMultiComboBoxColumn2.Width = 112;
-            gridViewTextBoxColumn26.EnableExpressionEditor = false;
-            gridViewTextBoxColumn26.HeaderText = "Цели";
-            gridViewTextBoxColumn26.Name = "columnPersonalAims";
-            gridViewTextBoxColumn26.ReadOnly = true;
-            gridViewTextBoxColumn26.Width = 148;
-            gridViewTextBoxColumn27.EnableExpressionEditor = false;
-            gridViewTextBoxColumn27.HeaderText = "Второе имя";
-            gridViewTextBoxColumn27.Name = "columnAltName";
-            gridViewTextBoxColumn27.Width = 141;
-            gridViewTextBoxColumn28.EnableExpressionEditor = false;
-            gridViewTextBoxColumn28.HeaderText = "Комментарий";
-            gridViewTextBoxColumn28.Name = "columnComment";
-            gridViewTextBoxColumn28.Width = 108;
-            gridViewComboBoxColumn7.EnableExpressionEditor = false;
-            gridViewComboBoxColumn7.HeaderText = "Клан";
-            gridViewComboBoxColumn7.Name = "columnClanColor";
-            gridViewComboBoxColumn7.Width = 102;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.Name = "columnID";
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.HeaderText = "Имя";
+            gridViewTextBoxColumn2.Name = "columnName";
+            gridViewTextBoxColumn2.Width = 137;
+            gridViewComboBoxColumn1.EnableExpressionEditor = false;
+            gridViewComboBoxColumn1.HeaderText = "Пол";
+            gridViewComboBoxColumn1.Name = "columnSex";
+            gridViewComboBoxColumn1.Width = 89;
+            gridViewCheckBoxColumn1.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn1.HeaderText = "Неудаляемый";
+            gridViewCheckBoxColumn1.MinWidth = 20;
+            gridViewCheckBoxColumn1.Name = "columnUnremovable";
+            gridViewCheckBoxColumn1.Width = 80;
+            gridViewTextBoxColumn3.DisableHTMLRendering = false;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.HeaderText = "Описание";
+            gridViewTextBoxColumn3.Name = "columnDescription";
+            gridViewTextBoxColumn3.Width = 186;
+            gridViewMultiComboBoxColumn1.EnableExpressionEditor = false;
+            gridViewMultiComboBoxColumn1.HeaderText = "Предметы";
+            gridViewMultiComboBoxColumn1.Name = "columnPersonalItems";
+            gridViewMultiComboBoxColumn1.ReadOnly = true;
+            gridViewMultiComboBoxColumn1.Width = 112;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.HeaderText = "Цели";
+            gridViewTextBoxColumn4.Name = "columnPersonalAims";
+            gridViewTextBoxColumn4.ReadOnly = true;
+            gridViewTextBoxColumn4.Width = 148;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.HeaderText = "Второе имя";
+            gridViewTextBoxColumn5.Name = "columnAltName";
+            gridViewTextBoxColumn5.Width = 141;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.HeaderText = "Комментарий";
+            gridViewTextBoxColumn6.Name = "columnComment";
+            gridViewTextBoxColumn6.Width = 108;
+            gridViewComboBoxColumn2.EnableExpressionEditor = false;
+            gridViewComboBoxColumn2.HeaderText = "Клан";
+            gridViewComboBoxColumn2.Name = "columnClanColor";
+            gridViewComboBoxColumn2.Width = 102;
             this.gridViewPersons.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn23,
-            gridViewTextBoxColumn24,
-            gridViewComboBoxColumn6,
-            gridViewCheckBoxColumn4,
-            gridViewTextBoxColumn25,
-            gridViewMultiComboBoxColumn2,
-            gridViewTextBoxColumn26,
-            gridViewTextBoxColumn27,
-            gridViewTextBoxColumn28,
-            gridViewComboBoxColumn7});
-            sortDescriptor4.PropertyName = "column1";
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewComboBoxColumn1,
+            gridViewCheckBoxColumn1,
+            gridViewTextBoxColumn3,
+            gridViewMultiComboBoxColumn1,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewComboBoxColumn2});
+            sortDescriptor1.PropertyName = "column1";
             this.gridViewPersons.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor4});
+            sortDescriptor1});
             this.gridViewPersons.Name = "gridViewPersons";
             this.gridViewPersons.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.gridViewPersons.Size = new System.Drawing.Size(1170, 509);
@@ -432,41 +432,41 @@
             // 
             // 
             this.gridViewAims.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
-            gridViewTextBoxColumn29.EnableExpressionEditor = false;
-            gridViewTextBoxColumn29.HeaderText = "ID";
-            gridViewTextBoxColumn29.Name = "columnID";
-            gridViewTextBoxColumn30.EnableExpressionEditor = false;
-            gridViewTextBoxColumn30.HeaderText = "Название";
-            gridViewTextBoxColumn30.Name = "columnName";
-            gridViewTextBoxColumn30.Width = 261;
-            gridViewTextBoxColumn31.AcceptsReturn = true;
-            gridViewTextBoxColumn31.AcceptsTab = true;
-            gridViewTextBoxColumn31.DisableHTMLRendering = false;
-            gridViewTextBoxColumn31.EnableExpressionEditor = false;
-            gridViewTextBoxColumn31.HeaderText = "Описание";
-            gridViewTextBoxColumn31.Multiline = true;
-            gridViewTextBoxColumn31.Name = "columnDescription";
-            gridViewTextBoxColumn31.Width = 272;
-            gridViewTextBoxColumn31.WrapText = true;
-            gridViewComboBoxColumn8.EnableExpressionEditor = false;
-            gridViewComboBoxColumn8.FilteringMode = Telerik.WinControls.UI.GridViewFilteringMode.DisplayMember;
-            gridViewComboBoxColumn8.HeaderText = "Тип";
-            gridViewComboBoxColumn8.Name = "columnType";
-            gridViewComboBoxColumn8.Width = 131;
-            gridViewTextBoxColumn32.EnableExpressionEditor = false;
-            gridViewTextBoxColumn32.HeaderText = "Кто преследует";
-            gridViewTextBoxColumn32.Name = "columnPersonsWithAim";
-            gridViewTextBoxColumn32.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn32.Width = 144;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.HeaderText = "ID";
+            gridViewTextBoxColumn7.Name = "columnID";
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.HeaderText = "Название";
+            gridViewTextBoxColumn8.Name = "columnName";
+            gridViewTextBoxColumn8.Width = 261;
+            gridViewTextBoxColumn9.AcceptsReturn = true;
+            gridViewTextBoxColumn9.AcceptsTab = true;
+            gridViewTextBoxColumn9.DisableHTMLRendering = false;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.HeaderText = "Описание";
+            gridViewTextBoxColumn9.Multiline = true;
+            gridViewTextBoxColumn9.Name = "columnDescription";
+            gridViewTextBoxColumn9.Width = 272;
+            gridViewTextBoxColumn9.WrapText = true;
+            gridViewComboBoxColumn3.EnableExpressionEditor = false;
+            gridViewComboBoxColumn3.FilteringMode = Telerik.WinControls.UI.GridViewFilteringMode.DisplayMember;
+            gridViewComboBoxColumn3.HeaderText = "Тип";
+            gridViewComboBoxColumn3.Name = "columnType";
+            gridViewComboBoxColumn3.Width = 131;
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.HeaderText = "Кто преследует";
+            gridViewTextBoxColumn10.Name = "columnPersonsWithAim";
+            gridViewTextBoxColumn10.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
+            gridViewTextBoxColumn10.Width = 144;
             this.gridViewAims.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn29,
-            gridViewTextBoxColumn30,
-            gridViewTextBoxColumn31,
-            gridViewComboBoxColumn8,
-            gridViewTextBoxColumn32});
-            sortDescriptor5.PropertyName = "columnPersonsWithAim";
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewComboBoxColumn3,
+            gridViewTextBoxColumn10});
+            sortDescriptor2.PropertyName = "columnPersonsWithAim";
             this.gridViewAims.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor5});
+            sortDescriptor2});
             this.gridViewAims.Name = "gridViewAims";
             this.gridViewAims.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.gridViewAims.Size = new System.Drawing.Size(1170, 509);
@@ -560,58 +560,58 @@
             // 
             // 
             this.gridViewItems.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
-            gridViewTextBoxColumn33.EnableExpressionEditor = false;
-            gridViewTextBoxColumn33.HeaderText = "ID";
-            gridViewTextBoxColumn33.Name = "columnID";
-            gridViewTextBoxColumn33.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn34.EnableExpressionEditor = false;
-            gridViewTextBoxColumn34.HeaderText = "Имя";
-            gridViewTextBoxColumn34.Name = "columnName";
-            gridViewTextBoxColumn34.Width = 262;
-            gridViewTextBoxColumn35.DisableHTMLRendering = false;
-            gridViewTextBoxColumn35.EnableExpressionEditor = false;
-            gridViewTextBoxColumn35.HeaderText = "Описание";
-            gridViewTextBoxColumn35.Name = "columnDescription";
-            gridViewTextBoxColumn35.Width = 266;
-            gridViewTextBoxColumn36.EnableExpressionEditor = false;
-            gridViewTextBoxColumn36.HeaderText = "Комментарий";
-            gridViewTextBoxColumn36.Name = "columnComment";
-            gridViewTextBoxColumn36.Width = 128;
-            gridViewImageColumn2.EnableExpressionEditor = false;
-            gridViewImageColumn2.HeaderText = "Картинка";
-            gridViewImageColumn2.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            gridViewImageColumn2.Name = "columnImage";
-            gridViewImageColumn2.Width = 128;
-            gridViewTextBoxColumn37.EnableExpressionEditor = false;
-            gridViewTextBoxColumn37.HeaderText = "Путь";
-            gridViewTextBoxColumn37.Name = "columnPath";
-            gridViewTextBoxColumn37.Width = 115;
-            gridViewCheckBoxColumn5.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn5.HeaderText = "Видимый";
-            gridViewCheckBoxColumn5.MinWidth = 20;
-            gridViewCheckBoxColumn5.Name = "columnVisibility";
-            gridViewCheckBoxColumn5.Width = 57;
-            gridViewCheckBoxColumn6.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn6.HeaderText = "Однократный";
-            gridViewCheckBoxColumn6.MinWidth = 20;
-            gridViewCheckBoxColumn6.Name = "columnSingleUse";
-            gridViewCheckBoxColumn6.Width = 80;
-            gridViewTextBoxColumn38.EnableExpressionEditor = false;
-            gridViewTextBoxColumn38.HeaderText = "У кого есть";
-            gridViewTextBoxColumn38.Name = "columnPersonsWithItem";
+            gridViewTextBoxColumn11.EnableExpressionEditor = false;
+            gridViewTextBoxColumn11.HeaderText = "ID";
+            gridViewTextBoxColumn11.Name = "columnID";
+            gridViewTextBoxColumn11.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
+            gridViewTextBoxColumn12.EnableExpressionEditor = false;
+            gridViewTextBoxColumn12.HeaderText = "Имя";
+            gridViewTextBoxColumn12.Name = "columnName";
+            gridViewTextBoxColumn12.Width = 262;
+            gridViewTextBoxColumn13.DisableHTMLRendering = false;
+            gridViewTextBoxColumn13.EnableExpressionEditor = false;
+            gridViewTextBoxColumn13.HeaderText = "Описание";
+            gridViewTextBoxColumn13.Name = "columnDescription";
+            gridViewTextBoxColumn13.Width = 266;
+            gridViewTextBoxColumn14.EnableExpressionEditor = false;
+            gridViewTextBoxColumn14.HeaderText = "Комментарий";
+            gridViewTextBoxColumn14.Name = "columnComment";
+            gridViewTextBoxColumn14.Width = 128;
+            gridViewImageColumn1.EnableExpressionEditor = false;
+            gridViewImageColumn1.HeaderText = "Картинка";
+            gridViewImageColumn1.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            gridViewImageColumn1.Name = "columnImage";
+            gridViewImageColumn1.Width = 128;
+            gridViewTextBoxColumn15.EnableExpressionEditor = false;
+            gridViewTextBoxColumn15.HeaderText = "Путь";
+            gridViewTextBoxColumn15.Name = "columnPath";
+            gridViewTextBoxColumn15.Width = 115;
+            gridViewCheckBoxColumn2.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn2.HeaderText = "Видимый";
+            gridViewCheckBoxColumn2.MinWidth = 20;
+            gridViewCheckBoxColumn2.Name = "columnVisibility";
+            gridViewCheckBoxColumn2.Width = 57;
+            gridViewCheckBoxColumn3.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn3.HeaderText = "Однократный";
+            gridViewCheckBoxColumn3.MinWidth = 20;
+            gridViewCheckBoxColumn3.Name = "columnSingleUse";
+            gridViewCheckBoxColumn3.Width = 80;
+            gridViewTextBoxColumn16.EnableExpressionEditor = false;
+            gridViewTextBoxColumn16.HeaderText = "У кого есть";
+            gridViewTextBoxColumn16.Name = "columnPersonsWithItem";
             this.gridViewItems.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn33,
-            gridViewTextBoxColumn34,
-            gridViewTextBoxColumn35,
-            gridViewTextBoxColumn36,
-            gridViewImageColumn2,
-            gridViewTextBoxColumn37,
-            gridViewCheckBoxColumn5,
-            gridViewCheckBoxColumn6,
-            gridViewTextBoxColumn38});
-            sortDescriptor6.PropertyName = "columnID";
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewImageColumn1,
+            gridViewTextBoxColumn15,
+            gridViewCheckBoxColumn2,
+            gridViewCheckBoxColumn3,
+            gridViewTextBoxColumn16});
+            sortDescriptor3.PropertyName = "columnID";
             this.gridViewItems.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor6});
+            sortDescriptor3});
             this.gridViewItems.Name = "gridViewItems";
             this.gridViewItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.gridViewItems.Size = new System.Drawing.Size(1170, 509);
@@ -775,42 +775,58 @@
             this.gridViewEvents.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewEvents.ForeColor = System.Drawing.Color.Black;
             this.gridViewEvents.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewEvents.Location = new System.Drawing.Point(0, 70);
+            this.gridViewEvents.Location = new System.Drawing.Point(0, 45);
             // 
             // gridViewEvents
             // 
             this.gridViewEvents.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
-            gridViewTextBoxColumn20.EnableExpressionEditor = false;
-            gridViewTextBoxColumn20.HeaderText = "ID";
-            gridViewTextBoxColumn20.Name = "columnID";
-            gridViewTextBoxColumn20.Width = 34;
-            gridViewTextBoxColumn21.EnableExpressionEditor = false;
-            gridViewTextBoxColumn21.HeaderText = "Описание";
-            gridViewTextBoxColumn21.Name = "columnDescription";
-            gridViewTextBoxColumn21.Width = 256;
-            gridViewTextBoxColumn22.EnableExpressionEditor = false;
-            gridViewTextBoxColumn22.HeaderText = "Условие наступления";
-            gridViewTextBoxColumn22.Name = "columnPrecondition";
-            gridViewTextBoxColumn22.Width = 222;
-            gridViewDateTimeColumn2.EditorType = Telerik.WinControls.UI.GridViewDateTimeEditorType.TimePicker;
-            gridViewDateTimeColumn2.EnableExpressionEditor = false;
-            gridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            gridViewDateTimeColumn2.HeaderText = "Время наступления";
-            gridViewDateTimeColumn2.Name = "columnTime";
-            gridViewDateTimeColumn2.Width = 140;
-            gridViewComboBoxColumn5.EnableExpressionEditor = false;
-            gridViewComboBoxColumn5.HeaderText = "Тип события";
-            gridViewComboBoxColumn5.Name = "columnEventType";
-            gridViewComboBoxColumn5.Width = 144;
+            this.gridViewEvents.MasterTemplate.AutoGenerateColumns = false;
+            gridViewTextBoxColumn17.EnableExpressionEditor = false;
+            gridViewTextBoxColumn17.HeaderText = "ID";
+            gridViewTextBoxColumn17.Name = "columnID";
+            gridViewTextBoxColumn17.Width = 34;
+            gridViewTextBoxColumn18.EnableExpressionEditor = false;
+            gridViewTextBoxColumn18.HeaderText = "Описание";
+            gridViewTextBoxColumn18.Name = "columnDescription";
+            gridViewTextBoxColumn18.Width = 256;
+            gridViewTextBoxColumn19.EnableExpressionEditor = false;
+            gridViewTextBoxColumn19.HeaderText = "Условие наступления";
+            gridViewTextBoxColumn19.Name = "columnPrecondition";
+            gridViewTextBoxColumn19.Width = 222;
+            gridViewDecimalColumn1.DecimalPlaces = 0;
+            gridViewDecimalColumn1.EnableExpressionEditor = true;
+            gridViewDecimalColumn1.HeaderText = "Время наступления";
+            gridViewDecimalColumn1.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            gridViewDecimalColumn1.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            gridViewDecimalColumn1.Name = "columnTime";
+            gridViewDecimalColumn1.Step = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            gridViewDecimalColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDecimalColumn1.Width = 121;
+            gridViewComboBoxColumn4.EnableExpressionEditor = false;
+            gridViewComboBoxColumn4.HeaderText = "Тип события";
+            gridViewComboBoxColumn4.Name = "columnEventType";
+            gridViewComboBoxColumn4.Width = 144;
             this.gridViewEvents.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn20,
-            gridViewTextBoxColumn21,
-            gridViewTextBoxColumn22,
-            gridViewDateTimeColumn2,
-            gridViewComboBoxColumn5});
+            gridViewTextBoxColumn17,
+            gridViewTextBoxColumn18,
+            gridViewTextBoxColumn19,
+            gridViewDecimalColumn1,
+            gridViewComboBoxColumn4});
             this.gridViewEvents.Name = "gridViewEvents";
             this.gridViewEvents.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewEvents.Size = new System.Drawing.Size(1170, 440);
+            this.gridViewEvents.Size = new System.Drawing.Size(1170, 465);
             this.gridViewEvents.TabIndex = 1;
             this.gridViewEvents.Text = "radGridView1";
             this.gridViewEvents.CellValueChanged += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridViewEvents_CellValueChanged);
@@ -822,7 +838,7 @@
             this.commandBarEvents.Name = "commandBarEvents";
             this.commandBarEvents.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowEvents});
-            this.commandBarEvents.Size = new System.Drawing.Size(1170, 70);
+            this.commandBarEvents.Size = new System.Drawing.Size(1170, 45);
             this.commandBarEvents.TabIndex = 0;
             // 
             // commandBarRowEvents
