@@ -44,6 +44,8 @@
             this.pImage = new Telerik.WinControls.UI.RadPanel();
             this.beImage = new Telerik.WinControls.UI.RadBrowseEditor();
             this.cbZoomImage = new Telerik.WinControls.UI.RadCheckBox();
+            this.lvPersons = new Telerik.WinControls.UI.RadListView();
+            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
@@ -60,12 +62,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbZoomImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lvPersons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radLabel1
             // 
-            this.radLabel1.Location = new System.Drawing.Point(39, 41);
+            this.radLabel1.Location = new System.Drawing.Point(31, 41);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(31, 18);
             this.radLabel1.TabIndex = 0;
@@ -73,7 +77,7 @@
             // 
             // radLabel2
             // 
-            this.radLabel2.Location = new System.Drawing.Point(39, 72);
+            this.radLabel2.Location = new System.Drawing.Point(31, 72);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(60, 18);
             this.radLabel2.TabIndex = 1;
@@ -81,7 +85,7 @@
             // 
             // radLabel3
             // 
-            this.radLabel3.Location = new System.Drawing.Point(39, 137);
+            this.radLabel3.Location = new System.Drawing.Point(31, 137);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(80, 18);
             this.radLabel3.TabIndex = 2;
@@ -89,7 +93,7 @@
             // 
             // radLabel4
             // 
-            this.radLabel4.Location = new System.Drawing.Point(39, 171);
+            this.radLabel4.Location = new System.Drawing.Point(31, 171);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(127, 18);
             this.radLabel4.TabIndex = 3;
@@ -97,15 +101,15 @@
             // 
             // radLabel5
             // 
-            this.radLabel5.Location = new System.Drawing.Point(39, 205);
+            this.radLabel5.Location = new System.Drawing.Point(31, 205);
             this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(166, 18);
+            this.radLabel5.Size = new System.Drawing.Size(161, 18);
             this.radLabel5.TabIndex = 1;
-            this.radLabel5.Text = "Однокуратное использование:";
+            this.radLabel5.Text = "Однократное использование:";
             // 
             // radLabel6
             // 
-            this.radLabel6.Location = new System.Drawing.Point(39, 245);
+            this.radLabel6.Location = new System.Drawing.Point(31, 245);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(57, 18);
             this.radLabel6.TabIndex = 1;
@@ -154,7 +158,7 @@
             // bOK
             // 
             this.bOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.bOK.Location = new System.Drawing.Point(284, 491);
+            this.bOK.Location = new System.Drawing.Point(314, 636);
             this.bOK.Name = "bOK";
             this.bOK.Size = new System.Drawing.Size(110, 24);
             this.bOK.TabIndex = 9;
@@ -164,7 +168,7 @@
             // bCancel
             // 
             this.bCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bCancel.Location = new System.Drawing.Point(428, 491);
+            this.bCancel.Location = new System.Drawing.Point(458, 636);
             this.bCancel.Name = "bCancel";
             this.bCancel.Size = new System.Drawing.Size(110, 24);
             this.bCancel.TabIndex = 10;
@@ -174,7 +178,7 @@
             // pImage
             // 
             this.pImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pImage.Location = new System.Drawing.Point(112, 286);
+            this.pImage.Location = new System.Drawing.Point(112, 280);
             this.pImage.Name = "pImage";
             this.pImage.Size = new System.Drawing.Size(312, 183);
             this.pImage.TabIndex = 12;
@@ -190,18 +194,37 @@
             // 
             // cbZoomImage
             // 
-            this.cbZoomImage.Location = new System.Drawing.Point(455, 245);
+            this.cbZoomImage.Location = new System.Drawing.Point(447, 245);
             this.cbZoomImage.Name = "cbZoomImage";
             this.cbZoomImage.Size = new System.Drawing.Size(109, 18);
             this.cbZoomImage.TabIndex = 14;
             this.cbZoomImage.Text = "Масштабировать";
             this.cbZoomImage.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.cbZoomImage_ToggleStateChanged);
             // 
+            // lvPersons
+            // 
+            this.lvPersons.Location = new System.Drawing.Point(112, 486);
+            this.lvPersons.Name = "lvPersons";
+            this.lvPersons.ShowCheckBoxes = true;
+            this.lvPersons.Size = new System.Drawing.Size(312, 135);
+            this.lvPersons.TabIndex = 15;
+            // 
+            // radLabel7
+            // 
+            this.radLabel7.AutoSize = false;
+            this.radLabel7.Location = new System.Drawing.Point(31, 486);
+            this.radLabel7.Name = "radLabel7";
+            this.radLabel7.Size = new System.Drawing.Size(80, 69);
+            this.radLabel7.TabIndex = 2;
+            this.radLabel7.Text = "Персонажи, обладающие этим предметом:";
+            // 
             // EditItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 547);
+            this.ClientSize = new System.Drawing.Size(590, 671);
+            this.Controls.Add(this.radLabel7);
+            this.Controls.Add(this.lvPersons);
             this.Controls.Add(this.cbZoomImage);
             this.Controls.Add(this.beImage);
             this.Controls.Add(this.pImage);
@@ -243,6 +266,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbZoomImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lvPersons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -267,5 +292,7 @@
         private Telerik.WinControls.UI.RadPanel pImage;
         private Telerik.WinControls.UI.RadBrowseEditor beImage;
         private Telerik.WinControls.UI.RadCheckBox cbZoomImage;
+        private Telerik.WinControls.UI.RadListView lvPersons;
+        private Telerik.WinControls.UI.RadLabel radLabel7;
     }
 }

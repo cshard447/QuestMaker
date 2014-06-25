@@ -376,7 +376,7 @@ namespace QuestMaker
             if (eif.ShowDialog() == DialogResult.OK)
             {
                 itemManager.addItem(eif.editedItem);
-                ShowItemsOnGridView();
+                UpdateDataOnGridViews();
             }
         }
 
@@ -385,11 +385,11 @@ namespace QuestMaker
             List<GridViewRowInfo> rows = gridViewItems.SelectedRows.ToList();
             int id = int.Parse(rows[0].Cells["columnID"].Value.ToString());
             CItem item = itemManager.getItem(id);
-            EditItemForm eif = new EditItemForm(item);
+            EditItemForm eif = new EditItemForm(item, ref peopleManager);
             if (eif.ShowDialog() == DialogResult.OK)
             {
                 itemManager.updateItem(eif.editedItem);
-                ShowItemsOnGridView();
+                UpdateDataOnGridViews();
             }
         }
         //***************************************************

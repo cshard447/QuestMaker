@@ -222,6 +222,21 @@ namespace QuestMaker.Classes
             }
         }
 
+        public void refreshItemOnPersons(List<int> ownersID, int itemID)
+        {
+            foreach (int ownerID in ownersID)
+            {
+                CPerson person = getPerson(ownerID);
+                if (!person.itemsId.Contains(itemID))
+                    persons[ownerID].itemsId.Add(itemID);
+            }
+            foreach (CPerson person in persons.Values)
+            {
+                if (person.itemsId.Contains(itemID) && !ownersID.Contains(person.getID()))
+                    person.itemsId.Remove(itemID);
+            }
+        }
+
         public Dictionary<int, CPerson> getAllPersons()
         {
             return persons;

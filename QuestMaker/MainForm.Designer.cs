@@ -163,7 +163,7 @@
             this.mainPageView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPageView.Location = new System.Drawing.Point(0, 20);
             this.mainPageView.Name = "mainPageView";
-            this.mainPageView.SelectedPage = this.pageAims;
+            this.mainPageView.SelectedPage = this.pageItems;
             this.mainPageView.Size = new System.Drawing.Size(1191, 558);
             this.mainPageView.TabIndex = 10;
             // 
@@ -555,9 +555,9 @@
             this.gridViewItems.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewItems.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gridViewItems.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewItems.Location = new System.Drawing.Point(0, 1);
+            this.gridViewItems.Location = new System.Drawing.Point(0, 45);
             // 
-            // 
+            // gridViewItems
             // 
             this.gridViewItems.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             gridViewTextBoxColumn11.EnableExpressionEditor = false;
@@ -614,7 +614,7 @@
             sortDescriptor3});
             this.gridViewItems.Name = "gridViewItems";
             this.gridViewItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewItems.Size = new System.Drawing.Size(1170, 509);
+            this.gridViewItems.Size = new System.Drawing.Size(1170, 465);
             this.gridViewItems.TabIndex = 1;
             this.gridViewItems.UserAddedRow += new Telerik.WinControls.UI.GridViewRowEventHandler(this.gridViewItems_UserAddedRow);
             this.gridViewItems.UserDeletedRow += new Telerik.WinControls.UI.GridViewRowEventHandler(this.gridViewItems_UserAddedRow);
@@ -628,7 +628,7 @@
             this.commandBarItems.Name = "commandBarItems";
             this.commandBarItems.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowItems});
-            this.commandBarItems.Size = new System.Drawing.Size(1170, 1);
+            this.commandBarItems.Size = new System.Drawing.Size(1170, 45);
             this.commandBarItems.TabIndex = 2;
             this.commandBarItems.Text = "radCommandBar1";
             // 
@@ -775,9 +775,9 @@
             this.gridViewEvents.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewEvents.ForeColor = System.Drawing.Color.Black;
             this.gridViewEvents.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewEvents.Location = new System.Drawing.Point(0, 45);
+            this.gridViewEvents.Location = new System.Drawing.Point(0, 1);
             // 
-            // gridViewEvents
+            // 
             // 
             this.gridViewEvents.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.gridViewEvents.MasterTemplate.AutoGenerateColumns = false;
@@ -826,7 +826,7 @@
             gridViewComboBoxColumn4});
             this.gridViewEvents.Name = "gridViewEvents";
             this.gridViewEvents.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewEvents.Size = new System.Drawing.Size(1170, 465);
+            this.gridViewEvents.Size = new System.Drawing.Size(1170, 509);
             this.gridViewEvents.TabIndex = 1;
             this.gridViewEvents.Text = "radGridView1";
             this.gridViewEvents.CellValueChanged += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridViewEvents_CellValueChanged);
@@ -838,7 +838,7 @@
             this.commandBarEvents.Name = "commandBarEvents";
             this.commandBarEvents.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowEvents});
-            this.commandBarEvents.Size = new System.Drawing.Size(1170, 45);
+            this.commandBarEvents.Size = new System.Drawing.Size(1170, 1);
             this.commandBarEvents.TabIndex = 0;
             // 
             // commandBarRowEvents

@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Text;
+using System.Drawing;
 using System.Windows.Forms;
+using System.ComponentModel;
+using System.Collections.Generic;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 using QuestMaker.Classes;
 
 namespace QuestMaker.GUI
@@ -13,6 +14,7 @@ namespace QuestMaker.GUI
     public partial class EditItemForm : Telerik.WinControls.UI.RadForm
     {
         public CItem editedItem;
+        private CPersonManager personManager;
         bool opening;
         
         public EditItemForm()
@@ -21,11 +23,13 @@ namespace QuestMaker.GUI
             editedItem = new CItem();
         }
 
-        public EditItemForm(CItem _item)
+        public EditItemForm(CItem _item, ref CPersonManager _personManager)
         {
             InitializeComponent();
             editedItem = _item;
+            personManager = _personManager;
             opening = true;
+            fillUIComponents();
             fillItemData();
             ((OpenFileDialog)(beImage.Dialog)).DefaultExt = ".jpg";
             ((OpenFileDialog)(beImage.Dialog)).Filter = "Картинки|*.jpg|Картинки|*.png";
@@ -39,7 +43,12 @@ namespace QuestMaker.GUI
         {
             CSettings.setFormSettings(this);
         }
-
+        private void fillUIComponents()
+        {
+            lvPersons.ValueMember = "Id";
+            lvPersons.DisplayMember = "Name";
+            lvPersons.DataSource = personManager.getPersonsList();
+        }
         private void fillItemData()
         {
             tbName.Text = editedItem.getName();
@@ -49,6 +58,9 @@ namespace QuestMaker.GUI
             pImage.BackgroundImage = editedItem.image;
             cbVisibility.Checked = editedItem.visibility;
             cbSingleUse.Checked = editedItem.singleUse;
+            foreach (ListViewDataItem lvPerson in lvPersons.Items)
+                if (editedItem.personsId.Contains((int)lvPerson.Value))
+                    lvPerson.CheckState = Telerik.WinControls.Enumerations.ToggleState.On;
             opening = false;
         }
         private void getItemFromUI()
@@ -59,6 +71,12 @@ namespace QuestMaker.GUI
             editedItem.visibility = cbVisibility.Checked;
             editedItem.singleUse = cbSingleUse.Checked;
             editedItem.pathToImage = beImage.Value;
+
+            List<int> owners = new List<int>();
+            foreach (ListViewDataItem lvPerson in lvPersons.CheckedItems)
+                owners.Add((int)lvPerson.Value);
+            personManager.refreshItemOnPersons(owners, editedItem.getID());
+            editedItem.setOwnerPersons(owners);
         }
 
         private void bOK_Click(object sender, EventArgs e)

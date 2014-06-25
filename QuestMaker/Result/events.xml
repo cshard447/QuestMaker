@@ -9,14 +9,14 @@
       <eventId>1</eventId>
       <eventDescription>Выдать нож Биллу</eventDescription>
       <eventPrecondition>Когда все тупят</eventPrecondition>
-      <eventTime>20</eventTime>
+      <eventTime>15</eventTime>
       <eventType>dataPass</eventType>
     </event>
     <event>
       <eventId>4</eventId>
       <eventDescription>Вбросить новые предметы на стол</eventDescription>
       <eventPrecondition>Когда все застряли</eventPrecondition>
-      <eventTime>40</eventTime>
+      <eventTime>35</eventTime>
       <eventType>itemEjection</eventType>
     </event>
     <event>

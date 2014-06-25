@@ -73,6 +73,10 @@ namespace QuestMaker
         {
             name = _name;
         }
+        public void setOwnerPersons(List<int> _owners)
+        {
+            personsId = _owners;
+        }
     }
 
     public class ItemDataSourceObject
@@ -165,7 +169,8 @@ namespace QuestMaker
             if (!this.items.ContainsKey(updated.getID()))
                 throw new System.ArgumentException("Предмета с таким ID не существует!");
             items[updated.getID()] = updated;
-            addImageToItem(updated.pathToImage, updated.getID());
+            if (updated.pathToImage != null)
+                addImageToItem(updated.pathToImage, updated.getID());
         }
 
         public void addItemsToPerson(List<int> itemsID, int personID)
