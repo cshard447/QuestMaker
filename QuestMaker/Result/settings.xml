@@ -18,8 +18,8 @@
     <EditAimForm>1</EditAimForm>
     <EditAimFormLeft>1392</EditAimFormLeft>
     <EditAimFormTop>114</EditAimFormTop>
-    <EditAimFormWidth>421</EditAimFormWidth>
-    <EditAimFormHeight>305</EditAimFormHeight>
+    <EditAimFormWidth>420</EditAimFormWidth>
+    <EditAimFormHeight>443</EditAimFormHeight>
     <gridViewAims_columnID>32</gridViewAims_columnID>
     <gridViewAims_columnName>254</gridViewAims_columnName>
     <gridViewAims_columnDescription>297</gridViewAims_columnDescription>
@@ -38,7 +38,7 @@
     <gridViewPersons_columnUnremovable>80</gridViewPersons_columnUnremovable>
     <gridViewPersons_columnDescription>129</gridViewPersons_columnDescription>
     <gridViewPersons_columnPersonalItems>116</gridViewPersons_columnPersonalItems>
-    <gridViewPersons_columnPersonalAims>253</gridViewPersons_columnPersonalAims>
+    <gridViewPersons_columnPersonalAims>382</gridViewPersons_columnPersonalAims>
     <gridViewPersons_columnAltName>70</gridViewPersons_columnAltName>
     <gridViewPersons_columnComment>203</gridViewPersons_columnComment>
     <gridViewPersons_columnClanColor>102</gridViewPersons_columnClanColor>
@@ -47,7 +47,7 @@
     <MainFormTop>7</MainFormTop>
     <MainFormWidth>1253</MainFormWidth>
     <MainFormHeight>947</MainFormHeight>
-    <gridViewAims_columnPersonsWithAim>197</gridViewAims_columnPersonsWithAim>
+    <gridViewAims_columnPersonsWithAim>270</gridViewAims_columnPersonsWithAim>
     <gridViewItems_columnPersonsWithItem>176</gridViewItems_columnPersonsWithItem>
     <gridViewEvents_columnID>38</gridViewEvents_columnID>
     <gridViewEvents_columnDescription>340</gridViewEvents_columnDescription>

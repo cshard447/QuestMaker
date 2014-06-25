@@ -90,7 +90,7 @@ namespace QuestMaker
             column8.DisplayMember = "DisplayString";
             column8.FieldName = "Type";
             column8.DataSource = CEventManager.enumEventList;
-            //column8.DataSourceNullValue = ;
+            column8.DataSourceNullValue = EventType.announcement;
         }
         //***************************************************
         //*********Data save by button click*****************
@@ -258,6 +258,7 @@ namespace QuestMaker
                 peopleManager.loadPersonsFromFile(filename);
                 rules.loadTextFromFile(filename);
                 prehistory.loadTextFromFile(filename);
+                eventManager.loadEventsFromFile(filename);
 
                 UpdateDataOnGridViews();
             }
@@ -360,12 +361,12 @@ namespace QuestMaker
             List<GridViewRowInfo> rows = gridViewAims.SelectedRows.ToList();
             int id = int.Parse(rows[0].Cells["columnID"].Value.ToString());
             CAim aim = aimManager.getAim(id);
-            EditAimForm eaf = new EditAimForm(aim);
+            EditAimForm eaf = new EditAimForm(aim, ref peopleManager);
             if (eaf.ShowDialog() == DialogResult.OK)
             {
-                // find out, aim updated eve nwithout this function!
+                // find out, aim updated even without this function!
                 aimManager.updateAim(eaf.editedAim);
-                ShowAimsOnGridView();
+                UpdateDataOnGridViews();
             }
         }
 
@@ -381,9 +382,7 @@ namespace QuestMaker
 
         private void cmbEditItems_Click(object sender, EventArgs e)
         {
-            List<GridViewRowInfo> rows = new List<GridViewRowInfo>();
-            rows = gridViewItems.SelectedRows.ToList();
-            //List<GridViewRowInfo> rows = gridViewItems.SelectedRows.ToList();
+            List<GridViewRowInfo> rows = gridViewItems.SelectedRows.ToList();
             int id = int.Parse(rows[0].Cells["columnID"].Value.ToString());
             CItem item = itemManager.getItem(id);
             EditItemForm eif = new EditItemForm(item);
@@ -476,7 +475,6 @@ namespace QuestMaker
         {
             eventManager.UpdateEventsFromGrid(gridViewEvents);
         }
-
         //***************************************************
 
     }

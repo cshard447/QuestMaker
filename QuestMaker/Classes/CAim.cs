@@ -49,6 +49,10 @@ namespace QuestMaker
         {
             return id;
         }
+        public void setFollowPersons(List<int> _persons)
+        {
+            personsId = _persons;
+        }
     }
 
     public class AimTypeDataSourceObject

@@ -163,7 +163,7 @@
             this.mainPageView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPageView.Location = new System.Drawing.Point(0, 20);
             this.mainPageView.Name = "mainPageView";
-            this.mainPageView.SelectedPage = this.pageAuthorEvents;
+            this.mainPageView.SelectedPage = this.pageAims;
             this.mainPageView.Size = new System.Drawing.Size(1191, 558);
             this.mainPageView.TabIndex = 10;
             // 
@@ -427,9 +427,9 @@
             this.gridViewAims.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewAims.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gridViewAims.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewAims.Location = new System.Drawing.Point(0, 1);
+            this.gridViewAims.Location = new System.Drawing.Point(0, 45);
             // 
-            // 
+            // gridViewAims
             // 
             this.gridViewAims.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
@@ -469,7 +469,7 @@
             sortDescriptor2});
             this.gridViewAims.Name = "gridViewAims";
             this.gridViewAims.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewAims.Size = new System.Drawing.Size(1170, 509);
+            this.gridViewAims.Size = new System.Drawing.Size(1170, 465);
             this.gridViewAims.TabIndex = 1;
             this.gridViewAims.UserAddedRow += new Telerik.WinControls.UI.GridViewRowEventHandler(this.gridViewAims_UserAddedRow);
             this.gridViewAims.UserDeletedRow += new Telerik.WinControls.UI.GridViewRowEventHandler(this.gridViewAims_UserAddedRow);
@@ -483,7 +483,7 @@
             this.commandBarAims.Name = "commandBarAims";
             this.commandBarAims.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowAims});
-            this.commandBarAims.Size = new System.Drawing.Size(1170, 1);
+            this.commandBarAims.Size = new System.Drawing.Size(1170, 45);
             this.commandBarAims.TabIndex = 2;
             this.commandBarAims.Text = "radCommandBar1";
             // 
@@ -788,14 +788,14 @@
             gridViewTextBoxColumn18.EnableExpressionEditor = false;
             gridViewTextBoxColumn18.HeaderText = "Описание";
             gridViewTextBoxColumn18.Name = "columnDescription";
-            gridViewTextBoxColumn18.Width = 256;
+            gridViewTextBoxColumn18.Width = 281;
             gridViewTextBoxColumn19.EnableExpressionEditor = false;
             gridViewTextBoxColumn19.HeaderText = "Условие наступления";
             gridViewTextBoxColumn19.Name = "columnPrecondition";
-            gridViewTextBoxColumn19.Width = 222;
+            gridViewTextBoxColumn19.Width = 260;
             gridViewDecimalColumn1.DecimalPlaces = 0;
             gridViewDecimalColumn1.EnableExpressionEditor = true;
-            gridViewDecimalColumn1.HeaderText = "Время наступления";
+            gridViewDecimalColumn1.HeaderText = "Время наступления, минут";
             gridViewDecimalColumn1.Maximum = new decimal(new int[] {
             300,
             0,
@@ -813,7 +813,7 @@
             0,
             0});
             gridViewDecimalColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDecimalColumn1.Width = 121;
+            gridViewDecimalColumn1.Width = 161;
             gridViewComboBoxColumn4.EnableExpressionEditor = false;
             gridViewComboBoxColumn4.HeaderText = "Тип события";
             gridViewComboBoxColumn4.Name = "columnEventType";

@@ -36,6 +36,8 @@
             this.ddlAimType = new Telerik.WinControls.UI.RadDropDownList();
             this.tbAimName = new Telerik.WinControls.UI.RadTextBox();
             this.tbcAimDescription = new Telerik.WinControls.UI.RadTextBoxControl();
+            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
+            this.lvPersons = new Telerik.WinControls.UI.RadListView();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
@@ -44,12 +46,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.ddlAimType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAimName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbcAimDescription)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lvPersons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radLabel1
             // 
-            this.radLabel1.Location = new System.Drawing.Point(33, 53);
+            this.radLabel1.Location = new System.Drawing.Point(33, 27);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(58, 18);
             this.radLabel1.TabIndex = 0;
@@ -57,7 +61,7 @@
             // 
             // radLabel2
             // 
-            this.radLabel2.Location = new System.Drawing.Point(33, 86);
+            this.radLabel2.Location = new System.Drawing.Point(33, 77);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(60, 18);
             this.radLabel2.TabIndex = 1;
@@ -65,7 +69,7 @@
             // 
             // radLabel3
             // 
-            this.radLabel3.Location = new System.Drawing.Point(33, 172);
+            this.radLabel3.Location = new System.Drawing.Point(33, 53);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(28, 18);
             this.radLabel3.TabIndex = 2;
@@ -74,7 +78,7 @@
             // bOK
             // 
             this.bOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.bOK.Location = new System.Drawing.Point(120, 225);
+            this.bOK.Location = new System.Drawing.Point(72, 368);
             this.bOK.Name = "bOK";
             this.bOK.Size = new System.Drawing.Size(110, 24);
             this.bOK.TabIndex = 3;
@@ -84,7 +88,7 @@
             // bCancel
             // 
             this.bCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bCancel.Location = new System.Drawing.Point(264, 225);
+            this.bCancel.Location = new System.Drawing.Point(216, 368);
             this.bCancel.Name = "bCancel";
             this.bCancel.Size = new System.Drawing.Size(110, 24);
             this.bCancel.TabIndex = 4;
@@ -93,32 +97,51 @@
             // 
             // ddlAimType
             // 
-            this.ddlAimType.Location = new System.Drawing.Point(120, 170);
+            this.ddlAimType.Location = new System.Drawing.Point(120, 51);
             this.ddlAimType.Name = "ddlAimType";
-            this.ddlAimType.Size = new System.Drawing.Size(149, 20);
+            this.ddlAimType.Size = new System.Drawing.Size(254, 20);
             this.ddlAimType.TabIndex = 5;
             // 
             // tbAimName
             // 
-            this.tbAimName.Location = new System.Drawing.Point(120, 51);
+            this.tbAimName.Location = new System.Drawing.Point(120, 25);
             this.tbAimName.Name = "tbAimName";
-            this.tbAimName.Size = new System.Drawing.Size(149, 20);
+            this.tbAimName.Size = new System.Drawing.Size(254, 20);
             this.tbAimName.TabIndex = 6;
             this.tbAimName.TabStop = false;
             // 
             // tbcAimDescription
             // 
-            this.tbcAimDescription.Location = new System.Drawing.Point(120, 86);
+            this.tbcAimDescription.Location = new System.Drawing.Point(120, 77);
             this.tbcAimDescription.Multiline = true;
             this.tbcAimDescription.Name = "tbcAimDescription";
-            this.tbcAimDescription.Size = new System.Drawing.Size(254, 62);
+            this.tbcAimDescription.Size = new System.Drawing.Size(254, 104);
             this.tbcAimDescription.TabIndex = 7;
+            // 
+            // radLabel4
+            // 
+            this.radLabel4.AutoSize = false;
+            this.radLabel4.Location = new System.Drawing.Point(33, 187);
+            this.radLabel4.Name = "radLabel4";
+            this.radLabel4.Size = new System.Drawing.Size(88, 54);
+            this.radLabel4.TabIndex = 8;
+            this.radLabel4.Text = "Персонажи, преследующие эту цель:";
+            // 
+            // lvPersons
+            // 
+            this.lvPersons.Location = new System.Drawing.Point(120, 187);
+            this.lvPersons.Name = "lvPersons";
+            this.lvPersons.ShowCheckBoxes = true;
+            this.lvPersons.Size = new System.Drawing.Size(254, 155);
+            this.lvPersons.TabIndex = 9;
             // 
             // EditAimForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 275);
+            this.ClientSize = new System.Drawing.Size(413, 404);
+            this.Controls.Add(this.lvPersons);
+            this.Controls.Add(this.radLabel4);
             this.Controls.Add(this.tbcAimDescription);
             this.Controls.Add(this.tbAimName);
             this.Controls.Add(this.ddlAimType);
@@ -144,6 +167,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ddlAimType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAimName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbcAimDescription)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lvPersons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -160,5 +185,7 @@
         private Telerik.WinControls.UI.RadDropDownList ddlAimType;
         private Telerik.WinControls.UI.RadTextBox tbAimName;
         private Telerik.WinControls.UI.RadTextBoxControl tbcAimDescription;
+        private Telerik.WinControls.UI.RadLabel radLabel4;
+        private Telerik.WinControls.UI.RadListView lvPersons;
     }
 }

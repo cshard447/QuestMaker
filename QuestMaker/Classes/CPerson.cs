@@ -201,11 +201,27 @@ namespace QuestMaker.Classes
             return desired;
         }
         public void updatePerson(CPerson updated)
-        { 
+        {
             if (!this.persons.ContainsKey(updated.getID()))
                 throw new System.ArgumentException("Персонажа с таким ID не существует!");
             persons[updated.getID()] = updated;
         }
+
+        public void refreshAimOnPersons(List<int> followersID, int aimID)
+        {
+            foreach (int followerID in followersID)
+            {
+                CPerson person = getPerson(followerID);
+                if (!person.aimsId.Contains(aimID))
+                    persons[followerID].aimsId.Add(aimID);
+            }
+            foreach (CPerson person in persons.Values)
+            {
+                if (person.aimsId.Contains(aimID) && !followersID.Contains(person.getID()))
+                    person.aimsId.Remove(aimID);
+            }
+        }
+
         public Dictionary<int, CPerson> getAllPersons()
         {
             return persons;
