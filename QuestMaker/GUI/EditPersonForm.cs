@@ -16,26 +16,29 @@ namespace QuestMaker.GUI
         public CPerson editedPerson;
         private CAimManager aimManager;
         private CItemManager itemManager;
+        private CPersonManager personManager;
 
         List<int> checkedAimList = new List<int>();
         List<int> checkedItemList = new List<int>();
 
-        public EditPersonForm(CPerson _person, ref CAimManager _aimManager, ref CItemManager _itemManager)
+        public EditPersonForm(CPerson _person, ref CAimManager _aimManager, ref CItemManager _itemManager, ref CPersonManager _personManager)
         {
             InitializeComponent();
             editedPerson = _person;
             aimManager = _aimManager;
             itemManager = _itemManager;
+            personManager = _personManager;
             fillUIComponents();
             fillPersonData();
             
         }
-        public EditPersonForm(ref CAimManager _aimManager, ref CItemManager _itemManager)
+        public EditPersonForm(ref CAimManager _aimManager, ref CItemManager _itemManager, ref CPersonManager _personManager)
         {
             InitializeComponent();
             editedPerson = new CPerson();
             aimManager = _aimManager;
             itemManager = _itemManager;
+            personManager = _personManager;
             fillUIComponents();
         }
 
@@ -154,7 +157,7 @@ namespace QuestMaker.GUI
         private void bCreateAim_Click(object sender, EventArgs e)
         {
             SaveState();
-            EditAimForm editAimForm = new EditAimForm();            
+            EditAimForm editAimForm = new EditAimForm(ref personManager);            
             if (editAimForm.ShowDialog() == DialogResult.OK)
             {
                 int newID = aimManager.addAim(editAimForm.editedAim);
@@ -166,7 +169,7 @@ namespace QuestMaker.GUI
         private void bCreateItem_Click(object sender, EventArgs e)
         {
             SaveState();
-            EditItemForm editItemForm = new EditItemForm();
+            EditItemForm editItemForm = new EditItemForm(ref personManager);
             if (editItemForm.ShowDialog() == DialogResult.OK)
             {
                 int newID = itemManager.addItem(editItemForm.editedItem);

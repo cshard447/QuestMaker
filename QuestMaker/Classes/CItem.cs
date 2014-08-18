@@ -119,7 +119,7 @@ namespace QuestMaker
             for (newID = 0; newID < MAX_ITEMS; newID++)
                 if (!items.Keys.Contains(newID))
                     break;
-            return newID;        
+            return newID;
         }
         public void addItem(int _id, string _name, string _description, string _comment, string _path, bool _visibility, 
                                 bool _singleUse, List<int> _personsId)
@@ -236,7 +236,7 @@ namespace QuestMaker
                     items[id].pathToImage = path;
                     items[id].visibility = vis;
                     items[id].singleUse = single;
-                }                
+                }
                 idsInTable.Add(id);
             }
             

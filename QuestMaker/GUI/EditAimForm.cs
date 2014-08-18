@@ -16,6 +16,14 @@ namespace QuestMaker.GUI
         public CAim editedAim;
         private CPersonManager personManager;
 
+        public EditAimForm(ref CPersonManager _personManager)
+        {
+            InitializeComponent();
+            personManager = _personManager;
+            editedAim = new CAim();
+            fillUIComponents();
+        }
+
         public EditAimForm(CAim _aim, ref CPersonManager _personManager)
         {
             InitializeComponent();
@@ -23,12 +31,6 @@ namespace QuestMaker.GUI
             personManager = _personManager;
             fillUIComponents();
             fillAimData();
-        }
-        public EditAimForm()
-        {
-            InitializeComponent();
-            editedAim = new CAim();
-            fillUIComponents();            
         }
 
         private void EditAimForm_Load(object sender, EventArgs e)

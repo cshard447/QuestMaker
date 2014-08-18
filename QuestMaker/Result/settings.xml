@@ -11,8 +11,8 @@
     <EditPersonFormWidth>867</EditPersonFormWidth>
     <EditPersonFormHeight>536</EditPersonFormHeight>
     <PrintResultForm>1</PrintResultForm>
-    <PrintResultFormLeft>0</PrintResultFormLeft>
-    <PrintResultFormTop>0</PrintResultFormTop>
+    <PrintResultFormLeft>66</PrintResultFormLeft>
+    <PrintResultFormTop>50</PrintResultFormTop>
     <PrintResultFormWidth>499</PrintResultFormWidth>
     <PrintResultFormHeight>557</PrintResultFormHeight>
     <EditAimForm>1</EditAimForm>
@@ -37,7 +37,7 @@
     <gridViewPersons_columnSex>76</gridViewPersons_columnSex>
     <gridViewPersons_columnUnremovable>80</gridViewPersons_columnUnremovable>
     <gridViewPersons_columnDescription>129</gridViewPersons_columnDescription>
-    <gridViewPersons_columnPersonalItems>595</gridViewPersons_columnPersonalItems>
+    <gridViewPersons_columnPersonalItems>199</gridViewPersons_columnPersonalItems>
     <gridViewPersons_columnPersonalAims>165</gridViewPersons_columnPersonalAims>
     <gridViewPersons_columnAltName>70</gridViewPersons_columnAltName>
     <gridViewPersons_columnComment>203</gridViewPersons_columnComment>

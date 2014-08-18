@@ -212,40 +212,6 @@ namespace QuestMaker
             gridViewEvents.EndUpdate();
         }
         //****************************************************************
-        //********* Stuff   ******************************************
-        private void gridViewItems_CellDoubleClick(object sender, GridViewCellEventArgs e)
-        {
-            if (e.Column.Name == "columnImage")
-            {
-                if (openImageFileDialog.ShowDialog() == DialogResult.OK)
-                {                    
-                    string fileName = openImageFileDialog.SafeFileName;
-                    string path = openImageFileDialog.FileName;
-                    int id = int.Parse(gridViewItems.Rows[e.RowIndex].Cells["columnID"].Value.ToString());
-                    itemManager.addImageToItem(path, fileName, id);                    
-                    ShowItemsOnGridView();
-                }
-            }
-            else if (e.Column.Name == "columnDescription")
-            {
-                markupItems.Value = e.Value.ToString();
-                DialogResult dr = markupItems.ShowDialog();
-                if (dr == DialogResult.OK)
-                    gridViewItems.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = markupItems.Value.ToString();
-            }
-        }
-
-        private void gridViewAims_CellDoubleClick(object sender, GridViewCellEventArgs e)
-        {
-            if (e.Column.Name == "columnDescription")
-            {
-                markupItems.Value = e.Value.ToString();
-                DialogResult dr = markupItems.ShowDialog();
-                if (dr == DialogResult.OK)
-                    gridViewAims.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = markupItems.Value.ToString();
-            }
-        }
-        //****************************************************************
         //********* Main MENU   ******************************************
         private void menuItemLoad_Click(object sender, EventArgs e)
         {
@@ -335,7 +301,7 @@ namespace QuestMaker
         //*******Create and Edit*****************************
         private void cmbCreatePerson_Click(object sender, EventArgs e)
         {
-            EditPersonForm epf = new EditPersonForm(ref aimManager, ref itemManager);
+            EditPersonForm epf = new EditPersonForm(ref aimManager, ref itemManager, ref peopleManager);
             if (epf.ShowDialog() == DialogResult.OK)
             {
                 peopleManager.addPerson(epf.editedPerson);
@@ -348,10 +314,19 @@ namespace QuestMaker
             List<GridViewRowInfo> rows = gridViewPersons.SelectedRows.ToList();
             int id = int.Parse(rows[0].Cells["columnID"].Value.ToString());
             CPerson person = peopleManager.getPerson(id);
-            EditPersonForm epf = new EditPersonForm(person, ref aimManager, ref itemManager);
+            EditPersonForm epf = new EditPersonForm(person, ref aimManager, ref itemManager, ref peopleManager);
             if (epf.ShowDialog() == DialogResult.OK)
             {
                 peopleManager.updatePerson(epf.editedPerson);
+                UpdateDataOnGridViews();
+            }
+        }
+        private void cmbCreateAim_Click(object sender, EventArgs e)
+        {
+            EditAimForm eaf = new EditAimForm(ref peopleManager);
+            if (eaf.ShowDialog() == DialogResult.OK)
+            {
+                aimManager.updateAim(eaf.editedAim);
                 UpdateDataOnGridViews();
             }
         }
@@ -372,7 +347,7 @@ namespace QuestMaker
 
         private void cmbCreateItem_Click(object sender, EventArgs e)
         {
-            EditItemForm eif = new EditItemForm();
+            EditItemForm eif = new EditItemForm(ref peopleManager);
             if (eif.ShowDialog() == DialogResult.OK)
             {
                 itemManager.addItem(eif.editedItem);
@@ -392,8 +367,40 @@ namespace QuestMaker
                 UpdateDataOnGridViews();
             }
         }
-        //***************************************************
+        //************************************************************
+        //********* Stuff   ******************************************
+        private void gridViewItems_CellDoubleClick(object sender, GridViewCellEventArgs e)
+        {
+            if (e.Column.Name == "columnImage")
+            {
+                if (openImageFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string fileName = openImageFileDialog.SafeFileName;
+                    string path = openImageFileDialog.FileName;
+                    int id = int.Parse(gridViewItems.Rows[e.RowIndex].Cells["columnID"].Value.ToString());
+                    itemManager.addImageToItem(path, fileName, id);
+                    ShowItemsOnGridView();
+                }
+            }
+            else if (e.Column.Name == "columnDescription")
+            {
+                markupItems.Value = e.Value.ToString();
+                DialogResult dr = markupItems.ShowDialog();
+                if (dr == DialogResult.OK)
+                    gridViewItems.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = markupItems.Value.ToString();
+            }
+        }
 
+        private void gridViewAims_CellDoubleClick(object sender, GridViewCellEventArgs e)
+        {
+            if (e.Column.Name == "columnDescription")
+            {
+                markupItems.Value = e.Value.ToString();
+                DialogResult dr = markupItems.ShowDialog();
+                if (dr == DialogResult.OK)
+                    gridViewAims.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = markupItems.Value.ToString();
+            }
+        }
         private void gridViewPersons_CellFormatting(object sender, CellFormattingEventArgs e)
         {
             if (e.CellElement.ColumnInfo.Name == "columnClanColor")

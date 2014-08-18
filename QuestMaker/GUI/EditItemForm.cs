@@ -16,11 +16,13 @@ namespace QuestMaker.GUI
         public CItem editedItem;
         private CPersonManager personManager;
         bool opening;
-        
-        public EditItemForm()
+
+        public EditItemForm(ref CPersonManager _personManager)
         {
             InitializeComponent();
+            personManager = _personManager;
             editedItem = new CItem();
+            fillUIComponents();
         }
 
         public EditItemForm(CItem _item, ref CPersonManager _personManager)
