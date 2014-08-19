@@ -14,22 +14,20 @@ namespace QuestMaker.GUI
     public partial class EditItemForm : Telerik.WinControls.UI.RadForm
     {
         public CItem editedItem;
-        private CPersonManager personManager;
+        private CPersonManager personManager = CSingleton.Instance.personManager;
         bool opening;
 
-        public EditItemForm(ref CPersonManager _personManager)
+        public EditItemForm()
         {
-            InitializeComponent();
-            personManager = _personManager;
+            InitializeComponent();            
             editedItem = new CItem();
             fillUIComponents();
         }
 
-        public EditItemForm(CItem _item, ref CPersonManager _personManager)
+        public EditItemForm(CItem _item)
         {
             InitializeComponent();
             editedItem = _item;
-            personManager = _personManager;
             opening = true;
             fillUIComponents();
             fillItemData();

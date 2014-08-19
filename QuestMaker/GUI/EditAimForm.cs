@@ -14,21 +14,19 @@ namespace QuestMaker.GUI
     public partial class EditAimForm : Telerik.WinControls.UI.RadForm
     {
         public CAim editedAim;
-        private CPersonManager personManager;
+        private CPersonManager personManager = CSingleton.Instance.personManager;
 
-        public EditAimForm(ref CPersonManager _personManager)
+        public EditAimForm()
         {
             InitializeComponent();
-            personManager = _personManager;
             editedAim = new CAim();
             fillUIComponents();
         }
 
-        public EditAimForm(CAim _aim, ref CPersonManager _personManager)
+        public EditAimForm(CAim _aim)
         {
             InitializeComponent();
             editedAim = _aim;
-            personManager = _personManager;
             fillUIComponents();
             fillAimData();
         }

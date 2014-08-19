@@ -25,9 +25,9 @@ namespace QuestMaker.GUI
 {
     public partial class PrintResultForm : Telerik.WinControls.UI.RadForm
     {
-        CPersonManager personManager;
-        CAimManager aimManager;
-        CItemManager itemManager;
+        CPersonManager personManager = CSingleton.Instance.personManager;
+        CAimManager aimManager = CSingleton.Instance.aimManager;
+        CItemManager itemManager = CSingleton.Instance.itemManager;
         CPrehistory prehistory;
         CRules rules;
 
@@ -37,12 +37,9 @@ namespace QuestMaker.GUI
         HtmlFormatProvider htmlProvider = new HtmlFormatProvider();
         PdfFormatProvider pdfProvider = new PdfFormatProvider();
 
-        public PrintResultForm(CPersonManager _personManager, CAimManager _aimManager, CItemManager _itemManager, CPrehistory _prehistory, CRules _rules)
+        public PrintResultForm(CPrehistory _prehistory, CRules _rules)
         {
             InitializeComponent();
-            personManager = _personManager;
-            aimManager = _aimManager;
-            itemManager = _itemManager;
             prehistory = _prehistory;
             rules = _rules;
             fillUIComponents();

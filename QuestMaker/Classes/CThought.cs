@@ -8,10 +8,10 @@ namespace QuestMaker
 {
     class CThought
     {
-        private int id;
-        public string name;
-        public string description;
-        public string image;   // @todo think about it
-        public string comment;
+        //private int id;
+        //public string name;
+        //public string description;
+        //public string image;   // @todo think about it
+        //public string comment;
     }
 }

@@ -19,12 +19,12 @@ namespace QuestMaker
 {
     public partial class MainForm : Telerik.WinControls.UI.RadForm
     {
-        CItemManager itemManager = new CItemManager();
-        CAimManager aimManager = new CAimManager();
+        CItemManager itemManager = CSingleton.Instance.itemManager;
+        CAimManager aimManager = CSingleton.Instance.aimManager;
+        CPersonManager peopleManager = CSingleton.Instance.personManager;
+        CEventManager eventManager = CSingleton.Instance.eventManager;
         CRules rules = new CRules();
         CPrehistory prehistory = new CPrehistory();
-        CPersonManager peopleManager = new CPersonManager();
-        CEventManager eventManager = new CEventManager();
         
         HtmlFormatProvider htmlProvider = new HtmlFormatProvider();
         //TxtFormatProvider txtProvider = new TxtFormatProvider();
@@ -49,7 +49,7 @@ namespace QuestMaker
                 MessageBox.Show(CommonError.getCurrentError(), "Ошибка открытия данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             UpdateDataOnGridViews();
             if (CommonError.isError)
-                MessageBox.Show(CommonError.getCurrentError(), "Ошибка открытия данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(CommonError.getCurrentError(), "Ошибка открытия данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);            
         }
 
         void FillTableColumns()
@@ -248,7 +248,7 @@ namespace QuestMaker
 
         private void menuItemPrintForm_Click(object sender, EventArgs e)
         {
-            PrintResultForm prf = new PrintResultForm(peopleManager, aimManager, itemManager, prehistory, rules);
+            PrintResultForm prf = new PrintResultForm(prehistory, rules);
             prf.Show();
         }
 
@@ -301,7 +301,7 @@ namespace QuestMaker
         //*******Create and Edit*****************************
         private void cmbCreatePerson_Click(object sender, EventArgs e)
         {
-            EditPersonForm epf = new EditPersonForm(ref aimManager, ref itemManager, ref peopleManager);
+            EditPersonForm epf = new EditPersonForm();
             if (epf.ShowDialog() == DialogResult.OK)
             {
                 peopleManager.addPerson(epf.editedPerson);
@@ -314,7 +314,7 @@ namespace QuestMaker
             List<GridViewRowInfo> rows = gridViewPersons.SelectedRows.ToList();
             int id = int.Parse(rows[0].Cells["columnID"].Value.ToString());
             CPerson person = peopleManager.getPerson(id);
-            EditPersonForm epf = new EditPersonForm(person, ref aimManager, ref itemManager, ref peopleManager);
+            EditPersonForm epf = new EditPersonForm(person);
             if (epf.ShowDialog() == DialogResult.OK)
             {
                 peopleManager.updatePerson(epf.editedPerson);
@@ -323,7 +323,7 @@ namespace QuestMaker
         }
         private void cmbCreateAim_Click(object sender, EventArgs e)
         {
-            EditAimForm eaf = new EditAimForm(ref peopleManager);
+            EditAimForm eaf = new EditAimForm();
             if (eaf.ShowDialog() == DialogResult.OK)
             {
                 aimManager.updateAim(eaf.editedAim);
@@ -336,7 +336,7 @@ namespace QuestMaker
             List<GridViewRowInfo> rows = gridViewAims.SelectedRows.ToList();
             int id = int.Parse(rows[0].Cells["columnID"].Value.ToString());
             CAim aim = aimManager.getAim(id);
-            EditAimForm eaf = new EditAimForm(aim, ref peopleManager);
+            EditAimForm eaf = new EditAimForm(aim);
             if (eaf.ShowDialog() == DialogResult.OK)
             {
                 // find out, aim updated even without this function!
@@ -347,7 +347,7 @@ namespace QuestMaker
 
         private void cmbCreateItem_Click(object sender, EventArgs e)
         {
-            EditItemForm eif = new EditItemForm(ref peopleManager);
+            EditItemForm eif = new EditItemForm();
             if (eif.ShowDialog() == DialogResult.OK)
             {
                 itemManager.addItem(eif.editedItem);
@@ -360,7 +360,7 @@ namespace QuestMaker
             List<GridViewRowInfo> rows = gridViewItems.SelectedRows.ToList();
             int id = int.Parse(rows[0].Cells["columnID"].Value.ToString());
             CItem item = itemManager.getItem(id);
-            EditItemForm eif = new EditItemForm(item, ref peopleManager);
+            EditItemForm eif = new EditItemForm(item);
             if (eif.ShowDialog() == DialogResult.OK)
             {
                 itemManager.updateItem(eif.editedItem);

@@ -77,6 +77,7 @@
     <Compile Include="Classes\Common.cs" />
     <Compile Include="Classes\CPerson.cs" />
     <Compile Include="Classes\CSettings.cs" />
+    <Compile Include="Classes\CSingleton.cs" />
     <Compile Include="Classes\CThought.cs" />
     <Compile Include="GUI\EditAimForm.cs">
       <SubType>Form</SubType>

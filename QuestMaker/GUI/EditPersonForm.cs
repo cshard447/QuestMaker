@@ -14,31 +14,25 @@ namespace QuestMaker.GUI
     public partial class EditPersonForm : Telerik.WinControls.UI.RadForm
     {
         public CPerson editedPerson;
-        private CAimManager aimManager;
-        private CItemManager itemManager;
-        private CPersonManager personManager;
+        private CAimManager aimManager = CSingleton.Instance.aimManager;
+        private CItemManager itemManager = CSingleton.Instance.itemManager;
+        private CPersonManager personManager = CSingleton.Instance.personManager;
 
         List<int> checkedAimList = new List<int>();
         List<int> checkedItemList = new List<int>();
 
-        public EditPersonForm(CPerson _person, ref CAimManager _aimManager, ref CItemManager _itemManager, ref CPersonManager _personManager)
+        public EditPersonForm(CPerson _person)
         {
             InitializeComponent();
             editedPerson = _person;
-            aimManager = _aimManager;
-            itemManager = _itemManager;
-            personManager = _personManager;
             fillUIComponents();
             fillPersonData();
             
         }
-        public EditPersonForm(ref CAimManager _aimManager, ref CItemManager _itemManager, ref CPersonManager _personManager)
+        public EditPersonForm()
         {
             InitializeComponent();
             editedPerson = new CPerson();
-            aimManager = _aimManager;
-            itemManager = _itemManager;
-            personManager = _personManager;
             fillUIComponents();
         }
 
@@ -157,7 +151,7 @@ namespace QuestMaker.GUI
         private void bCreateAim_Click(object sender, EventArgs e)
         {
             SaveState();
-            EditAimForm editAimForm = new EditAimForm(ref personManager);            
+            EditAimForm editAimForm = new EditAimForm();
             if (editAimForm.ShowDialog() == DialogResult.OK)
             {
                 int newID = aimManager.addAim(editAimForm.editedAim);
@@ -169,7 +163,7 @@ namespace QuestMaker.GUI
         private void bCreateItem_Click(object sender, EventArgs e)
         {
             SaveState();
-            EditItemForm editItemForm = new EditItemForm(ref personManager);
+            EditItemForm editItemForm = new EditItemForm();
             if (editItemForm.ShowDialog() == DialogResult.OK)
             {
                 int newID = itemManager.addItem(editItemForm.editedItem);
