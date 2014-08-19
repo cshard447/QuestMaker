@@ -14,6 +14,9 @@ namespace QuestMaker.GUI
     public partial class EditItemForm : Telerik.WinControls.UI.RadForm
     {
         public CItem editedItem;
+        public int newItemID;
+        private bool newItem;
+        private List<int> owners;
         private CPersonManager personManager = CSingleton.Instance.personManager;
         bool opening;
 
@@ -21,6 +24,7 @@ namespace QuestMaker.GUI
         {
             InitializeComponent();            
             editedItem = new CItem();
+            newItem = true;
             fillUIComponents();
         }
 
@@ -28,6 +32,7 @@ namespace QuestMaker.GUI
         {
             InitializeComponent();
             editedItem = _item;
+            newItem = false;
             opening = true;
             fillUIComponents();
             fillItemData();
@@ -72,16 +77,23 @@ namespace QuestMaker.GUI
             editedItem.singleUse = cbSingleUse.Checked;
             editedItem.pathToImage = beImage.Value;
 
-            List<int> owners = new List<int>();
+            owners = new List<int>();
             foreach (ListViewDataItem lvPerson in lvPersons.CheckedItems)
                 owners.Add((int)lvPerson.Value);
-            personManager.refreshItemOnPersons(owners, editedItem.getID());
+            
             editedItem.setOwnerPersons(owners);
         }
 
         private void bOK_Click(object sender, EventArgs e)
         {
             getItemFromUI();
+            CItemManager manager = CSingleton.Instance.itemManager;
+            newItemID = editedItem.getID();
+            if (newItem)
+                newItemID = manager.addItem(editedItem);
+            else
+                manager.updateItem(editedItem);
+            personManager.refreshItemOnPersons(owners, newItemID);
             this.Close();
         }
 

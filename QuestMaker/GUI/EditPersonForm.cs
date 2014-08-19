@@ -154,9 +154,8 @@ namespace QuestMaker.GUI
             EditAimForm editAimForm = new EditAimForm();
             if (editAimForm.ShowDialog() == DialogResult.OK)
             {
-                int newID = aimManager.addAim(editAimForm.editedAim);
                 fillUIComponents();
-                LoadState(newID);
+                LoadState(editAimForm.newAimID);
             }
         }
 
@@ -165,10 +164,9 @@ namespace QuestMaker.GUI
             SaveState();
             EditItemForm editItemForm = new EditItemForm();
             if (editItemForm.ShowDialog() == DialogResult.OK)
-            {
-                int newID = itemManager.addItem(editItemForm.editedItem);
+            {                
                 fillUIComponents();
-                LoadState(newID);
+                LoadState(editItemForm.newItemID);
             }
         }
 

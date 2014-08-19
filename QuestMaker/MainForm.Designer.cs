@@ -83,6 +83,7 @@
             this.commandBarAims = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowAims = new Telerik.WinControls.UI.CommandBarRowElement();
             this.commandBarStripAims = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.cmbCreateAim = new Telerik.WinControls.UI.CommandBarButton();
             this.cmbSaveAims = new Telerik.WinControls.UI.CommandBarButton();
             this.cmbEditAims = new Telerik.WinControls.UI.CommandBarButton();
             this.pageItems = new Telerik.WinControls.UI.RadPageViewPage();
@@ -122,7 +123,6 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.mainMenu = new Telerik.WinControls.UI.RadMenu();
-            this.cmbCreateAim = new Telerik.WinControls.UI.CommandBarButton();
             ((System.ComponentModel.ISupportInitialize)(this.mainPageView)).BeginInit();
             this.mainPageView.SuspendLayout();
             this.pagePrehistory.SuspendLayout();
@@ -257,9 +257,9 @@
             this.gridViewPersons.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewPersons.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gridViewPersons.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewPersons.Location = new System.Drawing.Point(0, 30);
+            this.gridViewPersons.Location = new System.Drawing.Point(0, 1);
             // 
-            // gridViewPersons
+            // 
             // 
             this.gridViewPersons.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.gridViewPersons.MasterTemplate.AutoGenerateColumns = false;
@@ -322,7 +322,7 @@
             sortDescriptor1});
             this.gridViewPersons.Name = "gridViewPersons";
             this.gridViewPersons.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewPersons.Size = new System.Drawing.Size(1170, 480);
+            this.gridViewPersons.Size = new System.Drawing.Size(1170, 509);
             this.gridViewPersons.TabIndex = 1;
             this.gridViewPersons.Text = "radGridView1";
             this.gridViewPersons.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gridViewPersons_CellFormatting);
@@ -337,7 +337,7 @@
             this.commandBarPerson.Name = "commandBarPerson";
             this.commandBarPerson.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowPerson});
-            this.commandBarPerson.Size = new System.Drawing.Size(1170, 30);
+            this.commandBarPerson.Size = new System.Drawing.Size(1170, 1);
             this.commandBarPerson.TabIndex = 0;
             this.commandBarPerson.Text = "radCommandBar1";
             // 
@@ -428,7 +428,7 @@
             this.gridViewAims.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewAims.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gridViewAims.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewAims.Location = new System.Drawing.Point(0, 70);
+            this.gridViewAims.Location = new System.Drawing.Point(0, 45);
             // 
             // gridViewAims
             // 
@@ -470,7 +470,7 @@
             sortDescriptor2});
             this.gridViewAims.Name = "gridViewAims";
             this.gridViewAims.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewAims.Size = new System.Drawing.Size(1170, 440);
+            this.gridViewAims.Size = new System.Drawing.Size(1170, 465);
             this.gridViewAims.TabIndex = 1;
             this.gridViewAims.UserAddedRow += new Telerik.WinControls.UI.GridViewRowEventHandler(this.gridViewAims_UserAddedRow);
             this.gridViewAims.UserDeletedRow += new Telerik.WinControls.UI.GridViewRowEventHandler(this.gridViewAims_UserAddedRow);
@@ -484,7 +484,7 @@
             this.commandBarAims.Name = "commandBarAims";
             this.commandBarAims.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowAims});
-            this.commandBarAims.Size = new System.Drawing.Size(1170, 70);
+            this.commandBarAims.Size = new System.Drawing.Size(1170, 45);
             this.commandBarAims.TabIndex = 2;
             this.commandBarAims.Text = "radCommandBar1";
             // 
@@ -502,6 +502,19 @@
             this.cmbSaveAims,
             this.cmbEditAims});
             this.commandBarStripAims.Name = "commandBarStripElement1";
+            // 
+            // cmbCreateAim
+            // 
+            this.cmbCreateAim.AccessibleDescription = "Создать";
+            this.cmbCreateAim.AccessibleName = "Создать";
+            this.cmbCreateAim.DisplayName = "commandBarButton1";
+            this.cmbCreateAim.DrawText = true;
+            this.cmbCreateAim.Image = ((System.Drawing.Image)(resources.GetObject("cmbCreateAim.Image")));
+            this.cmbCreateAim.Name = "cmbCreateAim";
+            this.cmbCreateAim.Text = "Создать";
+            this.cmbCreateAim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.cmbCreateAim.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.cmbCreateAim.Click += new System.EventHandler(this.cmbCreateAim_Click);
             // 
             // cmbSaveAims
             // 
@@ -557,9 +570,9 @@
             this.gridViewItems.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewItems.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gridViewItems.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewItems.Location = new System.Drawing.Point(0, 45);
+            this.gridViewItems.Location = new System.Drawing.Point(0, 1);
             // 
-            // gridViewItems
+            // 
             // 
             this.gridViewItems.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             gridViewTextBoxColumn11.EnableExpressionEditor = false;
@@ -616,7 +629,7 @@
             sortDescriptor3});
             this.gridViewItems.Name = "gridViewItems";
             this.gridViewItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewItems.Size = new System.Drawing.Size(1170, 465);
+            this.gridViewItems.Size = new System.Drawing.Size(1170, 509);
             this.gridViewItems.TabIndex = 1;
             this.gridViewItems.UserAddedRow += new Telerik.WinControls.UI.GridViewRowEventHandler(this.gridViewItems_UserAddedRow);
             this.gridViewItems.UserDeletedRow += new Telerik.WinControls.UI.GridViewRowEventHandler(this.gridViewItems_UserAddedRow);
@@ -630,7 +643,7 @@
             this.commandBarItems.Name = "commandBarItems";
             this.commandBarItems.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowItems});
-            this.commandBarItems.Size = new System.Drawing.Size(1170, 45);
+            this.commandBarItems.Size = new System.Drawing.Size(1170, 1);
             this.commandBarItems.TabIndex = 2;
             this.commandBarItems.Text = "radCommandBar1";
             // 
@@ -703,9 +716,9 @@
             // 
             this.rtbRules.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbRules.HyperlinkToolTipFormatString = null;
-            this.rtbRules.Location = new System.Drawing.Point(0, 45);
+            this.rtbRules.Location = new System.Drawing.Point(0, 1);
             this.rtbRules.Name = "rtbRules";
-            this.rtbRules.Size = new System.Drawing.Size(1170, 465);
+            this.rtbRules.Size = new System.Drawing.Size(1170, 509);
             this.rtbRules.TabIndex = 1;
             // 
             // commandBarRules
@@ -715,7 +728,7 @@
             this.commandBarRules.Name = "commandBarRules";
             this.commandBarRules.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowRules});
-            this.commandBarRules.Size = new System.Drawing.Size(1170, 45);
+            this.commandBarRules.Size = new System.Drawing.Size(1170, 1);
             this.commandBarRules.TabIndex = 2;
             this.commandBarRules.Text = "radCommandBar1";
             // 
@@ -777,9 +790,9 @@
             this.gridViewEvents.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewEvents.ForeColor = System.Drawing.Color.Black;
             this.gridViewEvents.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewEvents.Location = new System.Drawing.Point(0, 45);
+            this.gridViewEvents.Location = new System.Drawing.Point(0, 1);
             // 
-            // gridViewEvents
+            // 
             // 
             this.gridViewEvents.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.gridViewEvents.MasterTemplate.AutoGenerateColumns = false;
@@ -828,7 +841,7 @@
             gridViewComboBoxColumn4});
             this.gridViewEvents.Name = "gridViewEvents";
             this.gridViewEvents.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewEvents.Size = new System.Drawing.Size(1170, 465);
+            this.gridViewEvents.Size = new System.Drawing.Size(1170, 509);
             this.gridViewEvents.TabIndex = 1;
             this.gridViewEvents.Text = "radGridView1";
             this.gridViewEvents.CellValueChanged += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridViewEvents_CellValueChanged);
@@ -840,7 +853,7 @@
             this.commandBarEvents.Name = "commandBarEvents";
             this.commandBarEvents.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowEvents});
-            this.commandBarEvents.Size = new System.Drawing.Size(1170, 45);
+            this.commandBarEvents.Size = new System.Drawing.Size(1170, 1);
             this.commandBarEvents.TabIndex = 0;
             // 
             // commandBarRowEvents
@@ -981,19 +994,6 @@
             this.mainMenu.TabIndex = 12;
             this.mainMenu.Text = "radMenu1";
             // 
-            // cmbCreateAim
-            // 
-            this.cmbCreateAim.AccessibleDescription = "Создать";
-            this.cmbCreateAim.AccessibleName = "Создать";
-            this.cmbCreateAim.DisplayName = "commandBarButton1";
-            this.cmbCreateAim.DrawText = true;
-            this.cmbCreateAim.Image = ((System.Drawing.Image)(resources.GetObject("cmbCreateAim.Image")));
-            this.cmbCreateAim.Name = "cmbCreateAim";
-            this.cmbCreateAim.Text = "Создать";
-            this.cmbCreateAim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.cmbCreateAim.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.cmbCreateAim.Click += new System.EventHandler(this.cmbCreateAim_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1008,6 +1008,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Редактор квестов";
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainPageView)).EndInit();

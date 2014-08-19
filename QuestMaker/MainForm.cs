@@ -324,11 +324,7 @@ namespace QuestMaker
         private void cmbCreateAim_Click(object sender, EventArgs e)
         {
             EditAimForm eaf = new EditAimForm();
-            if (eaf.ShowDialog() == DialogResult.OK)
-            {
-                aimManager.updateAim(eaf.editedAim);
-                UpdateDataOnGridViews();
-            }
+            eaf.Show();
         }
 
         private void cmbEditAims_Click(object sender, EventArgs e)
@@ -337,22 +333,14 @@ namespace QuestMaker
             int id = int.Parse(rows[0].Cells["columnID"].Value.ToString());
             CAim aim = aimManager.getAim(id);
             EditAimForm eaf = new EditAimForm(aim);
-            if (eaf.ShowDialog() == DialogResult.OK)
-            {
-                // find out, aim updated even without this function!
-                aimManager.updateAim(eaf.editedAim);
-                UpdateDataOnGridViews();
-            }
+            eaf.Show();
         }
 
         private void cmbCreateItem_Click(object sender, EventArgs e)
         {
             EditItemForm eif = new EditItemForm();
-            if (eif.ShowDialog() == DialogResult.OK)
-            {
-                itemManager.addItem(eif.editedItem);
-                UpdateDataOnGridViews();
-            }
+            eif.Show();
+            UpdateDataOnGridViews();
         }
 
         private void cmbEditItems_Click(object sender, EventArgs e)
@@ -361,11 +349,7 @@ namespace QuestMaker
             int id = int.Parse(rows[0].Cells["columnID"].Value.ToString());
             CItem item = itemManager.getItem(id);
             EditItemForm eif = new EditItemForm(item);
-            if (eif.ShowDialog() == DialogResult.OK)
-            {
-                itemManager.updateItem(eif.editedItem);
-                UpdateDataOnGridViews();
-            }
+            eif.Show();
         }
         //************************************************************
         //********* Stuff   ******************************************
@@ -481,6 +465,11 @@ namespace QuestMaker
         private void gridViewEvents_CellValueChanged(object sender, GridViewCellEventArgs e)
         {
             eventManager.UpdateEventsFromGrid(gridViewEvents);
+        }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            UpdateDataOnGridViews();
         }
         //***************************************************
 

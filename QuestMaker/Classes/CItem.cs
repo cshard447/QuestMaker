@@ -317,14 +317,10 @@ namespace QuestMaker
             string result = "";
             foreach (int id in ids)
             {
-                try
-                {
-                    result += items.ElementAt(id).Value.getName() + "; ";
-                }
-                catch (System.ArgumentOutOfRangeException e)
-                {
-                    CommonError.addErrorString("Не существует предмет с ID = " + id.ToString());
-                }
+                if (items.ContainsKey(id))
+                    result += items[id].getName() + "; ";
+                else
+                    CommonError.addErrorString("Не существует предмет с ID = " + id.ToString());                    
             }
             return result;
         }

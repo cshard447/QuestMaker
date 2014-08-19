@@ -14,12 +14,16 @@ namespace QuestMaker.GUI
     public partial class EditAimForm : Telerik.WinControls.UI.RadForm
     {
         public CAim editedAim;
+        public int newAimID;
+        private bool newAim;
+        private List<int> followers;
         private CPersonManager personManager = CSingleton.Instance.personManager;
 
         public EditAimForm()
         {
             InitializeComponent();
             editedAim = new CAim();
+            newAim = true;
             fillUIComponents();
         }
 
@@ -27,6 +31,7 @@ namespace QuestMaker.GUI
         {
             InitializeComponent();
             editedAim = _aim;
+            newAim = false;
             fillUIComponents();
             fillAimData();
         }
@@ -66,16 +71,23 @@ namespace QuestMaker.GUI
             editedAim.description = tbcAimDescription.Text;
             editedAim.personsId.Clear();
 
-            List<int> followers = new List<int>();
+            followers = new List<int>();
             foreach (ListViewDataItem lvPerson in lvPersons.CheckedItems)
                 followers.Add((int)lvPerson.Value);
-            personManager.refreshAimOnPersons(followers, editedAim.getID());
+            
             editedAim.setFollowPersons(followers);
         }
 
         private void bOK_Click(object sender, EventArgs e)
         {
             getAimFromUI();
+            CAimManager manager = CSingleton.Instance.aimManager;
+            newAimID = editedAim.getID();
+            if (newAim)
+                newAimID = manager.addAim(editedAim);
+            else
+                manager.updateAim(editedAim);
+            personManager.refreshAimOnPersons(followers, newAimID);
             this.Close();
         }
 

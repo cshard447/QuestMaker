@@ -276,14 +276,10 @@ namespace QuestMaker
             string result = "";
             foreach (int id in ids)
             {
-                try
-                {
-                    result += aims.ElementAt(id).Value.getName() + "; ";
-                }
-                catch(System.ArgumentOutOfRangeException e)
-                {
+                if (aims.ContainsKey(id))
+                    result += aims[id].getName() + "; ";
+                else
                     CommonError.addErrorString("Не существует цель с ID = " + id.ToString() );
-                }
             }
             return result;
         }
