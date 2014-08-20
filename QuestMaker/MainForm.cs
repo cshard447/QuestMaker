@@ -302,11 +302,7 @@ namespace QuestMaker
         private void cmbCreatePerson_Click(object sender, EventArgs e)
         {
             EditPersonForm epf = new EditPersonForm();
-            if (epf.ShowDialog() == DialogResult.OK)
-            {
-                peopleManager.addPerson(epf.editedPerson);
-                UpdateDataOnGridViews();
-            }
+            epf.Show();
         }
 
         private void cmbEditPerson_Click(object sender, EventArgs e)
@@ -315,11 +311,7 @@ namespace QuestMaker
             int id = int.Parse(rows[0].Cells["columnID"].Value.ToString());
             CPerson person = peopleManager.getPerson(id);
             EditPersonForm epf = new EditPersonForm(person);
-            if (epf.ShowDialog() == DialogResult.OK)
-            {
-                peopleManager.updatePerson(epf.editedPerson);
-                UpdateDataOnGridViews();
-            }
+            epf.Show();
         }
         private void cmbCreateAim_Click(object sender, EventArgs e)
         {
@@ -340,7 +332,6 @@ namespace QuestMaker
         {
             EditItemForm eif = new EditItemForm();
             eif.Show();
-            UpdateDataOnGridViews();
         }
 
         private void cmbEditItems_Click(object sender, EventArgs e)

@@ -1,8 +1,8 @@
 <root>
   <settings>
     <EditItemForm>1</EditItemForm>
-    <EditItemFormLeft>595</EditItemFormLeft>
-    <EditItemFormTop>30</EditItemFormTop>
+    <EditItemFormLeft>1300</EditItemFormLeft>
+    <EditItemFormTop>41</EditItemFormTop>
     <EditItemFormWidth>598</EditItemFormWidth>
     <EditItemFormHeight>703</EditItemFormHeight>
     <EditPersonForm>1</EditPersonForm>
@@ -16,8 +16,8 @@
     <PrintResultFormWidth>499</PrintResultFormWidth>
     <PrintResultFormHeight>557</PrintResultFormHeight>
     <EditAimForm>1</EditAimForm>
-    <EditAimFormLeft>1392</EditAimFormLeft>
-    <EditAimFormTop>114</EditAimFormTop>
+    <EditAimFormLeft>1410</EditAimFormLeft>
+    <EditAimFormTop>471</EditAimFormTop>
     <EditAimFormWidth>420</EditAimFormWidth>
     <EditAimFormHeight>443</EditAimFormHeight>
     <gridViewAims_columnID>32</gridViewAims_columnID>
@@ -37,8 +37,8 @@
     <gridViewPersons_columnSex>76</gridViewPersons_columnSex>
     <gridViewPersons_columnUnremovable>80</gridViewPersons_columnUnremovable>
     <gridViewPersons_columnDescription>129</gridViewPersons_columnDescription>
-    <gridViewPersons_columnPersonalItems>199</gridViewPersons_columnPersonalItems>
-    <gridViewPersons_columnPersonalAims>165</gridViewPersons_columnPersonalAims>
+    <gridViewPersons_columnPersonalItems>161</gridViewPersons_columnPersonalItems>
+    <gridViewPersons_columnPersonalAims>191</gridViewPersons_columnPersonalAims>
     <gridViewPersons_columnAltName>70</gridViewPersons_columnAltName>
     <gridViewPersons_columnComment>203</gridViewPersons_columnComment>
     <gridViewPersons_columnClanColor>102</gridViewPersons_columnClanColor>

@@ -181,10 +181,11 @@ namespace QuestMaker.Classes
             persons.Add(newID, new CPerson(newID, _name, _sex, _description, _unremovable, _comment, _clan, _altName ));
             return newID;        
         }
-        public void addPerson(CPerson person)
+        public int addPerson(CPerson person)
         {
             int newID = calcNewID();
             addPerson(newID, person.getName(), person.sex, person.description, person.unremovable, person.comment, person.itemsId, person.aimsId, person.clan, person.altName);
+            return newID;
         }
         public bool removePerson(int idToDelete)
         {

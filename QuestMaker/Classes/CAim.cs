@@ -214,7 +214,6 @@ namespace QuestMaker
                 if (!idsInTable.Contains(id))
                     this.removeAim(id);
             }        
-
         }
         public void saveAimsToFile(string file = "")
         {

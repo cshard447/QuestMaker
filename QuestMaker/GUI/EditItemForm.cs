@@ -18,7 +18,7 @@ namespace QuestMaker.GUI
         private bool newItem;
         private List<int> owners;
         private CPersonManager personManager = CSingleton.Instance.personManager;
-        bool opening;
+        private bool opening;
 
         public EditItemForm()
         {
@@ -27,7 +27,6 @@ namespace QuestMaker.GUI
             newItem = true;
             fillUIComponents();
         }
-
         public EditItemForm(CItem _item)
         {
             InitializeComponent();

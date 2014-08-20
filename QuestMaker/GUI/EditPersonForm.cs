@@ -14,26 +14,30 @@ namespace QuestMaker.GUI
     public partial class EditPersonForm : Telerik.WinControls.UI.RadForm
     {
         public CPerson editedPerson;
+        private bool newPerson;
         private CAimManager aimManager = CSingleton.Instance.aimManager;
         private CItemManager itemManager = CSingleton.Instance.itemManager;
         private CPersonManager personManager = CSingleton.Instance.personManager;
+        private List<int> items;
+        private List<int> aims;
 
         List<int> checkedAimList = new List<int>();
         List<int> checkedItemList = new List<int>();
 
-        public EditPersonForm(CPerson _person)
-        {
-            InitializeComponent();
-            editedPerson = _person;
-            fillUIComponents();
-            fillPersonData();
-            
-        }
         public EditPersonForm()
         {
             InitializeComponent();
             editedPerson = new CPerson();
+            newPerson = true;
             fillUIComponents();
+        }
+        public EditPersonForm(CPerson _person)
+        {
+            InitializeComponent();
+            editedPerson = _person;
+            newPerson = false;
+            fillUIComponents();
+            fillPersonData();            
         }
 
         private void fillUIComponents()
@@ -93,16 +97,13 @@ namespace QuestMaker.GUI
             editedPerson.altName = tbAltName.Text;
             editedPerson.clan = (KnownColor)ddlClan.SelectedValue;
 
-            List<int> items = new List<int>();
-            List<int> aims = new List<int>();
+            items = new List<int>();
+            aims = new List<int>();
             
             foreach (ListViewDataItem lvItem in lvItems.CheckedItems)
                 items.Add((int)lvItem.Value);
             foreach (ListViewDataItem lvAim in lvAims.CheckedItems)
                 aims.Add((int)lvAim.Value);
-
-            aimManager.addAimsToPerson(aims, editedPerson.getID());
-            itemManager.addItemsToPerson(items, editedPerson.getID());
 
             editedPerson.setOwnItems(items);
             editedPerson.setOwnAims(aims);
@@ -111,6 +112,13 @@ namespace QuestMaker.GUI
         private void bOK_Click(object sender, EventArgs e)
         {
             getPersonFromUI();
+            int ID = editedPerson.getID();
+            if (newPerson)
+                ID = personManager.addPerson(editedPerson);
+            else
+                personManager.updatePerson(editedPerson);
+            aimManager.addAimsToPerson(aims, ID);
+            itemManager.addItemsToPerson(items, ID);
             this.Close();
         }
 
