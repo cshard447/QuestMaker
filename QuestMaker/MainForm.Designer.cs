@@ -570,7 +570,6 @@
             // gridViewItems
             // 
             this.gridViewItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(249)))));
-            this.gridViewItems.CausesValidation = false;
             this.gridViewItems.Cursor = System.Windows.Forms.Cursors.Default;
             this.gridViewItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridViewItems.Font = new System.Drawing.Font("Segoe UI", 8.25F);
