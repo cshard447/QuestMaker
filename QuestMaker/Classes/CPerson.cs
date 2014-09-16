@@ -386,6 +386,30 @@ namespace QuestMaker.Classes
             clanList.Add( new ClanClass(KnownColor.Gray, "Серый") );
         }
 
+        public void AddDelegates()
+        {
+            CSingleton.Instance.aimManager.AddMethodToDelegate(new CAimManager.AimDeleted(OnDeleteAim));
+            CSingleton.Instance.itemManager.AddMethodToDelegate(new CItemManager.ItemDeleted(OnDeleteItem));
+        }
+
+        public void OnDeleteAim(int aimID)
+        {
+            foreach (CPerson person in persons.Values)
+            {
+                if (person.aimsId.Contains(aimID))
+                    person.aimsId.Remove(aimID);
+            }
+        }
+
+        public void OnDeleteItem(int itemID)
+        {
+            foreach (CPerson person in persons.Values)
+            { 
+                if (person.itemsId.Contains(itemID))
+                    person.itemsId.Remove(itemID);
+            }
+        }
+
         public BindingList<PersonNameObject> getPersonsList()
         {
             personList.Clear();

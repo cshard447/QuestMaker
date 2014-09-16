@@ -107,6 +107,9 @@ namespace QuestMaker
         public const string section = "aims";
         const int MAX_ITEMS = 1000;
 
+        public delegate void AimDeleted(int aimID);
+        private AimDeleted aimDeleted;
+
         public CAimManager()
         {
             initDict();
@@ -137,10 +140,12 @@ namespace QuestMaker
             return newID;
         }
 
-        public bool removeAim(int idToDelete)
+        public void removeAim(int idToDelete)
         {
-            return aims.Remove(idToDelete);
+            aims.Remove(idToDelete);
+            aimDeleted.Invoke(idToDelete);            
         }
+
         public void removeAllAims()
         {
             aims.Clear();
@@ -292,6 +297,10 @@ namespace QuestMaker
             enumAimList.Add( new AimTypeDataSourceObject(AimType.primary, "Главная") );
             enumAimList.Add( new AimTypeDataSourceObject(AimType.secondary, "Побочная") );
             enumAimList.Add(new AimTypeDataSourceObject(AimType.transitional, "Промежуточная"));
+        }
+        public void AddMethodToDelegate(AimDeleted methodToCall)
+        {
+            aimDeleted = methodToCall;
         }
 
         public BindingList<AimDataSourceObject> getAimsList()

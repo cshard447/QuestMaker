@@ -164,7 +164,7 @@
             this.mainPageView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPageView.Location = new System.Drawing.Point(0, 20);
             this.mainPageView.Name = "mainPageView";
-            this.mainPageView.SelectedPage = this.pagePersons;
+            this.mainPageView.SelectedPage = this.pageAims;
             this.mainPageView.Size = new System.Drawing.Size(1191, 558);
             this.mainPageView.TabIndex = 10;
             // 
@@ -257,7 +257,7 @@
             this.gridViewPersons.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewPersons.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gridViewPersons.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewPersons.Location = new System.Drawing.Point(0, 134);
+            this.gridViewPersons.Location = new System.Drawing.Point(0, 109);
             // 
             // gridViewPersons
             // 
@@ -322,7 +322,7 @@
             sortDescriptor1});
             this.gridViewPersons.Name = "gridViewPersons";
             this.gridViewPersons.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewPersons.Size = new System.Drawing.Size(1170, 376);
+            this.gridViewPersons.Size = new System.Drawing.Size(1170, 401);
             this.gridViewPersons.TabIndex = 1;
             this.gridViewPersons.Text = "radGridView1";
             this.gridViewPersons.CellFormatting += new Telerik.WinControls.UI.CellFormattingEventHandler(this.gridViewPersons_CellFormatting);
@@ -337,7 +337,7 @@
             this.commandBarPerson.Name = "commandBarPerson";
             this.commandBarPerson.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowPerson});
-            this.commandBarPerson.Size = new System.Drawing.Size(1170, 134);
+            this.commandBarPerson.Size = new System.Drawing.Size(1170, 109);
             this.commandBarPerson.TabIndex = 0;
             this.commandBarPerson.Text = "radCommandBar1";
             // 
@@ -428,7 +428,7 @@
             this.gridViewAims.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewAims.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gridViewAims.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewAims.Location = new System.Drawing.Point(0, 107);
+            this.gridViewAims.Location = new System.Drawing.Point(0, 132);
             // 
             // gridViewAims
             // 
@@ -457,6 +457,7 @@
             gridViewTextBoxColumn10.EnableExpressionEditor = false;
             gridViewTextBoxColumn10.HeaderText = "Кто преследует";
             gridViewTextBoxColumn10.Name = "columnPersonsWithAim";
+            gridViewTextBoxColumn10.ReadOnly = true;
             gridViewTextBoxColumn10.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
             gridViewTextBoxColumn10.Width = 144;
             this.gridViewAims.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
@@ -470,10 +471,10 @@
             sortDescriptor2});
             this.gridViewAims.Name = "gridViewAims";
             this.gridViewAims.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewAims.Size = new System.Drawing.Size(1170, 403);
+            this.gridViewAims.Size = new System.Drawing.Size(1170, 378);
             this.gridViewAims.TabIndex = 1;
             this.gridViewAims.UserAddedRow += new Telerik.WinControls.UI.GridViewRowEventHandler(this.gridViewAims_UserAddedRow);
-            this.gridViewAims.UserDeletedRow += new Telerik.WinControls.UI.GridViewRowEventHandler(this.gridViewAims_UserAddedRow);
+            this.gridViewAims.UserDeletingRow += new Telerik.WinControls.UI.GridViewRowCancelEventHandler(this.gridViewAims_UserDeletingRow);
             this.gridViewAims.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridViewAims_CellDoubleClick);
             this.gridViewAims.CellValueChanged += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridViewAims_CellValueChanged);
             // 
@@ -484,7 +485,7 @@
             this.commandBarAims.Name = "commandBarAims";
             this.commandBarAims.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowAims});
-            this.commandBarAims.Size = new System.Drawing.Size(1170, 107);
+            this.commandBarAims.Size = new System.Drawing.Size(1170, 132);
             this.commandBarAims.TabIndex = 2;
             this.commandBarAims.Text = "radCommandBar1";
             // 
@@ -619,6 +620,7 @@
             gridViewTextBoxColumn16.EnableExpressionEditor = false;
             gridViewTextBoxColumn16.HeaderText = "У кого есть";
             gridViewTextBoxColumn16.Name = "columnPersonsWithItem";
+            gridViewTextBoxColumn16.ReadOnly = true;
             this.gridViewItems.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn11,
             gridViewTextBoxColumn12,
@@ -637,7 +639,7 @@
             this.gridViewItems.Size = new System.Drawing.Size(1170, 403);
             this.gridViewItems.TabIndex = 1;
             this.gridViewItems.UserAddedRow += new Telerik.WinControls.UI.GridViewRowEventHandler(this.gridViewItems_UserAddedRow);
-            this.gridViewItems.UserDeletedRow += new Telerik.WinControls.UI.GridViewRowEventHandler(this.gridViewItems_UserAddedRow);
+            this.gridViewItems.UserDeletingRow += new Telerik.WinControls.UI.GridViewRowCancelEventHandler(this.gridViewItems_UserDeletingRow);
             this.gridViewItems.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridViewItems_CellDoubleClick);
             this.gridViewItems.CellValueChanged += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridViewItems_CellValueChanged);
             // 
@@ -721,9 +723,9 @@
             // 
             this.rtbRules.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbRules.HyperlinkToolTipFormatString = null;
-            this.rtbRules.Location = new System.Drawing.Point(0, 102);
+            this.rtbRules.Location = new System.Drawing.Point(0, 1);
             this.rtbRules.Name = "rtbRules";
-            this.rtbRules.Size = new System.Drawing.Size(1170, 408);
+            this.rtbRules.Size = new System.Drawing.Size(1170, 509);
             this.rtbRules.TabIndex = 1;
             // 
             // commandBarRules
@@ -733,7 +735,7 @@
             this.commandBarRules.Name = "commandBarRules";
             this.commandBarRules.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowRules});
-            this.commandBarRules.Size = new System.Drawing.Size(1170, 102);
+            this.commandBarRules.Size = new System.Drawing.Size(1170, 1);
             this.commandBarRules.TabIndex = 2;
             this.commandBarRules.Text = "radCommandBar1";
             // 
@@ -795,9 +797,9 @@
             this.gridViewEvents.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gridViewEvents.ForeColor = System.Drawing.Color.Black;
             this.gridViewEvents.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridViewEvents.Location = new System.Drawing.Point(0, 100);
+            this.gridViewEvents.Location = new System.Drawing.Point(0, 1);
             // 
-            // gridViewEvents
+            // 
             // 
             this.gridViewEvents.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.gridViewEvents.MasterTemplate.AutoGenerateColumns = false;
@@ -846,7 +848,7 @@
             gridViewComboBoxColumn4});
             this.gridViewEvents.Name = "gridViewEvents";
             this.gridViewEvents.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridViewEvents.Size = new System.Drawing.Size(1170, 410);
+            this.gridViewEvents.Size = new System.Drawing.Size(1170, 509);
             this.gridViewEvents.TabIndex = 1;
             this.gridViewEvents.Text = "radGridView1";
             this.gridViewEvents.CellValueChanged += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gridViewEvents_CellValueChanged);
@@ -858,7 +860,7 @@
             this.commandBarEvents.Name = "commandBarEvents";
             this.commandBarEvents.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowEvents});
-            this.commandBarEvents.Size = new System.Drawing.Size(1170, 100);
+            this.commandBarEvents.Size = new System.Drawing.Size(1170, 1);
             this.commandBarEvents.TabIndex = 0;
             // 
             // commandBarRowEvents

@@ -45,11 +45,13 @@ namespace QuestMaker
             CSettings.fillGridViewSettings(gridViewItems);
             CSettings.fillGridViewSettings(gridViewPersons);
             CSettings.fillGridViewSettings(gridViewEvents);
+            peopleManager.AddDelegates();
             if (CommonError.isError)
                 MessageBox.Show(CommonError.getCurrentError(), "Ошибка открытия данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             UpdateDataOnGridViews();
             if (CommonError.isError)
                 MessageBox.Show(CommonError.getCurrentError(), "Ошибка открытия данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);            
+
         }
 
         void FillTableColumns()
@@ -399,7 +401,6 @@ namespace QuestMaker
 
         private void buttonTest_Click(object sender, EventArgs e)
         {
-            //itemManager.TestXML();
             gridViewAims.ColumnChooser.Show();
         }
 
@@ -439,7 +440,7 @@ namespace QuestMaker
         private void gridViewAims_UserAddedRow(object sender, GridViewRowEventArgs e)
         {
             aimManager.UpdateAimsFromGrid(gridViewAims);
-            ShowAimsOnGridView();
+            UpdateDataOnGridViews();
         }
 
         private void gridViewItems_CellValueChanged(object sender, GridViewCellEventArgs e)
@@ -450,7 +451,7 @@ namespace QuestMaker
         private void gridViewItems_UserAddedRow(object sender, GridViewRowEventArgs e)
         {
             itemManager.UpdateItemsFromGrid(gridViewItems);
-            ShowItemsOnGridView();
+            UpdateDataOnGridViews();
         }
 
         private void gridViewEvents_CellValueChanged(object sender, GridViewCellEventArgs e)
@@ -460,6 +461,38 @@ namespace QuestMaker
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
+            UpdateDataOnGridViews();
+        }
+
+        private void gridViewAims_UserDeletingRow(object sender, GridViewRowCancelEventArgs e)
+        {
+            string pursuers = e.Rows[0].Cells["columnPersonsWithAim"].Value.ToString(); 
+            DialogResult dr = DialogResult.Cancel;
+            if (pursuers != "")
+                dr = MessageBox.Show("Эту цель преследуют некоторые персонажи. Хотите удалить ее у них? ", "Вопрос", MessageBoxButtons.OKCancel);
+
+            if (pursuers == "" || dr == DialogResult.OK)
+                foreach (GridViewRowInfo rowInfo in e.Rows)
+                {
+                    int id = Common.convertNullInt(rowInfo.Cells["columnID"].Value);
+                    aimManager.removeAim(id);
+                }
+            UpdateDataOnGridViews();
+        }
+
+        private void gridViewItems_UserDeletingRow(object sender, GridViewRowCancelEventArgs e)
+        {
+            string owners = e.Rows[0].Cells["columnPersonsWithItem"].Value.ToString();
+            DialogResult dr = DialogResult.Cancel;
+            if (owners != "")
+                dr = MessageBox.Show("Этим предметом обладают некоторые персонажи. Хотите удалить его у них? ", "Вопрос", MessageBoxButtons.OKCancel);
+
+            if (owners == "" || dr == DialogResult.OK)
+                foreach (GridViewRowInfo rowInfo in e.Rows)
+                {
+                    int id = Common.convertNullInt(rowInfo.Cells["columnID"].Value);
+                    itemManager.removeItem(id);
+                }
             UpdateDataOnGridViews();
         }
         //***************************************************

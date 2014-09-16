@@ -109,6 +109,9 @@ namespace QuestMaker
         const int MAX_ITEMS = 1000;
         private BindingList<ItemDataSourceObject> itemList = new BindingList<ItemDataSourceObject>();
 
+        public delegate void ItemDeleted(int itemID);
+        private ItemDeleted itemDeleted;
+
         public CItemManager()
         { 
         
@@ -139,9 +142,10 @@ namespace QuestMaker
             return newID;
         }
 
-        public bool removeItem(int idToDelete)
+        public void removeItem(int idToDelete)
         {
-            return items.Remove(idToDelete);
+            items.Remove(idToDelete);
+            itemDeleted.Invoke(idToDelete);            
         }
         public void removeAllItems()
         {
@@ -307,10 +311,6 @@ namespace QuestMaker
                 addItem(id, name, desc, comm, path, ConvertStringToBool(vis), ConvertStringToBool(single), personsList);
             }
         }
-        public void TestXML()
-        {
-
-        }
 
         public string getItemsNamesFromId(List<int> ids)
         {
@@ -323,6 +323,11 @@ namespace QuestMaker
                     CommonError.addErrorString("Не существует предмет с ID = " + id.ToString());                    
             }
             return result;
+        }
+
+        public void AddMethodToDelegate(ItemDeleted methodToCall)
+        {
+            itemDeleted = methodToCall;
         }
 
         public BindingList<ItemDataSourceObject> getItemsList()
